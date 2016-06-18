@@ -14,6 +14,7 @@
 namespace sf
 {
     class Texture;
+    class Font;
 }
 
 ////////////////////////////////////////////////////////////
@@ -35,6 +36,15 @@ public:
     };
 
     ////////////////////////////////////////////////////////////
+    /// \brief Identificardores de fuente
+    ///
+    ////////////////////////////////////////////////////////////
+    enum class Fonts
+    {
+        Default ///< Id de la fuente por defecto
+    };
+
+    ////////////////////////////////////////////////////////////
     /// \brief Carga e inicializa los recursos y los relaciona con un id
     ///
     ////////////////////////////////////////////////////////////
@@ -48,8 +58,17 @@ public:
     ////////////////////////////////////////////////////////////
     sf::Texture& getTexture(const TextureId& textureId);
 
+    ////////////////////////////////////////////////////////////
+    /// \brief Obtiene una referencia a la fuente que concuerde con el id
+    /// \param textureId Identificador de la fuente
+    /// \return Referencia a la fuente
+    ///
+    ////////////////////////////////////////////////////////////
+    sf::Font& getFont(const Fonts& fontId);
+
 private:
     ResourceHolder<TextureId, sf::Texture> textureHolder; ///< Contenedor de texturas
+    ResourceHolder<Fonts, sf::Font> fontHolder; ///< Contenedor de fuentes
 };
 
 #endif // RESOURCEMANAGER_H
