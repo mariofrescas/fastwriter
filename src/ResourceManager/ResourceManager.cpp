@@ -2,13 +2,13 @@
 
 ResourceManager::ResourceManager()
 {
-    textureHolder.load(TextureId::ConcreteTexture1, "bg1.jpg");
-    textureHolder.load(TextureId::ConcreteTexture2, "bg2.jpg");
+    textureHolder.load(Textures::ConcreteTexture1, "bg1.jpg");
+    textureHolder.load(Textures::ConcreteTexture2, "bg2.jpg");
 
     fontHolder.load(Fonts::Default, "saxmono.ttf");
 }
 
-sf::Texture& ResourceManager::getTexture(const ResourceManager::TextureId& textureId)
+sf::Texture& ResourceManager::getTexture(const ResourceManager::Textures& textureId)
 {
     return textureHolder.get(textureId);
 }

@@ -29,7 +29,7 @@ public:
     /// \brief Identificardores de texturas
     ///
     ////////////////////////////////////////////////////////////
-    enum class TextureId
+    enum class Textures
     {
         ConcreteTexture1, ///< Id de la textura ejemplo 1
         ConcreteTexture2, ///< Id de la textura ejemplo 2
@@ -56,7 +56,7 @@ public:
     /// \return Referencia la textura
     ///
     ////////////////////////////////////////////////////////////
-    sf::Texture& getTexture(const TextureId& textureId);
+    sf::Texture& getTexture(const Textures& textureId);
 
     ////////////////////////////////////////////////////////////
     /// \brief Obtiene una referencia a la fuente que concuerde con el id
@@ -67,7 +67,7 @@ public:
     sf::Font& getFont(const Fonts& fontId);
 
 private:
-    ResourceHolder<TextureId, sf::Texture> textureHolder; ///< Contenedor de texturas
+    ResourceHolder<Textures, sf::Texture> textureHolder; ///< Contenedor de texturas
     ResourceHolder<Fonts, sf::Font> fontHolder; ///< Contenedor de fuentes
 };
 
