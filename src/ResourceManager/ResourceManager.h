@@ -31,8 +31,6 @@ public:
     ////////////////////////////////////////////////////////////
     enum class Textures
     {
-        ConcreteTexture1, ///< Id de la textura ejemplo 1
-        ConcreteTexture2, ///< Id de la textura ejemplo 2
     };
 
     ////////////////////////////////////////////////////////////

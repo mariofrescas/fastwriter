@@ -2,9 +2,6 @@
 
 ResourceManager::ResourceManager()
 {
-    textureHolder.load(Textures::ConcreteTexture1, "bg1.jpg");
-    textureHolder.load(Textures::ConcreteTexture2, "bg2.jpg");
-
     fontHolder.load(Fonts::Default, "fonts/saxmono.ttf");
 }
 
