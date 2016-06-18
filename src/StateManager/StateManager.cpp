@@ -4,8 +4,7 @@
 // #define NDEBUG
 #include <cassert>
 
-#include "ConcreteState.h"
-#include "ResourceManager.h"
+#include "MainMenu.h"
 
 StateManager::SharedContext::SharedContext(sf::RenderWindow& window, ResourceManager& resManager)
     : window(window), resourceManager(resManager)
@@ -16,8 +15,7 @@ StateManager::StateManager(const SharedContext& sharedContex)
 {
     shdContex = std::make_unique<SharedContext>(sharedContex.window, sharedContex.resourceManager);
 
-    states[StateType::ConcreteState1] = std::make_unique<ConcreteState1>(*this);
-    states[StateType::ConcreteState2] = std::make_unique<ConcreteState2>(*this);
+    states[StateType::MainMenu] = std::make_unique<MainMenu>(*this);
 }
 
 void StateManager::pushState(const StateManager::StateType& state)

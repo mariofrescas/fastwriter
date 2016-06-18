@@ -39,8 +39,7 @@ public:
     ////////////////////////////////////////////////////////////
     enum class StateType
     {
-        ConcreteState1, ///< Ejemplo 1 de implementacion de escena
-        ConcreteState2  ///< Ejemplo 2 de implementacion de escena
+        MainMenu ///< Menu principal
     };
 
     ////////////////////////////////////////////////////////////

@@ -7,18 +7,18 @@ LIBS += -lsfml-graphics -lsfml-window -lsfml-system
 
 SOURCES += \
     Main.cpp \
-    Menus/ConcreteState.cpp \
     ResourceManager/ResourceHolder.inl \
     ResourceManager/ResourceManager.cpp \
     StateManager/State.cpp \
-    StateManager/StateManager.cpp
+    StateManager/StateManager.cpp \
+    Menus/MainMenu.cpp
 
 HEADERS += \
-    Menus/ConcreteState.h \
     ResourceManager/ResourceHolder.h \
     ResourceManager/ResourceManager.h \
     StateManager/State.h \
-    StateManager/StateManager.h
+    StateManager/StateManager.h \
+    Menus/MainMenu.h
 
 INCLUDEPATH += \
     Menus \

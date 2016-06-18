@@ -9,7 +9,7 @@ int main()
     ResourceManager resManager;
 
     StateManager stateManager(StateManager::SharedContext(window, resManager));
-    stateManager.pushState(StateManager::StateType::ConcreteState1);
+    stateManager.pushState(StateManager::StateType::MainMenu);
 
     sf::Clock clock;
 
