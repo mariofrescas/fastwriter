@@ -2,7 +2,7 @@
 
 ResourceManager::ResourceManager()
 {
-    fontHolder.load(Fonts::Default, "fonts/saxmono.ttf");
+    fontHolder.load(Fonts::Default, "fonts/Saxmono.ttf");
 }
 
 sf::Texture& ResourceManager::getTexture(const ResourceManager::Textures& textureId)
