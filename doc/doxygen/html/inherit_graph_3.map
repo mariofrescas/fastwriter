@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_state.html" title="Define la interfaz basica para todo tipo de estados/escenas. " alt="" coords="5,31,59,57"/>
+<area shape="rect" id="node2" href="$class_concrete_state1.html" title="Define clase ejemplo 1. " alt="" coords="107,5,220,32"/>
+<area shape="rect" id="node3" href="$class_concrete_state2.html" title="Define clase ejemplo 2. " alt="" coords="107,56,220,83"/>
+</map>
