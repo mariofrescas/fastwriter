@@ -31,10 +31,11 @@ public:
     ////////////////////////////////////////////////////////////
     enum class Textures
     {
+        Background ///< Textura de fondo general para el juego
     };
 
     ////////////////////////////////////////////////////////////
-    /// \brief Identificardores de fuente
+    /// \brief Identificardores de fuentes
     ///
     ////////////////////////////////////////////////////////////
     enum class Fonts
@@ -66,7 +67,7 @@ public:
 
 private:
     ResourceHolder<Textures, sf::Texture> textureHolder; ///< Contenedor de texturas
-    ResourceHolder<Fonts, sf::Font> fontHolder; ///< Contenedor de fuentes
+    ResourceHolder<Fonts, sf::Font>       fontHolder;    ///< Contenedor de fuentes
 };
 
 #endif // RESOURCEMANAGER_H
