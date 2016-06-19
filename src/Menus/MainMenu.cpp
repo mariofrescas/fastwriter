@@ -14,7 +14,7 @@ MainMenu::MainMenu(StateManager& stateManager)
     background.setTexture(resMngr.getTexture(Textures::Background));
 }
 
-void MainMenu::handleInput(const sf::Event &event)
+void MainMenu::handleInput(const sf::Event& event)
 {
 }
 
