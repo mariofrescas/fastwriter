@@ -104,6 +104,13 @@ public:
     void popState();
 
     ////////////////////////////////////////////////////////////
+    /// \brief Indica si el administrador ya no tiene mas escenas
+    /// \return Verdadero si no tiene escenas, falso en caso contrario
+    ///
+    ////////////////////////////////////////////////////////////
+    bool isEmpty();
+
+    ////////////////////////////////////////////////////////////
     /// \brief Obtiene la informacion compartida por las escenas
     /// \return Referencia a la informacion compartida
     ///

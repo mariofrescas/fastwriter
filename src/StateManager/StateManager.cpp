@@ -43,6 +43,11 @@ void StateManager::pushState(const StateManager::StateType& state)
     stateStack.push(states[state].get());
 }
 
+bool StateManager::isEmpty()
+{
+    return stateStack.empty();
+}
+
 void StateManager::popState()
 {
     assert(!stateStack.empty());
