@@ -11,16 +11,17 @@ SOURCES += \
     ResourceManager/ResourceManager.cpp \
     StateManager/State.cpp \
     StateManager/StateManager.cpp \
-    Menus/MainMenu.cpp
+    States/MainMenu/MainMenu.cpp
 
 HEADERS += \
     ResourceManager/ResourceHolder.h \
     ResourceManager/ResourceManager.h \
     StateManager/State.h \
     StateManager/StateManager.h \
-    Menus/MainMenu.h
+    States/MainMenu/MainMenu.h
 
 INCLUDEPATH += \
-    Menus \
+    States \
+    States/MainMenu \
     ResourceManager \
     StateManager
