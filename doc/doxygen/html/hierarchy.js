@@ -6,7 +6,8 @@ var hierarchy =
     [ "ResourceManager", "class_resource_manager.html", null ],
     [ "StateManager::SharedContext", "struct_state_manager_1_1_shared_context.html", null ],
     [ "State", "class_state.html", [
-      [ "MainMenu", "class_main_menu.html", null ]
+      [ "MainMenu", "class_main_menu.html", null ],
+      [ "Wellcome", "class_wellcome.html", null ]
     ] ],
     [ "StateManager", "class_state_manager.html", null ]
 ];

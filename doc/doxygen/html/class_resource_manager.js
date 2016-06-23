@@ -5,7 +5,8 @@ var class_resource_manager =
     ] ],
     [ "Textures", "class_resource_manager.html#a3ffe116dd235b3f0b4ac0a3b8271bc61", [
       [ "Background", "class_resource_manager.html#a3ffe116dd235b3f0b4ac0a3b8271bc61aa9ded1e5ce5d75814730bb4caaf49419", null ],
-      [ "MainMenu", "class_resource_manager.html#a3ffe116dd235b3f0b4ac0a3b8271bc61aad1111b48f98329333237912fc3b371b", null ]
+      [ "MainMenu", "class_resource_manager.html#a3ffe116dd235b3f0b4ac0a3b8271bc61aad1111b48f98329333237912fc3b371b", null ],
+      [ "Wellcome", "class_resource_manager.html#a3ffe116dd235b3f0b4ac0a3b8271bc61a7ffcefdd1e4f1f5ca090f7791a608927", null ]
     ] ],
     [ "ResourceManager", "class_resource_manager.html#a3b32babd2e81909bbd90d7f2d566fadb", null ],
     [ "getFont", "class_resource_manager.html#a9b61bf062efb9970de36e6eb91a5b150", null ],

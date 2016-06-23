@@ -4,5 +4,6 @@ var annotated_dup =
     [ "ResourceHolder", "class_resource_holder.html", "class_resource_holder" ],
     [ "ResourceManager", "class_resource_manager.html", "class_resource_manager" ],
     [ "State", "class_state.html", "class_state" ],
-    [ "StateManager", "class_state_manager.html", "class_state_manager" ]
+    [ "StateManager", "class_state_manager.html", "class_state_manager" ],
+    [ "Wellcome", "class_wellcome.html", "class_wellcome" ]
 ];

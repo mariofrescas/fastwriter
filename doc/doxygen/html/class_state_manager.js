@@ -2,7 +2,8 @@ var class_state_manager =
 [
     [ "SharedContext", "struct_state_manager_1_1_shared_context.html", "struct_state_manager_1_1_shared_context" ],
     [ "StateType", "class_state_manager.html#a06954c4905cae4702141de1a5553b38d", [
-      [ "MainMenu", "class_state_manager.html#a06954c4905cae4702141de1a5553b38daad1111b48f98329333237912fc3b371b", null ]
+      [ "MainMenu", "class_state_manager.html#a06954c4905cae4702141de1a5553b38daad1111b48f98329333237912fc3b371b", null ],
+      [ "Wellcome", "class_state_manager.html#a06954c4905cae4702141de1a5553b38da7ffcefdd1e4f1f5ca090f7791a608927", null ]
     ] ],
     [ "StateManager", "class_state_manager.html#a4101d76a94f634ef9ad0e1caaaba3256", null ],
     [ "draw", "class_state_manager.html#a22666f2f72320ea3be46e9253b7530e2", null ],
