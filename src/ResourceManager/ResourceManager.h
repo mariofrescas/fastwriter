@@ -48,7 +48,8 @@ public:
     ////////////////////////////////////////////////////////////
     enum class Textures
     {
-        Background ///< Textura de fondo general para el juego
+        Background, ///< Textura de fondo general para el juego
+        MainMenu
     };
 
     ////////////////////////////////////////////////////////////

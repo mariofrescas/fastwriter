@@ -19,9 +19,10 @@
 
 ResourceManager::ResourceManager()
 {
-    fontHolder.load(Fonts::Default, "fonts/Saxmono.ttf");
+    fontHolder.load(Fonts::Default, "res/fonts/Saxmono.ttf");
 
-    textureHolder.load(Textures::Background, "textures/Background.png");
+    textureHolder.load(Textures::Background, "res/textures/Background.png");
+    textureHolder.load(Textures::MainMenu, "res/textures/MainMenu.png");
 }
 
 sf::Texture& ResourceManager::getTexture(const ResourceManager::Textures& textureId)
