@@ -1,6 +1,6 @@
 var NAVTREE =
 [
-  [ "States", "index.html", [
+  [ "Fastwriter", "index.html", [
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ]
     ] ],
@@ -24,7 +24,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_concrete_state_8h_source.html"
+"_main_menu_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

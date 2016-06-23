@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['resourceholder',['ResourceHolder',['../class_resource_holder.html',1,'']]],
-  ['resourceholder_3c_20textureid_2c_20sf_3a_3atexture_20_3e',['ResourceHolder&lt; TextureId, sf::Texture &gt;',['../class_resource_holder.html',1,'']]],
-  ['resourcemanager',['ResourceManager',['../class_resource_manager.html',1,'ResourceManager'],['../struct_state_manager_1_1_shared_context.html#a1f5ed7201e3c69cc6de27d7739aecf92',1,'StateManager::SharedContext::resourceManager()'],['../class_resource_manager.html#a3b32babd2e81909bbd90d7f2d566fadb',1,'ResourceManager::ResourceManager()']]]
+  ['get',['get',['../class_resource_holder.html#ad6da70c98c1ea6fca4cc163cd75c085b',1,'ResourceHolder']]],
+  ['getfont',['getFont',['../class_resource_manager.html#a9b61bf062efb9970de36e6eb91a5b150',1,'ResourceManager']]],
+  ['getsharedcontext',['getSharedContext',['../class_state_manager.html#a09bfc88e0eea4e559f712dfeb882df4d',1,'StateManager']]],
+  ['getstatemanager',['getStateManager',['../class_state.html#a2802cef36e2df29fb365d231174ed513',1,'State']]],
+  ['gettexture',['getTexture',['../class_resource_manager.html#a6294a86e1b3a41f468f7e8dbce0cd6c5',1,'ResourceManager']]]
 ];

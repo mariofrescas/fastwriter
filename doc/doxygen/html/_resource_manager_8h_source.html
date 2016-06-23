@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.10"/>
-<title>States: /home/Mario/Documentos/Codigos/Sfml/States_Template/src/ResourceManager.h Source File</title>
+<title>Fastwriter: /home/Mario/Documentos/Codigos/Sfml/Fastwriter/src/ResourceManager/ResourceManager.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -31,7 +31,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">States
+   <div id="projectname">Fastwriter
    </div>
   </td>
  </tr>
@@ -106,49 +106,80 @@ $(document).ready(function(){initNavTree('_resource_manager_8h_source.html','');
 <div class="title">ResourceManager.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef RESOURCEMANAGER_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define RESOURCEMANAGER_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;ResourceHolder.h&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacesf.html">sf</a></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">class </span>Texture;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_resource_manager.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_resource_manager.html">ResourceManager</a></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_resource_manager.html#a791fa3c18b2853794a7dee2bc12ea76c">   31</a></span>&#160;    <span class="keyword">enum class</span> <a class="code" href="class_resource_manager.html#a791fa3c18b2853794a7dee2bc12ea76c">TextureId</a></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="class_resource_manager.html#a791fa3c18b2853794a7dee2bc12ea76cab082c4ae2a17a22fdf698ceadcf26214">ConcreteTexture1</a>, </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="class_resource_manager.html#a791fa3c18b2853794a7dee2bc12ea76ca7e1c56755bfde3cf587a0dcd8690a932">ConcreteTexture2</a>, </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    };</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="class_resource_manager.html#a3b32babd2e81909bbd90d7f2d566fadb">ResourceManager</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    sf::Texture&amp; <a class="code" href="class_resource_manager.html#aac23d305b6af2a4be7e1d1cbdb9c2d2d">getTexture</a>(<span class="keyword">const</span> <a class="code" href="class_resource_manager.html#a791fa3c18b2853794a7dee2bc12ea76c">TextureId</a>&amp; textureId);</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** Copyright (C) 2016 Sysyfydev &lt;sysyfydev@gmail.com&gt;.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">**</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** This program is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">** the Free Software Foundation, either version 2 of the License, or</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">** (at your option) any later version.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">**</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">** This program is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">** but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">** GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">**</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">** You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">** along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">*************************************************************************/</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef RESOURCEMANAGER_H</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define RESOURCEMANAGER_H</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;ResourceHolder.h&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="namespacesf.html">   27</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacesf.html">sf</a></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">class </span>Texture;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">class </span>Font;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_resource_manager.html">   37</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_resource_manager.html">ResourceManager</a></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_resource_manager.html#a3ffe116dd235b3f0b4ac0a3b8271bc61">   45</a></span>&#160;    <span class="keyword">enum class</span> <a class="code" href="class_resource_manager.html#a3ffe116dd235b3f0b4ac0a3b8271bc61">Textures</a></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="class_resource_manager.html#a3ffe116dd235b3f0b4ac0a3b8271bc61aa9ded1e5ce5d75814730bb4caaf49419">Background</a>, </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="class_main_menu.html">MainMenu</a></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    };</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="class_resource_holder.html">ResourceHolder&lt;TextureId, sf::Texture&gt;</a> textureHolder; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif // RESOURCEMANAGER_H</span></div>
-<div class="ttc" id="class_resource_manager_html_a3b32babd2e81909bbd90d7f2d566fadb"><div class="ttname"><a href="class_resource_manager.html#a3b32babd2e81909bbd90d7f2d566fadb">ResourceManager::ResourceManager</a></div><div class="ttdeci">ResourceManager()</div><div class="ttdoc">Carga e inicializa los recursos y los relaciona con un id. </div><div class="ttdef"><b>Definition:</b> ResourceManager.cpp:3</div></div>
-<div class="ttc" id="class_resource_manager_html_a791fa3c18b2853794a7dee2bc12ea76cab082c4ae2a17a22fdf698ceadcf26214"><div class="ttname"><a href="class_resource_manager.html#a791fa3c18b2853794a7dee2bc12ea76cab082c4ae2a17a22fdf698ceadcf26214">ResourceManager::TextureId::ConcreteTexture1</a></div><div class="ttdoc">Id de la textura ejemplo 1. </div></div>
-<div class="ttc" id="class_resource_manager_html_aac23d305b6af2a4be7e1d1cbdb9c2d2d"><div class="ttname"><a href="class_resource_manager.html#aac23d305b6af2a4be7e1d1cbdb9c2d2d">ResourceManager::getTexture</a></div><div class="ttdeci">sf::Texture &amp; getTexture(const TextureId &amp;textureId)</div><div class="ttdoc">Obtiene una referencia a la textura que concuerde con el id. </div><div class="ttdef"><b>Definition:</b> ResourceManager.cpp:9</div></div>
-<div class="ttc" id="namespacesf_html"><div class="ttname"><a href="namespacesf.html">sf</a></div><div class="ttdoc">Inclusiones internas. </div><div class="ttdef"><b>Definition:</b> ConcreteState.h:19</div></div>
-<div class="ttc" id="class_resource_manager_html_a791fa3c18b2853794a7dee2bc12ea76ca7e1c56755bfde3cf587a0dcd8690a932"><div class="ttname"><a href="class_resource_manager.html#a791fa3c18b2853794a7dee2bc12ea76ca7e1c56755bfde3cf587a0dcd8690a932">ResourceManager::TextureId::ConcreteTexture2</a></div><div class="ttdoc">Id de la textura ejemplo 2. </div></div>
-<div class="ttc" id="class_resource_holder_html"><div class="ttname"><a href="class_resource_holder.html">ResourceHolder&lt; TextureId, sf::Texture &gt;</a></div></div>
-<div class="ttc" id="class_resource_manager_html_a791fa3c18b2853794a7dee2bc12ea76c"><div class="ttname"><a href="class_resource_manager.html#a791fa3c18b2853794a7dee2bc12ea76c">ResourceManager::TextureId</a></div><div class="ttdeci">TextureId</div><div class="ttdoc">Identificardores de texturas. </div><div class="ttdef"><b>Definition:</b> ResourceManager.h:31</div></div>
-<div class="ttc" id="class_resource_manager_html"><div class="ttname"><a href="class_resource_manager.html">ResourceManager</a></div><div class="ttdoc">Contenedor de los recursos necesarios por la aplicacion. </div><div class="ttdef"><b>Definition:</b> ResourceManager.h:23</div></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_resource_manager.html#af7a914e88ac068023b2cacf8af806168">   55</a></span>&#160;    <span class="keyword">enum class</span> <a class="code" href="class_resource_manager.html#af7a914e88ac068023b2cacf8af806168">Fonts</a></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="class_resource_manager.html#af7a914e88ac068023b2cacf8af806168a7a1920d61156abc05a60135aefe8bc67">Default</a> </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    };</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="class_resource_manager.html#a3b32babd2e81909bbd90d7f2d566fadb">ResourceManager</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    sf::Texture&amp; <a class="code" href="class_resource_manager.html#a6294a86e1b3a41f468f7e8dbce0cd6c5">getTexture</a>(<span class="keyword">const</span> <a class="code" href="class_resource_manager.html#a3ffe116dd235b3f0b4ac0a3b8271bc61">Textures</a>&amp; textureId);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    sf::Font&amp; <a class="code" href="class_resource_manager.html#a9b61bf062efb9970de36e6eb91a5b150">getFont</a>(<span class="keyword">const</span> <a class="code" href="class_resource_manager.html#af7a914e88ac068023b2cacf8af806168">Fonts</a>&amp; fontId);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="class_resource_manager.html#a281e666baf46a03ed51ac9ef938785d1">   83</a></span>&#160;    <a class="code" href="class_resource_holder.html">ResourceHolder&lt;Textures, sf::Texture&gt;</a> <a class="code" href="class_resource_manager.html#a281e666baf46a03ed51ac9ef938785d1">textureHolder</a>; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="class_resource_manager.html#a3a87a7ec038f133743f12c59db7bd1a2">   84</a></span>&#160;    <a class="code" href="class_resource_holder.html">ResourceHolder&lt;Fonts, sf::Font&gt;</a>       <a class="code" href="class_resource_manager.html#a3a87a7ec038f133743f12c59db7bd1a2">fontHolder</a>;    </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#endif // RESOURCEMANAGER_H</span></div>
+<div class="ttc" id="class_resource_manager_html_a3b32babd2e81909bbd90d7f2d566fadb"><div class="ttname"><a href="class_resource_manager.html#a3b32babd2e81909bbd90d7f2d566fadb">ResourceManager::ResourceManager</a></div><div class="ttdeci">ResourceManager()</div><div class="ttdoc">Carga e inicializa los recursos y los relaciona con un id. </div><div class="ttdef"><b>Definition:</b> ResourceManager.cpp:20</div></div>
+<div class="ttc" id="class_resource_manager_html_a3ffe116dd235b3f0b4ac0a3b8271bc61aa9ded1e5ce5d75814730bb4caaf49419"><div class="ttname"><a href="class_resource_manager.html#a3ffe116dd235b3f0b4ac0a3b8271bc61aa9ded1e5ce5d75814730bb4caaf49419">ResourceManager::Textures::Background</a></div><div class="ttdoc">Textura de fondo general para el juego. </div></div>
+<div class="ttc" id="class_resource_manager_html_a9b61bf062efb9970de36e6eb91a5b150"><div class="ttname"><a href="class_resource_manager.html#a9b61bf062efb9970de36e6eb91a5b150">ResourceManager::getFont</a></div><div class="ttdeci">sf::Font &amp; getFont(const Fonts &amp;fontId)</div><div class="ttdoc">Obtiene una referencia a la fuente que concuerde con el id. </div><div class="ttdef"><b>Definition:</b> ResourceManager.cpp:33</div></div>
+<div class="ttc" id="class_resource_manager_html_a3a87a7ec038f133743f12c59db7bd1a2"><div class="ttname"><a href="class_resource_manager.html#a3a87a7ec038f133743f12c59db7bd1a2">ResourceManager::fontHolder</a></div><div class="ttdeci">ResourceHolder&lt; Fonts, sf::Font &gt; fontHolder</div><div class="ttdoc">Contenedor de fuentes. </div><div class="ttdef"><b>Definition:</b> ResourceManager.h:84</div></div>
+<div class="ttc" id="class_resource_manager_html_af7a914e88ac068023b2cacf8af806168a7a1920d61156abc05a60135aefe8bc67"><div class="ttname"><a href="class_resource_manager.html#af7a914e88ac068023b2cacf8af806168a7a1920d61156abc05a60135aefe8bc67">ResourceManager::Fonts::Default</a></div><div class="ttdoc">Id de la fuente por defecto. </div></div>
+<div class="ttc" id="class_resource_manager_html_a3ffe116dd235b3f0b4ac0a3b8271bc61"><div class="ttname"><a href="class_resource_manager.html#a3ffe116dd235b3f0b4ac0a3b8271bc61">ResourceManager::Textures</a></div><div class="ttdeci">Textures</div><div class="ttdoc">Identificardores de texturas. </div><div class="ttdef"><b>Definition:</b> ResourceManager.h:45</div></div>
+<div class="ttc" id="class_resource_manager_html_a6294a86e1b3a41f468f7e8dbce0cd6c5"><div class="ttname"><a href="class_resource_manager.html#a6294a86e1b3a41f468f7e8dbce0cd6c5">ResourceManager::getTexture</a></div><div class="ttdeci">sf::Texture &amp; getTexture(const Textures &amp;textureId)</div><div class="ttdoc">Obtiene una referencia a la textura que concuerde con el id. </div><div class="ttdef"><b>Definition:</b> ResourceManager.cpp:28</div></div>
+<div class="ttc" id="class_resource_manager_html_af7a914e88ac068023b2cacf8af806168"><div class="ttname"><a href="class_resource_manager.html#af7a914e88ac068023b2cacf8af806168">ResourceManager::Fonts</a></div><div class="ttdeci">Fonts</div><div class="ttdoc">Identificardores de fuentes. </div><div class="ttdef"><b>Definition:</b> ResourceManager.h:55</div></div>
+<div class="ttc" id="namespacesf_html"><div class="ttname"><a href="namespacesf.html">sf</a></div><div class="ttdoc">Declaraciones fordward. </div><div class="ttdef"><b>Definition:</b> ResourceManager.h:27</div></div>
+<div class="ttc" id="class_main_menu_html"><div class="ttname"><a href="class_main_menu.html">MainMenu</a></div><div class="ttdoc">Describe la escena del menu principal. </div><div class="ttdef"><b>Definition:</b> MainMenu.h:30</div></div>
+<div class="ttc" id="class_resource_holder_html"><div class="ttname"><a href="class_resource_holder.html">ResourceHolder&lt; Textures, sf::Texture &gt;</a></div></div>
+<div class="ttc" id="class_resource_manager_html_a281e666baf46a03ed51ac9ef938785d1"><div class="ttname"><a href="class_resource_manager.html#a281e666baf46a03ed51ac9ef938785d1">ResourceManager::textureHolder</a></div><div class="ttdeci">ResourceHolder&lt; Textures, sf::Texture &gt; textureHolder</div><div class="ttdoc">Contenedor de texturas. </div><div class="ttdef"><b>Definition:</b> ResourceManager.h:83</div></div>
+<div class="ttc" id="class_resource_manager_html"><div class="ttname"><a href="class_resource_manager.html">ResourceManager</a></div><div class="ttdoc">Contenedor de los recursos necesarios por la aplicacion. </div><div class="ttdef"><b>Definition:</b> ResourceManager.h:37</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><b>ResourceManager.h</b></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_cc826e206496d9bb3cee340d21aea050.html">ResourceManager</a></li><li class="navelem"><b>ResourceManager.h</b></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>

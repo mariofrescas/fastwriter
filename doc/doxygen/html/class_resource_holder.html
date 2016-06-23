@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.10"/>
-<title>States: ResourceHolder&lt; Identifier, Resource &gt; Class Template Reference</title>
+<title>Fastwriter: ResourceHolder&lt; Identifier, Resource &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -31,7 +31,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">States
+   <div id="projectname">Fastwriter
    </div>
   </td>
  </tr>
@@ -107,13 +107,14 @@ $(document).ready(function(){initNavTree('class_resource_holder.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_resource_holder-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ResourceHolder&lt; Identifier, Resource &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Inclusiones internas.  
+<p>Mapa abstracto para recursos.  
  <a href="class_resource_holder.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_resource_holder_8h_source.html">ResourceHolder.h</a>&gt;</code></p>
@@ -130,13 +131,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad6da70c98c1ea6fca4cc163cd75c085b"><td class="memItemLeft" align="right" valign="top">Resource &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_holder.html#ad6da70c98c1ea6fca4cc163cd75c085b">get</a> (Identifier id) const </td></tr>
 <tr class="memdesc:ad6da70c98c1ea6fca4cc163cd75c085b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene una referencia al recurso que concuerde con el id.  <a href="#ad6da70c98c1ea6fca4cc163cd75c085b">More...</a><br /></td></tr>
 <tr class="separator:ad6da70c98c1ea6fca4cc163cd75c085b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:abf3e3b6e0b7395caa8c3e702a19e99ba"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abf3e3b6e0b7395caa8c3e702a19e99ba"></a>
+std::map&lt; Identifier, std::unique_ptr&lt; Resource &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_resource_holder.html#abf3e3b6e0b7395caa8c3e702a19e99ba">resources</a></td></tr>
+<tr class="memdesc:abf3e3b6e0b7395caa8c3e702a19e99ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contenedor de recursos. <br /></td></tr>
+<tr class="separator:abf3e3b6e0b7395caa8c3e702a19e99ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename Identifier, typename Resource&gt;<br />
 class ResourceHolder&lt; Identifier, Resource &gt;</h3>
 
-<p>Inclusiones internas. </p>
-<p>Mapa abstracto para recursos </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Mapa abstracto para recursos. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">Identifier</td><td>Tipo de identificador para el recurso (Ej: enum) </td></tr>
     <tr><td class="paramname">Resource</td><td>Tipo de recurso (Ej: sf::Texture) </td></tr>
@@ -255,8 +263,8 @@ template&lt;typename Parameter &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/Mario/Documentos/Codigos/Sfml/States_Template/src/<a class="el" href="_resource_holder_8h_source.html">ResourceHolder.h</a></li>
-<li>/home/Mario/Documentos/Codigos/Sfml/States_Template/src/ResourceHolder.inl</li>
+<li>/home/Mario/Documentos/Codigos/Sfml/Fastwriter/src/ResourceManager/<a class="el" href="_resource_holder_8h_source.html">ResourceHolder.h</a></li>
+<li>/home/Mario/Documentos/Codigos/Sfml/Fastwriter/src/ResourceManager/ResourceHolder.inl</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

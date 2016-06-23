@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['popstate',['popState',['../class_state_manager.html#a1c5f8c0609e74fb2346b6b7f5930bb38',1,'StateManager']]],
-  ['ptr',['Ptr',['../class_state.html#a71d9930be1a58be7f711e245b7965d48',1,'State']]],
-  ['pushstate',['pushState',['../class_state_manager.html#a70433937b2a88043e98a30e0c871f1e0',1,'StateManager']]]
+  ['fontholder',['fontHolder',['../class_resource_manager.html#a3a87a7ec038f133743f12c59db7bd1a2',1,'ResourceManager']]],
+  ['fonts',['Fonts',['../class_resource_manager.html#af7a914e88ac068023b2cacf8af806168',1,'ResourceManager']]]
 ];

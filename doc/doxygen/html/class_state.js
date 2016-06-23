@@ -6,5 +6,6 @@ var class_state =
     [ "draw", "class_state.html#ae261605bc40b7e3959ce5df5457e4942", null ],
     [ "getStateManager", "class_state.html#a2802cef36e2df29fb365d231174ed513", null ],
     [ "handleInput", "class_state.html#a91f7c1a787e7947922ac2837c1169cee", null ],
-    [ "update", "class_state.html#a103ea593cea4a82d1c330567a67d31db", null ]
+    [ "update", "class_state.html#a103ea593cea4a82d1c330567a67d31db", null ],
+    [ "mStateManager", "class_state.html#a274163db25ac5a0195ac40bb3f3cd5c1", null ]
 ];
