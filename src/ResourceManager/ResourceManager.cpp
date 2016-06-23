@@ -23,6 +23,7 @@ ResourceManager::ResourceManager()
 
     textureHolder.load(Textures::Background, "res/textures/Background.png");
     textureHolder.load(Textures::MainMenu, "res/textures/MainMenu.png");
+    textureHolder.load(Textures::Wellcome, "res/textures/Wellcome.png");
 }
 
 sf::Texture& ResourceManager::getTexture(const ResourceManager::Textures& textureId)

@@ -27,7 +27,7 @@ int main()
     ResourceManager resManager;
 
     StateManager stateManager(StateManager::SharedContext(window, resManager));
-    stateManager.pushState(StateManager::StateType::MainMenu);
+    stateManager.pushState(StateManager::StateType::Wellcome);
 
     sf::Clock clock;
 

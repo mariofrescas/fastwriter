@@ -22,6 +22,7 @@
 #include <cassert>
 
 #include "MainMenu.h"
+#include "Wellcome.h"
 
 StateManager::SharedContext::SharedContext(sf::RenderWindow& window, ResourceManager& resManager)
     : window(window), resourceManager(resManager)
@@ -33,6 +34,7 @@ StateManager::StateManager(const SharedContext& sharedContex)
     shdContex = std::make_unique<SharedContext>(sharedContex.window, sharedContex.resourceManager);
 
     states[StateType::MainMenu] = std::make_unique<MainMenu>(*this);
+    states[StateType::Wellcome] = std::make_unique<Wellcome>(*this);
 }
 
 void StateManager::pushState(const StateManager::StateType& state)

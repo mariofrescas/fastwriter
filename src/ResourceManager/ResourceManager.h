@@ -45,7 +45,8 @@ public:
     enum class Textures
     {
         Background, ///< Textura de fondo general para el juego
-        MainMenu
+        MainMenu,   ///< Textura para la escena del menu principal
+        Wellcome    ///< Textura para la escena de bienvenida
     };
 
     ////////////////////////////////////////////////////////////
