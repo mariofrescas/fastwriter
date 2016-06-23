@@ -22,7 +22,8 @@
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(600, 500), "States");
+    sf::RenderWindow window(sf::VideoMode::getFullscreenModes().front(), "Fastwriter", sf::Style::Fullscreen);
+    //sf::RenderWindow window(sf::VideoMode(600, 500), "States");
     ResourceManager resManager;
 
     StateManager stateManager(StateManager::SharedContext(window, resManager));
@@ -41,14 +42,23 @@ int main()
             {
                 window.close();
             }
+
             stateManager.handleInput(event);
+
+            if (stateManager.isEmpty())
+            {
+                window.close();
+            }
         }
 
-        stateManager.update(deltaTime);
+        if (window.isOpen())
+        {
+            stateManager.update(deltaTime);
 
-        window.clear();
-        stateManager.draw();
-        window.display();
+            window.clear();
+            stateManager.draw();
+            window.display();
+        }
     }
 
     return 0;
