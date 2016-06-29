@@ -176,7 +176,7 @@ private:
 };
 
 ////////////////////////////////////////////////////////////
-/// \class MainWindow
+/// \class MainMenu
 ///
 /// Muestra progresivamente el fondo y el menu principal hasta que
 /// estan completamente visibles.
