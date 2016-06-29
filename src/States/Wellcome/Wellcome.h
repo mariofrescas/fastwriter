@@ -18,61 +18,94 @@
 #ifndef WELLCOME_H
 #define WELLCOME_H
 
+////////////////////////////////////////////////////////////
+// Cabeceras
+//
+////////////////////////////////////////////////////////////
 #include "State.h"
 
 #include <SFML/Graphics/Sprite.hpp>
+#include <SFML/System/Time.hpp>
 
 ////////////////////////////////////////////////////////////
-/// \brief Describe la escena de la bienvenida
+/// \brief Describe la escena de bienvenida
 ///
 ////////////////////////////////////////////////////////////
 class Wellcome : public State
 {
+private:
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Describe los estados de la escena
+    ///
+    ////////////////////////////////////////////////////////////
+    enum VisualStates
+    {
+        None,    ///< Termino de mostrarse
+        Showing, ///< Mostrandose (fade in)
+        Hiding   ///< Ocultandose (fade out)
+    };
+
 public:
 
     ////////////////////////////////////////////////////////////
-    /// \brief Inicializa la escena de la bienvenida
-    ///
-    /// Inicializa:
-    /// * Sprite del fondo
-    /// * Sprite del mensaje de bienvenida
-    /// * Posicion del sprite del mensaje de bienvenida
+    /// \brief Inicializa la escena
     ///
     ////////////////////////////////////////////////////////////
     explicit Wellcome(StateManager& stateManager);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Cambia la escena actual por la del menu principal
-    /// \param event Evento producido por el usuario
-    ///
-    /// Cambia la escena actual por la del menu principal
-    /// al activarse algun click en cualquier parte de la escena.
+    /// \brief En caso de click la escena debe empezar a ocultarse
+    /// \param event Evento producido por el usuario (Click)
     ///
     ////////////////////////////////////////////////////////////
     virtual void handleInput(const sf::Event& event) override;
 
     ////////////////////////////////////////////////////////////
-    /// \brief No hace nada
+    /// \brief Oscurece/muestra la escena de una manera progresiva
     ///
-    /// No hace nada debido a que no es necesario actualizar los
-    /// elementos graficos de la escena en base a la logica.
+    /// Una vez ocultada la escena, procede al menu principal.
     ///
     ////////////////////////////////////////////////////////////
     virtual void update(const sf::Time& dt) override;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Dibuja la escena de la bienvenida
-    ///
-    /// Dibuja:
-    /// * Sprite del fondo
-    /// * Sprite del mensaje de bienvenida
+    /// \brief Dibuja los elementos graficos
     ///
     ////////////////////////////////////////////////////////////
     virtual void draw() override;
 
 private:
-    sf::Sprite background; ///< Sprite del fondo
-    sf::Sprite wellcome;   ///< Sprite del mensaje de bienvenida
+    sf::Sprite   background;  ///< Sprite de fondo
+    sf::Sprite   wellcome;    ///< Sprite de mensaje de bienvenida
+    sf::Time     elapsed;     ///< Tiempo transcurrido para empezar a mostrar la escena
+    VisualStates visualState; ///< Estado visual de la escena
+    float        alpha;       ///< Increment/Decremento de transparencia
 };
+
+////////////////////////////////////////////////////////////
+/// \class Wellcome
+///
+/// Inicia la escena con una pantalla negra, muestra progresivamente
+/// el fondo y el mensaje de bienvenida hasta que estan completamente visibles.
+///
+/// La escena tarda un poco para empezar a mostrarse, no lo hace
+/// directamente. De esta manera se logra un efecto mas realista.
+///
+/// Una vez que la escena esta completamente visible se puede hacer
+/// click sobre ella para proceder al menu principal.
+///
+/// Una vez que se da click la escena se desvanece para dar paso
+/// al menu principal.
+///
+/// La escena cuenta con tres estados None, Showing y Hiding.
+/// - Showing: La escena se esta mostrando
+/// - Hiding: La escena se esta ocultando
+/// - None: La escena se termino de mostrar
+///
+/// El termino mostrando y ocultando quieren decir que la
+/// escena se muestra/oculta de manera progresiva y no en un instante.
+///
+////////////////////////////////////////////////////////////
 
 #endif // WELLCOME_H

@@ -18,6 +18,10 @@
 #ifndef MAINMENU_H
 #define MAINMENU_H
 
+////////////////////////////////////////////////////////////
+// Cabeceras
+//
+////////////////////////////////////////////////////////////
 #include "State.h"
 
 #include <map>
@@ -31,7 +35,7 @@ class MainMenu : public State
 {
 private:
     ////////////////////////////////////////////////////////////
-    /// \brief Describe las opciones que tiene el menu
+    /// \brief Describe las opciones de seleccion para el menu
     ///
     ////////////////////////////////////////////////////////////
     enum class Options
@@ -44,6 +48,17 @@ private:
         Exit     ///< Salir del juego
     };
 
+    ////////////////////////////////////////////////////////////
+    /// \brief Describe los estados de la escena
+    ///
+    ////////////////////////////////////////////////////////////
+    enum VisualStates
+    {
+        None,    ///< Termino de mostrarse
+        Showing, ///< Mostrandose (fade in)
+        Hiding   ///< Ocultandose (fade out)
+    };
+
     using RectPair = std::pair<sf::IntRect, sf::IntRect>;
 
 public:
@@ -51,21 +66,16 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Inicializa la escena del menu principal
     ///
-    /// Inicializa:
-    /// * Sprite del fondo
-    /// * Sprites del menu
-    /// * Posicion de los sprites en la textura
-    /// * Posicion de los sprites en la escena
-    ///
     ////////////////////////////////////////////////////////////
     MainMenu(StateManager& stateManager);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Actualiza la logica de la escena del menu principal
+    /// \brief Reacciona al click y al movimiento del cursor
     /// \param event Evento producido por el usuario
     /// \see handleMouseMoved
     /// \see handleMousePressed
     ///
+    /// Si la escena termino de mostrarse:
     /// Llama a handelMouseMove en caso de que el cursor se mueva
     /// o llama a handleMousePressed en caso de que se de un click.
     ///
@@ -73,29 +83,28 @@ public:
     virtual void handleInput(const sf::Event& event) override;
 
     ////////////////////////////////////////////////////////////
-    /// \brief No hace nada
+    /// \brief Oscurece/muestra el menu de una manera progresiva
     ///
-    /// No hace nada debido a que no es necesario actualizar los
-    /// elementos graficos de la escena en base a la logica.
+    /// Al terminar de ocultar indica a menuOptionPressed que
+    /// reaccione a la opcion del menu en la que se dio el click.
     ///
     ////////////////////////////////////////////////////////////
     virtual void update(const sf::Time& dt) override;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Dibuja la escena del menu principal
-    ///
-    /// Dibuja:
-    /// * Sprite del fondo
-    /// * Sprites del menu
+    /// \brief Dibuja los elementos graficos
     ///
     ////////////////////////////////////////////////////////////
     virtual void draw() override;
 
 private:
-    sf::Sprite                    background;  ///< Sprite del fondo
-    std::map<Options, RectPair>   menuRects;   ///< Posiciones de los sprites en la textura
-    std::map<Options, sf::Sprite> menuSprites; ///< Sprites del menu
-    Options currentOption = Options::None;     ///< Opcion seleccionada
+    sf::Sprite                    background;    ///< Sprite de fondo
+    std::map<Options, RectPair>   menuRects;     ///< Posiciones de los sprites en la textura
+    std::map<Options, sf::Sprite> menuSprites;   ///< Sprites del menu
+    Options                       currentOption; ///< Opcion en la que se encuentra el cursor
+    VisualStates                  visualState;   ///< Estado visual de la escena
+    float                         alpha;         ///< Increment/Decremento de transparencia
+    Options                       clickedOption; ///< Opcion en la que se dio click
 
 private:
 
@@ -122,12 +131,12 @@ private:
     void setCurrentOption(const Options& option);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Identfica cual es la opcion del menu a la que se dio click
+    /// \brief Identfica la opcion del menu en la que se dio click
     /// \param x Coordenada en el eje X
     /// \param y Coordenada en el eje Y
-    /// \see menuOptionPressed
     ///
-    /// Indica a menuOptionPressed que reaccione a la opcion identificada.
+    /// Inicia el proceso de ocultacion del menu y almacena cual
+    /// es la opcion del menu en la que se dio el click.
     ///
     ////////////////////////////////////////////////////////////
     void handleMousePressed(int x, int y);
@@ -165,5 +174,30 @@ private:
     ////////////////////////////////////////////////////////////
     void initMenuPositions();
 };
+
+////////////////////////////////////////////////////////////
+/// \class MainWindow
+///
+/// Muestra progresivamente el fondo y el menu principal hasta que
+/// estan completamente visibles.
+///
+/// Una vez que la escena esta completamente visible se puede
+/// interactuar con ella para proceder a la opcion seleccionada.
+///
+/// Una vez seleccionada la opcion el menu se desvanece para
+/// dar paso a la siguiente escena.
+///
+/// El menu tiene la capacidad de cambiar el color del texto
+/// de la opcion en la que se encuentra el cursor.
+///
+/// La escena cuenta con tres estados None, Showing y Hiding.
+/// - Showing: La escena se esta mostrando
+/// - Hiding: La escena se esta ocultando
+/// - None: La escena se termino de mostrar
+///
+/// El termino mostrando y ocultando quieren decir que la
+/// escena se muestra/oculta de manera progresiva y no en un instante.
+///
+////////////////////////////////////////////////////////////
 
 #endif // MAINMENU_H

@@ -38,22 +38,61 @@ MainMenu::MainMenu(StateManager& stateManager)
     initMenuPositions();
 
     background.setTexture(resMngr.getTexture(Textures::Background));
+
+    alpha = 0;
+    clickedOption = Options::None;
+    currentOption = Options::None;
+    visualState = VisualStates::Showing;
 }
 
 void MainMenu::handleInput(const sf::Event& event)
 {
-    if (event.type == sf::Event::MouseMoved)
+    if (visualState == VisualStates::None)
     {
-        handleMouseMoved(event.mouseMove.x, event.mouseMove.y);
-    }
-    else if (event.type == sf::Event::MouseButtonPressed)
-    {
-        handleMousePressed(event.mouseButton.x, event.mouseButton.y);
+        if (event.type == sf::Event::MouseMoved)
+        {
+            handleMouseMoved(event.mouseMove.x, event.mouseMove.y);
+        }
+        else if (event.type == sf::Event::MouseButtonPressed)
+        {
+            handleMousePressed(event.mouseButton.x, event.mouseButton.y);
+        }
     }
 }
 
-void MainMenu::update(const sf::Time&)
+void MainMenu::update(const sf::Time& dt)
 {
+    if (visualState == VisualStates::Showing)
+    {
+        alpha += 255 * (dt.asSeconds() * 1.5);
+
+        if (alpha >= 255)
+        {
+            visualState = VisualStates::None;
+            alpha = 255;
+        }
+
+        for (auto& opt : menuSprites)
+        {
+            opt.second.setColor(sf::Color(255, 255, 255, alpha));
+        }
+    }
+    else if (visualState == VisualStates::Hiding)
+    {
+        alpha -= 255.0f * (dt.asSeconds() * 1.5);
+
+        if (alpha <= 0)
+        {
+            visualState = VisualStates::Showing;
+            alpha = 0;
+            menuOptionPressed(clickedOption);
+        }
+
+        for (auto& opt : menuSprites)
+        {
+            opt.second.setColor(sf::Color(255, 255, 255, alpha));
+        }
+    }
 }
 
 void MainMenu::draw()
@@ -114,7 +153,8 @@ void MainMenu::handleMousePressed(int x, int y)
     {
         if (opt.second.getGlobalBounds().contains(x, y))
         {
-            menuOptionPressed(opt.first);
+            clickedOption = opt.first;
+            visualState = VisualStates::Hiding;
             break;
         }
     }
@@ -164,6 +204,7 @@ void MainMenu::initMenuSprites()
     for (auto& opt : menuSprites)
     {
         opt.second.setTextureRect(menuRects[opt.first].first);
+        opt.second.setColor(sf::Color(255, 255, 255, 0));
     }
 }
 

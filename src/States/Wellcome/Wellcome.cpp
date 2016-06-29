@@ -31,21 +31,58 @@ Wellcome::Wellcome(StateManager& stateManager)
     const sf::Vector2u& windowSize = getStateManager().getSharedContext().window.getSize();
 
     background.setTexture(resMngr.getTexture(Textures::Background));
+    background.setColor(sf::Color(255, 255, 255, 0));
 
     wellcome.setTexture(resMngr.getTexture(Textures::Wellcome));
     wellcome.setPosition(0, (windowSize.y / 2) - (wellcome.getTextureRect().height / 2));
+    wellcome.setColor(sf::Color(255, 255, 255, 0));
+
+    visualState = VisualStates::Showing;
+    alpha = 0;
 }
 
 void Wellcome::handleInput(const sf::Event& event)
 {
-    if (event.type == sf::Event::MouseButtonPressed)
+    if (event.type == sf::Event::MouseButtonPressed
+     && visualState == VisualStates::None)
     {
-        getStateManager().pushState(StateManager::StateType::MainMenu);
+        visualState = VisualStates::Hiding;
     }
 }
 
-void Wellcome::update(const sf::Time&)
+void Wellcome::update(const sf::Time& dt)
 {
+    if (visualState == VisualStates::Showing)
+    {
+        elapsed += dt;
+
+        if (elapsed >= sf::milliseconds(1000))
+        {
+            alpha += 255 * (dt.asSeconds() * 1.5);
+
+            if (alpha >= 255)
+            {
+                visualState = VisualStates::None;
+                alpha = 255;
+            }
+
+            background.setColor(sf::Color(255, 255, 255, alpha));
+            wellcome.setColor(sf::Color(255, 255, 255, alpha));
+        }
+    }
+    else if (visualState == VisualStates::Hiding)
+    {
+        alpha -= 255.0f * (dt.asSeconds() * 1.5);
+
+        if (alpha <= 0)
+        {
+            visualState = VisualStates::Showing;
+            alpha = 0;
+            getStateManager().pushState(StateManager::StateType::MainMenu);
+        }
+
+        wellcome.setColor(sf::Color(255, 255, 255, alpha));
+    }
 }
 
 void Wellcome::draw()
