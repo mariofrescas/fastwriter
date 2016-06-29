@@ -2,12 +2,18 @@ var class_main_menu =
 [
     [ "RectPair", "class_main_menu.html#a352663172b2406aac6c4c6e8f6d8dd92", null ],
     [ "Options", "class_main_menu.html#a8781b0f718804a31239f2abfd9216bd4", [
-      [ "None", "class_main_menu.html#a8781b0f718804a31239f2abfd9216bd4a6adf97f83acf6453d4a6a4b1070f3754", null ],
+      [ "None", "class_main_menu.html#affe79ec08831a9d29979a76e723dbef3a6adf97f83acf6453d4a6a4b1070f3754", null ],
       [ "NewGame", "class_main_menu.html#a8781b0f718804a31239f2abfd9216bd4a31947c4eece1b08b70e9ba88dae24416", null ],
       [ "Scores", "class_main_menu.html#a8781b0f718804a31239f2abfd9216bd4a6660e1da424d138f62a1ec4407060095", null ],
       [ "Help", "class_main_menu.html#a8781b0f718804a31239f2abfd9216bd4a6a26f548831e6a8c26bfbbd9f6ec61e0", null ],
       [ "About", "class_main_menu.html#a8781b0f718804a31239f2abfd9216bd4a8f7f4c1ce7a4f933663d10543562b096", null ],
       [ "Exit", "class_main_menu.html#a8781b0f718804a31239f2abfd9216bd4afef46e5063ce3dc78b8ae64fa474241d", null ]
+    ] ],
+    [ "VisualStates", "class_main_menu.html#affe79ec08831a9d29979a76e723dbef3", [
+      [ "None", "class_main_menu.html#affe79ec08831a9d29979a76e723dbef3afa75d25ecd335b7b178480dcf1b2f3c2", null ],
+      [ "None", "class_main_menu.html#affe79ec08831a9d29979a76e723dbef3a6adf97f83acf6453d4a6a4b1070f3754", null ],
+      [ "Showing", "class_main_menu.html#affe79ec08831a9d29979a76e723dbef3a302c1e87d684a05881a439a58d8d699d", null ],
+      [ "Hiding", "class_main_menu.html#affe79ec08831a9d29979a76e723dbef3a7a33eacbe8bc30a9779314834538e7f2", null ]
     ] ],
     [ "MainMenu", "class_main_menu.html#a9d7926f73e4ea8d6fede1bcc09d99f9c", null ],
     [ "draw", "class_main_menu.html#a54ec1eed16b49cac99d640feab93e119", null ],
@@ -20,8 +26,11 @@ var class_main_menu =
     [ "menuOptionPressed", "class_main_menu.html#ae7ae1f4711a1791407946dff401a47db", null ],
     [ "setCurrentOption", "class_main_menu.html#a867d904daf7321b8fda7d8d3a9fa3913", null ],
     [ "update", "class_main_menu.html#aaa7079a25d80f63f6b9c0cc2b4525b31", null ],
+    [ "alpha", "class_main_menu.html#aed50d46d03851596a265ff33ce9e6949", null ],
     [ "background", "class_main_menu.html#ad2184bf04360e344c82207878fc5677e", null ],
+    [ "clickedOption", "class_main_menu.html#a4b885e7b3aaf8b91d1123eaa9e935dd0", null ],
     [ "currentOption", "class_main_menu.html#a4880892803030b77caa7683c1c8cce30", null ],
     [ "menuRects", "class_main_menu.html#a5b8517c184962710c6c6d260b5369f20", null ],
-    [ "menuSprites", "class_main_menu.html#ae3db0ab795514c977e53b4240109e57d", null ]
+    [ "menuSprites", "class_main_menu.html#ae3db0ab795514c977e53b4240109e57d", null ],
+    [ "visualState", "class_main_menu.html#aaf11ef827115f0e8e52ad801c5804dc2", null ]
 ];

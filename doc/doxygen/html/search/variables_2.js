@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['fontholder',['fontHolder',['../class_resource_manager.html#a3a87a7ec038f133743f12c59db7bd1a2',1,'ResourceManager']]]
+  ['clickedoption',['clickedOption',['../class_main_menu.html#a4b885e7b3aaf8b91d1123eaa9e935dd0',1,'MainMenu']]],
+  ['currentoption',['currentOption',['../class_main_menu.html#a4880892803030b77caa7683c1c8cce30',1,'MainMenu']]]
 ];

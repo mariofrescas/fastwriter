@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['resourcemanager',['resourceManager',['../struct_state_manager_1_1_shared_context.html#a1f5ed7201e3c69cc6de27d7739aecf92',1,'StateManager::SharedContext']]],
-  ['resources',['resources',['../class_resource_holder.html#abf3e3b6e0b7395caa8c3e702a19e99ba',1,'ResourceHolder']]]
+  ['fontholder',['fontHolder',['../class_resource_manager.html#a3a87a7ec038f133743f12c59db7bd1a2',1,'ResourceManager']]]
 ];
