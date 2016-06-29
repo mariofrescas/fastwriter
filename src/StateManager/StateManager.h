@@ -18,6 +18,10 @@
 #ifndef STATEMANAGER_H
 #define STATEMANAGER_H
 
+////////////////////////////////////////////////////////////
+// Cabeceras
+//
+////////////////////////////////////////////////////////////
 #include <map>
 #include <stack>
 #include <memory>
@@ -25,8 +29,8 @@
 #include "State.h"
 
 ////////////////////////////////////////////////////////////
-/// \brief Declaraciones fordward
-///
+// Declaraciones fordward
+//
 ////////////////////////////////////////////////////////////
 class ResourceManager;
 
@@ -115,23 +119,21 @@ public:
     SharedContext& getSharedContext() const;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Actualiza la logica de la escena actual
+    /// \brief Delega el control a la escena actual
     /// \param event Evento producido por el usuario
     ///
     ////////////////////////////////////////////////////////////
     void handleInput(const sf::Event& event);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Actualiza los EG de la escena actual en base a la logica
-    /// \param dt Tiempo transcurrido desde la ultima ejecucion del update
-    ///
-    /// \note EG: Elementos Graficos
+    /// \brief Delega el control a la escena actual
+    /// \param dt Porcion de tiempo
     ///
     ////////////////////////////////////////////////////////////
     void update(const sf::Time& dt);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Dibuja los elementos graficos de la escena actual
+    /// \brief Delega el control a la escena actual
     ///
     ////////////////////////////////////////////////////////////
     void draw();
