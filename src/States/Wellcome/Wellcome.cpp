@@ -58,7 +58,7 @@ void Wellcome::update(const sf::Time& dt)
 
         if (elapsed >= sf::milliseconds(1000))
         {
-            alpha += 255 * (dt.asSeconds() * 1.5);
+            alpha += 255 * (dt.asSeconds() * 3);
 
             if (alpha >= 255)
             {
