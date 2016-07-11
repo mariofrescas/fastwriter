@@ -78,7 +78,7 @@ void Wellcome::update(const sf::Time& dt)
         {
             visualState = VisualStates::Showing;
             alpha = 0;
-            getStateManager().pushState(StateManager::StateType::MainMenu);
+            getStateManager().setCurrentState(StateManager::StateType::MainMenu);
         }
 
         wellcome.setColor(sf::Color(255, 255, 255, alpha));

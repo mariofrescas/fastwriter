@@ -37,24 +37,19 @@ StateManager::StateManager(const SharedContext& sharedContex)
     states[StateType::Wellcome] = std::make_unique<Wellcome>(*this);
 }
 
-void StateManager::pushState(const StateManager::StateType& state)
+void StateManager::setCurrentState(const StateManager::StateType& state)
 {
     assert(!states.empty());
     assert(!(states.find(state) == states.end()));
 
-    stateStack.push(states[state].get());
+    currentState = states[state].get();
 }
 
-bool StateManager::isEmpty()
+State& StateManager::getCurrentState() const
 {
-    return stateStack.empty();
-}
+    assert(!(currentState == nullptr));
 
-void StateManager::popState()
-{
-    assert(!stateStack.empty());
-
-    stateStack.pop();
+    return *currentState;
 }
 
 StateManager::SharedContext& StateManager::getSharedContext() const
@@ -64,21 +59,21 @@ StateManager::SharedContext& StateManager::getSharedContext() const
 
 void StateManager::handleInput(const sf::Event& event)
 {
-    assert(!stateStack.empty());
+    assert(!(currentState == nullptr));
 
-    stateStack.top()->handleInput(event);
+    currentState->handleInput(event);
 }
 
 void StateManager::update(const sf::Time& dt)
 {
-    assert(!stateStack.empty());
+    assert(!(currentState == nullptr));
 
-    stateStack.top()->update(dt);
+    currentState->update(dt);
 }
 
 void StateManager::draw()
 {
-    assert(!stateStack.empty());
+    assert(!(currentState == nullptr));
 
-    stateStack.top()->draw();
+    currentState->draw();
 }

@@ -27,7 +27,7 @@ int main()
     ResourceManager resManager;
 
     StateManager stateManager(StateManager::SharedContext(window, resManager));
-    stateManager.pushState(StateManager::StateType::Wellcome);
+    stateManager.setCurrentState(StateManager::StateType::Wellcome);
 
     sf::Clock clock;
 
@@ -44,11 +44,6 @@ int main()
             }
 
             stateManager.handleInput(event);
-
-            if (stateManager.isEmpty())
-            {
-                window.close();
-            }
         }
 
         if (window.isOpen())
