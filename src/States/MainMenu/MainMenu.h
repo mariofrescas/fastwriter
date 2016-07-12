@@ -67,7 +67,7 @@ public:
     /// \brief Inicializa la escena del menu principal
     ///
     ////////////////////////////////////////////////////////////
-    MainMenu(StateManager& stateManager);
+    explicit MainMenu(StateManager& stateManager);
 
     ////////////////////////////////////////////////////////////
     /// \brief Reacciona al click y al movimiento del cursor
