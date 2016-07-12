@@ -71,7 +71,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Obtiene una referencia a la textura que concuerde con el id
     /// \param textureId Identificador de la textura
-    /// \return Referencia la textura
+    /// \return Referencia a la textura
     ///
     ////////////////////////////////////////////////////////////
     sf::Texture& getTexture(const Textures& textureId);
