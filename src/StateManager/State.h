@@ -43,14 +43,15 @@ namespace sf
 class State
 {
 public:
-    typedef std::unique_ptr<State> Ptr;
+    using Ptr = std::unique_ptr<State>; ///< Puntero unico
 
     ////////////////////////////////////////////////////////////
-    /// \brief Crea una escena que conoce a su administrador
+    /// \brief Escena que conoce a su administrador y a su escena padre
     /// \param stateManager Referencia hacia el administrador de la escena
+    /// \param parent Puntero hacia la escena padre
     ///
     ////////////////////////////////////////////////////////////
-    explicit State(StateManager& stateManager);
+    explicit State(StateManager& stateManager, State* parent = nullptr);
 
     ////////////////////////////////////////////////////////////
     /// \brief Controla las entradas del usuario
@@ -86,8 +87,16 @@ protected:
     ////////////////////////////////////////////////////////////
     StateManager& getStateManager() const;
 
+    ////////////////////////////////////////////////////////////
+    /// \brief Obtiene la escena padre
+    /// \return Referencia a la escena padre
+    ///
+    ////////////////////////////////////////////////////////////
+    State& getParentState() const;
+
 private:
     StateManager& mStateManager; ///< Administrador
+    State*        parentState;   ///< Escena padre
 };
 
 #endif // STATE_H

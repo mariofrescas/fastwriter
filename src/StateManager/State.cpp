@@ -17,12 +17,23 @@
 
 #include "State.h"
 
-State::State(StateManager& stateManager)
-    : mStateManager(stateManager)
+// WARNING: Uncomment to disable assertions
+// #define NDEBUG
+#include <cassert>
+
+State::State(StateManager& stateManager, State* parent)
+    : mStateManager(stateManager), parentState(parent)
 {
 }
 
 StateManager& State::getStateManager() const
 {
     return mStateManager;
+}
+
+State& State::getParentState() const
+{
+    assert(!(parentState == nullptr));
+
+    return *parentState;
 }
