@@ -15,25 +15,15 @@
 ** along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *************************************************************************/
 
-#include "ResourceManager.h"
+#include "GameConf.h"
 
-ResourceManager::ResourceManager()
+#include <random>
+
+int GameConf::random(int min, int max) const
 {
-    fontHolder.load(Fonts::Default, "res/fonts/Saxmono.ttf");
+    std::random_device rd;
+    std::mt19937 rng(rd());
+    std::uniform_int_distribution<int> uni(min, max);
 
-    textureHolder.load(Textures::Background, "res/textures/Background.png");
-    textureHolder.load(Textures::MainMenu, "res/textures/MainMenu.png");
-    textureHolder.load(Textures::Wellcome, "res/textures/Wellcome.png");
-    textureHolder.load(Textures::Game, "res/textures/Game.png");
-    textureHolder.load(Textures::Letters, "res/textures/Letters.png");
-}
-
-sf::Texture& ResourceManager::getTexture(const ResourceManager::Textures& textureId) const
-{
-    return textureHolder.get(textureId);
-}
-
-sf::Font& ResourceManager::getFont(const ResourceManager::Fonts& fontId) const
-{
-    return fontHolder.get(fontId);
+    return uni(rng);
 }

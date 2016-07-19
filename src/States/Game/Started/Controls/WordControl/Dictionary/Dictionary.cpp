@@ -15,25 +15,41 @@
 ** along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *************************************************************************/
 
-#include "ResourceManager.h"
+#include "Dictionary.h"
 
-ResourceManager::ResourceManager()
+#include <fstream>
+
+Dictionary::Dictionary(const std::string& filename)
 {
-    fontHolder.load(Fonts::Default, "res/fonts/Saxmono.ttf");
+    std::ifstream file(filename);
 
-    textureHolder.load(Textures::Background, "res/textures/Background.png");
-    textureHolder.load(Textures::MainMenu, "res/textures/MainMenu.png");
-    textureHolder.load(Textures::Wellcome, "res/textures/Wellcome.png");
-    textureHolder.load(Textures::Game, "res/textures/Game.png");
-    textureHolder.load(Textures::Letters, "res/textures/Letters.png");
+    if (!file.is_open())
+    {
+        throw std::runtime_error("Failed to load: " + filename);
+    }
+
+    int lineCount = 0;
+    std::string line = "";
+
+    while (std::getline(file, line))
+    {
+        if (line.at(0) != '#')
+        {
+            lineCount++;
+            words.push_back(line);
+        }
+    }
+
+    if (lineCount == 0)
+    {
+        file.close();
+        throw std::runtime_error("Invalid dictionary: " + filename);
+    }
+
+    file.close();
 }
 
-sf::Texture& ResourceManager::getTexture(const ResourceManager::Textures& textureId) const
+const std::list<std::string>& Dictionary::getWords() const
 {
-    return textureHolder.get(textureId);
-}
-
-sf::Font& ResourceManager::getFont(const ResourceManager::Fonts& fontId) const
-{
-    return fontHolder.get(fontId);
+    return words;
 }

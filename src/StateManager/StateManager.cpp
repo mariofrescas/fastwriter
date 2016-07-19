@@ -23,6 +23,7 @@
 
 #include "MainMenu.h"
 #include "Wellcome.h"
+#include "Started.h"
 
 StateManager::SharedContext::SharedContext(sf::RenderWindow& window, ResourceManager& resManager)
     : window(window), resourceManager(resManager)
@@ -35,6 +36,7 @@ StateManager::StateManager(const SharedContext& sharedContex)
 
     states[StateType::MainMenu] = std::make_unique<MainMenu>(*this);
     states[StateType::Wellcome] = std::make_unique<Wellcome>(*this);
+    states[StateType::Started] = std::make_unique<Started>(*this);
 }
 
 void StateManager::setCurrentState(const StateManager::StateType& state)

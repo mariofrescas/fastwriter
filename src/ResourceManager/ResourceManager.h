@@ -50,7 +50,9 @@ public:
     {
         Background, ///< Textura de fondo general para el juego
         MainMenu,   ///< Textura para la escena del menu principal
-        Wellcome    ///< Textura para la escena de bienvenida
+        Wellcome,   ///< Textura para la escena de bienvenida
+        Game,       ///< Textura para la escena del juego
+        Letters     ///< Texutra para todas las letras del juego
     };
 
     ////////////////////////////////////////////////////////////
@@ -74,7 +76,7 @@ public:
     /// \return Referencia a la textura
     ///
     ////////////////////////////////////////////////////////////
-    sf::Texture& getTexture(const Textures& textureId);
+    sf::Texture& getTexture(const Textures& textureId) const;
 
     ////////////////////////////////////////////////////////////
     /// \brief Obtiene una referencia a la fuente que concuerde con el id
@@ -82,7 +84,7 @@ public:
     /// \return Referencia a la fuente
     ///
     ////////////////////////////////////////////////////////////
-    sf::Font& getFont(const Fonts& fontId);
+    sf::Font& getFont(const Fonts& fontId) const;
 
 private:
     ResourceHolder<Textures, sf::Texture> textureHolder; ///< Contenedor de texturas

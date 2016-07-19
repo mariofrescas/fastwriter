@@ -147,7 +147,7 @@ private:
     /// \see handleMousePressed
     ///
     /// Acciones:
-    /// * NewGame:
+    /// * NewGame: Procede a la escena de juego
     /// * Scores:
     /// * Help:
     /// * About:

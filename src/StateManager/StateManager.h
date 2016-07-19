@@ -54,7 +54,7 @@ public:
     {
         MainMenu, ///< Menu principal
         Wellcome, ///< Bienvenida
-        Game      ///< Juego
+        Started,  ///< Juego iniciado
     };
 
     ////////////////////////////////////////////////////////////

@@ -165,7 +165,7 @@ void MainMenu::menuOptionPressed(const Options& option)
     switch (option)
     {
     case Options::NewGame:
-        getStateManager().setCurrentState(StateManager::StateType::Game);
+        getStateManager().setCurrentState(StateManager::StateType::Started);
         break;
     case Options::Scores:
         break;

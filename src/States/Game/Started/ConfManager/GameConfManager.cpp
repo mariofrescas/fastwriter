@@ -15,25 +15,23 @@
 ** along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *************************************************************************/
 
-#include "ResourceManager.h"
+#include "GameConfManager.h"
 
-ResourceManager::ResourceManager()
+#include "NormalConf.h"
+
+GameConfManager::GameConfManager(const ConfType& defaultType)
 {
-    fontHolder.load(Fonts::Default, "res/fonts/Saxmono.ttf");
+    confs[ConfType::Normal] = std::make_unique<NormalConf>();
 
-    textureHolder.load(Textures::Background, "res/textures/Background.png");
-    textureHolder.load(Textures::MainMenu, "res/textures/MainMenu.png");
-    textureHolder.load(Textures::Wellcome, "res/textures/Wellcome.png");
-    textureHolder.load(Textures::Game, "res/textures/Game.png");
-    textureHolder.load(Textures::Letters, "res/textures/Letters.png");
+    currentConf = confs[defaultType].get();
 }
 
-sf::Texture& ResourceManager::getTexture(const ResourceManager::Textures& textureId) const
+void GameConfManager::setCurrentConf(const ConfType& confType)
 {
-    return textureHolder.get(textureId);
+    currentConf = confs[confType].get();
 }
 
-sf::Font& ResourceManager::getFont(const ResourceManager::Fonts& fontId) const
+GameConf& GameConfManager::getCurrentConf() const
 {
-    return fontHolder.get(fontId);
+    return *currentConf;
 }

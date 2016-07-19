@@ -15,25 +15,17 @@
 ** along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *************************************************************************/
 
-#include "ResourceManager.h"
+#include "WordMap.h"
 
-ResourceManager::ResourceManager()
+WordMap::WordMap(const std::list<std::string>& wordList)
 {
-    fontHolder.load(Fonts::Default, "res/fonts/Saxmono.ttf");
-
-    textureHolder.load(Textures::Background, "res/textures/Background.png");
-    textureHolder.load(Textures::MainMenu, "res/textures/MainMenu.png");
-    textureHolder.load(Textures::Wellcome, "res/textures/Wellcome.png");
-    textureHolder.load(Textures::Game, "res/textures/Game.png");
-    textureHolder.load(Textures::Letters, "res/textures/Letters.png");
+    for (auto& word : wordList)
+    {
+        words[word.length()].push_back(word);
+    }
 }
 
-sf::Texture& ResourceManager::getTexture(const ResourceManager::Textures& textureId) const
+const WordMap::WordVector& WordMap::getWords(int wordLength)
 {
-    return textureHolder.get(textureId);
-}
-
-sf::Font& ResourceManager::getFont(const ResourceManager::Fonts& fontId) const
-{
-    return fontHolder.get(fontId);
+    return words[wordLength];
 }
