@@ -1,6 +1,0 @@
-<map id="State::getStateManager" name="State::getStateManager">
-<area shape="rect" id="node2" href="$class_concrete_state1.html#a164e501f6cb344ace8d2bc68a03d3cf5" title="Actualiza la logica de la escena en base a la entrada del usuario. " alt="" coords="213,5,401,32"/>
-<area shape="rect" id="node3" href="$class_concrete_state1.html#a106dfd413505098b15b7679890206737" title="Dibuja los elementos graficos en pantalla. " alt="" coords="233,56,382,83"/>
-<area shape="rect" id="node4" href="$class_concrete_state2.html#a0b737e6f9165e42c6273bca7ea0a64ac" title="Actualiza la logica de la escena en base a la entrada del usuario. " alt="" coords="213,107,401,133"/>
-<area shape="rect" id="node5" href="$class_concrete_state2.html#aa64f2b40e32e357784755ca24c6664bf" title="Dibuja los elementos graficos en pantalla. " alt="" coords="233,157,382,184"/>
-</map>

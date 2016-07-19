@@ -1,4 +1,0 @@
-<map id="ConcreteState1::handleInput" name="ConcreteState1::handleInput">
-<area shape="rect" id="node2" href="$class_state.html#a2802cef36e2df29fb365d231174ed513" title="Obtiene el administrador de la escena. " alt="" coords="247,5,407,32"/>
-<area shape="rect" id="node3" href="$class_state_manager.html#a70433937b2a88043e98a30e0c871f1e0" title="Agrega la escena en lo mas alto de la pila. " alt="" coords="241,56,412,83"/>
-</map>
