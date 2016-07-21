@@ -18,14 +18,10 @@
 #ifndef WELLCOME_H
 #define WELLCOME_H
 
-////////////////////////////////////////////////////////////
-// Cabeceras
-//
-////////////////////////////////////////////////////////////
+
 #include "State.h"
 
 #include <SFML/Graphics/Sprite.hpp>
-#include <SFML/System/Time.hpp>
 
 ////////////////////////////////////////////////////////////
 /// \brief Describe la escena de bienvenida
@@ -33,38 +29,25 @@
 ////////////////////////////////////////////////////////////
 class Wellcome : public State
 {
-private:
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Describe los estados de la escena
-    ///
-    ////////////////////////////////////////////////////////////
-    enum VisualStates
-    {
-        None,    ///< Termino de mostrarse
-        Showing, ///< Mostrandose (fade in)
-        Hiding   ///< Ocultandose (fade out)
-    };
-
 public:
 
     ////////////////////////////////////////////////////////////
     /// \brief Inicializa la escena
+    /// \param stateManager Administrador de la escena
     ///
     ////////////////////////////////////////////////////////////
     explicit Wellcome(StateManager& stateManager);
 
     ////////////////////////////////////////////////////////////
-    /// \brief En caso de click la escena debe empezar a ocultarse
-    /// \param event Evento producido por el usuario (Click)
+    /// \brief Controla las entradas del usuario
+    /// \param event Evento producido por el usuario
     ///
     ////////////////////////////////////////////////////////////
     virtual void handleInput(const sf::Event& event) override;
 
     ////////////////////////////////////////////////////////////
-    /// \brief Oscurece/muestra la escena de una manera progresiva
-    ///
-    /// Una vez ocultada la escena, procede al menu principal.
+    /// \brief Actualiza los elementos graficos
+    /// \param dt Porcion de tiempo
     ///
     ////////////////////////////////////////////////////////////
     virtual void update(const sf::Time& dt) override;
@@ -76,36 +59,8 @@ public:
     virtual void draw() override;
 
 private:
-    sf::Sprite   background;  ///< Sprite de fondo
-    sf::Sprite   wellcome;    ///< Sprite de mensaje de bienvenida
-    sf::Time     elapsed;     ///< Tiempo transcurrido para empezar a mostrar la escena
-    VisualStates visualState; ///< Estado visual de la escena
-    float        alpha;       ///< Increment/Decremento de transparencia
+    sf::Sprite background; ///< Sprite de fondo
+    sf::Sprite wellcome;   ///< Sprite de mensaje de bienvenida
 };
-
-////////////////////////////////////////////////////////////
-/// \class Wellcome
-///
-/// Inicia la escena con una pantalla negra, muestra progresivamente
-/// el fondo y el mensaje de bienvenida hasta que estan completamente visibles.
-///
-/// La escena tarda un poco para empezar a mostrarse, no lo hace
-/// directamente. De esta manera se logra un efecto mas realista.
-///
-/// Una vez que la escena esta completamente visible se puede hacer
-/// click sobre ella para proceder al menu principal.
-///
-/// Una vez que se da click la escena se desvanece para dar paso
-/// al menu principal.
-///
-/// La escena cuenta con tres estados None, Showing y Hiding.
-/// - Showing: La escena se esta mostrando
-/// - Hiding: La escena se esta ocultando
-/// - None: La escena se termino de mostrar
-///
-/// El termino mostrando y ocultando quieren decir que la
-/// escena se muestra/oculta de manera progresiva y no en un instante.
-///
-////////////////////////////////////////////////////////////
 
 #endif // WELLCOME_H

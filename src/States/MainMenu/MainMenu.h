@@ -102,8 +102,6 @@ private:
     std::map<Options, RectPair>   menuRects;     ///< Posiciones de los sprites en la textura
     std::map<Options, sf::Sprite> menuSprites;   ///< Sprites del menu
     Options                       currentOption; ///< Opcion en la que se encuentra el cursor
-    VisualStates                  visualState;   ///< Estado visual de la escena
-    float                         alpha;         ///< Increment/Decremento de transparencia
     Options                       clickedOption; ///< Opcion en la que se dio click
 
 private:
@@ -174,30 +172,5 @@ private:
     ////////////////////////////////////////////////////////////
     void initMenuPositions();
 };
-
-////////////////////////////////////////////////////////////
-/// \class MainMenu
-///
-/// Muestra progresivamente el fondo y el menu principal hasta que
-/// estan completamente visibles.
-///
-/// Una vez que la escena esta completamente visible se puede
-/// interactuar con ella para proceder a la opcion seleccionada.
-///
-/// Una vez seleccionada la opcion el menu se desvanece para
-/// dar paso a la siguiente escena.
-///
-/// El menu tiene la capacidad de cambiar el color del texto
-/// de la opcion en la que se encuentra el cursor.
-///
-/// La escena cuenta con tres estados None, Showing y Hiding.
-/// - Showing: La escena se esta mostrando
-/// - Hiding: La escena se esta ocultando
-/// - None: La escena se termino de mostrar
-///
-/// El termino mostrando y ocultando quieren decir que la
-/// escena se muestra/oculta de manera progresiva y no en un instante.
-///
-////////////////////////////////////////////////////////////
 
 #endif // MAINMENU_H

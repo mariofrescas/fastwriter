@@ -21,11 +21,10 @@
 // #define NDEBUG
 #include <cassert>
 
-#include "StateManager.h"
-#include "ResourceManager.h"
-
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Event.hpp>
+#include "StateManager.h"
+#include "ResourceManager.h"
 
 MainMenu::MainMenu(StateManager& stateManager)
     : State(stateManager)
@@ -33,66 +32,27 @@ MainMenu::MainMenu(StateManager& stateManager)
     using Textures = ResourceManager::Textures;
     ResourceManager& resMngr = getStateManager().getSharedContext().resourceManager;
 
+    background.setTexture(resMngr.getTexture(Textures::Background));
+
     initMenuRects();
     initMenuSprites();
     initMenuPositions();
-
-    background.setTexture(resMngr.getTexture(Textures::Background));
-
-    alpha = 0;
-    clickedOption = Options::None;
-    currentOption = Options::None;
-    visualState = VisualStates::Showing;
 }
 
 void MainMenu::handleInput(const sf::Event& event)
 {
-    if (visualState == VisualStates::None)
+    if (event.type == sf::Event::MouseMoved)
     {
-        if (event.type == sf::Event::MouseMoved)
-        {
-            handleMouseMoved(event.mouseMove.x, event.mouseMove.y);
-        }
-        else if (event.type == sf::Event::MouseButtonPressed)
-        {
-            handleMousePressed(event.mouseButton.x, event.mouseButton.y);
-        }
+        handleMouseMoved(event.mouseMove.x, event.mouseMove.y);
+    }
+    else if (event.type == sf::Event::MouseButtonPressed)
+    {
+        handleMousePressed(event.mouseButton.x, event.mouseButton.y);
     }
 }
 
-void MainMenu::update(const sf::Time& dt)
+void MainMenu::update(const sf::Time&)
 {
-    if (visualState == VisualStates::Showing)
-    {
-        alpha += 255 * (dt.asSeconds() * 1.5);
-
-        if (alpha >= 255)
-        {
-            visualState = VisualStates::None;
-            alpha = 255;
-        }
-
-        for (auto& opt : menuSprites)
-        {
-            opt.second.setColor(sf::Color(255, 255, 255, alpha));
-        }
-    }
-    else if (visualState == VisualStates::Hiding)
-    {
-        alpha -= 255.0f * (dt.asSeconds() * 1.5);
-
-        if (alpha <= 0)
-        {
-            visualState = VisualStates::Showing;
-            alpha = 0;
-            menuOptionPressed(clickedOption);
-        }
-
-        for (auto& opt : menuSprites)
-        {
-            opt.second.setColor(sf::Color(255, 255, 255, alpha));
-        }
-    }
 }
 
 void MainMenu::draw()
@@ -154,7 +114,7 @@ void MainMenu::handleMousePressed(int x, int y)
         if (opt.second.getGlobalBounds().contains(x, y))
         {
             clickedOption = opt.first;
-            visualState = VisualStates::Hiding;
+            menuOptionPressed(clickedOption);
             break;
         }
     }
@@ -205,13 +165,12 @@ void MainMenu::initMenuSprites()
     for (auto& opt : menuSprites)
     {
         opt.second.setTextureRect(menuRects[opt.first].first);
-        opt.second.setColor(sf::Color(255, 255, 255, 0));
     }
 }
 
 void MainMenu::initMenuPositions()
 {
-    const int width = getStateManager().getSharedContext().window.getSize().x;
+    int width = getStateManager().getSharedContext().window.getSize().x;
 
     menuSprites[Options::NewGame].setPosition((width / 2) - (menuSprites[Options::NewGame].getTextureRect().width / 2), 17);
     menuSprites[Options::Scores].setPosition((width / 2) - (menuSprites[Options::Scores].getTextureRect().width / 2), 164);
