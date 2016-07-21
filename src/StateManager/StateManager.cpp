@@ -34,12 +34,12 @@ StateManager::StateManager(const SharedContext& sharedContex)
 {
     shdContex = std::make_unique<SharedContext>(sharedContex.window, sharedContex.resourceManager);
 
-    states[StateType::MainMenu] = std::make_unique<MainMenu>(*this);
-    states[StateType::Wellcome] = std::make_unique<Wellcome>(*this);
-    states[StateType::Started] = std::make_unique<Started>(*this);
+    states[States::ID::MainMenu] = std::make_unique<MainMenu>(*this);
+    states[States::ID::Wellcome] = std::make_unique<Wellcome>(*this);
+    states[States::ID::Started] = std::make_unique<Started>(*this);
 }
 
-void StateManager::setCurrentState(const StateManager::StateType& state)
+void StateManager::setCurrentState(const States::ID& state)
 {
     assert(!states.empty());
     assert(!(states.find(state) == states.end()));

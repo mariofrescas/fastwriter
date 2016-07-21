@@ -39,7 +39,7 @@ void Wellcome::handleInput(const sf::Event& event)
 {
     if (event.type == sf::Event::MouseButtonPressed)
     {
-        getStateManager().setCurrentState(StateManager::StateType::MainMenu);
+        getStateManager().setCurrentState(States::ID::MainMenu);
     }
 }
 

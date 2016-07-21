@@ -18,24 +18,29 @@
 #ifndef STATEMANAGER_H
 #define STATEMANAGER_H
 
-////////////////////////////////////////////////////////////
-// Cabeceras
-//
-////////////////////////////////////////////////////////////
+#include "State.h"
 #include <map>
 #include <memory>
 
-#include "State.h"
-
-////////////////////////////////////////////////////////////
-// Declaraciones fordward
-//
-////////////////////////////////////////////////////////////
 class ResourceManager;
-
 namespace sf
 {
     class RenderWindow;
+}
+
+
+namespace States
+{
+    ////////////////////////////////////////////////////////////
+    /// \brief Define los tipos de escenas existentes
+    ///
+    ////////////////////////////////////////////////////////////
+    enum class ID
+    {
+        Wellcome, ///< Bienvenida
+        MainMenu, ///< Menu principal
+        Started   ///< Juego iniciado
+    };
 }
 
 ////////////////////////////////////////////////////////////
@@ -45,17 +50,6 @@ namespace sf
 class StateManager
 {
 public:
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Define los tipos de escenas existentes
-    ///
-    ////////////////////////////////////////////////////////////
-    enum class StateType
-    {
-        MainMenu, ///< Menu principal
-        Wellcome, ///< Bienvenida
-        Started,  ///< Juego iniciado
-    };
 
     ////////////////////////////////////////////////////////////
     /// \brief Define la informacion compartida por las escenas
@@ -92,7 +86,7 @@ public:
     /// igual al del parametro state y lo establece como la escena actual.
     ///
     ////////////////////////////////////////////////////////////
-    void setCurrentState(const StateType& state);
+    void setCurrentState(const States::ID& state);
 
     ////////////////////////////////////////////////////////////
     /// \brief Obtiene la escena actual
@@ -131,7 +125,7 @@ public:
 private:
     std::unique_ptr<SharedContext>  shdContex;    ///< Informacion compartida por las escenas
     State*                          currentState; ///< Escena actual
-    std::map<StateType, State::Ptr> states;       ///< Todas las escenas existentes
+    std::map<States::ID, State::Ptr> states;      ///< Todas las escenas existentes
 };
 
 #endif // STATEMANAGER_H
