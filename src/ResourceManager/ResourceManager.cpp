@@ -19,13 +19,13 @@
 
 ResourceManager::ResourceManager()
 {
-    fontHolder.load(Fonts::ID::Default, "res/fonts/Saxmono.ttf");
+    fontHolder.load(Fonts::ID::Default, "res/fonts/saxmono.ttf");
 
-    textureHolder.load(Textures::ID::Background, "res/textures/Background.png");
-    textureHolder.load(Textures::ID::MainMenu, "res/textures/MainMenu.png");
-    textureHolder.load(Textures::ID::Wellcome, "res/textures/Wellcome.png");
-    textureHolder.load(Textures::ID::Game, "res/textures/Game.png");
-    textureHolder.load(Textures::ID::Letters, "res/textures/Letters.png");
+    textureHolder.load(Textures::ID::Background, "res/textures/background.png");
+    textureHolder.load(Textures::ID::MainMenu, "res/textures/main-menu.png");
+    textureHolder.load(Textures::ID::Wellcome, "res/textures/wellcome.png");
+    textureHolder.load(Textures::ID::Game, "res/textures/game.png");
+    textureHolder.load(Textures::ID::Letters, "res/textures/letters.png");
 }
 
 sf::Texture& ResourceManager::getTexture(const Textures::ID& textureId) const
