@@ -17,7 +17,7 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="Wellcome.svg"
-   inkscape:export-filename="/home/Mario/Documentos/Codigos/Sfml/Fastwriter/design/window/Wellcome1.png"
+   inkscape:export-filename="/home/mario/Documents/Codigos/Qt/build-Test-Desktop-Debug/Main.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
@@ -357,6 +357,19 @@
          stdDeviation="2.5278755"
          id="feGaussianBlur4830" />
     </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter20810"
+       x="-0.048556932"
+       width="1.0971139"
+       y="-0.31102826"
+       height="1.6220565">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="27.636987"
+         id="feGaussianBlur20812" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -366,18 +379,18 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.55933251"
-     inkscape:cx="801.4993"
-     inkscape:cy="165.03478"
+     inkscape:cx="679.86526"
+     inkscape:cy="379.57622"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="px"
      showguides="true"
      inkscape:window-width="1366"
-     inkscape:window-height="655"
+     inkscape:window-height="723"
      inkscape:window-x="0"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1" />
+     inkscape:window-y="22"
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -403,12 +416,19 @@
        x="-6.1035156e-05"
        y="284.362" />
     <rect
-       style="fill:#c5c837;fill-opacity:1;stroke:#000000;stroke-width:1.74358475;stroke-opacity:1"
-       id="rect3063-4-3-1-7"
-       width="1364.2565"
+       y="527.23376"
+       x="-6.1035156e-05"
        height="213.25641"
-       x="0.87170291"
-       y="527.23376" />
+       width="1366"
+       id="rect20808"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.74358475;stroke-opacity:1;filter:url(#filter20810)" />
+    <rect
+       style="fill:#c5c837;fill-opacity:1;stroke:#000000;stroke-width:1.0003649;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3063-4-3-1-7"
+       width="1366.9996"
+       height="213.25604"
+       x="-0.49987856"
+       y="527.23395" />
     <circle
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter4749)"
        id="circle4735"
