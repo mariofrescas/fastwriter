@@ -15,25 +15,34 @@
 ** along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *************************************************************************/
 
-#include "ResourceManager.h"
+#ifndef FADE_H
+#define FADE_H
 
-ResourceManager::ResourceManager()
+#include "Transition.h"
+
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/Shader.hpp>
+#include <SFML/System/Time.hpp>
+
+class Fade : public Transition
 {
-    fontHolder.load(Fonts::ID::Default, "res/fonts/Saxmono.ttf");
+public:
+    Fade(StateManager& stateManager);
 
-    textureHolder.load(Textures::ID::Background, "res/textures/Background.png");
-    textureHolder.load(Textures::ID::MainMenu, "res/textures/MainMenu.png");
-    textureHolder.load(Textures::ID::Wellcome, "res/textures/Wellcome.png");
-    textureHolder.load(Textures::ID::Game, "res/textures/Game.png");
-    textureHolder.load(Textures::ID::Letters, "res/textures/Letters.png");
-}
+    virtual void configure(const sf::Time& duration,
+                           const States::ID& next,
+                           const sf::Texture& from,
+                           const sf::Texture& to) override;
 
-sf::Texture& ResourceManager::getTexture(const Textures::ID& textureId) const
-{
-    return textureHolder.get(textureId);
-}
+    virtual void handleInput(const sf::Event& event) override;
+    virtual void update(const sf::Time& dt) override;
+    virtual void draw() override;
 
-sf::Font& ResourceManager::getFont(const Fonts::ID& fontId) const
-{
-    return fontHolder.get(fontId);
-}
+private:
+    sf::Shader fade;
+    sf::Sprite handler;
+    float progress;
+    sf::Time effectDuration;
+    States::ID nextState;
+};
+#endif // FADE_H

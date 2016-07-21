@@ -25,21 +25,30 @@
 Wellcome::Wellcome(StateManager& stateManager)
     : State(stateManager)
 {
-    using Textures = ResourceManager::Textures;
     ResourceManager& resMngr = getStateManager().getSharedContext().resourceManager;
     const sf::Vector2u& windowSize = getStateManager().getSharedContext().window.getSize();
 
-    background.setTexture(resMngr.getTexture(Textures::Background));
+    background.setTexture(resMngr.getTexture(Textures::ID::Background));
 
-    wellcome.setTexture(resMngr.getTexture(Textures::Wellcome));
+    wellcome.setTexture(resMngr.getTexture(Textures::ID::Wellcome));
     wellcome.setPosition(0, (windowSize.y / 2) - (wellcome.getTextureRect().height / 2));
+
+    if (!snapShot.create(1366, 768))
+    {
+        throw std::runtime_error("Can not create Wellcome Render Texture");
+    }
 }
 
 void Wellcome::handleInput(const sf::Event& event)
 {
     if (event.type == sf::Event::MouseButtonPressed)
     {
-        getStateManager().setCurrentState(States::ID::MainMenu);
+        getStateManager().setCurrentState
+        (
+            States::ID::MainMenu,
+            Transitions::ID::Fade,
+            sf::milliseconds(1000)
+        );
     }
 }
 
@@ -53,4 +62,14 @@ void Wellcome::draw()
 
     window.draw(background);
     window.draw(wellcome);
+}
+
+const sf::Texture* Wellcome::getSnapShotTexture()
+{
+    snapShot.clear();
+    snapShot.draw(background);
+    snapShot.draw(wellcome);
+    snapShot.display();
+
+    return &snapShot.getTexture();
 }

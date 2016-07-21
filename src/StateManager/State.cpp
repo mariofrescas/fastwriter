@@ -22,13 +22,13 @@
 #include <cassert>
 
 State::State(StateManager& stateManager, State* parent)
-    : mStateManager(stateManager), parentState(parent)
+    : stateManager(stateManager), parentState(parent)
 {
 }
 
 StateManager& State::getStateManager() const
 {
-    return mStateManager;
+    return stateManager;
 }
 
 State& State::getParentState() const

@@ -18,14 +18,11 @@
 #ifndef MAINMENU_H
 #define MAINMENU_H
 
-////////////////////////////////////////////////////////////
-// Cabeceras
-//
-////////////////////////////////////////////////////////////
 #include "State.h"
 
 #include <map>
 #include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/RenderTexture.hpp>
 
 ////////////////////////////////////////////////////////////
 /// \brief Describe la escena del menu principal
@@ -33,34 +30,6 @@
 ////////////////////////////////////////////////////////////
 class MainMenu : public State
 {
-private:
-    ////////////////////////////////////////////////////////////
-    /// \brief Describe las opciones de seleccion para el menu
-    ///
-    ////////////////////////////////////////////////////////////
-    enum class Options
-    {
-        None,    ///< Ninguna opcion
-        NewGame, ///< Juego nuevo
-        Scores,  ///< Puntuaciones
-        Help,    ///< Ayuda
-        About,   ///< Informacion
-        Exit     ///< Salir del juego
-    };
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Describe los estados de la escena
-    ///
-    ////////////////////////////////////////////////////////////
-    enum VisualStates
-    {
-        None,    ///< Termino de mostrarse
-        Showing, ///< Mostrandose (fade in)
-        Hiding   ///< Ocultandose (fade out)
-    };
-
-    using RectPair = std::pair<sf::IntRect, sf::IntRect>;
-
 public:
 
     ////////////////////////////////////////////////////////////
@@ -97,14 +66,47 @@ public:
     ////////////////////////////////////////////////////////////
     virtual void draw() override;
 
+    ////////////////////////////////////////////////////////////
+    /// \brief Obtiene una captura de la escena en forma de textura
+    /// \return Puntero hacia la textura
+    ///
+    ////////////////////////////////////////////////////////////
+    virtual const sf::Texture* getSnapShotTexture() override;
+
 private:
+    using RectPair = std::pair<sf::IntRect, sf::IntRect>;
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Describe las opciones de seleccion para el menu
+    ///
+    ////////////////////////////////////////////////////////////
+    enum class Options
+    {
+        None,    ///< Ninguna opcion
+        NewGame, ///< Juego nuevo
+        Scores,  ///< Puntuaciones
+        Help,    ///< Ayuda
+        About,   ///< Informacion
+        Exit     ///< Salir del juego
+    };
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Describe los estados de la escena
+    ///
+    ////////////////////////////////////////////////////////////
+    enum VisualStates
+    {
+        None,    ///< Termino de mostrarse
+        Showing, ///< Mostrandose (fade in)
+        Hiding   ///< Ocultandose (fade out)
+    };
+
     sf::Sprite                    background;    ///< Sprite de fondo
     std::map<Options, RectPair>   menuRects;     ///< Posiciones de los sprites en la textura
     std::map<Options, sf::Sprite> menuSprites;   ///< Sprites del menu
     Options                       currentOption; ///< Opcion en la que se encuentra el cursor
     Options                       clickedOption; ///< Opcion en la que se dio click
-
-private:
+    sf::RenderTexture             snapShot;      ///< Captura de la escena
 
     ////////////////////////////////////////////////////////////
     /// \brief Identfica cual es la opcion del menu en la que se encuentra el cursor

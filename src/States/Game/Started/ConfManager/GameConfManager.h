@@ -21,6 +21,20 @@
 #include "GameConf.h"
 #include <map>
 
+namespace Configs
+{
+    ////////////////////////////////////////////////////////////
+    /// \brief Describe las dificultades posibles
+    ///
+    ////////////////////////////////////////////////////////////
+    enum class ID
+    {
+        Normal, ///< Dificultad de juego normal
+        Hard,   ///< Dificultad de juego dificil
+        Expert  ///< Dificultad de juego experto
+    };
+}
+
 ////////////////////////////////////////////////////////////
 /// \brief Describe el administrador de dificultades
 ///
@@ -28,30 +42,20 @@
 class GameConfManager
 {
 public:
-    ////////////////////////////////////////////////////////////
-    /// \brief Describe las dificultades posibles
-    ///
-    ////////////////////////////////////////////////////////////
-    enum class ConfType
-    {
-        Normal, ///< Dificultad de juego normal
-        Hard,   ///< Dificultad de juego dificil
-        Expert  ///< Dificultad de juego experto
-    };
 
     ////////////////////////////////////////////////////////////
     /// \brief Crea un administrador de dificultades
     /// \param defaultType Dificultad por defecto
     ///
     ////////////////////////////////////////////////////////////
-    explicit GameConfManager(const ConfType& defaultType = ConfType::Normal);
+    explicit GameConfManager(const Configs::ID& defaultConf = Configs::ID::Normal);
 
     ////////////////////////////////////////////////////////////
     /// \brief Cambia la dificultad actual
     /// \param confType Nueva dificultad
     ///
     ////////////////////////////////////////////////////////////
-    void setCurrentConf(const ConfType& confType);
+    void setCurrentConf(const Configs::ID& confType);
 
     ////////////////////////////////////////////////////////////
     /// \brief Obtiene la dificultad actual
@@ -61,8 +65,8 @@ public:
     GameConf& getCurrentConf() const;
 
 private:
-    GameConf*                         currentConf; ///< Dificultad actual
-    std::map<ConfType, GameConf::Ptr> confs;       ///< Mapa de dificultades
+    GameConf*                            currentConf; ///< Dificultad actual
+    std::map<Configs::ID, GameConf::Ptr> confs;       ///< Mapa de dificultades
 };
 
 #endif // GAMECONFMANAGER_H

@@ -15,25 +15,29 @@
 ** along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *************************************************************************/
 
-#include "ResourceManager.h"
+#ifndef TRANSITION_H
+#define TRANSITION_H
 
-ResourceManager::ResourceManager()
+#include "State.h"
+
+namespace States
 {
-    fontHolder.load(Fonts::ID::Default, "res/fonts/Saxmono.ttf");
-
-    textureHolder.load(Textures::ID::Background, "res/textures/Background.png");
-    textureHolder.load(Textures::ID::MainMenu, "res/textures/MainMenu.png");
-    textureHolder.load(Textures::ID::Wellcome, "res/textures/Wellcome.png");
-    textureHolder.load(Textures::ID::Game, "res/textures/Game.png");
-    textureHolder.load(Textures::ID::Letters, "res/textures/Letters.png");
+    enum class ID;
 }
 
-sf::Texture& ResourceManager::getTexture(const Textures::ID& textureId) const
+class Transition : public State
 {
-    return textureHolder.get(textureId);
-}
+public:
+    using Ptr = std::unique_ptr<Transition>;
 
-sf::Font& ResourceManager::getFont(const Fonts::ID& fontId) const
-{
-    return fontHolder.get(fontId);
-}
+    Transition(StateManager& stateManager);
+
+    virtual void configure(const sf::Time& duration,
+                           const States::ID& next,
+                           const sf::Texture& from,
+                           const sf::Texture& to) = 0;
+
+    virtual const sf::Texture* getSnapShotTexture() override;
+};
+
+#endif // TRANSITION_H

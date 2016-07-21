@@ -19,15 +19,14 @@
 #define STATEMANAGER_H
 
 #include "State.h"
+#include "Transition.h"
 #include <map>
-#include <memory>
 
 class ResourceManager;
 namespace sf
 {
     class RenderWindow;
 }
-
 
 namespace States
 {
@@ -40,6 +39,18 @@ namespace States
         Wellcome, ///< Bienvenida
         MainMenu, ///< Menu principal
         Started   ///< Juego iniciado
+    };
+}
+
+namespace Transitions
+{
+    ////////////////////////////////////////////////////////////
+    /// \brief Define los tipos de transiciones para las escenas existentes
+    ///
+    ////////////////////////////////////////////////////////////
+    enum class ID
+    {
+        Fade
     };
 }
 
@@ -89,6 +100,24 @@ public:
     void setCurrentState(const States::ID& state);
 
     ////////////////////////////////////////////////////////////
+    /// \brief Cambia la escena actual con un efecto transitorio
+    /// \param state Llave que identifica la escena
+    /// \param transition Efecto transitorio
+    /// \param duration Duracion de la transicion
+    ///
+    /// Obtiene el efecto transitorio seleccionado y lo establece
+    /// como escena actual. Cuando el efecto transitorio termine
+    /// este se encarga de poner como escena actual la escena
+    /// seleccionada mediante el llamado a: setCurrentState(state).
+    ///
+    /// \see setCurrentState
+    ///
+    ////////////////////////////////////////////////////////////
+    void setCurrentState(const States::ID& state,
+                         const Transitions::ID& transition,
+                         const sf::Time& duration);
+
+    ////////////////////////////////////////////////////////////
     /// \brief Obtiene la escena actual
     /// \return Referencia hacia el estado actual
     ///
@@ -123,9 +152,10 @@ public:
     void draw();
 
 private:
-    std::unique_ptr<SharedContext>  shdContex;    ///< Informacion compartida por las escenas
-    State*                          currentState; ///< Escena actual
-    std::map<States::ID, State::Ptr> states;      ///< Todas las escenas existentes
+    std::unique_ptr<SharedContext>   shdContex;    ///< Informacion compartida
+    State*                           currentState; ///< Escena actual
+    std::map<States::ID, State::Ptr> states;       ///< Todas las escenas existentes
+    std::map<Transitions::ID, Transition::Ptr> transitions; /// Efectos transitorios
 };
 
 #endif // STATEMANAGER_H

@@ -18,10 +18,10 @@
 #ifndef WELLCOME_H
 #define WELLCOME_H
 
-
 #include "State.h"
 
 #include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/RenderTexture.hpp>
 
 ////////////////////////////////////////////////////////////
 /// \brief Describe la escena de bienvenida
@@ -58,9 +58,17 @@ public:
     ////////////////////////////////////////////////////////////
     virtual void draw() override;
 
+    ////////////////////////////////////////////////////////////
+    /// \brief Obtiene una captura de la escena en forma de textura
+    /// \return Puntero hacia la textura
+    ///
+    ////////////////////////////////////////////////////////////
+    virtual const sf::Texture* getSnapShotTexture() override;
+
 private:
-    sf::Sprite background; ///< Sprite de fondo
-    sf::Sprite wellcome;   ///< Sprite de mensaje de bienvenida
+    sf::Sprite        background; ///< Sprite de fondo
+    sf::Sprite        wellcome;   ///< Sprite de mensaje de bienvenida
+    sf::RenderTexture snapShot;   ///< Captura de la escena
 };
 
 #endif // WELLCOME_H

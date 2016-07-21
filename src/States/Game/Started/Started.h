@@ -20,6 +20,7 @@
 
 #include "State.h"
 
+#include <SFML/Graphics/RenderTexture.hpp>
 #include "PointsControl.h"
 #include "WantPointsControl.h"
 #include "TimeControl.h"
@@ -37,6 +38,7 @@ public:
     virtual void handleInput(const sf::Event& event) override;
     virtual void update(const sf::Time& dt) override;
     virtual void draw() override;
+    virtual const sf::Texture* getSnapShotTexture() override;
 
 private:
     sf::Sprite background;
@@ -50,6 +52,7 @@ private:
     CleanersControl::Ptr cleaners;
     WordControl::Ptr words;
     GameConfManager confMngr;
+    sf::RenderTexture snapShot;
     int trapCount;
     int takeCount;
 

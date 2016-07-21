@@ -24,19 +24,28 @@
 #include "MainMenu.h"
 #include "Wellcome.h"
 #include "Started.h"
+#include "Fade.h"
 
-StateManager::SharedContext::SharedContext(sf::RenderWindow& window, ResourceManager& resManager)
-    : window(window), resourceManager(resManager)
+StateManager::SharedContext::SharedContext(sf::RenderWindow& window,
+                                           ResourceManager& resManager)
+    : window(window),
+      resourceManager(resManager)
 {
 }
 
 StateManager::StateManager(const SharedContext& sharedContex)
 {
-    shdContex = std::make_unique<SharedContext>(sharedContex.window, sharedContex.resourceManager);
+    shdContex = std::make_unique<SharedContext>
+    (
+        sharedContex.window,
+        sharedContex.resourceManager
+    );
 
     states[States::ID::MainMenu] = std::make_unique<MainMenu>(*this);
     states[States::ID::Wellcome] = std::make_unique<Wellcome>(*this);
     states[States::ID::Started] = std::make_unique<Started>(*this);
+
+    transitions[Transitions::ID::Fade] = std::make_unique<Fade>(*this);
 }
 
 void StateManager::setCurrentState(const States::ID& state)
@@ -45,6 +54,28 @@ void StateManager::setCurrentState(const States::ID& state)
     assert(!(states.find(state) == states.end()));
 
     currentState = states[state].get();
+}
+
+void StateManager::setCurrentState(const States::ID& state,
+                                   const Transitions::ID& transition,
+                                   const sf::Time& duration)
+{
+    assert(!states.empty());
+    assert(!(states.find(state) == states.end()));
+    assert(!transitions.empty());
+    assert(!(transitions.find(transition) == transitions.end()));
+    assert(!(currentState->getSnapShotTexture() == nullptr));
+    assert(!(states[state]->getSnapShotTexture() == nullptr));
+
+    transitions[transition]->configure
+    (
+        duration,
+        state,
+        *currentState->getSnapShotTexture(),
+        *states[state]->getSnapShotTexture()
+    );
+
+    currentState = transitions[transition].get();
 }
 
 State& StateManager::getCurrentState() const

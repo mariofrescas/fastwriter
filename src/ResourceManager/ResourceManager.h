@@ -18,20 +18,40 @@
 #ifndef RESOURCEMANAGER_H
 #define RESOURCEMANAGER_H
 
-////////////////////////////////////////////////////////////
-// Cabeceras
-//
-////////////////////////////////////////////////////////////
 #include "ResourceHolder.h"
 
-////////////////////////////////////////////////////////////
-// Declaraciones fordward
-//
-////////////////////////////////////////////////////////////
 namespace sf
 {
     class Texture;
     class Font;
+}
+
+namespace Textures
+{
+    ////////////////////////////////////////////////////////////
+    /// \brief Identificardores de texturas
+    ///
+    ////////////////////////////////////////////////////////////
+    enum class ID
+    {
+        Background, ///< Textura de fondo general para el juego
+        Wellcome,   ///< Textura para la escena de bienvenida
+        MainMenu,   ///< Textura para la escena del menu principal
+        Game,       ///< Textura para la escena del juego
+        Letters     ///< Texutra para todas las letras del juego
+    };
+}
+
+namespace Fonts
+{
+    ////////////////////////////////////////////////////////////
+    /// \brief Identificardores de fuentes
+    ///
+    ////////////////////////////////////////////////////////////
+    enum class ID
+    {
+        Default ///< Id de la fuente por defecto
+    };
 }
 
 ////////////////////////////////////////////////////////////
@@ -41,29 +61,6 @@ namespace sf
 class ResourceManager
 {
 public:
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Identificardores de texturas
-    ///
-    ////////////////////////////////////////////////////////////
-    enum class Textures
-    {
-        Background, ///< Textura de fondo general para el juego
-        MainMenu,   ///< Textura para la escena del menu principal
-        Wellcome,   ///< Textura para la escena de bienvenida
-        Game,       ///< Textura para la escena del juego
-        Letters     ///< Texutra para todas las letras del juego
-    };
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Identificardores de fuentes
-    ///
-    ////////////////////////////////////////////////////////////
-    enum class Fonts
-    {
-        Default ///< Id de la fuente por defecto
-    };
-
     ////////////////////////////////////////////////////////////
     /// \brief Carga e inicializa los recursos y los relaciona con un id
     ///
@@ -76,7 +73,7 @@ public:
     /// \return Referencia a la textura
     ///
     ////////////////////////////////////////////////////////////
-    sf::Texture& getTexture(const Textures& textureId) const;
+    sf::Texture& getTexture(const Textures::ID& textureId) const;
 
     ////////////////////////////////////////////////////////////
     /// \brief Obtiene una referencia a la fuente que concuerde con el id
@@ -84,11 +81,11 @@ public:
     /// \return Referencia a la fuente
     ///
     ////////////////////////////////////////////////////////////
-    sf::Font& getFont(const Fonts& fontId) const;
+    sf::Font& getFont(const Fonts::ID& fontId) const;
 
 private:
-    ResourceHolder<Textures, sf::Texture> textureHolder; ///< Contenedor de texturas
-    ResourceHolder<Fonts, sf::Font>       fontHolder;    ///< Contenedor de fuentes
+    ResourceHolder<Textures::ID, sf::Texture> textureHolder; ///< Contenedor de texturas
+    ResourceHolder<Fonts::ID, sf::Font>       fontHolder;    ///< Contenedor de fuentes
 };
 
 #endif // RESOURCEMANAGER_H

@@ -39,7 +39,9 @@ void ResourceHolder<Identifier, Resource>::load(Identifier id, const std::string
 
 template<typename Identifier, typename Resource>
 template<typename Parameter>
-void ResourceHolder<Identifier, Resource>::load(Identifier id, const std::string& filename, const Parameter& exparam)
+void ResourceHolder<Identifier, Resource>::load(Identifier id,
+                                                const std::string& filename,
+                                                const Parameter& exparam)
 {
     auto res = std::make_unique<Resource>();
 

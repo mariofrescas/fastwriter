@@ -23,7 +23,6 @@
 #include "WordMap.h"
 #include "Dictionary.h"
 #include <list>
-#include <tuple>
 #include <string>
 #include <memory>
 

@@ -18,23 +18,16 @@
 #ifndef STATE_H
 #define STATE_H
 
-////////////////////////////////////////////////////////////
-// Cabeceras
-//
-////////////////////////////////////////////////////////////
 #include <memory>
 
-////////////////////////////////////////////////////////////
-// Declaraciones fordward
-//
-////////////////////////////////////////////////////////////
 class StateManager;
-
 namespace sf
 {
     class Event;
     class Time;
+    class Texture;
 }
+
 
 ////////////////////////////////////////////////////////////
 /// \brief Define la interfaz basica para estados/escenas
@@ -49,6 +42,8 @@ public:
     /// \brief Escena que conoce a su administrador y a su escena padre
     /// \param stateManager Referencia hacia el administrador de la escena
     /// \param parent Puntero hacia la escena padre
+    ///
+    /// No es necesario que la escena tenga/conozca a su padre.
     ///
     ////////////////////////////////////////////////////////////
     explicit State(StateManager& stateManager, State* parent = nullptr);
@@ -74,6 +69,13 @@ public:
     virtual void draw() = 0;
 
     ////////////////////////////////////////////////////////////
+    /// \brief Obtiene una captura de la escena en forma de textura
+    /// \return Puntero hacia la textura
+    ///
+    ////////////////////////////////////////////////////////////
+    virtual const sf::Texture* getSnapShotTexture() = 0;
+
+    ////////////////////////////////////////////////////////////
     /// \brief Destructor virtual
     ///
     ////////////////////////////////////////////////////////////
@@ -95,7 +97,7 @@ protected:
     State& getParentState() const;
 
 private:
-    StateManager& mStateManager; ///< Administrador
+    StateManager& stateManager; ///< Administrador
     State*        parentState;   ///< Escena padre
 };
 

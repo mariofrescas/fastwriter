@@ -19,14 +19,14 @@
 
 #include "NormalConf.h"
 
-GameConfManager::GameConfManager(const ConfType& defaultType)
+GameConfManager::GameConfManager(const Configs::ID& defaultConf)
 {
-    confs[ConfType::Normal] = std::make_unique<NormalConf>();
+    confs[Configs::ID::Normal] = std::make_unique<NormalConf>();
 
-    currentConf = confs[defaultType].get();
+    currentConf = confs[defaultConf].get();
 }
 
-void GameConfManager::setCurrentConf(const ConfType& confType)
+void GameConfManager::setCurrentConf(const Configs::ID& confType)
 {
     currentConf = confs[confType].get();
 }

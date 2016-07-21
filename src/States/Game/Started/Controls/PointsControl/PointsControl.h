@@ -19,7 +19,6 @@
 #define POINTSCONTROL_H
 
 #include <SFML/Graphics/Text.hpp>
-#include <SFML/Graphics/RectangleShape.hpp>
 
 ////////////////////////////////////////////////////////////
 /// \brief Describe el control logico-grafico de puntos

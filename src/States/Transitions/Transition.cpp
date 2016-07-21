@@ -15,25 +15,14 @@
 ** along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *************************************************************************/
 
-#include "ResourceManager.h"
+#include "Transition.h"
 
-ResourceManager::ResourceManager()
+Transition::Transition(StateManager& stateManager)
+    : State(stateManager, nullptr)
 {
-    fontHolder.load(Fonts::ID::Default, "res/fonts/Saxmono.ttf");
-
-    textureHolder.load(Textures::ID::Background, "res/textures/Background.png");
-    textureHolder.load(Textures::ID::MainMenu, "res/textures/MainMenu.png");
-    textureHolder.load(Textures::ID::Wellcome, "res/textures/Wellcome.png");
-    textureHolder.load(Textures::ID::Game, "res/textures/Game.png");
-    textureHolder.load(Textures::ID::Letters, "res/textures/Letters.png");
 }
 
-sf::Texture& ResourceManager::getTexture(const Textures::ID& textureId) const
+const sf::Texture* Transition::getSnapShotTexture()
 {
-    return textureHolder.get(textureId);
-}
-
-sf::Font& ResourceManager::getFont(const Fonts::ID& fontId) const
-{
-    return fontHolder.get(fontId);
+    return nullptr;
 }

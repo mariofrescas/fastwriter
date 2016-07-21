@@ -8,6 +8,8 @@ INCLUDEPATH += \
            StateManager/ \
            States/MainMenu/ \
            States/Wellcome/ \
+           States/Transitions/ \
+           States/Transitions/Fade/ \
            States/Game/Started/ \
            States/Game/Started/ConfManager/ \
            States/Game/Started/Confs/ \
@@ -16,7 +18,7 @@ INCLUDEPATH += \
            States/Game/Started/Controls/PointsControl/ \
            States/Game/Started/Controls/ShiftModeControl/ \
            States/Game/Started/Controls/TimeControl/ \
-            States/Game/Started/Controls/WantPointsControl/ \
+           States/Game/Started/Controls/WantPointsControl/ \
            States/Game/Started/Controls/WordControl/ \
            States/Game/Started/Controls/WordControl/Dictionary/ \
            States/Game/Started/Controls/WordControl/WordMap/
@@ -40,7 +42,9 @@ HEADERS += \
            States/Game/Started/Controls/WordControl/Dictionary/Dictionary.h \
            States/Game/Started/Controls/WordControl/WordMap/WordMap.h \
     States/Game/Started/Controls/WantPointsControl/WantPointsControl.h \
-    States/Game/Started/Controls/CleanersControl/CleanersControl.h
+    States/Game/Started/Controls/CleanersControl/CleanersControl.h \
+    States/Transitions/Transition.h \
+    States/Transitions/Fade/Fade.h
 
 SOURCES += \
            Main.cpp \
@@ -61,4 +65,6 @@ SOURCES += \
            States/Game/Started/Controls/WordControl/Dictionary/Dictionary.cpp \
            States/Game/Started/Controls/WordControl/WordMap/WordMap.cpp \
     States/Game/Started/Controls/WantPointsControl/WantPointsControl.cpp \
-    States/Game/Started/Controls/CleanersControl/CleanersControl.cpp
+    States/Game/Started/Controls/CleanersControl/CleanersControl.cpp \
+    States/Transitions/Transition.cpp \
+    States/Transitions/Fade/Fade.cpp

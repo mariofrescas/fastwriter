@@ -27,17 +27,15 @@ Started::Started(StateManager& stateManager)
       trapCount(0),
       takeCount(0)
 {
-    using Textures = ResourceManager::Textures;
-    using Fonts = ResourceManager::Fonts;
     const ResourceManager& resMngr = getStateManager().getSharedContext().resourceManager;
     const GameConf& gConf = confMngr.getCurrentConf();
 
-    background.setTexture(resMngr.getTexture(Textures::Background));
+    background.setTexture(resMngr.getTexture(Textures::ID::Background));
 
-    gameCase.setTexture(resMngr.getTexture(Textures::Game));
+    gameCase.setTexture(resMngr.getTexture(Textures::ID::Game));
     gameCase.setTextureRect(sf::IntRect(0, 41, 1366, 768));
 
-    wordsCover.setTexture(resMngr.getTexture(Textures::Game));
+    wordsCover.setTexture(resMngr.getTexture(Textures::ID::Game));
     wordsCover.setTextureRect(sf::IntRect(0, 0, 1025, 41));
     wordsCover.setPosition(170, 170);
 
@@ -45,7 +43,7 @@ Started::Started(StateManager& stateManager)
     (
         110,
         sf::Vector2f(75, 5),
-        resMngr.getFont(Fonts::Default)
+        resMngr.getFont(Fonts::ID::Default)
     );
 
     wantPoints = std::make_unique<WantPointsControl>
@@ -59,7 +57,7 @@ Started::Started(StateManager& stateManager)
     (
         110,
         sf::Vector2f(440, 5),
-        resMngr.getFont(Fonts::Default)
+        resMngr.getFont(Fonts::ID::Default)
     );
 
     shiftMode = std::make_unique<ShiftModeControl>
@@ -75,7 +73,7 @@ Started::Started(StateManager& stateManager)
         gConf.getInitLifes(),
         110,
         sf::Vector2f(990, 5),
-        resMngr.getFont(Fonts::Default)
+        resMngr.getFont(Fonts::ID::Default)
     );
 
     cleaners = std::make_unique<CleanersControl>
@@ -84,7 +82,7 @@ Started::Started(StateManager& stateManager)
         gConf.getMaxCleaners(),
         sf::milliseconds(gConf.getAddInterval()),
         sf::Vector2f(980, 110),
-        resMngr.getTexture(Textures::Game),
+        resMngr.getTexture(Textures::ID::Game),
         sf::IntRect(1025, 0, 28, 28)
     );
 
@@ -92,8 +90,13 @@ Started::Started(StateManager& stateManager)
     (
         "res/dictionaries/en.dic",
         sf::FloatRect(175, 170, 1025, 540),
-        resMngr.getTexture(Textures::Letters)
+        resMngr.getTexture(Textures::ID::Letters)
     );
+
+    if (!snapShot.create(1366, 768))
+    {
+        throw std::runtime_error("Can not create Wellcome Render Texture");
+    }
 }
 
 void Started::handleInput(const sf::Event& event)
@@ -211,6 +214,31 @@ void Started::draw()
     {
         window.draw(cleaner);
     }
+}
+
+const sf::Texture* Started::getSnapShotTexture()
+{
+    snapShot.draw(background);
+    snapShot.draw(gameCase);
+
+    for (auto& letter : words->getGraph())
+    {
+        snapShot.draw(letter.graph);
+    }
+
+    snapShot.draw(wordsCover);
+    snapShot.draw(points->getGraph());
+    snapShot.draw(wantPoints->getGraph());
+    snapShot.draw(time->getGraph());
+    snapShot.draw(shiftMode->getGraph());
+    snapShot.draw(lifes->getGraph());
+
+    for (auto& cleaner : cleaners->getGraph())
+    {
+        snapShot.draw(cleaner);
+    }
+
+    return &snapShot.getTexture();
 }
 
 void Started::handleInputLetter(char letter)

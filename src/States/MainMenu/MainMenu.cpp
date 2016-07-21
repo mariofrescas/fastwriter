@@ -29,14 +29,18 @@
 MainMenu::MainMenu(StateManager& stateManager)
     : State(stateManager)
 {
-    using Textures = ResourceManager::Textures;
     ResourceManager& resMngr = getStateManager().getSharedContext().resourceManager;
 
-    background.setTexture(resMngr.getTexture(Textures::Background));
+    background.setTexture(resMngr.getTexture(Textures::ID::Background));
 
     initMenuRects();
     initMenuSprites();
     initMenuPositions();
+
+    if (!snapShot.create(1366, 768))
+    {
+        throw std::runtime_error("Can not create MainMenu Render Texture");
+    }
 }
 
 void MainMenu::handleInput(const sf::Event& event)
@@ -65,6 +69,19 @@ void MainMenu::draw()
     {
         window.draw(opt.second);
     }
+}
+
+const sf::Texture* MainMenu::getSnapShotTexture()
+{
+    snapShot.clear();
+    snapShot.draw(background);
+    for (const auto& opt : menuSprites)
+    {
+        snapShot.draw(opt.second);
+    }
+    snapShot.display();
+
+    return &snapShot.getTexture();
 }
 
 void MainMenu::handleMouseMoved(int x, int y)
@@ -125,7 +142,7 @@ void MainMenu::menuOptionPressed(const Options& option)
     switch (option)
     {
     case Options::NewGame:
-        getStateManager().setCurrentState(States::ID::Started);
+        getStateManager().setCurrentState(States::ID::Started, Transitions::ID::Fade, sf::milliseconds(1000));
         break;
     case Options::Scores:
         break;
@@ -153,14 +170,13 @@ void MainMenu::initMenuRects()
 
 void MainMenu::initMenuSprites()
 {
-    using Textures = ResourceManager::Textures;
     ResourceManager& resMngr = getStateManager().getSharedContext().resourceManager;
 
-    menuSprites[Options::NewGame] = sf::Sprite(resMngr.getTexture(Textures::MainMenu));
-    menuSprites[Options::Scores] = sf::Sprite(resMngr.getTexture(Textures::MainMenu));
-    menuSprites[Options::Help] = sf::Sprite(resMngr.getTexture(Textures::MainMenu));
-    menuSprites[Options::About] = sf::Sprite(resMngr.getTexture(Textures::MainMenu));
-    menuSprites[Options::Exit] = sf::Sprite(resMngr.getTexture(Textures::MainMenu));
+    menuSprites[Options::NewGame] = sf::Sprite(resMngr.getTexture(Textures::ID::MainMenu));
+    menuSprites[Options::Scores] = sf::Sprite(resMngr.getTexture(Textures::ID::MainMenu));
+    menuSprites[Options::Help] = sf::Sprite(resMngr.getTexture(Textures::ID::MainMenu));
+    menuSprites[Options::About] = sf::Sprite(resMngr.getTexture(Textures::ID::MainMenu));
+    menuSprites[Options::Exit] = sf::Sprite(resMngr.getTexture(Textures::ID::MainMenu));
 
     for (auto& opt : menuSprites)
     {
