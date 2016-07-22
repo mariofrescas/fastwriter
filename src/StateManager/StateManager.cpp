@@ -24,6 +24,7 @@
 #include "Fade.h"
 #include "Wellcome.h"
 #include "MainMenu.h"
+#include "About.h"
 #include "DifftyMenu.h"
 #include "Started.h"
 
@@ -44,6 +45,7 @@ StateManager::StateManager(const SharedContext& sharedContex)
 
     states[States::ID::Wellcome] = std::make_unique<Wellcome>(*this);
     states[States::ID::MainMenu] = std::make_unique<MainMenu>(*this);
+    states[States::ID::About] = std::make_unique<About>(*this);
     states[States::ID::DifftyMenu] = std::make_unique<DifftyMenu>(*this);
     states[States::ID::Started] = std::make_unique<Started>(*this);
 

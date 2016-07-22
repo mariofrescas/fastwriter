@@ -38,6 +38,7 @@ namespace States
     {
         Wellcome,   ///< Bienvenida
         MainMenu,   ///< Menu principal
+        About,      ///< Acerca de...
         DifftyMenu, ///< Menu de seleccion de dificultad
         Started     ///< Juego iniciado
     };

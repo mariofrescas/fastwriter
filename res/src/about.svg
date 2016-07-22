@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="662.35303"
+   height="624.03802"
+   viewBox="0 0 662.35303 624.03802"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/about.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"
+   sodipodi:docname="about.svg">
+  <defs
+     id="defs4">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter18458"
+       x="-0.088469103"
+       width="1.1769382"
+       y="-0.079960704"
+       height="1.1599214">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="17.924525"
+         id="feGaussianBlur18460" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter4535"
+       x="-0.03815598"
+       width="1.0763119"
+       y="-0.14034845"
+       height="1.2806969">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="6.0936445"
+         id="feGaussianBlur4537" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter4271"
+       x="-0.036510386"
+       width="1.0730208"
+       y="-0.16824068"
+       height="1.3364815">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="7.0040039"
+         id="feGaussianBlur4273" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="368.5365"
+     inkscape:cy="235.2284"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1366"
+     inkscape:window-height="723"
+     inkscape:window-x="0"
+     inkscape:window-y="22"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-428.32416)">
+    <rect
+       y="471.34329"
+       x="43.018856"
+       height="538"
+       width="486.25858"
+       id="rect18320"
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter18458)" />
+    <rect
+       style="opacity:1;fill:#535353;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect7013"
+       width="480.25858"
+       height="534"
+       x="47.018856"
+       y="471.34329" />
+    <rect
+       style="fill:#c8c837;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3063-4-3-1"
+       width="465.81857"
+       height="519.64972"
+       x="54.247433"
+       y="477.75858" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4531"
+       y="870.74237"
+       x="368.99066"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:none;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4535)"
+       xml:space="preserve"
+       transform="matrix(0.70712401,0,0,0.70712401,-194.81755,-52.464072)"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:144px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         y="870.74237"
+         x="368.99066"
+         id="tspan4533"
+         sodipodi:role="line">About</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:28.28495979px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="66.104614"
+       y="563.25873"
+       id="text4050-57"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4052-734"
+         x="66.104614"
+         y="563.25873"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:101.82585907px;font-family:saxMono;-inkscape-font-specification:saxMono">About</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text18827"
+       y="609.22705"
+       x="62.279263"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:saxMono;-inkscape-font-specification:saxMono"
+         y="609.22705"
+         x="62.279263"
+         sodipodi:role="line"
+         id="tspan18839">Fastwriter is a simple game that</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:saxMono;-inkscape-font-specification:saxMono"
+         y="637.35205"
+         x="62.279263"
+         sodipodi:role="line"
+         id="tspan4265">challenges you to type as fast as</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:saxMono;-inkscape-font-specification:saxMono"
+         y="665.47705"
+         x="62.279263"
+         sodipodi:role="line"
+         id="tspan4267">you can while random words are</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:saxMono;-inkscape-font-specification:saxMono"
+         y="693.60205"
+         x="62.279263"
+         sodipodi:role="line"
+         id="tspan4270">dropping into the screen.</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:saxMono;-inkscape-font-specification:saxMono"
+         y="721.72705"
+         x="62.279263"
+         sodipodi:role="line"
+         id="tspan4292" /><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:#4d000e;fill-opacity:1"
+         y="749.85205"
+         x="62.279263"
+         sodipodi:role="line"
+         id="tspan18843">Design and programming:</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:saxMono;-inkscape-font-specification:saxMono"
+         y="777.97705"
+         x="62.279263"
+         sodipodi:role="line"
+         id="tspan18845">- Sysyfydev<tspan
+   style="font-size:64.99999762%;baseline-shift:super"
+   id="tspan4336">&lt;github.com/sysyfydev&gt;</tspan></tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:saxMono;-inkscape-font-specification:saxMono"
+         y="806.10205"
+         x="62.279263"
+         sodipodi:role="line"
+         id="tspan18849" /><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:#4d000e;fill-opacity:1"
+         y="834.22705"
+         x="62.279263"
+         sodipodi:role="line"
+         id="tspan4294">Acknowledgments:</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:saxMono;-inkscape-font-specification:saxMono"
+         y="862.35205"
+         x="62.279263"
+         sodipodi:role="line"
+         id="tspan4288">- Sound Effects: Kenney<tspan
+   style="font-size:64.99999762%;baseline-shift:super"
+   id="tspan4334">&lt;kenney.nl&gt;</tspan></tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:saxMono;-inkscape-font-specification:saxMono"
+         y="890.47705"
+         x="62.279263"
+         sodipodi:role="line"
+         id="tspan4290">- Dictionary:    SCOWL<tspan
+   style="font-size:64.99999762%;baseline-shift:super"
+   id="tspan4326">&lt;wordlist.aspell.net&gt;</tspan></tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:saxMono;-inkscape-font-specification:saxMono"
+         y="918.60205"
+         x="62.279263"
+         sodipodi:role="line"
+         id="tspan14689">- Shaders:       GLSL.io<tspan
+   style="font-size:64.99999762%;baseline-shift:super"
+   id="tspan14693">&lt;glsl.io&gt;</tspan></tspan></text>
+    <rect
+       y="-579.27325"
+       x="54.247433"
+       height="1.3502808"
+       width="465.81857"
+       id="rect18855"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.59000003;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="scale(1,-1)" />
+    <rect
+       style="fill:#37b2c8;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3063-4-3-1-8"
+       width="177.38678"
+       height="38.971336"
+       x="335.45477"
+       y="949.85767" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4267"
+       y="569.69965"
+       x="369.53815"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:none;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4271)"
+       xml:space="preserve"
+       transform="matrix(0.26876785,0,0,0.26876785,240.95656,829.21788)"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:144px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         y="569.69965"
+         x="369.53815"
+         id="tspan4269"
+         sodipodi:role="line">Back</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.7507143px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="579.27863"
+       y="489.74295"
+       id="text4050-6"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4052-7"
+         x="579.27863"
+         y="489.74295"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:38.70257187px;font-family:saxMono;-inkscape-font-specification:saxMono">Back</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text16092"
+       y="455.80185"
+       x="579.27863"
+       style="font-style:normal;font-weight:normal;font-size:10.7507143px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#e4e4e4;fill-opacity:1;stroke:none"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:38.70257187px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:#e4e4e4;fill-opacity:1"
+         y="455.80185"
+         x="579.27863"
+         id="tspan16094"
+         sodipodi:role="line">Back</tspan></text>
+  </g>
+</svg>

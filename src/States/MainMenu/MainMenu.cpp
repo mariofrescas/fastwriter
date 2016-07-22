@@ -73,7 +73,15 @@ MainMenu::MainMenu(StateManager& stateManager)
             },
             GraphicMenu::MenuOptionData
             {
-                [&] () { },
+                [&] ()
+                {
+                    getStateManager().setCurrentState
+                    (
+                        States::ID::About,
+                        Transitions::ID::Fade,
+                        sf::milliseconds(1000)
+                    );
+                },
                 sf::Vector2f(mx, my + (mc * 3)),
                 sf::IntRect(590.028, 413.489, 272, 74),
                 sf::IntRect(927.338, 413.489, 272, 74)
