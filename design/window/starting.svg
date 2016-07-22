@@ -14,7 +14,7 @@
    id="svg3767"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="Starting.svg"
+   sodipodi:docname="starting.svg"
    inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/design/window/Pause.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
@@ -224,9 +224,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35355339"
-     inkscape:cx="310.21959"
-     inkscape:cy="448.81265"
+     inkscape:zoom="0.5"
+     inkscape:cx="635.30031"
+     inkscape:cy="352.15241"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -533,7 +533,7 @@
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:52.77260208px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#aeaeae;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;font-size:52.77260208px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
        x="614.44196"
        y="749.9364"
        id="text8473"
@@ -542,7 +542,7 @@
          id="tspan8475"
          x="614.44196"
          y="749.9364"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:237.47669983px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:#aeaeae;fill-opacity:1">3</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:237.47669983px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:#ffffff;fill-opacity:1;">3</tspan></text>
     <path
        id="path8504"
        d="M 678.99989,546.88757 A 135.12292,122 0 0 1 802.56044,668.36218 135.12292,122 0 0 1 678.99989,789.8407 l 0,-8.00196 A 114,114 0 0 0 782.56044,668.36218 114,114 0 0 0 678.99989,554.9364 l 0,-8.04883 z"

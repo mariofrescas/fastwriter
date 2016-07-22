@@ -13,6 +13,8 @@ INCLUDEPATH += \
            States/Wellcome/ \
            States/Transitions/ \
            States/Transitions/Fade/ \
+           States/Game/Starting/ \
+           States/Game/Starting/Controls/CountDownControl/ \
            States/Game/Started/ \
            States/Game/Started/ConfManager/ \
            States/Game/Started/Confs/ \
@@ -50,7 +52,9 @@ HEADERS += \
     States/Transitions/Fade/Fade.h \
     Menu/GraphicMenu.h \
     States/DifficultyMenu/DifftyMenu.h \
-    States/About/About.h
+    States/About/About.h \
+    States/Game/Starting/Starting.h \
+    States/Game/Starting/Controls/CountDownControl/CountDownControl.h
 
 SOURCES += \
            Main.cpp \
@@ -76,4 +80,6 @@ SOURCES += \
     States/Transitions/Fade/Fade.cpp \
     Menu/GraphicMenu.cpp \
     States/DifficultyMenu/DifftyMenu.cpp \
-    States/About/About.cpp
+    States/About/About.cpp \
+    States/Game/Starting/Starting.cpp \
+    States/Game/Starting/Controls/CountDownControl/CountDownControl.cpp

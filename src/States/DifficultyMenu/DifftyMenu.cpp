@@ -48,7 +48,7 @@ DifftyMenu::DifftyMenu(StateManager& stateManager)
                 {
                     getStateManager().setCurrentState
                     (
-                        States::ID::Started,
+                        States::ID::Starting,
                         Transitions::ID::Fade,
                         sf::milliseconds(1000)
                     );

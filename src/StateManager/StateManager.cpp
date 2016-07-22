@@ -26,6 +26,7 @@
 #include "MainMenu.h"
 #include "About.h"
 #include "DifftyMenu.h"
+#include "Starting.h"
 #include "Started.h"
 
 StateManager::SharedContext::SharedContext(sf::RenderWindow& window,
@@ -48,6 +49,11 @@ StateManager::StateManager(const SharedContext& sharedContex)
     states[States::ID::About] = std::make_unique<About>(*this);
     states[States::ID::DifftyMenu] = std::make_unique<DifftyMenu>(*this);
     states[States::ID::Started] = std::make_unique<Started>(*this);
+    states[States::ID::Starting] = std::make_unique<Starting>
+    (
+        *this,
+        states[States::ID::Started].get()
+    );
 
     transitions[Transitions::ID::Fade] = std::make_unique<Fade>(*this);
 }

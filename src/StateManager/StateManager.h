@@ -40,6 +40,7 @@ namespace States
         MainMenu,   ///< Menu principal
         About,      ///< Acerca de...
         DifftyMenu, ///< Menu de seleccion de dificultad
+        Starting,   ///< Iniciando el juego
         Started     ///< Juego iniciado
     };
 }
