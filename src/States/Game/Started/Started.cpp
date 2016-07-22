@@ -226,6 +226,7 @@ void Started::draw()
 
 const sf::Texture* Started::getSnapShotTexture()
 {
+    snapShot.clear();
     snapShot.draw(background);
     snapShot.draw(gameCase);
 
@@ -245,6 +246,7 @@ const sf::Texture* Started::getSnapShotTexture()
     {
         snapShot.draw(cleaner);
     }
+    snapShot.display();
 
     return &snapShot.getTexture();
 }
