@@ -17,9 +17,41 @@
 
 #include "Transition.h"
 
-Transition::Transition(StateManager& stateManager)
-    : State(stateManager, nullptr)
+#include "StateManager.h"
+#include <SFML/Graphics/RenderWindow.hpp>
+
+Transition::Transition(StateManager& stateManager,
+                       sf::Shader& shader)
+    : State(stateManager, nullptr),
+      shader(shader),
+      progress(0)
 {
+    if (!sf::Shader::isAvailable())
+    {
+        throw std::runtime_error("Error: Shaders not available");
+    }
+}
+
+void Transition::handleInput(const sf::Event&)
+{
+}
+
+void Transition::update(const sf::Time& dt)
+{
+    progress += 1 * (dt.asSeconds() / effectDuration.asSeconds());
+    shader.setParameter("progress", progress);
+
+    if (progress >= 1)
+    {
+        progress = 0;
+        getStateManager().setCurrentState(nextState);
+    }
+}
+
+void Transition::draw()
+{
+    sf::RenderWindow& window = getStateManager().getSharedContext().window;
+    window.draw(handler, &shader);
 }
 
 const sf::Texture* Transition::getSnapShotTexture()

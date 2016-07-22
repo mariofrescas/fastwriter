@@ -20,10 +20,6 @@
 
 #include "Transition.h"
 
-#include <SFML/System/Time.hpp>
-#include <SFML/Graphics/Sprite.hpp>
-#include <SFML/Graphics/Shader.hpp>
-
 ////////////////////////////////////////////////////////////
 /// \brief Describe el efecto transitorio Fade para escenas
 ///
@@ -31,26 +27,11 @@
 class Fade : public Transition
 {
 public:
-    ////////////////////////////////////////////////////////////
-    /// \brief Crea un efecto transitorio Fade
-    ///
-    ////////////////////////////////////////////////////////////
-    Fade(StateManager& stateManager);
+    explicit Fade(StateManager& stateManager);
 
     virtual void configure(const sf::Time& duration,
                            const States::ID& next,
                            const sf::Texture& from,
                            const sf::Texture& to) override;
-
-    virtual void handleInput(const sf::Event& event) override;
-    virtual void update(const sf::Time& dt) override;
-    virtual void draw() override;
-
-private:
-    sf::Shader& fade;           ///< Shader del efecto
-    sf::Sprite  handler;        ///< Sprite envoltorio de shader a mostrar
-    float       progress;       ///< Progreso del efecto
-    sf::Time    effectDuration; ///< Duracion del efecto
-    States::ID  nextState;      ///< Esena siguiente al terminar el efecto
 };
 #endif // FADE_H

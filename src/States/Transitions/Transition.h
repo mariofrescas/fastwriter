@@ -20,6 +20,10 @@
 
 #include "State.h"
 
+#include <SFML/System/Time.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/Shader.hpp>
+
 namespace States
 {
     enum class ID;
@@ -38,7 +42,7 @@ public:
     /// \brief Crea un efecto transitorio abstracto
     ///
     ////////////////////////////////////////////////////////////
-    Transition(StateManager& stateManager);
+    Transition(StateManager& stateManager, sf::Shader& shader);
 
     ////////////////////////////////////////////////////////////
     /// \brief Configura el efecto transitorio
@@ -53,12 +57,17 @@ public:
                            const sf::Texture& from,
                            const sf::Texture& to) = 0;
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Obtiene la captura de la escena
-    /// \return Puntero a la captura de la escena (opcional: nullptr)
-    ///
-    ////////////////////////////////////////////////////////////
+    virtual void handleInput(const sf::Event& event) override;
+    virtual void update(const sf::Time& dt) override;
+    virtual void draw() override;
     virtual const sf::Texture* getSnapShotTexture() override;
+
+protected:
+    sf::Shader& shader;         ///< Shader del efecto
+    sf::Sprite  handler;        ///< Sprite envoltorio de shader a mostrar
+    float       progress;       ///< Progreso del efecto
+    sf::Time    effectDuration; ///< Duracion del efecto
+    States::ID  nextState;      ///< Esena siguiente al terminar el efecto
 };
 
 #endif // TRANSITION_H

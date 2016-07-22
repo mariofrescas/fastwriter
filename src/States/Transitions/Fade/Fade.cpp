@@ -19,23 +19,18 @@
 
 #include "StateManager.h"
 #include "ResourceManager.h"
-#include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Graphics/Texture.hpp>
 
 Fade::Fade(StateManager& stateManager)
-    : Transition(stateManager),
-      fade
+    : Transition
       (
-            getStateManager()
+           stateManager,
+           stateManager
            .getSharedContext()
            .resourceManager
            .getShader(Shaders::ID::Fade)
-      ),
-      progress(0)
+      )
 {
-    if (!sf::Shader::isAvailable())
-    {
-        throw std::runtime_error("Error: Shaders not available");
-    }
 }
 
 void Fade::configure(const sf::Time& duration,
@@ -45,33 +40,11 @@ void Fade::configure(const sf::Time& duration,
 {
     nextState = next;
     effectDuration = duration;
-    fade.setParameter("from", from);
-    fade.setParameter("to", to);
-    fade.setParameter("progress", progress);
-    fade.setParameter("resolution", sf::Vector2f(1366.f, 768.f));
-    fade.setParameter("color", sf::Vector3f(0.95f, 1.0f, 0.85f));
-    fade.setParameter("colorPhase", 0.5f);
+    shader.setParameter("from", from);
+    shader.setParameter("to", to);
+    shader.setParameter("progress", progress);
+    shader.setParameter("resolution", sf::Vector2f(from.getSize().x, from.getSize().y));
+    shader.setParameter("color", sf::Vector3f(0.95f, 1.0f, 0.85f));
+    shader.setParameter("colorPhase", 0.5f);
     handler.setTexture(from);
-}
-
-void Fade::handleInput(const sf::Event&)
-{
-}
-
-void Fade::update(const sf::Time& dt)
-{
-    progress += 1 * (dt.asSeconds() / effectDuration.asSeconds());
-    fade.setParameter("progress", progress);
-
-    if (progress >= 1)
-    {
-        progress = 0;
-        getStateManager().setCurrentState(nextState);
-    }
-}
-
-void Fade::draw()
-{
-    sf::RenderWindow& window = getStateManager().getSharedContext().window;
-    window.draw(handler, &fade);
 }
