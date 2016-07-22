@@ -33,17 +33,24 @@ Started::Started(StateManager& stateManager)
 
     background.setTexture(resMngr.getTexture(Textures::ID::Background));
 
+    constexpr float gcw = 1129.520;
+    constexpr float gch = 757.696;
+    float gcx = (windowSize.x / 2) - (gcw / 2);
+    float gcy = (windowSize.y / 2) - (gch / 2);
+
     gameCase.setTexture(resMngr.getTexture(Textures::ID::Game));
-    gameCase.setTextureRect(sf::IntRect(0, 41, 1366, 768));
+    gameCase.setTextureRect(sf::IntRect(0, 0, gcw, gch));
+    gameCase.setPosition(gcx, gcy);
+
 
     wordsCover.setTexture(resMngr.getTexture(Textures::ID::Game));
-    wordsCover.setTextureRect(sf::IntRect(0, 0, 1025, 41));
-    wordsCover.setPosition(170, 170);
+    wordsCover.setTextureRect(sf::IntRect(129.670, 172, 876.108, 43));
+    wordsCover.setPosition(gcx + 129.670, gcy + 172);
 
     points = std::make_unique<PointsControl>
     (
-        110,
-        sf::Vector2f(75, 5),
+        90,
+        sf::Vector2f(gcx + 84, gcy + 35),
         resMngr.getFont(Fonts::ID::Default)
     );
 
@@ -51,13 +58,13 @@ Started::Started(StateManager& stateManager)
     (
         gConf.getWantPoints(),
         sf::Color(27, 156, 63),
-        sf::FloatRect(63, 129, 322, 10)
+        sf::FloatRect(gcx + 81, gcy + 135, 252, 12)
     );
 
     time = std::make_unique<TimeControl>
     (
-        110,
-        sf::Vector2f(440, 5),
+        90,
+        sf::Vector2f(gcx + 370, gcy + 35),
         resMngr.getFont(Fonts::ID::Default)
     );
 
@@ -66,14 +73,14 @@ Started::Started(StateManager& stateManager)
         sf::milliseconds(gConf.getShiftModeDuration()),
         sf::milliseconds(gConf.getShiftModeNecessaryTime()),
         sf::Color(140, 26, 50),
-        sf::FloatRect(429, 129, 508, 10)
+        sf::FloatRect(gcx + 369, gcy + 135 , 396, 12)
     );
 
     lifes = std::make_unique<LifesControl>
     (
         gConf.getInitLifes(),
-        110,
-        sf::Vector2f(990, 5),
+        90,
+        sf::Vector2f(gcx + 803, gcy + 35),
         resMngr.getFont(Fonts::ID::Default)
     );
 
@@ -82,15 +89,15 @@ Started::Started(StateManager& stateManager)
         gConf.getDefaultCleaners(),
         gConf.getMaxCleaners(),
         sf::milliseconds(gConf.getAddInterval()),
-        sf::Vector2f(980, 110),
+        sf::Vector2f(gcx + 800, gcy + 124),
         resMngr.getTexture(Textures::ID::Game),
-        sf::IntRect(1025, 0, 28, 28)
+        sf::IntRect(1129.520, 0, 23, 23)
     );
 
     words = std::make_unique<WordControl>
     (
         "res/dictionaries/en.dic",
-        sf::FloatRect(175, 170, 1025, 540),
+        sf::FloatRect(gcx + 129.670, gcy + 172, 1100, 520),
         resMngr.getTexture(Textures::ID::Letters)
     );
 
