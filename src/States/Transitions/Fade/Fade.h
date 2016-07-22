@@ -20,9 +20,9 @@
 
 #include "Transition.h"
 
+#include <SFML/System/Time.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Shader.hpp>
-#include <SFML/System/Time.hpp>
 
 class Fade : public Transition
 {

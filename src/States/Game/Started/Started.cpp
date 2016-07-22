@@ -17,10 +17,10 @@
 
 #include "Started.h"
 
-#include <SFML/Window/Event.hpp>
-#include <SFML/Graphics/RenderWindow.hpp>
 #include "StateManager.h"
 #include "ResourceManager.h"
+#include <SFML/Window/Event.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
 
 Started::Started(StateManager& stateManager)
     : State(stateManager),

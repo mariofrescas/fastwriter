@@ -18,8 +18,8 @@
 #ifndef WANTPOINTSCONTROL_H
 #define WANTPOINTSCONTROL_H
 
-#include <SFML/Graphics/RectangleShape.hpp>
 #include <memory>
+#include <SFML/Graphics/RectangleShape.hpp>
 
 ////////////////////////////////////////////////////////////
 /// \brief Describe el control logico-grafico de puntos deseados

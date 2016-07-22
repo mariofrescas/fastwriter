@@ -17,10 +17,10 @@
 
 #include "Wellcome.h"
 
-#include <SFML/Graphics/RenderWindow.hpp>
-#include <SFML/Window/Event.hpp>
 #include "StateManager.h"
 #include "ResourceManager.h"
+#include <SFML/Window/Event.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
 
 Wellcome::Wellcome(StateManager& stateManager)
     : State(stateManager)

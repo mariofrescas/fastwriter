@@ -17,8 +17,8 @@
 
 #include "Fade.h"
 
-#include <SFML/Graphics/RenderWindow.hpp>
 #include "StateManager.h"
+#include <SFML/Graphics/RenderWindow.hpp>
 
 Fade::Fade(StateManager& stateManager)
     : Transition(stateManager),

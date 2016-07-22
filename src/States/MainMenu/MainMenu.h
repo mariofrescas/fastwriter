@@ -20,7 +20,7 @@
 
 #include "State.h"
 
-#include <map>
+#include "GraphicMenu.h"
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/RenderTexture.hpp>
 

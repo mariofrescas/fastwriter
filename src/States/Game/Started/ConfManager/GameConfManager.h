@@ -18,8 +18,8 @@
 #ifndef GAMECONFMANAGER_H
 #define GAMECONFMANAGER_H
 
-#include "GameConf.h"
 #include <map>
+#include "GameConf.h"
 
 namespace Configs
 {

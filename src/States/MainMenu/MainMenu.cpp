@@ -21,10 +21,10 @@
 // #define NDEBUG
 #include <cassert>
 
-#include <SFML/Graphics/RenderWindow.hpp>
-#include <SFML/Window/Event.hpp>
 #include "StateManager.h"
 #include "ResourceManager.h"
+#include <SFML/Window/Event.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
 
 MainMenu::MainMenu(StateManager& stateManager)
     : State(stateManager)

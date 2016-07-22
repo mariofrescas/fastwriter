@@ -18,10 +18,10 @@
 #ifndef CLEANERSCONTROL_H
 #define CLEANERSCONTROL_H
 
+#include <list>
+#include <memory>
 #include <SFML/System/Time.hpp>
 #include <SFML/Graphics/Sprite.hpp>
-#include <memory>
-#include <list>
 
 ////////////////////////////////////////////////////////////
 /// \brief Describe el control logico-grafico de limpiadores

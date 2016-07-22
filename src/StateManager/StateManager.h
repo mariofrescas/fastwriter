@@ -18,9 +18,9 @@
 #ifndef STATEMANAGER_H
 #define STATEMANAGER_H
 
+#include <map>
 #include "State.h"
 #include "Transition.h"
-#include <map>
 
 class ResourceManager;
 namespace sf

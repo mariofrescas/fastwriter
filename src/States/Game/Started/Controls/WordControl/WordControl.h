@@ -18,13 +18,13 @@
 #ifndef WORDCONTROL_H
 #define WORDCONTROL_H
 
-#include <SFML/System/Time.hpp>
-#include <SFML/Graphics/Sprite.hpp>
-#include "WordMap.h"
-#include "Dictionary.h"
 #include <list>
 #include <string>
 #include <memory>
+#include "WordMap.h"
+#include "Dictionary.h"
+#include <SFML/System/Time.hpp>
+#include <SFML/Graphics/Sprite.hpp>
 
 ////////////////////////////////////////////////////////////
 /// \brief Describe el control logico-grafico de las palabras

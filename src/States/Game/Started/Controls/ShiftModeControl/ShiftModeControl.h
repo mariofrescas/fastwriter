@@ -18,9 +18,9 @@
 #ifndef SHIFTMODECONTROL_H
 #define SHIFTMODECONTROL_H
 
+#include <memory>
 #include <SFML/System/Time.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
-#include <memory>
 
 ////////////////////////////////////////////////////////////
 /// \brief Describe el control logico-grafico del modo Shift

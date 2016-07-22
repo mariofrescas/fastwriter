@@ -20,7 +20,6 @@
 
 #include "State.h"
 
-#include <SFML/Graphics/RenderTexture.hpp>
 #include "PointsControl.h"
 #include "WantPointsControl.h"
 #include "TimeControl.h"
@@ -29,6 +28,7 @@
 #include "CleanersControl.h"
 #include "WordControl.h"
 #include "GameConfManager.h"
+#include <SFML/Graphics/RenderTexture.hpp>
 
 class Started : public State
 {

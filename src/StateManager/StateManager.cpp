@@ -21,10 +21,10 @@
 // #define NDEBUG
 #include <cassert>
 
-#include "MainMenu.h"
-#include "Wellcome.h"
-#include "Started.h"
 #include "Fade.h"
+#include "Wellcome.h"
+#include "MainMenu.h"
+#include "Started.h"
 
 StateManager::SharedContext::SharedContext(sf::RenderWindow& window,
                                            ResourceManager& resManager)
