@@ -54,7 +54,7 @@ void Starting::update(const sf::Time& dt)
         getStateManager().setCurrentState
         (
             States::ID::Started,
-            Transitions::ID::Circle,
+            Transitions::ID::CircleOpen,
             sf::milliseconds(1000)
         );
     }
