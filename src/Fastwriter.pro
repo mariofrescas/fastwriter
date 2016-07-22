@@ -4,6 +4,7 @@ CONFIG += console c++1y
 LIBS += -lsfml-graphics -lsfml-window -lsfml-system
 
 INCLUDEPATH += \
+           Menu/ \
            ResourceManager/ \
            StateManager/ \
            States/MainMenu/ \
@@ -44,7 +45,8 @@ HEADERS += \
     States/Game/Started/Controls/WantPointsControl/WantPointsControl.h \
     States/Game/Started/Controls/CleanersControl/CleanersControl.h \
     States/Transitions/Transition.h \
-    States/Transitions/Fade/Fade.h
+    States/Transitions/Fade/Fade.h \
+    Menu/GraphicMenu.h
 
 SOURCES += \
            Main.cpp \
@@ -67,4 +69,5 @@ SOURCES += \
     States/Game/Started/Controls/WantPointsControl/WantPointsControl.cpp \
     States/Game/Started/Controls/CleanersControl/CleanersControl.cpp \
     States/Transitions/Transition.cpp \
-    States/Transitions/Fade/Fade.cpp
+    States/Transitions/Fade/Fade.cpp \
+    Menu/GraphicMenu.cpp
