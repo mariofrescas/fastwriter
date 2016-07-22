@@ -66,7 +66,8 @@ namespace Shaders
     ////////////////////////////////////////////////////////////
     enum class ID
     {
-        Fade ///< Ide del shader para transiciones Fade
+        Fade,  ///< Id del shader para transiciones Fade
+        Circle ///< Id del shader para transiciones Circle
     };
 }
 

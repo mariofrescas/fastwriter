@@ -25,6 +25,7 @@ ResourceManager::ResourceManager()
 {
     fontHolder.load(Fonts::ID::Default, "res/fonts/saxmono.ttf");
     shaderHolder.load(Shaders::ID::Fade, "res/shaders/fade.frag", sf::Shader::Fragment);
+    shaderHolder.load(Shaders::ID::Circle, "res/shaders/circle.frag", sf::Shader::Fragment);
 
     textureHolder.load(Textures::ID::Background, "res/textures/background.png");
     textureHolder.load(Textures::ID::MainMenu, "res/textures/main-menu.png");

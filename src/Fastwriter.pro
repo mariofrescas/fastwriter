@@ -13,6 +13,7 @@ INCLUDEPATH += \
            States/Wellcome/ \
            States/Transitions/ \
            States/Transitions/Fade/ \
+           States/Transitions/CircleOpen/ \
            States/Game/Starting/ \
            States/Game/Starting/Controls/CountDownControl/ \
            States/Game/Started/ \
@@ -54,7 +55,8 @@ HEADERS += \
     States/DifficultyMenu/DifftyMenu.h \
     States/About/About.h \
     States/Game/Starting/Starting.h \
-    States/Game/Starting/Controls/CountDownControl/CountDownControl.h
+    States/Game/Starting/Controls/CountDownControl/CountDownControl.h \
+    States/Transitions/CircleOpen/CircleOpen.h
 
 SOURCES += \
            Main.cpp \
@@ -82,4 +84,5 @@ SOURCES += \
     States/DifficultyMenu/DifftyMenu.cpp \
     States/About/About.cpp \
     States/Game/Starting/Starting.cpp \
-    States/Game/Starting/Controls/CountDownControl/CountDownControl.cpp
+    States/Game/Starting/Controls/CountDownControl/CountDownControl.cpp \
+    States/Transitions/CircleOpen/CircleOpen.cpp
