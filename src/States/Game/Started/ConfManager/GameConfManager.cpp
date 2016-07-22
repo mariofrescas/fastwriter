@@ -26,9 +26,9 @@ GameConfManager::GameConfManager(const Configs::ID& defaultConf)
     currentConf = confs[defaultConf].get();
 }
 
-void GameConfManager::setCurrentConf(const Configs::ID& confType)
+void GameConfManager::setCurrentConf(const Configs::ID& config)
 {
-    currentConf = confs[confType].get();
+    currentConf = confs[config].get();
 }
 
 GameConf& GameConfManager::getCurrentConf() const

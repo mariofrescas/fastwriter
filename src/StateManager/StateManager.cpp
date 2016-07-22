@@ -57,7 +57,7 @@ StateManager::StateManager(const SharedContext& sharedContex)
     );
 
     transitions[Transitions::ID::Fade] = std::make_unique<Fade>(*this);
-    transitions[Transitions::ID::Circle] = std::make_unique<CircleOpen>(*this);
+    transitions[Transitions::ID::CircleOpen] = std::make_unique<CircleOpen>(*this);
 }
 
 void StateManager::setCurrentState(const States::ID& state)

@@ -32,25 +32,25 @@ public:
     using Ptr = std::unique_ptr<GraphicMenu>; ///< Puntero unico
 
     ////////////////////////////////////////////////////////////
-    /// \brief Informacion acerca de cada uno de las opciones del menu
+    /// \brief Informacion acerca de cada una de las opciones del menu
     ///
     ////////////////////////////////////////////////////////////
     struct MenuOptionData
     {
-        std::function<void()> action; ///< Acciona cuando se de click
+        std::function<void()> action; ///< Accion cuando se de click
         sf::Vector2f pos;             ///< Posicion
         sf::IntRect normal;           ///< Rect en textura en estado normal
         sf::IntRect hover;            ///< Rect en textura en estado "hover"
     };
 
     ////////////////////////////////////////////////////////////
-    /// \brief Describe una opcion de menu logica-grafica
+    /// \brief Describe una opcion logica-grafica de menu
     ///
     ////////////////////////////////////////////////////////////
     struct MenuOption
     {
-        MenuOptionData data; ///< Informacion
-        sf::Sprite graph;    ///< Rep. grafica
+        MenuOptionData data;  ///< Informacion
+        sf::Sprite     graph; ///< Rep. grafica
     };
 
     ////////////////////////////////////////////////////////////
@@ -59,18 +59,18 @@ public:
     ////////////////////////////////////////////////////////////
     struct MenuContainerData
     {
-        sf::Vector2f pos; ///< Posicion
-        sf::IntRect rect; ///< Rect en la textura
+        sf::Vector2f pos;  ///< Posicion
+        sf::IntRect  rect; ///< Rect en la textura
     };
 
     ////////////////////////////////////////////////////////////
-    /// \brief Describe el contenedor del menu logico-grafico
+    /// \brief Describe el contenedor logico-grafico del menu
     ///
     ////////////////////////////////////////////////////////////
     struct MenuContainer
     {
-        MenuContainerData data; ///< Informacion
-        sf::Sprite graph;       ///< Rep. grafica
+        MenuContainerData data;  ///< Informacion
+        sf::Sprite        graph; ///< Rep. grafica
     };
 
     ////////////////////////////////////////////////////////////
@@ -79,8 +79,8 @@ public:
     ////////////////////////////////////////////////////////////
     struct Menu
     {
-        std::list<MenuOption> options; ///< Opciones logica-grafica
-        MenuContainer container;       ///< Contenedor logico-grafico
+        std::list<MenuOption> options;   ///< Opciones logico-grafico
+        MenuContainer         container; ///< Contenedor logico-grafico
     };
 
     ////////////////////////////////////////////////////////////
@@ -97,7 +97,7 @@ public:
 
     ////////////////////////////////////////////////////////////
     /// \brief Cambia de color el texto si el cursor se encuentra
-    ///        en alguna opcion del menu
+    ///        sobre alguna opcion del menu
     /// \param point Posicion del cursor
     ///
     ////////////////////////////////////////////////////////////

@@ -45,7 +45,7 @@ public:
 
     ////////////////////////////////////////////////////////////
     /// \brief Crea un administrador de dificultades
-    /// \param defaultType Dificultad por defecto
+    /// \param defaultConf Dificultad por defecto
     ///
     ////////////////////////////////////////////////////////////
     explicit GameConfManager(const Configs::ID& defaultConf = Configs::ID::Normal);
@@ -55,7 +55,7 @@ public:
     /// \param confType Nueva dificultad
     ///
     ////////////////////////////////////////////////////////////
-    void setCurrentConf(const Configs::ID& confType);
+    void setCurrentConf(const Configs::ID& config);
 
     ////////////////////////////////////////////////////////////
     /// \brief Obtiene la dificultad actual

@@ -97,7 +97,7 @@ protected:
     State& getParentState() const;
 
 private:
-    StateManager& stateManager; ///< Administrador
+    StateManager& stateManager;  ///< Administrador
     State*        parentState;   ///< Escena padre
 };
 
