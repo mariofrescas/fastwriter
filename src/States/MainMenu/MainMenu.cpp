@@ -17,10 +17,6 @@
 
 #include "MainMenu.h"
 
-// WARNING: Uncomment to disable assertions
-// #define NDEBUG
-#include <cassert>
-
 #include "StateManager.h"
 #include "ResourceManager.h"
 #include <SFML/Window/Event.hpp>
