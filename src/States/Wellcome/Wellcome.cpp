@@ -33,7 +33,7 @@ Wellcome::Wellcome(StateManager& stateManager)
     wellcome.setTexture(resMngr.getTexture(Textures::ID::Wellcome));
     wellcome.setPosition(0, (windowSize.y / 2) - (wellcome.getTextureRect().height / 2));
 
-    if (!snapShot.create(1366, 768))
+    if (!snapShot.create(windowSize.x, windowSize.y))
     {
         throw std::runtime_error("Can not create Wellcome Render Texture");
     }

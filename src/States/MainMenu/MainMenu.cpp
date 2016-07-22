@@ -98,7 +98,7 @@ MainMenu::MainMenu(StateManager& stateManager)
         resMngr.getTexture(Textures::ID::MainMenu)
     );
 
-    if (!snapShot.create(1366, 768))
+    if (!snapShot.create(windowSize.x, windowSize.y))
     {
         throw std::runtime_error("Can not create MainMenu Render Texture");
     }

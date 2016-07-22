@@ -29,6 +29,7 @@ Started::Started(StateManager& stateManager)
 {
     const ResourceManager& resMngr = getStateManager().getSharedContext().resourceManager;
     const GameConf& gConf = confMngr.getCurrentConf();
+    const sf::Vector2u& windowSize = getStateManager().getSharedContext().window.getSize();
 
     background.setTexture(resMngr.getTexture(Textures::ID::Background));
 
@@ -93,7 +94,7 @@ Started::Started(StateManager& stateManager)
         resMngr.getTexture(Textures::ID::Letters)
     );
 
-    if (!snapShot.create(1366, 768))
+    if (!snapShot.create(windowSize.x, windowSize.y))
     {
         throw std::runtime_error("Can not create Wellcome Render Texture");
     }
