@@ -22,8 +22,9 @@
 
 namespace sf
 {
-    class Texture;
     class Font;
+    class Shader;
+    class Texture;
 }
 
 namespace Textures
@@ -57,6 +58,18 @@ namespace Fonts
     };
 }
 
+namespace Shaders
+{
+    ////////////////////////////////////////////////////////////
+    /// \brief Identificardores de shaders
+    ///
+    ////////////////////////////////////////////////////////////
+    enum class ID
+    {
+        Fade ///< Ide del shader para transiciones Fade
+    };
+}
+
 ////////////////////////////////////////////////////////////
 /// \brief Contenedor de los recursos necesarios por la aplicacion
 ///
@@ -86,9 +99,18 @@ public:
     ////////////////////////////////////////////////////////////
     sf::Font& getFont(const Fonts::ID& fontId) const;
 
+    ////////////////////////////////////////////////////////////
+    /// \brief Obtiene una referencia al shader que concuerde con el id
+    /// \param shaderId Identificador del shader
+    /// \return Referencia al shader
+    ///
+    ////////////////////////////////////////////////////////////
+    sf::Shader& getShader(const Shaders::ID shaderId) const;
+
 private:
     ResourceHolder<Textures::ID, sf::Texture> textureHolder; ///< Contenedor de texturas
     ResourceHolder<Fonts::ID, sf::Font>       fontHolder;    ///< Contenedor de fuentes
+    ResourceHolder<Shaders::ID, sf::Shader>   shaderHolder;  ///< Contenedor de shaders
 };
 
 #endif // RESOURCEMANAGER_H

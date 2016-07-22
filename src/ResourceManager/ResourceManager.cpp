@@ -17,9 +17,14 @@
 
 #include "ResourceManager.h"
 
+#include <SFML/Graphics/Font.hpp>
+#include <SFML/Graphics/Shader.hpp>
+#include <SFML/Graphics/Texture.hpp>
+
 ResourceManager::ResourceManager()
 {
     fontHolder.load(Fonts::ID::Default, "res/fonts/saxmono.ttf");
+    shaderHolder.load(Shaders::ID::Fade, "res/shaders/fade.frag", sf::Shader::Fragment);
 
     textureHolder.load(Textures::ID::Background, "res/textures/background.png");
     textureHolder.load(Textures::ID::MainMenu, "res/textures/main-menu.png");
@@ -39,4 +44,9 @@ sf::Texture& ResourceManager::getTexture(const Textures::ID& textureId) const
 sf::Font& ResourceManager::getFont(const Fonts::ID& fontId) const
 {
     return fontHolder.get(fontId);
+}
+
+sf::Shader& ResourceManager::getShader(const Shaders::ID shaderId) const
+{
+    return shaderHolder.get(shaderId);
 }

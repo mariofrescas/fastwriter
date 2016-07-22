@@ -18,21 +18,23 @@
 #include "Fade.h"
 
 #include "StateManager.h"
+#include "ResourceManager.h"
 #include <SFML/Graphics/RenderWindow.hpp>
 
 Fade::Fade(StateManager& stateManager)
     : Transition(stateManager),
+      fade
+      (
+            getStateManager()
+           .getSharedContext()
+           .resourceManager
+           .getShader(Shaders::ID::Fade)
+      ),
       progress(0)
 {
     if (!sf::Shader::isAvailable())
     {
         throw std::runtime_error("Error: Shaders not available");
-    }
-
-    std::string filename("res/shaders/fade.frag");
-    if (!fade.loadFromFile(filename, sf::Shader::Fragment))
-    {
-        throw std::runtime_error("Failed to load: " + filename);
     }
 }
 

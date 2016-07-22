@@ -47,10 +47,10 @@ public:
     virtual void draw() override;
 
 private:
-    sf::Shader fade;           ///< Shader del efecto
-    sf::Sprite handler;        ///< Sprite capa a mostrar
-    float      progress;       ///< Progreso del efecto
-    sf::Time   effectDuration; ///< Duracion del efecto
-    States::ID nextState;      ///< Esena siguiente al terminar el efecto
+    sf::Shader& fade;           ///< Shader del efecto
+    sf::Sprite  handler;        ///< Sprite envoltorio de shader a mostrar
+    float       progress;       ///< Progreso del efecto
+    sf::Time    effectDuration; ///< Duracion del efecto
+    States::ID  nextState;      ///< Esena siguiente al terminar el efecto
 };
 #endif // FADE_H

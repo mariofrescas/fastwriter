@@ -21,9 +21,6 @@
 // #define NDEBUG
 #include <cassert>
 
-#include <SFML/Graphics/Font.hpp>
-#include <SFML/Graphics/Texture.hpp>
-
 template<typename Identifier, typename Resource>
 void ResourceHolder<Identifier, Resource>::load(Identifier id, const std::string& filename)
 {
