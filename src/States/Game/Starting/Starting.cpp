@@ -31,6 +31,7 @@ Starting::Starting(StateManager& stateManager, State* parent)
     countDown = std::make_unique<CountDownControl>
     (
         sf::seconds(3),
+        sf::Color(162, 162, 162, 255),
         210,
         sf::Vector2f((windowSize.x / 2) - 65, (windowSize.y / 2) - 140),
         resMngr.getFont(Fonts::ID::Default)

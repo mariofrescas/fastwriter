@@ -33,12 +33,14 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Crea un control de cuenta regresiva
     /// \param start Duracion de la cuenta
+    /// \param color Color del texto
     /// \param charSize Tamaño del texto grafico
     /// \param position Posicion del texto grafico
     /// \param font Fuente del texto grafico
     ///
     ////////////////////////////////////////////////////////////
     CountDownControl(const sf::Time& start,
+                     const sf::Color& color,
                      unsigned charSize,
                      const sf::Vector2f& position,
                      const sf::Font& font);

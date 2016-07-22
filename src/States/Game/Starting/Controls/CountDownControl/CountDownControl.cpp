@@ -18,6 +18,7 @@
 #include "CountDownControl.h"
 
 CountDownControl::CountDownControl(const sf::Time& start,
+                                   const sf::Color& color,
                                    unsigned charSize,
                                    const sf::Vector2f& position,
                                    const sf::Font& font)
@@ -26,6 +27,7 @@ CountDownControl::CountDownControl(const sf::Time& start,
       graph(std::to_string(static_cast<int>(elapsed.asSeconds())), font, charSize)
 {
     graph.setPosition(position);
+    graph.setColor(color);
 }
 
 bool CountDownControl::finished(const sf::Time& dt)
