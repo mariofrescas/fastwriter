@@ -24,9 +24,17 @@
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Shader.hpp>
 
+////////////////////////////////////////////////////////////
+/// \brief Describe el efecto transitorio Fade para escenas
+///
+////////////////////////////////////////////////////////////
 class Fade : public Transition
 {
 public:
+    ////////////////////////////////////////////////////////////
+    /// \brief Crea un efecto transitorio Fade
+    ///
+    ////////////////////////////////////////////////////////////
     Fade(StateManager& stateManager);
 
     virtual void configure(const sf::Time& duration,
@@ -39,10 +47,10 @@ public:
     virtual void draw() override;
 
 private:
-    sf::Shader fade;
-    sf::Sprite handler;
-    float progress;
-    sf::Time effectDuration;
-    States::ID nextState;
+    sf::Shader fade;           ///< Shader del efecto
+    sf::Sprite handler;        ///< Sprite capa a mostrar
+    float      progress;       ///< Progreso del efecto
+    sf::Time   effectDuration; ///< Duracion del efecto
+    States::ID nextState;      ///< Esena siguiente al terminar el efecto
 };
 #endif // FADE_H

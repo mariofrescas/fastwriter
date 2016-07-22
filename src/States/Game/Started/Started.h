@@ -30,6 +30,10 @@
 #include "GameConfManager.h"
 #include <SFML/Graphics/RenderTexture.hpp>
 
+////////////////////////////////////////////////////////////
+/// \brief Describe la escena de juego iniciado
+///
+////////////////////////////////////////////////////////////
 class Started : public State
 {
 public:
@@ -41,20 +45,20 @@ public:
     virtual const sf::Texture* getSnapShotTexture() override;
 
 private:
-    sf::Sprite background;
-    sf::Sprite gameCase;
-    sf::Sprite wordsCover;
-    PointsControl::Ptr points;
-    WantPointsControl::Ptr wantPoints;
-    TimeControl::Ptr time;
-    ShiftModeControl::Ptr shiftMode;
-    LifesControl::Ptr lifes;
-    CleanersControl::Ptr cleaners;
-    WordControl::Ptr words;
-    GameConfManager confMngr;
-    sf::RenderTexture snapShot;
-    int trapCount;
-    int takeCount;
+    sf::Sprite             background; ///< Fondo
+    sf::Sprite             gameCase;   ///< Tablero de juego
+    sf::Sprite             wordsCover; ///< Ocultar la aparicion de las letras
+    PointsControl::Ptr     points;     ///< Control de puntos
+    WantPointsControl::Ptr wantPoints; ///< Control de puntos deseados
+    TimeControl::Ptr       time;       ///< Control de tiempo transcurrido
+    ShiftModeControl::Ptr  shiftMode;  ///< Control de modo de juego Shift
+    LifesControl::Ptr      lifes;      ///< Control de vidas
+    CleanersControl::Ptr   cleaners;   ///< Control de limpiadores
+    WordControl::Ptr       words;      ///< Control de palabras
+    GameConfManager        confMngr;   ///< Configuracion de dificultad
+    sf::RenderTexture      snapShot;   ///< Caputra de la escena
+    int                    trapCount;  ///< Acomulacion de vidas perdidas
+    int                    takeCount;  ///< Acomulacion de puntos ganados
 
     void handleInputLetter(char letter);
     void handleShiftModeActivation();

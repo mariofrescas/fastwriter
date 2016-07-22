@@ -25,18 +25,39 @@ namespace States
     enum class ID;
 }
 
+////////////////////////////////////////////////////////////
+/// \brief Describe la interfaz para los efectos transitorios de escenas
+///
+////////////////////////////////////////////////////////////
 class Transition : public State
 {
 public:
-    using Ptr = std::unique_ptr<Transition>;
+    using Ptr = std::unique_ptr<Transition>; ///< Puntero unico
 
+    ////////////////////////////////////////////////////////////
+    /// \brief Crea un efecto transitorio abstracto
+    ///
+    ////////////////////////////////////////////////////////////
     Transition(StateManager& stateManager);
 
+    ////////////////////////////////////////////////////////////
+    /// \brief Configura el efecto transitorio
+    /// \param duration Duracion de la transicion
+    /// \param next Cuando termine el efecto cambia la escena a "next"
+    /// \param from Textura a ocultar
+    /// \param to Textura a mostar
+    ///
+    ////////////////////////////////////////////////////////////
     virtual void configure(const sf::Time& duration,
                            const States::ID& next,
                            const sf::Texture& from,
                            const sf::Texture& to) = 0;
 
+    ////////////////////////////////////////////////////////////
+    /// \brief Obtiene la captura de la escena
+    /// \return Puntero a la captura de la escena (opcional: nullptr)
+    ///
+    ////////////////////////////////////////////////////////////
     virtual const sf::Texture* getSnapShotTexture() override;
 };
 

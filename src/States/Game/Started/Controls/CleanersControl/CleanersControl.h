@@ -77,7 +77,7 @@ public:
     void clean();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Obtiene la representacion grafica
+    /// \brief Comprueba si el control puede activar un limpiador
     /// \return True = Es posible activar un limpiador
     ///
     ////////////////////////////////////////////////////////////
