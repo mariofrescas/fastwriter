@@ -23,6 +23,7 @@ ResourceManager::ResourceManager()
 
     textureHolder.load(Textures::ID::Background, "res/textures/background.png");
     textureHolder.load(Textures::ID::MainMenu, "res/textures/main-menu.png");
+    textureHolder.load(Textures::ID::DifftyMenu, "res/textures/difficulty-menu.png");
     textureHolder.load(Textures::ID::Wellcome, "res/textures/wellcome.png");
     textureHolder.load(Textures::ID::Game, "res/textures/game.png");
     textureHolder.load(Textures::ID::Letters, "res/textures/letters.png");

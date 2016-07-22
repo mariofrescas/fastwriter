@@ -36,9 +36,10 @@ namespace States
     ////////////////////////////////////////////////////////////
     enum class ID
     {
-        Wellcome, ///< Bienvenida
-        MainMenu, ///< Menu principal
-        Started   ///< Juego iniciado
+        Wellcome,   ///< Bienvenida
+        MainMenu,   ///< Menu principal
+        DifftyMenu, ///< Menu de seleccion de dificultad
+        Started     ///< Juego iniciado
     };
 }
 

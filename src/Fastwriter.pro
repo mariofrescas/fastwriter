@@ -8,6 +8,7 @@ INCLUDEPATH += \
            ResourceManager/ \
            StateManager/ \
            States/MainMenu/ \
+            States/DifficultyMenu/ \
            States/Wellcome/ \
            States/Transitions/ \
            States/Transitions/Fade/ \
@@ -46,7 +47,8 @@ HEADERS += \
     States/Game/Started/Controls/CleanersControl/CleanersControl.h \
     States/Transitions/Transition.h \
     States/Transitions/Fade/Fade.h \
-    Menu/GraphicMenu.h
+    Menu/GraphicMenu.h \
+    States/DifficultyMenu/DifftyMenu.h
 
 SOURCES += \
            Main.cpp \
@@ -70,4 +72,5 @@ SOURCES += \
     States/Game/Started/Controls/CleanersControl/CleanersControl.cpp \
     States/Transitions/Transition.cpp \
     States/Transitions/Fade/Fade.cpp \
-    Menu/GraphicMenu.cpp
+    Menu/GraphicMenu.cpp \
+    States/DifficultyMenu/DifftyMenu.cpp
