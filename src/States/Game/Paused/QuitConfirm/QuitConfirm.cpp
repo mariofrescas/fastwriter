@@ -15,36 +15,36 @@
 ** along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *************************************************************************/
 
-#include "Paused.h"
+#include "QuitConfirm.h"
 
 #include "StateManager.h"
 #include "ResourceManager.h"
 #include <SFML/Window/Event.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 
-Paused::Paused(StateManager& stateManager, State* parent)
+QuitConfirm::QuitConfirm(StateManager& stateManager, State* parent)
     : State(stateManager, parent)
 {
     ResourceManager& resMngr = getStateManager().getSharedContext().resourceManager;
     const sf::Vector2u& windowSize = getStateManager().getSharedContext().window.getSize();
 
-    background.setTexture(resMngr.getTexture(Textures::ID::Paused));
-    background.setTextureRect(sf::IntRect(1398, 0, 31, 32));
+    background.setTexture(resMngr.getTexture(Textures::ID::QuitConfirm));
+    background.setTextureRect(sf::IntRect(0, 395, 32, 32));
     background.setScale
     (   windowSize.x / background.getLocalBounds().width,
         windowSize.y / background.getLocalBounds().width
     );
 
-    constexpr float cw = 556.062;
-    constexpr float ch = 394.947;
+    constexpr float cw = 1069.727;
+    constexpr float ch = 191.313;
     float cx = (windowSize.x / 2) - (cw / 2);
     float cy = (windowSize.y / 2) - (ch / 2);
 
-    constexpr float mc = 110;
-    float mx = cx + 52;
-    float my = cy + 47;
+    constexpr float mc = 500;
+    float mx = cx + 55;
+    float my = cy + 55;
 
-    pausedMenu = std::make_unique<GraphicMenu>
+    quitConfirmMenu = std::make_unique<GraphicMenu>
     (
         std::list<GraphicMenu::MenuOptionData>
         {
@@ -54,21 +54,14 @@ Paused::Paused(StateManager& stateManager, State* parent)
                 {
                     getStateManager().setCurrentState
                     (
-                        States::ID::Starting,
+                        States::ID::Paused,
                         Transitions::ID::CircleOpen,
                         sf::milliseconds(1000)
                     );
                 },
                 sf::Vector2f(mx, my),
-                sf::IntRect(582, 31, 401, 73),
-                sf::IntRect(994, 31, 401, 73)
-            },
-            GraphicMenu::MenuOptionData
-            {
-                [&] () { },
-                sf::Vector2f(mx, my + (mc * 1)),
-                sf::IntRect(582, 135, 402, 79),
-                sf::IntRect(994, 135, 402, 79)
+                sf::IntRect(56, 208, 339, 79),
+                sf::IntRect(56, 298, 339, 79)
             },
             GraphicMenu::MenuOptionData
             {
@@ -76,14 +69,14 @@ Paused::Paused(StateManager& stateManager, State* parent)
                 {
                     getStateManager().setCurrentState
                     (
-                        States::ID::QuitConfirm,
-                        Transitions::ID::CircleClose,
+                        States::ID::MainMenu,
+                        Transitions::ID::Fade,
                         sf::milliseconds(1000)
                     );
                 },
-                sf::Vector2f(mx, my + (mc  * 2)),
-                sf::IntRect(582, 241, 226, 89),
-                sf::IntRect(994, 241, 226, 89)
+                sf::Vector2f(mx + (mc * 1), my),
+                sf::IntRect(554, 203, 267, 90),
+                sf::IntRect(554, 293, 267, 90)
             }
         },
         GraphicMenu::MenuContainerData
@@ -91,7 +84,7 @@ Paused::Paused(StateManager& stateManager, State* parent)
             sf::Vector2f(cx, cy),
             sf::IntRect(0, 0, cw, ch)
         },
-        resMngr.getTexture(Textures::ID::Paused)
+        resMngr.getTexture(Textures::ID::QuitConfirm)
     );
 
     if (!snapShot.create(windowSize.x, windowSize.y))
@@ -100,52 +93,52 @@ Paused::Paused(StateManager& stateManager, State* parent)
     }
 }
 
-void Paused::handleInput(const sf::Event& event)
+void QuitConfirm::handleInput(const sf::Event& event)
 {
     if (event.type == sf::Event::MouseMoved)
     {
-        pausedMenu->setCurrentOption
+        quitConfirmMenu->setCurrentOption
         (
             sf::Vector2f(event.mouseMove.x, event.mouseMove.y)
         );
     }
     else if (event.type == sf::Event::MouseButtonPressed)
     {
-        pausedMenu->execCurrentOption
+        quitConfirmMenu->execCurrentOption
         (
             sf::Vector2f(event.mouseButton.x, event.mouseButton.y)
         );
     }
 }
 
-void Paused::update(const sf::Time&)
+void QuitConfirm::update(const sf::Time&)
 {
 }
 
-void Paused::draw()
+void QuitConfirm::draw()
 {
     sf::RenderWindow& window = getStateManager().getSharedContext().window;
 
     window.draw(sf::Sprite(*getParentState().getSnapShotTexture()));
     window.draw(background);
 
-    window.draw(pausedMenu->getGraphicMenu().container.graph);
+    window.draw(quitConfirmMenu->getGraphicMenu().container.graph);
 
-    for (const auto& opt : pausedMenu->getGraphicMenu().options)
+    for (const auto& opt : quitConfirmMenu->getGraphicMenu().options)
     {
         window.draw(opt.graph);
     }
 }
 
-const sf::Texture* Paused::getSnapShotTexture()
+const sf::Texture* QuitConfirm::getSnapShotTexture()
 {
     snapShot.clear();
     snapShot.draw(sf::Sprite(*getParentState().getSnapShotTexture()));
     snapShot.draw(background);
 
-    snapShot.draw(pausedMenu->getGraphicMenu().container.graph);
+    snapShot.draw(quitConfirmMenu->getGraphicMenu().container.graph);
 
-    for (const auto& opt : pausedMenu->getGraphicMenu().options)
+    for (const auto& opt : quitConfirmMenu->getGraphicMenu().options)
     {
         snapShot.draw(opt.graph);
     }

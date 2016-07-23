@@ -31,6 +31,7 @@
 #include "Starting.h"
 #include "Started.h"
 #include "Paused.h"
+#include "QuitConfirm.h"
 
 StateManager::SharedContext::SharedContext(sf::RenderWindow& window,
                                            ResourceManager& resManager)
@@ -61,6 +62,11 @@ StateManager::StateManager(const SharedContext& sharedContex)
     (
         *this,
         states[States::ID::Started].get()
+    );
+    states[States::ID::QuitConfirm] = std::make_unique<QuitConfirm>
+    (
+        *this,
+        states[States::ID::Paused].get()
     );
 
     transitions[Transitions::ID::Fade] = std::make_unique<Fade>(*this);

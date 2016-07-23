@@ -42,7 +42,8 @@ namespace States
         DifftyMenu, ///< Menu de seleccion de dificultad
         Starting,   ///< Iniciando el juego
         Started,    ///< Juego iniciado
-        Paused      ///< Juego pausado
+        Paused,     ///< Juego pausado
+        QuitConfirm ///< Confirmar quitar el juego
     };
 }
 

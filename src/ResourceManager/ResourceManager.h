@@ -35,15 +35,16 @@ namespace Textures
     ////////////////////////////////////////////////////////////
     enum class ID
     {
-        Background, ///< Textura de fondo general para el juego
-        Wellcome,   ///< Textura para la escena de bienvenida
-        MainMenu,   ///< Textura para la escena del menu principal
-        About,      ///< Texutra para la escena de informacion "acerca de..."
-        DifftyMenu, ///< Textura para la escena del menu de dificultad
-        Starting,   ///< Textura para la escena de "iniciando"
-        Paused,     ///< Textura para la escena de juego pausado
-        Game,       ///< Textura para la escena del juego
-        Letters     ///< Texutra para todas las letras del juego
+        Background,  ///< Textura de fondo general para el juego
+        Wellcome,    ///< Textura para la escena de bienvenida
+        MainMenu,    ///< Textura para la escena del menu principal
+        About,       ///< Texutra para la escena de informacion "acerca de..."
+        DifftyMenu,  ///< Textura para la escena del menu de dificultad
+        Starting,    ///< Textura para la escena de "iniciando"
+        Paused,      ///< Textura para la escena de juego pausado
+        QuitConfirm, ///< Textura para la escena de confirmar quitar el juego
+        Game,        ///< Textura para la escena del juego
+        Letters      ///< Texutra para todas las letras del juego
     };
 }
 
