@@ -14,6 +14,7 @@ INCLUDEPATH += \
            States/Transitions/ \
            States/Transitions/Fade/ \
            States/Transitions/CircleOpen/ \
+           States/Transitions/CircleClose/ \
            States/Game/Starting/ \
            States/Game/Starting/Controls/CountDownControl/ \
            States/Game/Started/ \
@@ -58,7 +59,8 @@ HEADERS += \
     States/Game/Starting/Starting.h \
     States/Game/Starting/Controls/CountDownControl/CountDownControl.h \
     States/Transitions/CircleOpen/CircleOpen.h \
-    States/Game/Paused/Paused.h
+    States/Game/Paused/Paused.h \
+    States/Transitions/CircleClose/CircleClose.h
 
 SOURCES += \
            Main.cpp \
@@ -88,4 +90,5 @@ SOURCES += \
     States/Game/Starting/Starting.cpp \
     States/Game/Starting/Controls/CountDownControl/CountDownControl.cpp \
     States/Transitions/CircleOpen/CircleOpen.cpp \
-    States/Game/Paused/Paused.cpp
+    States/Game/Paused/Paused.cpp \
+    States/Transitions/CircleClose/CircleClose.cpp

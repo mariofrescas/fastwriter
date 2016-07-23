@@ -23,6 +23,7 @@
 
 #include "Fade.h"
 #include "CircleOpen.h"
+#include "CircleClose.h"
 #include "Wellcome.h"
 #include "MainMenu.h"
 #include "About.h"
@@ -64,6 +65,7 @@ StateManager::StateManager(const SharedContext& sharedContex)
 
     transitions[Transitions::ID::Fade] = std::make_unique<Fade>(*this);
     transitions[Transitions::ID::CircleOpen] = std::make_unique<CircleOpen>(*this);
+    transitions[Transitions::ID::CircleClose] = std::make_unique<CircleClose>(*this);
 }
 
 void StateManager::setCurrentState(const States::ID& state)

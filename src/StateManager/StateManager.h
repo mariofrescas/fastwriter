@@ -54,8 +54,9 @@ namespace Transitions
     ////////////////////////////////////////////////////////////
     enum class ID
     {
-        Fade,      ///< Transicion que se muestra progresivamente
-        CircleOpen ///< Transicion que se abre en forma de circulo
+        Fade,       ///< Transicion que se muestra progresivamente
+        CircleOpen, ///< Transicion que se abre en forma de circulo
+        CircleClose ///< Transicion que se cierra en forma de circulo
     };
 }
 
