@@ -32,6 +32,7 @@
 #include "Started.h"
 #include "Paused.h"
 #include "QuitConfirm.h"
+#include "RestartConfirm.h"
 
 StateManager::SharedContext::SharedContext(sf::RenderWindow& window,
                                            ResourceManager& resManager)
@@ -64,6 +65,11 @@ StateManager::StateManager(const SharedContext& sharedContex)
         states[States::ID::Started].get()
     );
     states[States::ID::QuitConfirm] = std::make_unique<QuitConfirm>
+    (
+        *this,
+        states[States::ID::Paused].get()
+    );
+    states[States::ID::RestartConfirm] = std::make_unique<RestartConfirm>
     (
         *this,
         states[States::ID::Paused].get()
