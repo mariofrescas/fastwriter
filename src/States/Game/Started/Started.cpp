@@ -140,7 +140,7 @@ void Started::handleInput(const sf::Event& event)
         case sf::Keyboard::Y: handleInputLetter('y'); break;
         case sf::Keyboard::Z: handleInputLetter('z'); break;
         case sf::Keyboard::Escape:
-            getStateManager().setCurrentState(States::ID::MainMenu);
+            getStateManager().setCurrentState(States::ID::Paused);
             break;
         case sf::Keyboard::LShift:
             handleCleanerActivation();

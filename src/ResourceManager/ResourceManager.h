@@ -41,6 +41,7 @@ namespace Textures
         About,      ///< Texutra para la escena de informacion "acerca de..."
         DifftyMenu, ///< Textura para la escena del menu de dificultad
         Starting,   ///< Textura para la escena de "iniciando"
+        Paused,     ///< Textura para la escena de juego pausado
         Game,       ///< Textura para la escena del juego
         Letters     ///< Texutra para todas las letras del juego
     };

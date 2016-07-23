@@ -41,7 +41,8 @@ namespace States
         About,      ///< Acerca de...
         DifftyMenu, ///< Menu de seleccion de dificultad
         Starting,   ///< Iniciando el juego
-        Started     ///< Juego iniciado
+        Started,    ///< Juego iniciado
+        Paused      ///< Juego pausado
     };
 }
 

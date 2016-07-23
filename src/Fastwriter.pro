@@ -27,7 +27,8 @@ INCLUDEPATH += \
            States/Game/Started/Controls/WantPointsControl/ \
            States/Game/Started/Controls/WordControl/ \
            States/Game/Started/Controls/WordControl/Dictionary/ \
-           States/Game/Started/Controls/WordControl/WordMap/
+           States/Game/Started/Controls/WordControl/WordMap/ \
+           States/Game/Paused/
 
 HEADERS += \
            ResourceManager/ResourceHolder.h \
@@ -56,7 +57,8 @@ HEADERS += \
     States/About/About.h \
     States/Game/Starting/Starting.h \
     States/Game/Starting/Controls/CountDownControl/CountDownControl.h \
-    States/Transitions/CircleOpen/CircleOpen.h
+    States/Transitions/CircleOpen/CircleOpen.h \
+    States/Game/Paused/Paused.h
 
 SOURCES += \
            Main.cpp \
@@ -85,4 +87,5 @@ SOURCES += \
     States/About/About.cpp \
     States/Game/Starting/Starting.cpp \
     States/Game/Starting/Controls/CountDownControl/CountDownControl.cpp \
-    States/Transitions/CircleOpen/CircleOpen.cpp
+    States/Transitions/CircleOpen/CircleOpen.cpp \
+    States/Game/Paused/Paused.cpp

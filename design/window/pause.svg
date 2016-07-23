@@ -14,7 +14,7 @@
    id="svg3767"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="Pause.svg"
+   sodipodi:docname="pause.svg"
    inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/design/window/Pause.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
@@ -263,9 +263,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35355339"
-     inkscape:cx="482.3458"
-     inkscape:cy="449.89148"
+     inkscape:zoom="0.5"
+     inkscape:cx="626.04892"
+     inkscape:cy="356.25987"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -542,19 +542,19 @@
          transform="scale(1,-1)" />
     </g>
     <rect
-       y="488.36218"
-       x="416.22986"
-       height="364"
-       width="535.54022"
-       id="rect7040"
-       style="opacity:1;fill:#535353;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter7050)" />
-    <rect
        y="284.36218"
        x="0"
        height="768"
        width="1366"
        id="rect5791"
        style="opacity:1;fill:#000000;fill-opacity:0.8627451;stroke:none" />
+    <rect
+       y="488.36218"
+       x="416.22986"
+       height="364"
+       width="535.54022"
+       id="rect7040"
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter7050)" />
     <rect
        style="opacity:1;fill:#535353;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect7013"

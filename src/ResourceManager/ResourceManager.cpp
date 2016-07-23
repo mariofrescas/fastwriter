@@ -32,6 +32,7 @@ ResourceManager::ResourceManager()
     textureHolder.load(Textures::ID::About, "res/textures/about.png");
     textureHolder.load(Textures::ID::DifftyMenu, "res/textures/difficulty-menu.png");
     textureHolder.load(Textures::ID::Starting, "res/textures/starting.png");
+    textureHolder.load(Textures::ID::Paused, "res/textures/paused-menu.png");
     textureHolder.load(Textures::ID::Wellcome, "res/textures/wellcome.png");
     textureHolder.load(Textures::ID::Game, "res/textures/game.png");
     textureHolder.load(Textures::ID::Letters, "res/textures/letters.png");
