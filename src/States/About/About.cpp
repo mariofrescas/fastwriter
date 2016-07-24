@@ -82,6 +82,7 @@ void About::handleInput(const sf::Event& event)
     else if (event.type == sf::Event::MouseButtonPressed)
     {
         button->execCurrentOption(sf::Vector2f(event.mouseButton.x, event.mouseButton.y));
+        reset();
     }
 }
 
@@ -107,4 +108,9 @@ const sf::Texture* About::getSnapShotTexture()
     snapShot.display();
 
     return &snapShot.getTexture();
+}
+
+void About::reset()
+{
+    button->setCurrentOption(sf::Vector2f(0, 0));
 }

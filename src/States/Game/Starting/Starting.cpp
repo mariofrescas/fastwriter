@@ -57,6 +57,8 @@ void Starting::update(const sf::Time& dt)
             Transitions::ID::CircleOpen,
             sf::milliseconds(1000)
         );
+
+        reset();
     }
 }
 
@@ -78,4 +80,9 @@ const sf::Texture* Starting::getSnapShotTexture()
     snapShot.display();
 
     return &snapShot.getTexture();
+}
+
+void Starting::reset()
+{
+    countDown->reset();
 }

@@ -117,6 +117,7 @@ void MainMenu::handleInput(const sf::Event& event)
     else if (event.type == sf::Event::MouseButtonPressed)
     {
         mainMenu->execCurrentOption(sf::Vector2f(event.mouseButton.x, event.mouseButton.y));
+        reset();
     }
 }
 
@@ -150,4 +151,9 @@ const sf::Texture* MainMenu::getSnapShotTexture()
     snapShot.display();
 
     return &snapShot.getTexture();
+}
+
+void MainMenu::reset()
+{
+    mainMenu->setCurrentOption(sf::Vector2f(0, 0));
 }

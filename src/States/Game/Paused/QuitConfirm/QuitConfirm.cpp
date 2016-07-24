@@ -67,6 +67,7 @@ QuitConfirm::QuitConfirm(StateManager& stateManager, State* parent)
             {
                 [&] ()
                 {
+                    getStateManager().getState(States::ID::Started).reset();
                     getStateManager().setCurrentState
                     (
                         States::ID::MainMenu,
@@ -108,6 +109,7 @@ void QuitConfirm::handleInput(const sf::Event& event)
         (
             sf::Vector2f(event.mouseButton.x, event.mouseButton.y)
         );
+        reset();
     }
 }
 
@@ -145,5 +147,10 @@ const sf::Texture* QuitConfirm::getSnapShotTexture()
     snapShot.display();
 
     return &snapShot.getTexture();
+}
+
+void QuitConfirm::reset()
+{
+    quitConfirmMenu->setCurrentOption(sf::Vector2f(0, 0));
 }
 

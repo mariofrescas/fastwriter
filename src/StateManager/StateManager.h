@@ -126,11 +126,12 @@ public:
                          const sf::Time& duration);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Obtiene la escena actual
-    /// \return Referencia hacia el estado actual
+    /// \brief Obtiene la escena correspondiente
+    /// \param state Esena requerida
+    /// \return Referencia hacia la escena requerida
     ///
     ////////////////////////////////////////////////////////////
-    State& getCurrentState() const;
+    State& getState(const States::ID& state);
 
     ////////////////////////////////////////////////////////////
     /// \brief Obtiene la informacion compartida por las escenas

@@ -37,6 +37,7 @@ public:
     virtual void update(const sf::Time& dt) override;
     virtual void draw() override;
     virtual const sf::Texture* getSnapShotTexture() override;
+    virtual void reset() override;
 
 private:
     sf::Sprite            starting;  ///< Fondo de conteo

@@ -116,6 +116,7 @@ void DifftyMenu::handleInput(const sf::Event& event)
         (
             sf::Vector2f(event.mouseButton.x, event.mouseButton.y)
         );
+        reset();
     }
 }
 
@@ -149,4 +150,9 @@ const sf::Texture* DifftyMenu::getSnapShotTexture()
     snapShot.display();
 
     return &snapShot.getTexture();
+}
+
+void DifftyMenu::reset()
+{
+    difftyMenu->setCurrentOption(sf::Vector2f(0, 0));
 }

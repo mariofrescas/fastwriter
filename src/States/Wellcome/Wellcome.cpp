@@ -73,3 +73,7 @@ const sf::Texture* Wellcome::getSnapShotTexture()
 
     return &snapShot.getTexture();
 }
+
+void Wellcome::reset()
+{
+}

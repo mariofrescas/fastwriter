@@ -67,10 +67,11 @@ RestartConfirm::RestartConfirm(StateManager& stateManager, State* parent)
             {
                 [&] ()
                 {
+                    getStateManager().getState(States::ID::Started).reset();
                     getStateManager().setCurrentState
                     (
-                        States::ID::MainMenu,
-                        Transitions::ID::Fade,
+                        States::ID::Starting,
+                        Transitions::ID::CircleClose,
                         sf::milliseconds(1000)
                     );
                 },
@@ -108,6 +109,7 @@ void RestartConfirm::handleInput(const sf::Event& event)
         (
             sf::Vector2f(event.mouseButton.x, event.mouseButton.y)
         );
+        reset();
     }
 }
 
@@ -145,5 +147,10 @@ const sf::Texture* RestartConfirm::getSnapShotTexture()
     snapShot.display();
 
     return &snapShot.getTexture();
+}
+
+void RestartConfirm::reset()
+{
+    restartConfirmMenu->setCurrentOption(sf::Vector2f(0, 0));
 }
 

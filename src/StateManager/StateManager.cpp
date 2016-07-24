@@ -110,11 +110,9 @@ void StateManager::setCurrentState(const States::ID& state,
     currentState = transitions[transition].get();
 }
 
-State& StateManager::getCurrentState() const
+State& StateManager::getState(const States::ID& state)
 {
-    assert(!(currentState == nullptr));
-
-    return *currentState;
+    return *states[state];
 }
 
 StateManager::SharedContext& StateManager::getSharedContext() const

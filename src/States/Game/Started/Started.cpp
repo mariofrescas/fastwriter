@@ -256,6 +256,19 @@ const sf::Texture* Started::getSnapShotTexture()
     return &snapShot.getTexture();
 }
 
+void Started::reset()
+{
+    points->reset();
+    wantPoints->reset();
+    time->reset();
+    shiftMode->reset();
+    lifes->reset();
+    cleaners->reset();
+    words->reset();
+    trapCount = 0;
+    takeCount = 0;
+}
+
 void Started::handleInputLetter(char letter)
 {
     const GameConf& gConf = confMngr.getCurrentConf();

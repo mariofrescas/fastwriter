@@ -123,6 +123,7 @@ void Paused::handleInput(const sf::Event& event)
         (
             sf::Vector2f(event.mouseButton.x, event.mouseButton.y)
         );
+        reset();
     }
 }
 
@@ -160,5 +161,10 @@ const sf::Texture* Paused::getSnapShotTexture()
     snapShot.display();
 
     return &snapShot.getTexture();
+}
+
+void Paused::reset()
+{
+    pausedMenu->setCurrentOption(sf::Vector2f(0, 0));
 }
 

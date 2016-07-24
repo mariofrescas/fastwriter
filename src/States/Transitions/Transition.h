@@ -61,6 +61,7 @@ public:
     virtual void update(const sf::Time& dt) override;
     virtual void draw() override;
     virtual const sf::Texture* getSnapShotTexture() override;
+    virtual void reset() override;
 
 protected:
     sf::Shader& shader;         ///< Shader del efecto

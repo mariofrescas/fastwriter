@@ -58,3 +58,7 @@ const sf::Texture* Transition::getSnapShotTexture()
 {
     return nullptr;
 }
+
+void Transition::reset()
+{
+}
