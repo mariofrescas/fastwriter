@@ -56,7 +56,7 @@ RestartConfirm::RestartConfirm(StateManager& stateManager, State* parent)
                     (
                         States::ID::Paused,
                         Transitions::ID::CircleOpen,
-                        sf::milliseconds(1000)
+                        sf::milliseconds(500)
                     );
                 },
                 sf::Vector2f(mx, my),
@@ -72,7 +72,7 @@ RestartConfirm::RestartConfirm(StateManager& stateManager, State* parent)
                     (
                         States::ID::Starting,
                         Transitions::ID::CircleClose,
-                        sf::milliseconds(1000)
+                        sf::milliseconds(500)
                     );
                 },
                 sf::Vector2f(mx + (mc * 1), my),

@@ -168,7 +168,7 @@ void Started::handleInput(const sf::Event& event)
             (
                 States::ID::Paused,
                 Transitions::ID::CircleClose,
-                sf::milliseconds(1000)
+                sf::milliseconds(500)
             );
             break;
         case sf::Keyboard::LShift:

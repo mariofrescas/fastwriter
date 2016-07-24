@@ -56,7 +56,7 @@ QuitConfirm::QuitConfirm(StateManager& stateManager, State* parent)
                     (
                         States::ID::Paused,
                         Transitions::ID::CircleOpen,
-                        sf::milliseconds(1000)
+                        sf::milliseconds(500)
                     );
                 },
                 sf::Vector2f(mx, my),
@@ -71,7 +71,7 @@ QuitConfirm::QuitConfirm(StateManager& stateManager, State* parent)
                     (
                         States::ID::MainMenu,
                         Transitions::ID::Fade,
-                        sf::milliseconds(1000)
+                        sf::milliseconds(500)
                     );
                 },
                 sf::Vector2f(mx + (mc * 1), my),

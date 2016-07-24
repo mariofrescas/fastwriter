@@ -56,7 +56,7 @@ Paused::Paused(StateManager& stateManager, State* parent)
                     (
                         States::ID::Starting,
                         Transitions::ID::CircleOpen,
-                        sf::milliseconds(1000)
+                        sf::milliseconds(500)
                     );
                 },
                 sf::Vector2f(mx, my),
@@ -71,7 +71,7 @@ Paused::Paused(StateManager& stateManager, State* parent)
                     (
                         States::ID::RestartConfirm,
                         Transitions::ID::CircleClose,
-                        sf::milliseconds(1000)
+                        sf::milliseconds(500)
                     );
                 },
                 sf::Vector2f(mx, my + (mc * 1)),
@@ -86,7 +86,7 @@ Paused::Paused(StateManager& stateManager, State* parent)
                     (
                         States::ID::QuitConfirm,
                         Transitions::ID::CircleClose,
-                        sf::milliseconds(1000)
+                        sf::milliseconds(500)
                     );
                 },
                 sf::Vector2f(mx, my + (mc  * 2)),
