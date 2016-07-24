@@ -27,13 +27,27 @@ Starting::Starting(StateManager& stateManager, State* parent)
     ResourceManager& resMngr = getStateManager().getSharedContext().resourceManager;
     const sf::Vector2u& windowSize = getStateManager().getSharedContext().window.getSize();
 
+    background.setTexture(resMngr.getTexture(Textures::ID::Starting));
+    background.setTextureRect(sf::IntRect(284, 0, 31, 32));
+    background.setScale
+    (   windowSize.x / background.getLocalBounds().width,
+        windowSize.y / background.getLocalBounds().width
+    );
+
     starting.setTexture(resMngr.getTexture(Textures::ID::Starting));
+    starting.setTextureRect(sf::IntRect(0, 0, 283, 272));
+    starting.setPosition
+    (
+        (windowSize.x / 2) - (starting.getGlobalBounds().width / 2),
+        (windowSize.y / 2) - (starting.getGlobalBounds().height / 2)
+    );
+
     countDown = std::make_unique<CountDownControl>
     (
         sf::seconds(3),
         sf::Color(162, 162, 162, 255),
         210,
-        sf::Vector2f((windowSize.x / 2) - 65, (windowSize.y / 2) - 140),
+        sf::Vector2f((windowSize.x / 2) - 58, (windowSize.y / 2) - 140),
         resMngr.getFont(Fonts::ID::Default)
     );
 
@@ -67,6 +81,7 @@ void Starting::draw()
     sf::RenderWindow& window = getStateManager().getSharedContext().window;
 
     window.draw(sf::Sprite(*getParentState().getSnapShotTexture()));
+    window.draw(background);
     window.draw(starting);
     window.draw(countDown->getGraph());
 }
@@ -75,6 +90,7 @@ const sf::Texture* Starting::getSnapShotTexture()
 {
     snapShot.clear();
     snapShot.draw(sf::Sprite(*getParentState().getSnapShotTexture()));
+    snapShot.draw(background);
     snapShot.draw(starting);
     snapShot.draw(countDown->getGraph());
     snapShot.display();

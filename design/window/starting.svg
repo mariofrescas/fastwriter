@@ -63,19 +63,6 @@
     <filter
        inkscape:collect="always"
        style="color-interpolation-filters:sRGB"
-       id="filter8605"
-       x="-0.028268576"
-       width="1.0565372"
-       y="-0.15893961"
-       height="1.3178792">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="16.089531"
-         id="feGaussianBlur8607" />
-    </filter>
-    <filter
-       inkscape:collect="always"
-       style="color-interpolation-filters:sRGB"
        id="filter35636"
        x="-0.019892585"
        width="1.0397851"
@@ -215,6 +202,32 @@
          id="feGaussianBlur5575-30-3"
          stdDeviation="2.3609064"
          inkscape:collect="always" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter5110"
+       x="-0.12055151"
+       width="1.241103"
+       y="-0.061309811"
+       height="1.1226196">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="6.206421"
+         id="feGaussianBlur5112" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter5114"
+       x="-0.12055151"
+       width="1.241103"
+       y="-0.061309811"
+       height="1.1226196">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="6.206421"
+         id="feGaussianBlur5116" />
     </filter>
   </defs>
   <sodipodi:namedview
@@ -517,20 +530,20 @@
        id="rect5791"
        style="opacity:1;fill:#000000;fill-opacity:0.86274511;stroke:none" />
     <path
-       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;filter:url(#filter8605)"
-       d="M 672.56044,546.88757 A 135.12292,122 0 0 0 549.3788,660.36218 l -549.37892507168,0 0,16 549.44923507168,0 A 135.12292,122 0 0 0 672.56044,789.8407 l 0,-8.00196 A 114,114 0 0 1 568.99989,668.36218 114,114 0 0 1 672.56044,554.9364 l 0,-8.04883 z m 6.43945,0 0,8.04883 A 114,114 0 0 1 782.56044,668.36218 114,114 0 0 1 678.99989,781.83874 l 0,8.00196 A 135.12292,122 0 0 0 802.11122,676.36218 l 563.88868,0 0,-16 -563.81837,0 A 135.12292,122 0 0 0 678.99989,546.88757 Z"
-       id="path8510"
-       inkscape:connector-curvature="0" />
-    <path
-       style="opacity:1;fill:#535353;fill-opacity:1;stroke:none"
-       d="m -1.2507168e-4,660.36218 0,16 561.66993507168,0 a 114.92893,122 0 0 1 -0.57031,-11.11328 114.92893,122 0 0 1 0.23047,-4.88672 l -561.33009507168,0 z m 790.79493507168,0 a 114.92893,122 0 0 1 0.16211,4.88672 114.92893,122 0 0 1 -0.52344,11.11328 l 575.56642,0 0,-16 -575.20509,0 z"
-       id="rect8477"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       id="path5106"
+       d="M 672.56044,546.88757 A 135.12292,122 0 0 0 548.99989,668.36218 135.12292,122 0 0 0 672.56044,789.8407 l 0,-8.00196 A 114,114 0 0 1 568.99989,668.36218 114,114 0 0 1 672.56044,554.9364 l 0,-8.04883 z"
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.33800006;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter5110)" />
     <path
        style="opacity:1;fill:#535353;fill-opacity:1;stroke:none;stroke-width:1.33800006;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="M 672.56044,546.88757 A 135.12292,122 0 0 0 548.99989,668.36218 135.12292,122 0 0 0 672.56044,789.8407 l 0,-8.00196 A 114,114 0 0 1 568.99989,668.36218 114,114 0 0 1 672.56044,554.9364 l 0,-8.04883 z"
        id="circle8451"
        inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.33800006;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter5114)"
+       d="M 678.99989,546.88757 A 135.12292,122 0 0 1 802.56044,668.36218 135.12292,122 0 0 1 678.99989,789.8407 l 0,-8.00196 A 114,114 0 0 0 782.56044,668.36218 114,114 0 0 0 678.99989,554.9364 l 0,-8.04883 z"
+       id="path5108" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:52.77260208px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#a2a2a2;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"

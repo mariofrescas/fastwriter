@@ -40,9 +40,10 @@ public:
     virtual void reset() override;
 
 private:
-    sf::Sprite            starting;  ///< Fondo de conteo
-    CountDownControl::Ptr countDown; ///< Control de conteo
-    sf::RenderTexture     snapShot;  ///< Captura de la escena
+    sf::Sprite            background; ///< Fondo negro semi-transparente
+    sf::Sprite            starting;   ///< Contenedor de conteo
+    CountDownControl::Ptr countDown;  ///< Control de conteo
+    sf::RenderTexture     snapShot;   ///< Captura de la escena
 };
 
 #endif // STARTING_H
