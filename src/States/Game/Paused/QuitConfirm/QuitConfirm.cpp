@@ -67,7 +67,6 @@ QuitConfirm::QuitConfirm(StateManager& stateManager, State* parent)
             {
                 [&] ()
                 {
-                    getStateManager().getState(States::ID::Started).reset();
                     getStateManager().setCurrentState
                     (
                         States::ID::MainMenu,

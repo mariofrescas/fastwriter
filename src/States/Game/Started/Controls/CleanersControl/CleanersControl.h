@@ -50,6 +50,17 @@ public:
                     const sf::IntRect& location);
 
     ////////////////////////////////////////////////////////////
+    /// \brief Reconfigura las propiedades del control de limpiadores
+    /// \param defaultCleaners Numero por defecto de limpiadores
+    /// \param maxCleaners Numero maximo de limpiadores
+    /// \param addInterval Tiemponecesario para agregar un limpiador
+    ///
+    ////////////////////////////////////////////////////////////
+    void reconfigure(int defaultCleaners,
+                     int maxCleaners,
+                     const sf::Time& addInterval);
+
+    ////////////////////////////////////////////////////////////
     /// \brief Reinicia el control a los valores por defecto
     ///
     ////////////////////////////////////////////////////////////

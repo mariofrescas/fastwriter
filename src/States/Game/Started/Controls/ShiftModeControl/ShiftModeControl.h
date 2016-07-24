@@ -45,6 +45,15 @@ public:
                      const sf::FloatRect rect);
 
     ////////////////////////////////////////////////////////////
+    /// \brief Reconfigura las propiedades del control del modo Shift
+    /// \param duration Duracion del modo
+    /// \param necessary Tiempo de recarga
+    ///
+    ////////////////////////////////////////////////////////////
+    void reconfigure(const sf::Time& duration,
+                     const sf::Time& necessary);
+
+    ////////////////////////////////////////////////////////////
     /// \brief Reinicia el control a los valores por defecto
     ///
     ////////////////////////////////////////////////////////////

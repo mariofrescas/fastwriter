@@ -35,6 +35,15 @@ CleanersControl::CleanersControl(int defaultCleaners,
     addDefaultCleaners();
 }
 
+void CleanersControl::reconfigure(int defaultCleaners,
+                                  int maxCleaners,
+                                  const sf::Time& addInterval)
+{
+    this->defaultCleaners = defaultCleaners;
+    this->maxCleaners = maxCleaners;
+    this->addInterval = addInterval;
+}
+
 void CleanersControl::reset()
 {
     cleaners = defaultCleaners;

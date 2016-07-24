@@ -33,6 +33,13 @@ ShiftModeControl::ShiftModeControl(const sf::Time& duration,
     graph.setPosition(rect.left, rect.top);
 }
 
+void ShiftModeControl::reconfigure(const sf::Time& duration,
+                                   const sf::Time& necessary)
+{
+    this->duration = duration;
+    this->necessary = necessary;
+}
+
 void ShiftModeControl::reset()
 {
     elapsed = sf::Time::Zero;

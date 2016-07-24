@@ -107,6 +107,30 @@ Started::Started(StateManager& stateManager)
     }
 }
 
+void Started::setGameDifficulty(const Configs::ID& diffty)
+{
+    confMngr.setCurrentConf(diffty);
+    GameConf& cConf = confMngr.getCurrentConf();
+
+    shiftMode->reconfigure
+    (
+        sf::milliseconds(cConf.getShiftModeDuration()),
+        sf::milliseconds(cConf.getShiftModeNecessaryTime())
+    );
+
+    lifes->reconfigure
+    (
+        cConf.getInitLifes()
+    );
+
+    cleaners->reconfigure
+    (
+        cConf.getDefaultCleaners(),
+        cConf.getMaxCleaners(),
+        sf::milliseconds(cConf.getAddInterval())
+    );
+}
+
 void Started::handleInput(const sf::Event& event)
 {
     if (event.type == sf::Event::KeyPressed)

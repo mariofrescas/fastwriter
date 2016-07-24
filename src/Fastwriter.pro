@@ -64,7 +64,9 @@ HEADERS += \
     States/Game/Paused/Paused.h \
     States/Transitions/CircleClose/CircleClose.h \
     States/Game/Paused/QuitConfirm/QuitConfirm.h \
-    States/Game/Paused/RestartConfirm/RestartConfirm.h
+    States/Game/Paused/RestartConfirm/RestartConfirm.h \
+    States/Game/Started/Confs/ExpertConf.h \
+    States/Game/Started/Confs/HardConf.h
 
 SOURCES += \
            Main.cpp \
@@ -97,4 +99,6 @@ SOURCES += \
     States/Game/Paused/Paused.cpp \
     States/Transitions/CircleClose/CircleClose.cpp \
     States/Game/Paused/QuitConfirm/QuitConfirm.cpp \
-    States/Game/Paused/RestartConfirm/RestartConfirm.cpp
+    States/Game/Paused/RestartConfirm/RestartConfirm.cpp \
+    States/Game/Started/Confs/ExpertConf.cpp \
+    States/Game/Started/Confs/HardConf.cpp

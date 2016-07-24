@@ -15,27 +15,74 @@
 ** along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *************************************************************************/
 
-#include "GameConfManager.h"
-
 #include "HardConf.h"
-#include "NormalConf.h"
-#include "ExpertConf.h"
 
-GameConfManager::GameConfManager(const Configs::ID& defaultConf)
+int HardConf::getDropTime() const
 {
-    confs[Configs::ID::Hard] = std::make_unique<HardConf>();
-    confs[Configs::ID::Normal] = std::make_unique<NormalConf>();
-    confs[Configs::ID::Expert] = std::make_unique<ExpertConf>();
-
-    currentConf = confs[defaultConf].get();
+    return random(500, 800);
 }
 
-void GameConfManager::setCurrentConf(const Configs::ID& config)
+int HardConf::getWordLength() const
 {
-    currentConf = confs[config].get();
+    return random(1, 5);
 }
 
-GameConf& GameConfManager::getCurrentConf() const
+float HardConf::getDropVelocity() const
 {
-    return *currentConf;
+    return random(10, 50);
+}
+
+int HardConf::getInitLifes() const
+{
+    return 10;
+}
+
+int HardConf::getPointsIncrement() const
+{
+    return 1;
+}
+
+int HardConf::getPointsDecrement() const
+{
+    return 1;
+}
+
+int HardConf::getLifesIncrement() const
+{
+    return 1;
+}
+
+int HardConf::getLifesDecrement() const
+{
+    return 1;
+}
+
+int HardConf::getWantPoints() const
+{
+    return 10;
+}
+
+int HardConf::getShiftModeDuration() const
+{
+    return 5000;
+}
+
+int HardConf::getShiftModeNecessaryTime() const
+{
+    return 10000;
+}
+
+int HardConf::getDefaultCleaners() const
+{
+    return 2;
+}
+
+int HardConf::getMaxCleaners() const
+{
+    return 4;
+}
+
+int HardConf::getAddInterval() const
+{
+    return 5000;
 }

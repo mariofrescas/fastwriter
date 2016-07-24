@@ -39,6 +39,8 @@ class Started : public State
 public:
     explicit Started(StateManager& stateManager);
 
+    void setGameDifficulty(const Configs::ID& diffty);
+
     virtual void handleInput(const sf::Event& event) override;
     virtual void update(const sf::Time& dt) override;
     virtual void draw() override;

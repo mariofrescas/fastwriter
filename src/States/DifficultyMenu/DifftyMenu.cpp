@@ -17,6 +17,7 @@
 
 #include "DifftyMenu.h"
 
+#include "Started.h"
 #include "StateManager.h"
 #include "ResourceManager.h"
 #include <SFML/Window/Event.hpp>
@@ -46,6 +47,14 @@ DifftyMenu::DifftyMenu(StateManager& stateManager)
             {
                 [&] ()
                 {
+                    static_cast<Started&>
+                    (
+                        getStateManager().getState
+                        (
+                            States::ID::Started
+                        )
+                    ).setGameDifficulty(Configs::ID::Normal);
+                    getStateManager().getState(States::ID::Started).reset();
                     getStateManager().setCurrentState
                     (
                         States::ID::Starting,
@@ -59,14 +68,46 @@ DifftyMenu::DifftyMenu(StateManager& stateManager)
             },
             GraphicMenu::MenuOptionData
             {
-                [&] () { },
+                [&] ()
+                {
+                    static_cast<Started&>
+                    (
+                        getStateManager().getState
+                        (
+                            States::ID::Started
+                        )
+                    ).setGameDifficulty(Configs::ID::Hard);
+                    getStateManager().getState(States::ID::Started).reset();
+                    getStateManager().setCurrentState
+                    (
+                        States::ID::Starting,
+                        Transitions::ID::Fade,
+                        sf::milliseconds(1000)
+                    );
+                },
                 sf::Vector2f(mx, my + (mc * 1)),
                 sf::IntRect(569.098, 164.973, 212, 74),
                 sf::IntRect(909.098, 164.973, 212, 74)
             },
             GraphicMenu::MenuOptionData
             {
-                [&] () { },
+                [&] ()
+                {
+                    static_cast<Started&>
+                    (
+                        getStateManager().getState
+                        (
+                            States::ID::Started
+                        )
+                    ).setGameDifficulty(Configs::ID::Expert);
+                    getStateManager().getState(States::ID::Started).reset();
+                    getStateManager().setCurrentState
+                    (
+                        States::ID::Starting,
+                        Transitions::ID::Fade,
+                        sf::milliseconds(1000)
+                    );
+                },
                 sf::Vector2f(mx, my + (mc  * 2)),
                 sf::IntRect(569.098, 268.559, 326, 79),
                 sf::IntRect(909.098, 268.559, 326, 79)

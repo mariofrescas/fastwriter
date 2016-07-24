@@ -30,6 +30,11 @@ LifesControl::LifesControl(int defaultLifes,
     updateGraph();
 }
 
+void LifesControl::reconfigure(int defaultLifes)
+{
+    this->defaultLifes = defaultLifes;
+}
+
 void LifesControl::reset()
 {
     lifes = defaultLifes;
