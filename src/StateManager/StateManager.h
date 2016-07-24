@@ -36,6 +36,7 @@ namespace States
     ////////////////////////////////////////////////////////////
     enum class ID
     {
+        Black,         ///< Escena negra de entrada
         Wellcome,      ///< Bienvenida
         MainMenu,      ///< Menu principal
         About,         ///< Acerca de...

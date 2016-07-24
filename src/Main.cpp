@@ -27,7 +27,7 @@ int main()
     ResourceManager resManager;
 
     StateManager stateManager(StateManager::SharedContext(window, resManager));
-    stateManager.setCurrentState(States::ID::Wellcome);
+    stateManager.setCurrentState(States::ID::Black);
 
     sf::Clock clock;
 

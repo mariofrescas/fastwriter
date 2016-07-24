@@ -24,6 +24,7 @@
 #include "Fade.h"
 #include "CircleOpen.h"
 #include "CircleClose.h"
+#include "Black.h"
 #include "Wellcome.h"
 #include "MainMenu.h"
 #include "About.h"
@@ -49,6 +50,7 @@ StateManager::StateManager(const SharedContext& sharedContex)
         sharedContex.resourceManager
     );
 
+    states[States::ID::Black] = std::make_unique<Black>(*this);
     states[States::ID::Wellcome] = std::make_unique<Wellcome>(*this);
     states[States::ID::MainMenu] = std::make_unique<MainMenu>(*this);
     states[States::ID::About] = std::make_unique<About>(*this);

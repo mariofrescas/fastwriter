@@ -10,6 +10,7 @@ INCLUDEPATH += \
            States/MainMenu/ \
            States/About/ \
            States/DifficultyMenu/ \
+           States/Black/ \
            States/Wellcome/ \
            States/Transitions/ \
            States/Transitions/Fade/ \
@@ -66,7 +67,8 @@ HEADERS += \
     States/Game/Paused/QuitConfirm/QuitConfirm.h \
     States/Game/Paused/RestartConfirm/RestartConfirm.h \
     States/Game/Started/Confs/ExpertConf.h \
-    States/Game/Started/Confs/HardConf.h
+    States/Game/Started/Confs/HardConf.h \
+    States/Black/Black.h
 
 SOURCES += \
            Main.cpp \
@@ -101,4 +103,5 @@ SOURCES += \
     States/Game/Paused/QuitConfirm/QuitConfirm.cpp \
     States/Game/Paused/RestartConfirm/RestartConfirm.cpp \
     States/Game/Started/Confs/ExpertConf.cpp \
-    States/Game/Started/Confs/HardConf.cpp
+    States/Game/Started/Confs/HardConf.cpp \
+    States/Black/Black.cpp
