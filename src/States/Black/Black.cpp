@@ -54,7 +54,7 @@ void Black::update(const sf::Time& dt)
     {
         getStateManager().getSharedContext().soundPlayer.play
         (
-            Sounds::ID::MenuClosed
+            Sounds::ID::MenuClose
         );
         getStateManager().setCurrentState
         (
