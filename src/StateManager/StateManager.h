@@ -22,6 +22,7 @@
 #include "State.h"
 #include "Transition.h"
 
+class SoundPlayer;
 class ResourceManager;
 namespace sf
 {
@@ -80,12 +81,16 @@ public:
         ////////////////////////////////////////////////////////////
         /// \brief Almacena la informacion compartida
         /// \param window Referencia hacia la ventana donde se trabajara
+        /// \param soundPlayer Referencia hacia el administrador de sonidos
         /// \param resManager Referencia hacia el administrador de recursos
         ///
         ////////////////////////////////////////////////////////////
-        SharedContext(sf::RenderWindow& window, ResourceManager& resManager);
+        SharedContext(sf::RenderWindow& window,
+                      SoundPlayer& soundPlayer,
+                      ResourceManager& resManager);
 
         sf::RenderWindow& window;          ///< Ventana donde trabajaran las escenas
+        SoundPlayer&      soundPlayer;     ///< Administrador de sonidos
         ResourceManager&  resourceManager; ///< Administrador de recursos
     };
 

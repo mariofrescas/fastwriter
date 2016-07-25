@@ -17,6 +17,7 @@
 
 #include "Wellcome.h"
 
+#include "SoundPlayer.h"
 #include "StateManager.h"
 #include "ResourceManager.h"
 #include <SFML/Window/Event.hpp>
@@ -43,6 +44,10 @@ void Wellcome::handleInput(const sf::Event& event)
 {
     if (event.type == sf::Event::MouseButtonPressed)
     {
+        getStateManager().getSharedContext().soundPlayer.play
+        (
+            Sounds::ID::MenuOpen
+        );
         getStateManager().setCurrentState
         (
             States::ID::MainMenu,

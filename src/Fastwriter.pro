@@ -1,11 +1,12 @@
 TARGET = Fastwriter
 CONFIG += console c++1y
 
-LIBS += -lsfml-graphics -lsfml-window -lsfml-system
+LIBS += -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 
 INCLUDEPATH += \
            Menu/ \
            ResourceManager/ \
+           SoundPlayer/ \
            StateManager/ \
            States/MainMenu/ \
            States/About/ \
@@ -68,7 +69,8 @@ HEADERS += \
     States/Game/Paused/RestartConfirm/RestartConfirm.h \
     States/Game/Started/Confs/ExpertConf.h \
     States/Game/Started/Confs/HardConf.h \
-    States/Black/Black.h
+    States/Black/Black.h \
+    SoundPlayer/SoundPlayer.h
 
 SOURCES += \
            Main.cpp \
@@ -104,4 +106,5 @@ SOURCES += \
     States/Game/Paused/RestartConfirm/RestartConfirm.cpp \
     States/Game/Started/Confs/ExpertConf.cpp \
     States/Game/Started/Confs/HardConf.cpp \
-    States/Black/Black.cpp
+    States/Black/Black.cpp \
+    SoundPlayer/SoundPlayer.cpp

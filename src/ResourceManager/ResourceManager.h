@@ -19,6 +19,7 @@
 #define RESOURCEMANAGER_H
 
 #include "ResourceHolder.h"
+#include <SFML/Audio/SoundBuffer.hpp>
 
 namespace sf
 {
@@ -74,6 +75,19 @@ namespace Shaders
     };
 }
 
+namespace Sounds
+{
+    ////////////////////////////////////////////////////////////
+    /// \brief Identificardores de efectos de sonido
+    ///
+    ////////////////////////////////////////////////////////////
+    enum class ID
+    {
+        MenuOpen,  ///< Id de efecto de sonido para abrir menus
+        MenuClose  ///< Id de efecto de sonido para cerrar menus
+    };
+}
+
 ////////////////////////////////////////////////////////////
 /// \brief Contenedor de los recursos necesarios por la aplicacion
 ///
@@ -109,12 +123,15 @@ public:
     /// \return Referencia al shader
     ///
     ////////////////////////////////////////////////////////////
-    sf::Shader& getShader(const Shaders::ID shaderId) const;
+    sf::Shader& getShader(const Shaders::ID& shaderId) const;
+
+    sf::SoundBuffer& getSound(const Sounds::ID& soundId) const;
 
 private:
-    ResourceHolder<Textures::ID, sf::Texture> textureHolder; ///< Contenedor de texturas
-    ResourceHolder<Fonts::ID, sf::Font>       fontHolder;    ///< Contenedor de fuentes
-    ResourceHolder<Shaders::ID, sf::Shader>   shaderHolder;  ///< Contenedor de shaders
+    ResourceHolder<Textures::ID, sf::Texture>   textureHolder; ///< Contenedor de texturas
+    ResourceHolder<Fonts::ID, sf::Font>         fontHolder;    ///< Contenedor de fuentes
+    ResourceHolder<Shaders::ID, sf::Shader>     shaderHolder;  ///< Contenedor de shaders
+    ResourceHolder<Sounds::ID, sf::SoundBuffer> soundHolder;   ///< Contenedor de efectos de sonido
 };
 
 #endif // RESOURCEMANAGER_H

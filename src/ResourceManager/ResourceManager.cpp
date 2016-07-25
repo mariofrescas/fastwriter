@@ -38,6 +38,9 @@ ResourceManager::ResourceManager()
     textureHolder.load(Textures::ID::Wellcome, "res/textures/wellcome.png");
     textureHolder.load(Textures::ID::Game, "res/textures/game.png");
     textureHolder.load(Textures::ID::Letters, "res/textures/letters.png");
+
+    soundHolder.load(Sounds::ID::MenuOpen, "res/sounds/menu-open.ogg");
+    soundHolder.load(Sounds::ID::MenuClose, "res/sounds/menu-close.ogg");
 }
 
 sf::Texture& ResourceManager::getTexture(const Textures::ID& textureId) const
@@ -50,7 +53,12 @@ sf::Font& ResourceManager::getFont(const Fonts::ID& fontId) const
     return fontHolder.get(fontId);
 }
 
-sf::Shader& ResourceManager::getShader(const Shaders::ID shaderId) const
+sf::Shader& ResourceManager::getShader(const Shaders::ID& shaderId) const
 {
     return shaderHolder.get(shaderId);
+}
+
+sf::SoundBuffer& ResourceManager::getSound(const Sounds::ID& soundId) const
+{
+    return soundHolder.get(soundId);
 }

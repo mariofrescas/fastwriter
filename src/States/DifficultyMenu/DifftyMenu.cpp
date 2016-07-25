@@ -18,6 +18,7 @@
 #include "DifftyMenu.h"
 
 #include "Started.h"
+#include "SoundPlayer.h"
 #include "StateManager.h"
 #include "ResourceManager.h"
 #include <SFML/Window/Event.hpp>
@@ -55,6 +56,10 @@ DifftyMenu::DifftyMenu(StateManager& stateManager)
                         )
                     ).setGameDifficulty(Configs::ID::Normal);
                     getStateManager().getState(States::ID::Started).reset();
+                    getStateManager().getSharedContext().soundPlayer.play
+                    (
+                        Sounds::ID::MenuOpen
+                    );
                     getStateManager().setCurrentState
                     (
                         States::ID::Starting,
@@ -78,6 +83,10 @@ DifftyMenu::DifftyMenu(StateManager& stateManager)
                         )
                     ).setGameDifficulty(Configs::ID::Hard);
                     getStateManager().getState(States::ID::Started).reset();
+                    getStateManager().getSharedContext().soundPlayer.play
+                    (
+                        Sounds::ID::MenuOpen
+                    );
                     getStateManager().setCurrentState
                     (
                         States::ID::Starting,
@@ -101,6 +110,10 @@ DifftyMenu::DifftyMenu(StateManager& stateManager)
                         )
                     ).setGameDifficulty(Configs::ID::Expert);
                     getStateManager().getState(States::ID::Started).reset();
+                    getStateManager().getSharedContext().soundPlayer.play
+                    (
+                        Sounds::ID::MenuOpen
+                    );
                     getStateManager().setCurrentState
                     (
                         States::ID::Starting,
@@ -116,6 +129,10 @@ DifftyMenu::DifftyMenu(StateManager& stateManager)
             {
                 [&] ()
                 {
+                    getStateManager().getSharedContext().soundPlayer.play
+                    (
+                        Sounds::ID::MenuClose
+                    );
                     getStateManager().setCurrentState
                     (
                         States::ID::MainMenu,

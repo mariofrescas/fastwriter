@@ -17,6 +17,7 @@
 
 #include "About.h"
 
+#include "SoundPlayer.h"
 #include "StateManager.h"
 #include "ResourceManager.h"
 #include <SFML/Window/Event.hpp>
@@ -47,6 +48,10 @@ About::About(StateManager& stateManager)
             {
                 [&] ()
                 {
+                    getStateManager().getSharedContext().soundPlayer.play
+                    (
+                        Sounds::ID::MenuClose
+                    );
                     getStateManager().setCurrentState
                     (
                         States::ID::MainMenu,

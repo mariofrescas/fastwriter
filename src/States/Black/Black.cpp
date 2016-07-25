@@ -17,6 +17,7 @@
 
 #include "Black.h"
 
+#include "SoundPlayer.h"
 #include "StateManager.h"
 #include <SFML/Graphics/RenderWindow.hpp>
 
@@ -43,6 +44,10 @@ void Black::update(const sf::Time& dt)
     elapsed += dt;
     if (elapsed >= sf::milliseconds(1000))
     {
+        getStateManager().getSharedContext().soundPlayer.play
+        (
+            Sounds::ID::MenuClosed
+        );
         getStateManager().setCurrentState
         (
             States::ID::Wellcome,

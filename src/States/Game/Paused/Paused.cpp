@@ -17,6 +17,7 @@
 
 #include "Paused.h"
 
+#include "SoundPlayer.h"
 #include "StateManager.h"
 #include "ResourceManager.h"
 #include <SFML/Window/Event.hpp>
@@ -52,6 +53,10 @@ Paused::Paused(StateManager& stateManager, State* parent)
             {
                 [&] ()
                 {
+                    getStateManager().getSharedContext().soundPlayer.play
+                    (
+                        Sounds::ID::MenuClose
+                    );
                     getStateManager().setCurrentState
                     (
                         States::ID::Starting,
@@ -67,6 +72,10 @@ Paused::Paused(StateManager& stateManager, State* parent)
             {
                 [&] ()
                 {
+                    getStateManager().getSharedContext().soundPlayer.play
+                    (
+                        Sounds::ID::MenuOpen
+                    );
                     getStateManager().setCurrentState
                     (
                         States::ID::RestartConfirm,
@@ -82,6 +91,10 @@ Paused::Paused(StateManager& stateManager, State* parent)
             {
                 [&] ()
                 {
+                    getStateManager().getSharedContext().soundPlayer.play
+                    (
+                        Sounds::ID::MenuOpen
+                    );
                     getStateManager().setCurrentState
                     (
                         States::ID::QuitConfirm,

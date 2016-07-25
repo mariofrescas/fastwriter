@@ -17,6 +17,7 @@
 
 #include "Started.h"
 
+#include "SoundPlayer.h"
 #include "StateManager.h"
 #include "ResourceManager.h"
 #include <SFML/Window/Event.hpp>
@@ -164,6 +165,10 @@ void Started::handleInput(const sf::Event& event)
         case sf::Keyboard::Y: handleInputLetter('y'); break;
         case sf::Keyboard::Z: handleInputLetter('z'); break;
         case sf::Keyboard::Escape:
+            getStateManager().getSharedContext().soundPlayer.play
+            (
+                Sounds::ID::MenuOpen
+            );
             getStateManager().setCurrentState
             (
                 States::ID::Paused,

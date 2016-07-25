@@ -17,6 +17,7 @@
 
 #include "QuitConfirm.h"
 
+#include "SoundPlayer.h"
 #include "StateManager.h"
 #include "ResourceManager.h"
 #include <SFML/Window/Event.hpp>
@@ -52,6 +53,10 @@ QuitConfirm::QuitConfirm(StateManager& stateManager, State* parent)
             {
                 [&] ()
                 {
+                    getStateManager().getSharedContext().soundPlayer.play
+                    (
+                        Sounds::ID::MenuClose
+                    );
                     getStateManager().setCurrentState
                     (
                         States::ID::Paused,
@@ -67,6 +72,10 @@ QuitConfirm::QuitConfirm(StateManager& stateManager, State* parent)
             {
                 [&] ()
                 {
+                    getStateManager().getSharedContext().soundPlayer.play
+                    (
+                        Sounds::ID::MenuClose
+                    );
                     getStateManager().setCurrentState
                     (
                         States::ID::MainMenu,

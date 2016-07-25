@@ -17,6 +17,7 @@
 
 #include "MainMenu.h"
 
+#include "SoundPlayer.h"
 #include "StateManager.h"
 #include "ResourceManager.h"
 #include <SFML/Window/Event.hpp>
@@ -46,6 +47,10 @@ MainMenu::MainMenu(StateManager& stateManager)
             {
                 [&] ()
                 {
+                    getStateManager().getSharedContext().soundPlayer.play
+                    (
+                        Sounds::ID::MenuOpen
+                    );
                     getStateManager().setCurrentState
                     (
                         States::ID::DifftyMenu,
@@ -75,6 +80,10 @@ MainMenu::MainMenu(StateManager& stateManager)
             {
                 [&] ()
                 {
+                    getStateManager().getSharedContext().soundPlayer.play
+                    (
+                        Sounds::ID::MenuOpen
+                    );
                     getStateManager().setCurrentState
                     (
                         States::ID::About,

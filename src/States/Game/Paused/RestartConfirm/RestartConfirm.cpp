@@ -17,6 +17,7 @@
 
 #include "RestartConfirm.h"
 
+#include "SoundPlayer.h"
 #include "StateManager.h"
 #include "ResourceManager.h"
 #include <SFML/Window/Event.hpp>
@@ -52,6 +53,10 @@ RestartConfirm::RestartConfirm(StateManager& stateManager, State* parent)
             {
                 [&] ()
                 {
+                    getStateManager().getSharedContext().soundPlayer.play
+                    (
+                        Sounds::ID::MenuClose
+                    );
                     getStateManager().setCurrentState
                     (
                         States::ID::Paused,
@@ -68,6 +73,10 @@ RestartConfirm::RestartConfirm(StateManager& stateManager, State* parent)
                 [&] ()
                 {
                     getStateManager().getState(States::ID::Started).reset();
+                    getStateManager().getSharedContext().soundPlayer.play
+                    (
+                        Sounds::ID::MenuClose
+                    );
                     getStateManager().setCurrentState
                     (
                         States::ID::Starting,

@@ -17,6 +17,7 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "SoundPlayer.h"
 #include "StateManager.h"
 #include "ResourceManager.h"
 
@@ -25,8 +26,17 @@ int main()
     sf::RenderWindow window(sf::VideoMode::getFullscreenModes().front(), "Fastwriter", sf::Style::Fullscreen);
     //sf::RenderWindow window(sf::VideoMode(600, 500), "States");
     ResourceManager resManager;
+    SoundPlayer soundPlayer(resManager);
 
-    StateManager stateManager(StateManager::SharedContext(window, resManager));
+    StateManager stateManager
+    (
+        StateManager::SharedContext
+        (
+            window,
+            soundPlayer,
+            resManager
+        )
+    );
     stateManager.setCurrentState(States::ID::Black);
 
     sf::Clock clock;
@@ -53,6 +63,8 @@ int main()
             window.clear();
             stateManager.draw();
             window.display();
+
+            soundPlayer.removeStoppedSounds();
         }
     }
 
