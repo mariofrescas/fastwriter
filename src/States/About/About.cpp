@@ -37,21 +37,71 @@ About::About(StateManager& stateManager)
     ResourceManager& resMngr = getStateManager().getSharedContext().resourceManager;
     const sf::Vector2u& windowSize = getStateManager().getSharedContext().window.getSize();
 
-    background.setTexture(resMngr.getTexture(Textures::ID::Background));
+    background.setTexture(resMngr.getTexture(Textures::ID::About));
+    background.setTextureRect(sf::IntRect(582, 195, 31, 31));
+    background.setScale
+    (   windowSize.x / background.getLocalBounds().width,
+        windowSize.y / background.getLocalBounds().width
+    );
 
     constexpr float acw = 572.296;
     constexpr float ach = 624.038;
     float acx = (windowSize.x / 2) - (acw / 2);
     float acy = (windowSize.y / 2) - (ach / 2);
 
-    about.setTexture(resMngr.getTexture(Textures::ID::About));
-    about.setTextureRect(sf::IntRect(0, 0, acw, ach));
-    about.setPosition(acx, acy);
+    constexpr float msgYoff = 200;
+    constexpr float msgXoff = 63;
+    container.setTexture(resMngr.getTexture(Textures::ID::About));
+    container.setTextureRect(sf::IntRect(0, 0, acw, ach));
+    container.setPosition(acx, acy);
 
-    button = std::make_unique<GraphicMenu>
+    about.setTexture(resMngr.getTexture(Textures::ID::About));
+    about.setTextureRect(sf::IntRect(787, 0, 406, 200));
+    about.setPosition(acx + msgXoff, acy + msgYoff);
+    currentMsg = &about;
+
+    license.setTexture(resMngr.getTexture(Textures::ID::About));
+    license.setTextureRect(sf::IntRect(581, 233, 452, 278));
+    license.setPosition(acx + msgXoff, acy + msgYoff);
+
+    acknowled.setTexture(resMngr.getTexture(Textures::ID::About));
+    acknowled.setTextureRect(sf::IntRect(1043, 239, 376, 255));
+    acknowled.setPosition(acx + msgXoff, acy + msgYoff);
+
+    options = std::make_unique<GraphicMenu>
     (
         std::list<GraphicMenu::MenuOptionData>
         {
+            GraphicMenu::MenuOptionData
+            {
+                [&] ()
+                {
+                    currentMsg = &about;
+                },
+                sf::Vector2f(acx + 63, acy + 160),
+                sf::IntRect(581, 86, 73, 20),
+                sf::IntRect(581, 65, 73, 20)
+            },
+            GraphicMenu::MenuOptionData
+            {
+                [&] ()
+                {
+                    currentMsg = &license;
+                },
+                sf::Vector2f(acx + 200, acy + 160),
+                sf::IntRect(581, 129, 103, 20),
+                sf::IntRect(581, 107, 103, 20)
+            },
+            GraphicMenu::MenuOptionData
+            {
+                [&] ()
+                {
+                    currentMsg = &acknowled;
+                },
+                sf::Vector2f(acx + 338, acy + 164),
+                sf::IntRect(581, 170, 173, 20),
+                sf::IntRect(581, 150, 173, 20)
+            },
             GraphicMenu::MenuOptionData
             {
                 [&] ()
@@ -66,6 +116,7 @@ About::About(StateManager& stateManager)
                         Transitions::ID::Fade,
                         sf::milliseconds(1000)
                     );
+                    reset();
                 },
                 sf::Vector2f(acx + 341, acy + 527),
                 sf::IntRect(581.338, 34, 81.015, 28),
@@ -90,12 +141,11 @@ void About::handleInput(const sf::Event& event)
 {
     if (event.type == sf::Event::MouseMoved)
     {
-        button->setCurrentOption(sf::Vector2f(event.mouseMove.x, event.mouseMove.y));
+        options->setCurrentOption(sf::Vector2f(event.mouseMove.x, event.mouseMove.y));
     }
     else if (event.type == sf::Event::MouseButtonPressed)
     {
-        button->execCurrentOption(sf::Vector2f(event.mouseButton.x, event.mouseButton.y));
-        reset();
+        options->execCurrentOption(sf::Vector2f(event.mouseButton.x, event.mouseButton.y));
     }
 }
 
@@ -108,16 +158,24 @@ void About::draw()
     sf::RenderWindow& window = getStateManager().getSharedContext().window;
 
     window.draw(background);
-    window.draw(about);
-    window.draw(button->getGraphicMenu().options.front().graph);
+    window.draw(container);
+    window.draw(*currentMsg);
+    for (const auto& opt : options->getGraphicMenu().options)
+    {
+        window.draw(opt.graph);
+    }
 }
 
 const sf::Texture* About::getSnapShotTexture()
 {
     snapShot.clear();
     snapShot.draw(background);
-    snapShot.draw(about);
-    snapShot.draw(button->getGraphicMenu().options.front().graph);
+    snapShot.draw(container);
+    snapShot.draw(*currentMsg);
+    for (const auto& opt : options->getGraphicMenu().options)
+    {
+        snapShot.draw(opt.graph);
+    }
     snapShot.display();
 
     return &snapShot.getTexture();
@@ -125,5 +183,6 @@ const sf::Texture* About::getSnapShotTexture()
 
 void About::reset()
 {
-    button->setCurrentOption(sf::Vector2f(0, 0));
+    currentMsg = &about;
+    options->setCurrentOption(sf::Vector2f(0, 0));
 }

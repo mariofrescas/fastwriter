@@ -49,8 +49,12 @@ public:
 
 private:
     sf::Sprite        background; ///< Sprite de fondo
-    sf::Sprite        about;      ///< Sprite de mensaje de bienvenida
-    GraphicMenu::Ptr  button;     ///< Boton para regresar el menu principal
+    sf::Sprite        container;  ///< Contendedor de mensajes
+    sf::Sprite        about;      ///< Mensaje de "acerca de..."
+    sf::Sprite        license;    ///< Mensaje de licencia
+    sf::Sprite        acknowled;  ///< Mensaje de reconocimientos
+    sf::Sprite*       currentMsg; ///< Unico mensaje a mostrar
+    GraphicMenu::Ptr  options;    ///< Menu de opciones
     sf::RenderTexture snapShot;   ///< Captura de la escena
 };
 
