@@ -98,7 +98,7 @@ public:
     /// \param texture Textura donde se encuentran los elementros del menu
     ///
     ////////////////////////////////////////////////////////////
-    GraphicMenu(const std::list<MenuOptionData>& menusData,
+    GraphicMenu(const std::list<MenuOptionData>& menuData,
                 const MenuContainerData& containerData,
                 const sf::Texture& texture);
 

@@ -25,7 +25,7 @@
 
 #include "GraphicMenu.h"
 
-GraphicMenu::GraphicMenu(const std::list<MenuOptionData>& menusData,
+GraphicMenu::GraphicMenu(const std::list<MenuOptionData>& menuData,
                          const MenuContainerData& containerData,
                          const sf::Texture& texture)
 {
@@ -34,7 +34,7 @@ GraphicMenu::GraphicMenu(const std::list<MenuOptionData>& menusData,
     menu.container.graph.setPosition(containerData.pos);
     menu.container.data = containerData;
 
-    for (auto& data : menusData)
+    for (auto& data : menuData)
     {
         sf::Sprite s(texture, data.normal);
         s.setPosition(data.pos);
