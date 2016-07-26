@@ -8,15 +8,15 @@ INCLUDEPATH += \
            ResourceManager/ \
            SoundPlayer/ \
            StateManager/ \
+           Transitions/ \
+           Transitions/Fade/ \
+           Transitions/CircleOpen/ \
+           Transitions/CircleClose/ \
            States/MainMenu/ \
            States/About/ \
            States/DifficultyMenu/ \
            States/Black/ \
            States/Wellcome/ \
-           States/Transitions/ \
-           States/Transitions/Fade/ \
-           States/Transitions/CircleOpen/ \
-           States/Transitions/CircleClose/ \
            States/Game/Starting/ \
            States/Game/Starting/Controls/CountDownControl/ \
            States/Game/Started/ \
@@ -55,16 +55,16 @@ HEADERS += \
            States/Game/Started/Controls/WordControl/WordMap/WordMap.h \
     States/Game/Started/Controls/WantPointsControl/WantPointsControl.h \
     States/Game/Started/Controls/CleanersControl/CleanersControl.h \
-    States/Transitions/Transition.h \
-    States/Transitions/Fade/Fade.h \
+    Transitions/Transition.h \
+    Transitions/Fade/Fade.h \
     Menu/GraphicMenu.h \
     States/DifficultyMenu/DifftyMenu.h \
     States/About/About.h \
     States/Game/Starting/Starting.h \
     States/Game/Starting/Controls/CountDownControl/CountDownControl.h \
-    States/Transitions/CircleOpen/CircleOpen.h \
+    Transitions/CircleOpen/CircleOpen.h \
     States/Game/Paused/Paused.h \
-    States/Transitions/CircleClose/CircleClose.h \
+    Transitions/CircleClose/CircleClose.h \
     States/Game/Paused/QuitConfirm/QuitConfirm.h \
     States/Game/Paused/RestartConfirm/RestartConfirm.h \
     States/Game/Started/Confs/ExpertConf.h \
@@ -92,16 +92,16 @@ SOURCES += \
            States/Game/Started/Controls/WordControl/WordMap/WordMap.cpp \
     States/Game/Started/Controls/WantPointsControl/WantPointsControl.cpp \
     States/Game/Started/Controls/CleanersControl/CleanersControl.cpp \
-    States/Transitions/Transition.cpp \
-    States/Transitions/Fade/Fade.cpp \
+    Transitions/Transition.cpp \
+    Transitions/Fade/Fade.cpp \
     Menu/GraphicMenu.cpp \
     States/DifficultyMenu/DifftyMenu.cpp \
     States/About/About.cpp \
     States/Game/Starting/Starting.cpp \
     States/Game/Starting/Controls/CountDownControl/CountDownControl.cpp \
-    States/Transitions/CircleOpen/CircleOpen.cpp \
+    Transitions/CircleOpen/CircleOpen.cpp \
     States/Game/Paused/Paused.cpp \
-    States/Transitions/CircleClose/CircleClose.cpp \
+    Transitions/CircleClose/CircleClose.cpp \
     States/Game/Paused/QuitConfirm/QuitConfirm.cpp \
     States/Game/Paused/RestartConfirm/RestartConfirm.cpp \
     States/Game/Started/Confs/ExpertConf.cpp \
