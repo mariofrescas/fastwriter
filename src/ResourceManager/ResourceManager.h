@@ -104,7 +104,7 @@ namespace Sounds
         CleanerActive,   ///< Id de efecto de sonido para activar un lipiador
         LetterTake,      ///< Id de efecto de sonido para tomar letras
         LetterTrap,      ///< Id de efecto de sonido para atrapar letras
-        LetterTakeFail  ///< Id de efecto de sonido para cuando falla el tomar letras
+        LetterTakeFail   ///< Id de efecto de sonido para cuando falla el tomar letras
     };
 }
 
