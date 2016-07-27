@@ -14,13 +14,16 @@
 
 ################################################################################
 # License for:
-#  - cleaner-active.wav
+#  - cleaner-active.ogg
 #  - life-increment.wav
 # Original file names:
 #  - BattleIntro.wav
 #  - LoadSave.wav
 # Modifications:
-#  - None
+#  - BattleIntro.wav:
+#    - wav to ogg format with Audacity
+#    - Start cropped with Audacity
+#    - Lower the volume with Audacity
 #===============================================================================
 # Copyrigh (C) 2016 KillaMaaki <http://opengameart.org/users/killamaaki>
 #
@@ -62,12 +65,14 @@
 ################################################################################
 # License for:
 #  - letter-take-fail.wav
-#  - tab-change.wav
+#  - tab-change.ogg
 # Original file names:
 #  - negative_2.wav
 #  - misc_menu_4.wav
 # Modifications:
-#  - None
+#  - misc_menu_4.wav
+#    - wav to ogg format with Audacity
+#    - Lower the volume with Audacity
 #===============================================================================
 # Credit lokif <http://opengameart.org/users/lokif>
 #
