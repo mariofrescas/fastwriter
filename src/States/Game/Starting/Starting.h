@@ -52,6 +52,11 @@ private:
     sf::Sprite            starting;   ///< Contenedor de conteo
     CountDownControl::Ptr countDown;  ///< Control de conteo
     sf::RenderTexture     snapShot;   ///< Captura de la escena
+    sf::Time              elapsed;    ///< Tiempo transcurrido para reproducir sonido
+    bool                  playOnce1;  ///< Reproducion 1 sola vez primer sonido
+    bool                  playOnce2;  ///< Reproducion 1 sola vez segundo sonido
+    bool                  playOnce3;  ///< Reproducion 1 sola vez tercer sonido
+    bool                  playOnce4;  ///< Reproducion 1 sola vez cuarto sonido
 };
 
 #endif // STARTING_H

@@ -25,12 +25,17 @@
 
 #include "Starting.h"
 
+#include "SoundPlayer.h"
 #include "StateManager.h"
 #include "ResourceManager.h"
 #include <SFML/Graphics/RenderWindow.hpp>
 
 Starting::Starting(StateManager& stateManager, State* parent)
-    : State(stateManager, parent)
+    : State(stateManager, parent),
+      playOnce1(true),
+      playOnce2(false),
+      playOnce3(false),
+      playOnce4(false)
 {
     ResourceManager& resMngr = getStateManager().getSharedContext().resourceManager;
     const sf::Vector2u& windowSize = getStateManager().getSharedContext().window.getSize();
@@ -71,6 +76,47 @@ void Starting::handleInput(const sf::Event&)
 
 void Starting::update(const sf::Time& dt)
 {
+    elapsed += dt;
+
+    if (playOnce1)
+    {
+        playOnce1 = false;
+        playOnce2 = true;
+        getStateManager().getSharedContext().soundPlayer.play
+        (
+            Sounds::ID::CountDown
+        );
+    }
+
+    if(elapsed >= sf::seconds(1) && playOnce2)
+    {
+        playOnce2 = false;
+        playOnce3 = true;
+        getStateManager().getSharedContext().soundPlayer.play
+        (
+            Sounds::ID::CountDown
+        );
+    }
+
+    if(elapsed >= sf::seconds(2) && playOnce3)
+    {
+        playOnce3 = false;
+        playOnce4 = true;
+        getStateManager().getSharedContext().soundPlayer.play
+        (
+            Sounds::ID::CountDown
+        );
+    }
+
+    if(elapsed >= sf::seconds(3) && playOnce4)
+    {
+        playOnce4 = false;
+        getStateManager().getSharedContext().soundPlayer.play
+        (
+            Sounds::ID::CountDownFinish
+        );
+    }
+
     if (countDown->finished(dt))
     {
         getStateManager().setCurrentState
@@ -108,5 +154,7 @@ const sf::Texture* Starting::getSnapShotTexture()
 
 void Starting::reset()
 {
+    playOnce1 = true;
     countDown->reset();
+    elapsed = sf::Time::Zero;
 }
