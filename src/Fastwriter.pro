@@ -7,6 +7,7 @@ INCLUDEPATH += \
            Gui/ \
            ResourceManager/ \
            SoundPlayer/ \
+           MusicPlayer/ \
            StateManager/ \
            Transitions/ \
            States/About/ \
@@ -39,6 +40,7 @@ HEADERS += \
            Gui/GraphicMenu.h \
            ResourceManager/ResourceHolder.h \
            ResourceManager/ResourceManager.h \
+           MusicPlayer/MusicPlayer.h \
            SoundPlayer/SoundPlayer.h \
            StateManager/State.h \
            StateManager/StateManager.h \
@@ -76,6 +78,7 @@ SOURCES += \
            Main.cpp \
            Gui/GraphicMenu.cpp \
            ResourceManager/ResourceManager.cpp \
+           MusicPlayer/MusicPlayer.cpp \
            SoundPlayer/SoundPlayer.cpp \
            StateManager/State.cpp \
            StateManager/StateManager.cpp \

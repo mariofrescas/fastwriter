@@ -25,6 +25,7 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "MusicPlayer.h"
 #include "SoundPlayer.h"
 #include "StateManager.h"
 #include "ResourceManager.h"
@@ -34,6 +35,8 @@ int main()
     sf::RenderWindow window(sf::VideoMode::getFullscreenModes().front(), "Fastwriter", sf::Style::Fullscreen);
     //sf::RenderWindow window(sf::VideoMode(600, 500), "States");
     ResourceManager resManager;
+    MusicPlayer musicPlayer;
+    musicPlayer.setVolume(50);
     SoundPlayer soundPlayer(resManager);
 
     StateManager stateManager
@@ -41,6 +44,7 @@ int main()
         StateManager::SharedContext
         (
             window,
+            musicPlayer,
             soundPlayer,
             resManager
         )

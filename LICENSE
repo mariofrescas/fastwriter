@@ -4,6 +4,7 @@
  Exceptions:
   - res/dictionaries/en.dic          - license included in: same file
   - res/fonts/saxmono.ttf            - license included in: licenses/LICENSES
+  - res/music/started.ogg            - license included in: licenses/LICENSES
   - res/shaders/circle.frag          - license included in: same file
   - res/shaders/fade.frag            - license included in: same file
   - res/sounds/cleaner-active.wav    - license included in: licenses/LICENSES

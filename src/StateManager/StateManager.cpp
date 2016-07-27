@@ -44,9 +44,11 @@
 #include "RestartConfirm.h"
 
 StateManager::SharedContext::SharedContext(sf::RenderWindow& window,
+                                           MusicPlayer& musicPlayer,
                                            SoundPlayer& soundPlayer,
                                            ResourceManager& resManager)
     : window(window),
+      musicPlayer(musicPlayer),
       soundPlayer(soundPlayer),
       resourceManager(resManager)
 {
@@ -57,6 +59,7 @@ StateManager::StateManager(const SharedContext& sharedContex)
     shdContex = std::make_unique<SharedContext>
     (
         sharedContex.window,
+        sharedContex.musicPlayer,
         sharedContex.soundPlayer,
         sharedContex.resourceManager
     );
