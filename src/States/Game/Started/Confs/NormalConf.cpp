@@ -27,7 +27,7 @@
 
 int NormalConf::getDropTime() const
 {
-    return random(500, 800);
+    return 400;
 }
 
 int NormalConf::getWordLength() const
@@ -37,7 +37,7 @@ int NormalConf::getWordLength() const
 
 float NormalConf::getDropVelocity() const
 {
-    return random(10, 50);
+    return 100;
 }
 
 int NormalConf::getInitLifes() const
@@ -67,7 +67,7 @@ int NormalConf::getLifesDecrement() const
 
 int NormalConf::getWantPoints() const
 {
-    return 10;
+    return 100;
 }
 
 int NormalConf::getShiftModeDuration() const
