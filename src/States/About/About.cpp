@@ -76,6 +76,10 @@ About::About(StateManager& stateManager)
             {
                 [&] ()
                 {
+                    getStateManager().getSharedContext().soundPlayer.play
+                    (
+                        Sounds::ID::TabChange
+                    );
                     currentMsg = &about;
                 },
                 sf::Vector2f(acx + 63, acy + 160),
@@ -86,6 +90,10 @@ About::About(StateManager& stateManager)
             {
                 [&] ()
                 {
+                    getStateManager().getSharedContext().soundPlayer.play
+                    (
+                        Sounds::ID::TabChange
+                    );
                     currentMsg = &license;
                 },
                 sf::Vector2f(acx + 200, acy + 160),
@@ -96,6 +104,10 @@ About::About(StateManager& stateManager)
             {
                 [&] ()
                 {
+                    getStateManager().getSharedContext().soundPlayer.play
+                    (
+                        Sounds::ID::TabChange
+                    );
                     currentMsg = &acknowled;
                 },
                 sf::Vector2f(acx + 338, acy + 164),
