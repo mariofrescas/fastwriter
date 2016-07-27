@@ -91,8 +91,20 @@ namespace Sounds
     ////////////////////////////////////////////////////////////
     enum class ID
     {
-        MenuOpen,  ///< Id de efecto de sonido para abrir menus
-        MenuClose  ///< Id de efecto de sonido para cerrar menus
+        MenuOpen,        ///< Id de efecto de sonido para abrir menus
+        MenuClose,       ///< Id de efecto de sonido para cerrar menus
+        TabChange,       ///< Id de efecto de sonido para cambiar de pestañas
+        LifesIncrement,  ///< Id de efecto de sonido para cuando incrementan las vidas
+        GameEnd,         ///< Id de efecto de sonido para cuando el juego ha terminado
+        CountDown,       ///< Id de efecto de sonido para cuando esta corriendo la la cuenta de inicio de juego
+        CountDownFinish, ///< Id de efecto de sonido para cuando termina la cuenta de inicio de juego
+        ShiftModeStart,  ///< Id de efecto de sonido para cuando inicia el modo Shift
+        ShiftModeFinish, ///< Id de efecto de sonido para cuando termina el modo Shift
+        ShiftModeReady,  ///< Id de efecto de sonido para cuando esta listo el modo Shift
+        CleanerActive,   ///< Id de efecto de sonido para activar un lipiador
+        LetterTake,      ///< Id de efecto de sonido para tomar letras
+        LetterTrap,      ///< Id de efecto de sonido para atrapar letras
+        LetterTakeFail  ///< Id de efecto de sonido para cuando falla el tomar letras
     };
 }
 

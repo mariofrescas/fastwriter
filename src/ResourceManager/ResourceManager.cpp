@@ -32,6 +32,7 @@
 ResourceManager::ResourceManager()
 {
     fontHolder.load(Fonts::ID::Default, "res/fonts/saxmono.ttf");
+
     shaderHolder.load(Shaders::ID::Fade, "res/shaders/fade.frag", sf::Shader::Fragment);
     shaderHolder.load(Shaders::ID::Circle, "res/shaders/circle.frag", sf::Shader::Fragment);
 
@@ -49,6 +50,18 @@ ResourceManager::ResourceManager()
 
     soundHolder.load(Sounds::ID::MenuOpen, "res/sounds/menu-open.ogg");
     soundHolder.load(Sounds::ID::MenuClose, "res/sounds/menu-close.ogg");
+    soundHolder.load(Sounds::ID::TabChange, "res/sounds/tab-change.wav");
+    soundHolder.load(Sounds::ID::LifesIncrement, "res/sounds/life-increment.wav");
+    soundHolder.load(Sounds::ID::GameEnd, "res/sounds/game-end.ogg");
+    soundHolder.load(Sounds::ID::CountDown, "res/sounds/count-down.ogg");
+    soundHolder.load(Sounds::ID::CountDownFinish, "res/sounds/count-down-finish.ogg");
+    soundHolder.load(Sounds::ID::ShiftModeStart, "res/sounds/shift-mode-start.wav");
+    soundHolder.load(Sounds::ID::ShiftModeFinish, "res/sounds/shift-mode-finish.wav");
+    soundHolder.load(Sounds::ID::ShiftModeReady, "res/sounds/shift-mode-ready.wav");
+    soundHolder.load(Sounds::ID::CleanerActive, "res/sounds/cleaner-active.wav");
+    soundHolder.load(Sounds::ID::LetterTake, "res/sounds/letter-take.ogg");
+    soundHolder.load(Sounds::ID::LetterTrap, "res/sounds/letter-trap.ogg");
+    soundHolder.load(Sounds::ID::LetterTakeFail, "res/sounds/letter-take-fail.wav");
 }
 
 sf::Texture& ResourceManager::getTexture(const Textures::ID& textureId) const

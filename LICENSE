@@ -2,9 +2,24 @@
  All files in this project are under the following license.
 
  Exceptions:
-  - res/dictionaries/en.dic
-  - res/sounds/menu-open.ogg
-  - res/sounds/menu-close.ogg
+  - res/dictionaries/en.dic          - license included in: same file
+  - res/fonts/saxmono.ttf            - license included in: licenses/LICENSES
+  - res/shaders/circle.frag          - license included in: same file
+  - res/shaders/fade.frag            - license included in: same file
+  - res/sounds/cleaner-active.wav    - license included in: licenses/LICENSES
+  - res/sounds/count-down.ogg        - license included in: licenses/LICENSES
+  - res/sounds/count-down-finish.ogg - license included in: licenses/LICENSES
+  - res/sounds/game-end.ogg          - license included in: licenses/LICENSES
+  - res/sounds/letter-take.ogg       - license included in: licenses/LICENSES
+  - res/sounds/letter-take-fail.wav  - license included in: licenses/LICENSES
+  - res/sounds/letter-trap.ogg       - license included in: licenses/LICENSES
+  - res/sounds/life-increment.wav    - license included in: licenses/LICENSES
+  - res/sounds/menu-close.ogg        - license included in: licenses/LICENSES
+  - res/sounds/menu-open.ogg         - license included in: licenses/LICENSES
+  - res/sounds/shift-mode-finish.wav - license included in: licenses/LICENSES
+  - res/sounds/shift-mode-ready.wav  - license included in: licenses/LICENSES
+  - res/sounds/shift-mode-start.wav  - license included in: licenses/LICENSES
+  - res/sounds/tab-change.wav        - license included in: licenses/LICENSES
   These files are under their own license file.
 =====
 
