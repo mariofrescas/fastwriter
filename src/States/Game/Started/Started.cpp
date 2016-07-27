@@ -25,6 +25,7 @@
 
 #include "Started.h"
 
+#include "MusicPlayer.h"
 #include "SoundPlayer.h"
 #include "StateManager.h"
 #include "ResourceManager.h"
@@ -175,6 +176,10 @@ void Started::handleInput(const sf::Event& event)
         case sf::Keyboard::Y: handleInputLetter('y'); break;
         case sf::Keyboard::Z: handleInputLetter('z'); break;
         case sf::Keyboard::Escape:
+            getStateManager().getSharedContext().musicPlayer.pause
+            (
+                true
+            );
             getStateManager().getSharedContext().soundPlayer.play
             (
                 Sounds::ID::MenuOpen
@@ -230,6 +235,7 @@ void Started::update(const sf::Time& dt)
         lifes->decrement(gConf.getLifesDecrement());
         if (!lifes->remain())
         {
+            getStateManager().getSharedContext().musicPlayer.stop();
             getStateManager().getSharedContext().soundPlayer.play
             (
                 Sounds::ID::GameEnd
@@ -342,6 +348,8 @@ void Started::reset()
     words->reset();
     trapCount = 0;
     takeCount = 0;
+    shiftStarted = false;
+    shiftFinished = false;
 }
 
 void Started::handleInputLetter(char letter)

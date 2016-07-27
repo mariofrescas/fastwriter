@@ -25,6 +25,7 @@
 
 #include "Starting.h"
 
+#include "MusicPlayer.h"
 #include "SoundPlayer.h"
 #include "StateManager.h"
 #include "ResourceManager.h"
@@ -124,6 +125,10 @@ void Starting::update(const sf::Time& dt)
             States::ID::Started,
             Transitions::ID::CircleOpen,
             sf::milliseconds(1000)
+        );
+        getStateManager().getSharedContext().musicPlayer.play
+        (
+            Music::ID::Started
         );
 
         reset();
