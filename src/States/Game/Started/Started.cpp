@@ -34,7 +34,9 @@
 Started::Started(StateManager& stateManager)
     : State(stateManager),
       trapCount(0),
-      takeCount(0)
+      takeCount(0),
+      shiftStarted(false),
+      shiftFinished(false)
 {
     const ResourceManager& resMngr = getStateManager().getSharedContext().resourceManager;
     const GameConf& gConf = confMngr.getCurrentConf();
@@ -221,10 +223,23 @@ void Started::update(const sf::Time& dt)
     if (trapCount > 0)
     {
         --trapCount;
+        getStateManager().getSharedContext().soundPlayer.play
+        (
+            Sounds::ID::LetterTrap
+        );
         lifes->decrement(gConf.getLifesDecrement());
         if (!lifes->remain())
         {
-            // TODO: End Game
+            getStateManager().getSharedContext().soundPlayer.play
+            (
+                Sounds::ID::GameEnd
+            );
+            getStateManager().setCurrentState
+            (
+                States::ID::MainMenu,
+                Transitions::ID::CircleClose,
+                sf::milliseconds(1000)
+            );
         }
     }
 
@@ -236,8 +251,31 @@ void Started::update(const sf::Time& dt)
 
         if (wantPoints->isFull())
         {
+            getStateManager().getSharedContext().soundPlayer.play
+            (
+                Sounds::ID::LifesIncrement
+            );
             lifes->increment(gConf.getLifesIncrement());
         }
+    }
+
+    if (!shiftMode->canActive() && !shiftMode->isActive() && shiftStarted)
+    {
+        shiftStarted = false;
+        shiftFinished = true;
+        getStateManager().getSharedContext().soundPlayer.play
+        (
+            Sounds::ID::ShiftModeFinish
+        );
+    }
+
+    if (shiftMode->canActive() && shiftFinished)
+    {
+        shiftFinished = false;
+        getStateManager().getSharedContext().soundPlayer.play
+        (
+            Sounds::ID::ShiftModeReady
+        );
     }
 }
 
@@ -313,9 +351,17 @@ void Started::handleInputLetter(char letter)
     if (words->take(letter))
     {
         ++takeCount;
+        getStateManager().getSharedContext().soundPlayer.play
+        (
+            Sounds::ID::LetterTake
+        );
     }
     else
     {
+        getStateManager().getSharedContext().soundPlayer.play
+        (
+            Sounds::ID::LetterTakeFail
+        );
         points->decrement(gConf.getPointsIncrement());
     }
 }
@@ -324,6 +370,11 @@ void Started::handleShiftModeActivation()
 {
     if (shiftMode->canActive())
     {
+        getStateManager().getSharedContext().soundPlayer.play
+        (
+            Sounds::ID::ShiftModeStart
+        );
+        shiftStarted = true;
         shiftMode->active();
     }
 }
@@ -332,6 +383,10 @@ void Started::handleCleanerActivation()
 {
     if (cleaners->canClean())
     {
+        getStateManager().getSharedContext().soundPlayer.play
+        (
+            Sounds::ID::CleanerActive
+        );
         cleaners->clean();
         takeCount += words->takeAll();
     }

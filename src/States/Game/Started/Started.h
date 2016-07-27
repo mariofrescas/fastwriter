@@ -56,20 +56,22 @@ public:
     virtual void reset() override;
 
 private:
-    sf::Sprite             background; ///< Fondo
-    sf::Sprite             gameCase;   ///< Tablero de juego
-    sf::Sprite             wordsCover; ///< Ocultar la aparicion de las letras
-    PointsControl::Ptr     points;     ///< Control de puntos
-    WantPointsControl::Ptr wantPoints; ///< Control de puntos deseados
-    TimeControl::Ptr       time;       ///< Control de tiempo transcurrido
-    ShiftModeControl::Ptr  shiftMode;  ///< Control de modo de juego Shift
-    LifesControl::Ptr      lifes;      ///< Control de vidas
-    CleanersControl::Ptr   cleaners;   ///< Control de limpiadores
-    WordControl::Ptr       words;      ///< Control de palabras
-    GameConfManager        confMngr;   ///< Configuracion de dificultad
-    sf::RenderTexture      snapShot;   ///< Caputra de la escena
-    int                    trapCount;  ///< Acomulacion de vidas perdidas
-    int                    takeCount;  ///< Acomulacion de puntos ganados
+    sf::Sprite             background;    ///< Fondo
+    sf::Sprite             gameCase;      ///< Tablero de juego
+    sf::Sprite             wordsCover;    ///< Ocultar la aparicion de las letras
+    PointsControl::Ptr     points;        ///< Control de puntos
+    WantPointsControl::Ptr wantPoints;    ///< Control de puntos deseados
+    TimeControl::Ptr       time;          ///< Control de tiempo transcurrido
+    ShiftModeControl::Ptr  shiftMode;     ///< Control de modo de juego Shift
+    LifesControl::Ptr      lifes;         ///< Control de vidas
+    CleanersControl::Ptr   cleaners;      ///< Control de limpiadores
+    WordControl::Ptr       words;         ///< Control de palabras
+    GameConfManager        confMngr;      ///< Configuracion de dificultad
+    sf::RenderTexture      snapShot;      ///< Caputra de la escena
+    int                    trapCount;     ///< Acomulacion de vidas perdidas
+    int                    takeCount;     ///< Acomulacion de puntos ganados
+    bool                   shiftStarted;  ///< Reproducir 1 sola vez finished
+    bool                   shiftFinished; ///< Reproducir 1 sola vez ready
 
     void handleInputLetter(char letter);
     void handleShiftModeActivation();
