@@ -65,7 +65,7 @@ About::About(StateManager& stateManager)
     license.setPosition(acx + msgXoff, acy + msgYoff);
 
     acknowled.setTexture(resMngr.getTexture(Textures::ID::About));
-    acknowled.setTextureRect(sf::IntRect(1043, 239, 376, 255));
+    acknowled.setTextureRect(sf::IntRect(1040, 236, 378, 300));
     acknowled.setPosition(acx + msgXoff, acy + msgYoff);
 
     options = std::make_unique<GraphicMenu>
