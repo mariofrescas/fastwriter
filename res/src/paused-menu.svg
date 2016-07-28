@@ -18,7 +18,7 @@
    inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/paused-menu.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90"
-   sodipodi:docname="pause-menu.svg">
+   sodipodi:docname="paused-menu.svg">
   <defs
      id="defs4">
     <filter
@@ -81,9 +81,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7071068"
-     inkscape:cx="597.99688"
-     inkscape:cy="267.42171"
+     inkscape:zoom="1"
+     inkscape:cx="294.1724"
+     inkscape:cy="232.50326"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -101,7 +101,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -123,10 +123,10 @@
     <rect
        style="opacity:1;fill:#535353;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect7013-3"
-       width="504.40784"
-       height="344"
-       x="26.180555"
-       y="682.88873"
+       width="503.40784"
+       height="339"
+       x="27.180555"
+       y="684.88873"
        inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/text4199.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
@@ -175,7 +175,7 @@
        width="491.70169"
        height="108.02537"
        x="33.022411"
-       y="911.71118"
+       y="910.29694"
        inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/text4199.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
@@ -186,7 +186,7 @@
        x="368.99066"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:none;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4535)"
        xml:space="preserve"
-       transform="matrix(0.74500254,0,0,0.74500254,-228.91891,353.1817)"
+       transform="matrix(0.74500254,0,0,0.74500254,-228.91891,351.76748)"
        inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/text4199.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"><tspan
@@ -213,7 +213,7 @@
        width="491.70169"
        height="108.02537"
        x="33.022377"
-       y="691.64349"
+       y="691.83679"
        inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/text4199.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
@@ -224,7 +224,7 @@
        x="1429.0615"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:none;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4203)"
        xml:space="preserve"
-       transform="matrix(0.74500254,0,0,0.74500254,-1019.3666,358.3175)"
+       transform="matrix(0.74500254,0,0,0.74500254,-1019.3666,358.5108)"
        inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/text4199.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"><tspan

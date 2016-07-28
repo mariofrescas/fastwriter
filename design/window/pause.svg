@@ -263,16 +263,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.5"
-     inkscape:cx="626.04892"
-     inkscape:cy="356.25987"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="633.92661"
+     inkscape:cy="346.30829"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1366"
-     inkscape:window-height="723"
+     inkscape:window-height="745"
      inkscape:window-x="0"
-     inkscape:window-y="22"
+     inkscape:window-y="0"
      inkscape:window-maximized="0"
      showguides="false"
      inkscape:snap-nodes="true"
@@ -600,7 +600,7 @@
     </g>
     <g
        id="g8002"
-       transform="translate(4.5898438e-5,-5.5527344e-6)">
+       transform="translate(4.5898438e-5,-1.4142193)">
       <rect
          y="727.18463"
          x="439.49146"
