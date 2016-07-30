@@ -29,43 +29,43 @@
 #include <SFML/Graphics/Shader.hpp>
 #include <SFML/Graphics/Texture.hpp>
 
-ResourceManager::ResourceManager()
+ResourceManager::ResourceManager(const std::string& path)
 {
-    dicHolder[Dictionaries::ID::EN_DIC] = "res/dictionaries/en.dic";
+    dicHolder[Dictionaries::ID::EN_DIC] = path + "res/dictionaries/en.dic";
 
-    fontHolder.load(Fonts::ID::Default, "res/fonts/saxmono.ttf");
+    fontHolder.load(Fonts::ID::Default, path + "res/fonts/saxmono.ttf");
 
-    shaderHolder.load(Shaders::ID::Fade, "res/shaders/fade.frag", sf::Shader::Fragment);
-    shaderHolder.load(Shaders::ID::Circle, "res/shaders/circle.frag", sf::Shader::Fragment);
+    shaderHolder.load(Shaders::ID::Fade, path + "res/shaders/fade.frag", sf::Shader::Fragment);
+    shaderHolder.load(Shaders::ID::Circle, path + "res/shaders/circle.frag", sf::Shader::Fragment);
 
-    textureHolder.load(Textures::ID::Background, "res/textures/background.png");
-    textureHolder.load(Textures::ID::MainMenu, "res/textures/main-menu.png");
-    textureHolder.load(Textures::ID::About, "res/textures/about.png");
-    textureHolder.load(Textures::ID::DifftyMenu, "res/textures/difficulty-menu.png");
-    textureHolder.load(Textures::ID::Starting, "res/textures/starting.png");
-    textureHolder.load(Textures::ID::Paused, "res/textures/paused-menu.png");
-    textureHolder.load(Textures::ID::QuitConfirm, "res/textures/quit-confirm-menu.png");
-    textureHolder.load(Textures::ID::RestartConfirm, "res/textures/restart-confirm-menu.png");
-    textureHolder.load(Textures::ID::Wellcome, "res/textures/wellcome.png");
-    textureHolder.load(Textures::ID::Game, "res/textures/game.png");
-    textureHolder.load(Textures::ID::Letters, "res/textures/letters.png");
+    textureHolder.load(Textures::ID::Background, path + "res/textures/background.png");
+    textureHolder.load(Textures::ID::MainMenu, path + "res/textures/main-menu.png");
+    textureHolder.load(Textures::ID::About, path + "res/textures/about.png");
+    textureHolder.load(Textures::ID::DifftyMenu, path + "res/textures/difficulty-menu.png");
+    textureHolder.load(Textures::ID::Starting, path + "res/textures/starting.png");
+    textureHolder.load(Textures::ID::Paused, path + "res/textures/paused-menu.png");
+    textureHolder.load(Textures::ID::QuitConfirm, path + "res/textures/quit-confirm-menu.png");
+    textureHolder.load(Textures::ID::RestartConfirm, path + "res/textures/restart-confirm-menu.png");
+    textureHolder.load(Textures::ID::Wellcome, path + "res/textures/wellcome.png");
+    textureHolder.load(Textures::ID::Game, path + "res/textures/game.png");
+    textureHolder.load(Textures::ID::Letters, path + "res/textures/letters.png");
 
-    soundHolder.load(Sounds::ID::MenuOpen, "res/sounds/menu-open.ogg");
-    soundHolder.load(Sounds::ID::MenuClose, "res/sounds/menu-close.ogg");
-    soundHolder.load(Sounds::ID::TabChange, "res/sounds/tab-change.ogg");
-    soundHolder.load(Sounds::ID::LifesIncrement, "res/sounds/life-increment.wav");
-    soundHolder.load(Sounds::ID::GameEnd, "res/sounds/game-end.ogg");
-    soundHolder.load(Sounds::ID::CountDown, "res/sounds/count-down.ogg");
-    soundHolder.load(Sounds::ID::CountDownFinish, "res/sounds/count-down-finish.ogg");
-    soundHolder.load(Sounds::ID::ShiftModeStart, "res/sounds/shift-mode-start.wav");
-    soundHolder.load(Sounds::ID::ShiftModeFinish, "res/sounds/shift-mode-finish.wav");
-    soundHolder.load(Sounds::ID::ShiftModeReady, "res/sounds/shift-mode-ready.wav");
-    soundHolder.load(Sounds::ID::CleanerActive, "res/sounds/cleaner-active.ogg");
-    soundHolder.load(Sounds::ID::LetterTake, "res/sounds/letter-take.ogg");
-    soundHolder.load(Sounds::ID::LetterTrap, "res/sounds/letter-trap.ogg");
-    soundHolder.load(Sounds::ID::LetterTakeFail, "res/sounds/letter-take-fail.wav");
+    soundHolder.load(Sounds::ID::MenuOpen, path + "res/sounds/menu-open.ogg");
+    soundHolder.load(Sounds::ID::MenuClose, path + "res/sounds/menu-close.ogg");
+    soundHolder.load(Sounds::ID::TabChange, path + "res/sounds/tab-change.ogg");
+    soundHolder.load(Sounds::ID::LifesIncrement, path + "res/sounds/life-increment.wav");
+    soundHolder.load(Sounds::ID::GameEnd, path + "res/sounds/game-end.ogg");
+    soundHolder.load(Sounds::ID::CountDown, path + "res/sounds/count-down.ogg");
+    soundHolder.load(Sounds::ID::CountDownFinish, path + "res/sounds/count-down-finish.ogg");
+    soundHolder.load(Sounds::ID::ShiftModeStart, path + "res/sounds/shift-mode-start.wav");
+    soundHolder.load(Sounds::ID::ShiftModeFinish, path + "res/sounds/shift-mode-finish.wav");
+    soundHolder.load(Sounds::ID::ShiftModeReady, path + "res/sounds/shift-mode-ready.wav");
+    soundHolder.load(Sounds::ID::CleanerActive, path + "res/sounds/cleaner-active.ogg");
+    soundHolder.load(Sounds::ID::LetterTake, path + "res/sounds/letter-take.ogg");
+    soundHolder.load(Sounds::ID::LetterTrap, path + "res/sounds/letter-trap.ogg");
+    soundHolder.load(Sounds::ID::LetterTakeFail, path + "res/sounds/letter-take-fail.wav");
 
-    musicHolder[Music::ID::Started] = "res/music/started.ogg";
+    musicHolder[Music::ID::Started] = path + "res/music/started.ogg";
 }
 
 const sf::Texture& ResourceManager::getTexture(const Textures::ID& textureId) const

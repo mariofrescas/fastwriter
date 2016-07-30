@@ -141,9 +141,10 @@ class ResourceManager
 public:
     ////////////////////////////////////////////////////////////
     /// \brief Carga e inicializa los recursos y los relaciona con un id
+    /// \param path Ruta donde se encuentran los recursos
     ///
     ////////////////////////////////////////////////////////////
-    ResourceManager();
+    explicit ResourceManager(const std::string& path);
 
     ////////////////////////////////////////////////////////////
     /// \brief Obtiene una referencia a la textura que concuerde con el id
