@@ -35,7 +35,7 @@ int main()
     sf::RenderWindow window(sf::VideoMode::getFullscreenModes().front(), "Fastwriter", sf::Style::Fullscreen);
     //sf::RenderWindow window(sf::VideoMode(600, 500), "States");
     ResourceManager resManager;
-    MusicPlayer musicPlayer;
+    MusicPlayer musicPlayer(resManager);
     musicPlayer.setVolume(50);
     SoundPlayer soundPlayer(resManager);
 

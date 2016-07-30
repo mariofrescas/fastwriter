@@ -31,6 +31,8 @@
 
 ResourceManager::ResourceManager()
 {
+    dicHolder[Dictionaries::ID::EN_DIC] = "res/dictionaries/en.dic";
+
     fontHolder.load(Fonts::ID::Default, "res/fonts/saxmono.ttf");
 
     shaderHolder.load(Shaders::ID::Fade, "res/shaders/fade.frag", sf::Shader::Fragment);
@@ -62,24 +64,36 @@ ResourceManager::ResourceManager()
     soundHolder.load(Sounds::ID::LetterTake, "res/sounds/letter-take.ogg");
     soundHolder.load(Sounds::ID::LetterTrap, "res/sounds/letter-trap.ogg");
     soundHolder.load(Sounds::ID::LetterTakeFail, "res/sounds/letter-take-fail.wav");
+
+    musicHolder[Music::ID::Started] = "res/music/started.ogg";
 }
 
-sf::Texture& ResourceManager::getTexture(const Textures::ID& textureId) const
+const sf::Texture& ResourceManager::getTexture(const Textures::ID& textureId) const
 {
     return textureHolder.get(textureId);
 }
 
-sf::Font& ResourceManager::getFont(const Fonts::ID& fontId) const
+const sf::Font& ResourceManager::getFont(const Fonts::ID& fontId) const
 {
     return fontHolder.get(fontId);
 }
 
-sf::Shader& ResourceManager::getShader(const Shaders::ID& shaderId) const
+sf::Shader& ResourceManager::getShader(const Shaders::ID& shaderId)
 {
     return shaderHolder.get(shaderId);
 }
 
-sf::SoundBuffer& ResourceManager::getSound(const Sounds::ID& soundId) const
+const sf::SoundBuffer& ResourceManager::getSound(const Sounds::ID& soundId) const
 {
     return soundHolder.get(soundId);
+}
+
+const std::string& ResourceManager::getDictionary(const Dictionaries::ID& dicId) const
+{
+    return dicHolder.at(dicId);
+}
+
+const std::string& ResourceManager::getMusic(const Music::ID& musicId) const
+{
+    return musicHolder.at(musicId);
 }

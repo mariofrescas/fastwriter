@@ -26,20 +26,13 @@
 #ifndef MUSICPLAYER_H
 #define MUSICPLAYER_H
 
-#include <map>
 #include <SFML/Audio/Music.hpp>
 
 namespace Music
 {
-    ////////////////////////////////////////////////////////////
-    /// \brief Identificadores de temas musicales
-    ///
-    ////////////////////////////////////////////////////////////
-    enum class ID
-    {
-        Started ///< Tema de juego iniciado
-    };
+    enum class ID;
 }
+class ResourceManager;
 
 ////////////////////////////////////////////////////////////
 /// \brief Describe el reproductor de temas
@@ -50,12 +43,13 @@ class MusicPlayer
 public:
     ////////////////////////////////////////////////////////////
     /// \brief Crea un reproductor de temas
+    /// \param resMngr Obtiene las rutas de los temas musicales
     ///
     ////////////////////////////////////////////////////////////
-    MusicPlayer();
+    MusicPlayer(const ResourceManager& resMngr);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Reproducee el tema especificado
+    /// \brief Reproduce el tema especificado
     /// \param theme Tema a reproducir
     ///
     ////////////////////////////////////////////////////////////
@@ -82,8 +76,8 @@ public:
     void setVolume(float volume);
 
 private:
-    sf::Music                        music; ///< Reproductor interno
-    std::map<Music::ID, std::string> files; ///< Locacion de cada tema
+    sf::Music              music;   ///< Reproductor intern
+    const ResourceManager& resMngr; ///< Administrador de recursos
 };
 
 #endif // MUSICPLAYER_H

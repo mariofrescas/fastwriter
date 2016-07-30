@@ -108,7 +108,7 @@ Started::Started(StateManager& stateManager)
 
     words = std::make_unique<WordControl>
     (
-        "res/dictionaries/en.dic",
+        resMngr.getDictionary(Dictionaries::ID::EN_DIC),
         sf::FloatRect(gcx + 129.670, gcy + 172, 1100, 520),
         resMngr.getTexture(Textures::ID::Letters)
     );

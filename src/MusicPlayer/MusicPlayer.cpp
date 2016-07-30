@@ -25,18 +25,18 @@
 
 #include "MusicPlayer.h"
 
-MusicPlayer::MusicPlayer()
+#include "ResourceManager.h"
+
+MusicPlayer::MusicPlayer(const ResourceManager& resMngr)
+    : resMngr(resMngr)
 {
-    files[Music::ID::Started] = "res/music/started.ogg";
 }
 
 void MusicPlayer::play(const Music::ID& theme)
 {
-    std::string file = files[theme];
-
-    if (!music.openFromFile(file))
+    if (!music.openFromFile(resMngr.getMusic(theme)))
     {
-        throw std::runtime_error("Failed to load: " + file);
+        throw std::runtime_error("Failed to load: " + resMngr.getMusic(theme));
     }
 
     music.setLoop(true);

@@ -36,6 +36,18 @@ namespace sf
     class Texture;
 }
 
+namespace Dictionaries
+{
+    ////////////////////////////////////////////////////////////
+    /// \brief Identificardores de diccionarios
+    ///
+    ////////////////////////////////////////////////////////////
+    enum class ID
+    {
+        EN_DIC ///< Diccionario en ingles
+    };
+}
+
 namespace Textures
 {
     ////////////////////////////////////////////////////////////
@@ -108,6 +120,18 @@ namespace Sounds
     };
 }
 
+namespace Music
+{
+    ////////////////////////////////////////////////////////////
+    /// \brief Identificardores de temas musicales
+    ///
+    ////////////////////////////////////////////////////////////
+    enum class ID
+    {
+        Started ///< Tema musical para la escena Started
+    };
+}
+
 ////////////////////////////////////////////////////////////
 /// \brief Contenedor de los recursos necesarios por la aplicacion
 ///
@@ -127,7 +151,7 @@ public:
     /// \return Referencia a la textura
     ///
     ////////////////////////////////////////////////////////////
-    sf::Texture& getTexture(const Textures::ID& textureId) const;
+    const sf::Texture& getTexture(const Textures::ID& textureId) const;
 
     ////////////////////////////////////////////////////////////
     /// \brief Obtiene una referencia a la fuente que concuerde con el id
@@ -135,7 +159,7 @@ public:
     /// \return Referencia a la fuente
     ///
     ////////////////////////////////////////////////////////////
-    sf::Font& getFont(const Fonts::ID& fontId) const;
+    const sf::Font& getFont(const Fonts::ID& fontId) const;
 
     ////////////////////////////////////////////////////////////
     /// \brief Obtiene una referencia al shader que concuerde con el id
@@ -143,15 +167,39 @@ public:
     /// \return Referencia al shader
     ///
     ////////////////////////////////////////////////////////////
-    sf::Shader& getShader(const Shaders::ID& shaderId) const;
+    sf::Shader& getShader(const Shaders::ID& shaderId);
 
-    sf::SoundBuffer& getSound(const Sounds::ID& soundId) const;
+    ////////////////////////////////////////////////////////////
+    /// \brief Obtiene una referencia al sonido que concuerde con el id
+    /// \param soundId Identificador del sonido
+    /// \return Referencia hacia el sonido
+    ///
+    ////////////////////////////////////////////////////////////
+    const sf::SoundBuffer& getSound(const Sounds::ID& soundId) const;
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Obtiene una referencia al diccionario que concuerde con el id
+    /// \param soundId Identificador del diccionario
+    /// \return Referencia hacia el diccionario
+    ///
+    ////////////////////////////////////////////////////////////
+    const std::string& getDictionary(const Dictionaries::ID& dicId) const;
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Obtiene una referencia al tema musical que concuerde con el id
+    /// \param soundId Identificador del tema musical
+    /// \return Referencia hacia el tema musical
+    ///
+    ////////////////////////////////////////////////////////////
+    const std::string& getMusic(const Music::ID& musicId) const;
 
 private:
     ResourceHolder<Textures::ID, sf::Texture>   textureHolder; ///< Contenedor de texturas
     ResourceHolder<Fonts::ID, sf::Font>         fontHolder;    ///< Contenedor de fuentes
     ResourceHolder<Shaders::ID, sf::Shader>     shaderHolder;  ///< Contenedor de shaders
     ResourceHolder<Sounds::ID, sf::SoundBuffer> soundHolder;   ///< Contenedor de efectos de sonido
+    std::map<Music::ID, std::string>            musicHolder;   ///< Contenedor de temas musicales
+    std::map<Dictionaries::ID, std::string>     dicHolder;     ///< Contenedor de diccionarios
 };
 
 #endif // RESOURCEMANAGER_H
