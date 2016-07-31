@@ -36,6 +36,7 @@ find_package(SFML 2 REQUIRED system window graphics audio)
 
 include_directories(
     ${PROJECT_BINARY_DIR}
+    src/Game/
     src/Gui/
     src/ResourceManager/
     src/MusicPlayer/
@@ -71,6 +72,7 @@ include_directories(
 
 set(SOURCES
     src/Main.cpp
+    src/Game/Game.cpp
     src/Gui/GraphicMenu.cpp
     src/ResourceManager/ResourceManager.cpp
     src/ResourceManager/ResourceHolder.inl

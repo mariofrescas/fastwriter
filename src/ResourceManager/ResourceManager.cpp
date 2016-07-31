@@ -25,10 +25,6 @@
 
 #include "ResourceManager.h"
 
-#include <SFML/Graphics/Font.hpp>
-#include <SFML/Graphics/Shader.hpp>
-#include <SFML/Graphics/Texture.hpp>
-
 ResourceManager::ResourceManager(const std::string& path)
 {
     dicHolder[Dictionaries::ID::EN_DIC] = path + "res/dictionaries/en.dic";
