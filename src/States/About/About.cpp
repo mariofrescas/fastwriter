@@ -56,7 +56,7 @@ About::About(StateManager& stateManager)
     container.setPosition(acx, acy);
 
     about.setTexture(resMngr.getTexture(Textures::ID::About));
-    about.setTextureRect(sf::IntRect(787, 0, 406, 200));
+    about.setTextureRect(sf::IntRect(787, 0, 431, 200));
     about.setPosition(acx + msgXoff, acy + msgYoff);
     currentMsg = &about;
 

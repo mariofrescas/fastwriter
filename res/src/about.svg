@@ -68,9 +68,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="1092.0211"
-     inkscape:cy="339.32928"
+     inkscape:zoom="1"
+     inkscape:cx="245.26268"
+     inkscape:cy="422.23488"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -88,7 +88,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -211,25 +211,11 @@
          x="786.76996"
          sodipodi:role="line"
          id="tspan5330">Copyright (C) 2016</tspan><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:saxMono;-inkscape-font-specification:saxMono"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:saxMono;-inkscape-font-specification:saxMono;baseline-shift:baseline"
          y="613.04865"
          x="786.76996"
          sodipodi:role="line"
-         id="tspan5348"> - Sysyfydev<tspan
-   style="font-size:64.99999762%;baseline-shift:super"
-   id="tspan5350" /></tspan><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:saxMono;-inkscape-font-specification:saxMono"
-         y="634.18494"
-         x="786.76996"
-         sodipodi:role="line"
-         id="tspan5355"><tspan
-           style="font-size:64.99999762%;baseline-shift:super"
-           id="tspan5357">     &lt;github.com/sysyfydev&gt;</tspan></tspan><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62499905px;font-family:saxMono;-inkscape-font-specification:saxMono;baseline-shift:sub"
-         y="652.46619"
-         x="786.76996"
-         sodipodi:role="line"
-         id="tspan5309" /></text>
+         id="tspan5309"> - Sysyfydev &lt;github.com/sysyfydev&gt;</tspan></text>
     <rect
        style="fill:#37b2c8;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3063-4-3-1-8"
@@ -369,7 +355,7 @@
        height="38.842381"
        width="137.50815"
        id="rect4444"
-       style="fill:#c83778;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="fill:#c8c896;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <text
        transform="matrix(0.26876785,0,0,0.26876785,-37.043419,454.71792)"
        xml:space="preserve"
@@ -404,7 +390,7 @@
        style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.59000003;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        transform="scale(1,-1)" />
     <rect
-       style="fill:#c87337;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#c8c896;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4454"
        width="137.50815"
        height="38.842381"
@@ -441,7 +427,7 @@
        height="38.66795"
        width="190.51938"
        id="rect4464"
-       style="fill:#37c4c8;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="fill:#c8c896;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <text
        transform="matrix(0.26876785,0,0,0.26876785,238.02111,454.71792)"
        xml:space="preserve"

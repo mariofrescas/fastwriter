@@ -68,7 +68,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.70710678"
-     inkscape:cx="1026.4421"
+     inkscape:cx="702.78005"
      inkscape:cy="448.10324"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -193,25 +193,11 @@
          x="462.20764"
          sodipodi:role="line"
          id="tspan5330">Copyright (C) 2016</tspan><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:saxMono;-inkscape-font-specification:saxMono"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:saxMono;-inkscape-font-specification:saxMono;baseline-shift:baseline"
          y="758.54517"
          x="462.20764"
          sodipodi:role="line"
-         id="tspan5348"> - Sysyfydev<tspan
-   style="font-size:64.99999762%;baseline-shift:super"
-   id="tspan5350" /></tspan><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:saxMono;-inkscape-font-specification:saxMono"
-         y="779.68146"
-         x="462.20764"
-         sodipodi:role="line"
-         id="tspan5355"><tspan
-           style="font-size:64.99999762%;baseline-shift:super"
-           id="tspan5357">     &lt;github.com/sysyfydev&gt;</tspan></tspan><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.62499905px;font-family:saxMono;-inkscape-font-specification:saxMono;baseline-shift:sub"
-         y="797.96271"
-         x="462.20764"
-         sodipodi:role="line"
-         id="tspan5309" /></text>
+         id="tspan5309"> - Sysyfydev &lt;github.com/sysyfydev&gt;</tspan></text>
     <rect
        style="fill:#37b2c8;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3063-4-3-1-8"
@@ -363,7 +349,7 @@
        height="38.842381"
        width="137.50815"
        id="rect4444"
-       style="fill:#c83778;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="fill:#c8c896;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <text
        transform="matrix(0.26876785,0,0,0.26876785,359.80843,382.73681)"
        xml:space="preserve"
@@ -398,7 +384,7 @@
        style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.59000003;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        transform="scale(1,-1)" />
     <rect
-       style="fill:#c87337;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#c8c896;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4454"
        width="137.50815"
        height="38.842381"
@@ -435,7 +421,7 @@
        height="38.668327"
        width="190.39476"
        id="rect4464"
-       style="fill:#37c4c8;fill-opacity:1;stroke:#000000;stroke-width:1.17405391;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="fill:#c8c896;fill-opacity:1;stroke:#000000;stroke-width:1.17405391;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <text
        transform="matrix(0.26876785,0,0,0.26876785,634.87297,382.73681)"
        xml:space="preserve"
