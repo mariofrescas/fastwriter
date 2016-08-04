@@ -38,34 +38,34 @@ About::About(StateManager& stateManager)
     const sf::Vector2u& windowSize = getStateManager().getSharedContext().window.getSize();
 
     background.setTexture(resMngr.getTexture(Textures::ID::About));
-    background.setTextureRect(sf::IntRect(582, 195, 31, 31));
+    background.setTextureRect(sf::IntRect(878, 2, 32, 32));
     background.setScale
     (   windowSize.x / background.getLocalBounds().width,
         windowSize.y / background.getLocalBounds().width
     );
 
-    constexpr float acw = 572.296;
-    constexpr float ach = 624.038;
+    constexpr float acw = 572;
+    constexpr float ach = 624;
     float acx = (windowSize.x / 2) - (acw / 2);
     float acy = (windowSize.y / 2) - (ach / 2);
 
     constexpr float msgYoff = 200;
     constexpr float msgXoff = 63;
     container.setTexture(resMngr.getTexture(Textures::ID::About));
-    container.setTextureRect(sf::IntRect(0, 0, acw, ach));
+    container.setTextureRect(sf::IntRect(433, 316, acw, ach));
     container.setPosition(acx, acy);
 
     about.setTexture(resMngr.getTexture(Textures::ID::About));
-    about.setTextureRect(sf::IntRect(787, 0, 431, 200));
+    about.setTextureRect(sf::IntRect(2, 36, 430, 189));
     about.setPosition(acx + msgXoff, acy + msgYoff);
     currentMsg = &about;
 
     license.setTexture(resMngr.getTexture(Textures::ID::About));
-    license.setTextureRect(sf::IntRect(581, 233, 452, 278));
+    license.setTextureRect(sf::IntRect(434, 36, 452, 278));
     license.setPosition(acx + msgXoff, acy + msgYoff);
 
     acknowled.setTexture(resMngr.getTexture(Textures::ID::About));
-    acknowled.setTextureRect(sf::IntRect(1040, 200, 430, 290));
+    acknowled.setTextureRect(sf::IntRect(2, 316, 429, 288));
     acknowled.setPosition(acx + msgXoff, acy + msgYoff);
 
     options = std::make_unique<GraphicMenu>
@@ -83,8 +83,8 @@ About::About(StateManager& stateManager)
                     currentMsg = &about;
                 },
                 sf::Vector2f(acx + 63, acy + 160),
-                sf::IntRect(581, 86, 73, 20),
-                sf::IntRect(581, 65, 73, 20)
+                sf::IntRect(457, 2, 73, 20),
+                sf::IntRect(532, 2, 73, 20)
             },
             GraphicMenu::MenuOptionData
             {
@@ -97,8 +97,8 @@ About::About(StateManager& stateManager)
                     currentMsg = &license;
                 },
                 sf::Vector2f(acx + 200, acy + 160),
-                sf::IntRect(581, 129, 103, 20),
-                sf::IntRect(581, 107, 103, 20)
+                sf::IntRect(607, 2, 103, 20),
+                sf::IntRect(2, 2, 103, 20)
             },
             GraphicMenu::MenuOptionData
             {
@@ -111,8 +111,8 @@ About::About(StateManager& stateManager)
                     currentMsg = &acknowled;
                 },
                 sf::Vector2f(acx + 338, acy + 164),
-                sf::IntRect(581, 170, 173, 20),
-                sf::IntRect(581, 150, 173, 20)
+                sf::IntRect(107, 2, 173, 20),
+                sf::IntRect(282, 2, 173, 20)
             },
             GraphicMenu::MenuOptionData
             {
@@ -131,8 +131,8 @@ About::About(StateManager& stateManager)
                     reset();
                 },
                 sf::Vector2f(acx + 341, acy + 527),
-                sf::IntRect(581.338, 34, 81.015, 28),
-                sf::IntRect(581.338, 0, 81.015, 28)
+                sf::IntRect(712, 2, 81, 28),
+                sf::IntRect(795, 2, 81, 28)
             }
         },
         GraphicMenu::MenuContainerData

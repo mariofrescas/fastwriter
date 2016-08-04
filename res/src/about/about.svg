@@ -68,9 +68,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="245.26268"
-     inkscape:cy="422.23488"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="889.58465"
+     inkscape:cy="332.59512"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -103,7 +103,10 @@
        x="579.27863"
        y="489.74295"
        id="text4050-6"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/back-option.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan4052-7"
          x="579.27863"
@@ -115,7 +118,10 @@
        y="455.80185"
        x="579.27863"
        style="font-style:normal;font-weight:normal;font-size:10.7507143px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#e4e4e4;fill-opacity:1;stroke:none"
-       xml:space="preserve"><tspan
+       xml:space="preserve"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/back-option-s.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:38.70257187px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:#e4e4e4;fill-opacity:1"
          y="455.80185"
          x="579.27863"
@@ -127,28 +133,40 @@
        height="538"
        width="486.25858"
        id="rect18320"
-       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter18458)" />
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter18458)"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/about/container.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <rect
        style="opacity:1;fill:#535353;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect7013"
        width="480.25858"
        height="534"
        x="47.01886"
-       y="471.34332" />
+       y="471.34332"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/about/container.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <rect
        style="fill:#c8c837;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3063-4-3-1"
        width="465.81857"
        height="519.64972"
        x="54.247437"
-       y="477.75861" />
+       y="477.75861"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/about/container.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <rect
        y="617.69977"
        x="54.246883"
        height="317.8176"
        width="465.81924"
        id="rect4434"
-       style="fill:#c8c837;fill-opacity:1;stroke:#000000;stroke-width:0.99976724;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="fill:#c8c837;fill-opacity:1;stroke:#000000;stroke-width:0.99976724;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/about/container.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <text
        sodipodi:linespacing="125%"
        id="text4531"
@@ -156,7 +174,10 @@
        x="368.99066"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:none;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4535)"
        xml:space="preserve"
-       transform="matrix(0.70712401,0,0,0.70712401,-194.81754,-52.46403)"><tspan
+       transform="matrix(0.70712401,0,0,0.70712401,-194.81754,-52.46403)"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/about/container.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:144px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          y="870.74237"
          x="368.99066"
@@ -168,7 +189,10 @@
        x="66.104614"
        y="563.25879"
        id="text4050-57"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/about/container.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan4052-734"
          x="66.104614"
@@ -180,7 +204,10 @@
        y="444.29865"
        x="786.76996"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
+       xml:space="preserve"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/about-text.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:saxMono;-inkscape-font-specification:saxMono"
          y="444.29865"
          x="786.76996"
@@ -222,7 +249,10 @@
        width="177.38678"
        height="38.971336"
        x="335.45477"
-       y="949.85767" />
+       y="949.85767"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/about/container.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <text
        sodipodi:linespacing="125%"
        id="text4267"
@@ -230,7 +260,10 @@
        x="369.53815"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:none;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4271)"
        xml:space="preserve"
-       transform="matrix(0.26876785,0,0,0.26876785,240.95657,829.21792)"><tspan
+       transform="matrix(0.26876785,0,0,0.26876785,240.95657,829.21792)"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/about/container.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:144px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          y="569.69965"
          x="369.53815"
@@ -243,7 +276,10 @@
        y="650.66687"
        id="text4271"
        sodipodi:linespacing="125%"
-       transform="scale(0.97154406,1.0292894)"><tspan
+       transform="scale(0.97154406,1.0292894)"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/license-text.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          id="tspan4301"
          sodipodi:role="line"
          x="598.36554"
@@ -355,7 +391,10 @@
        height="38.842381"
        width="137.50815"
        id="rect4444"
-       style="fill:#c8c896;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="fill:#c8c896;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/about/container.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <text
        transform="matrix(0.26876785,0,0,0.26876785,-37.043419,454.71792)"
        xml:space="preserve"
@@ -363,7 +402,10 @@
        x="369.53815"
        y="569.69965"
        id="text4446"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/about/container.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan4448"
          x="369.53815"
@@ -375,7 +417,10 @@
        y="533.8349"
        x="580.22687"
        style="font-style:normal;font-weight:normal;font-size:10.7507143px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       xml:space="preserve"><tspan
+       xml:space="preserve"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/about-option.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:27.5px;font-family:saxMono;-inkscape-font-specification:saxMono"
          y="533.8349"
          x="580.22687"
@@ -388,14 +433,20 @@
        width="465.81857"
        id="rect18855"
        style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.59000003;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       transform="scale(1,-1)" />
+       transform="scale(1,-1)"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/about/container.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <rect
        style="fill:#c8c896;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4454"
        width="137.50815"
        height="38.842381"
        x="191.74438"
-       y="578.5484" />
+       y="578.5484"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/about/container.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <text
        sodipodi:linespacing="125%"
        id="text4456"
@@ -403,7 +454,10 @@
        x="369.53815"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:none;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4271)"
        xml:space="preserve"
-       transform="matrix(0.26876785,0,0,0.26876785,100.48884,454.71792)"><tspan
+       transform="matrix(0.26876785,0,0,0.26876785,100.48884,454.71792)"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/about/container.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:102.31878662px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          y="569.69965"
          x="369.53815"
@@ -415,7 +469,10 @@
        x="579.67346"
        y="576.8349"
        id="text4460"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/license-option.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan4462"
          x="579.67346"
@@ -427,7 +484,10 @@
        height="38.66795"
        width="190.51938"
        id="rect4464"
-       style="fill:#c8c896;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="fill:#c8c896;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/about/container.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <text
        transform="matrix(0.26876785,0,0,0.26876785,238.02111,454.71792)"
        xml:space="preserve"
@@ -435,7 +495,10 @@
        x="369.53815"
        y="569.69965"
        id="text4466"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/about/container.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan4468"
          x="369.53815"
@@ -447,7 +510,10 @@
        y="614.3349"
        x="580.47949"
        style="font-style:normal;font-weight:normal;font-size:10.7507143px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       xml:space="preserve"><tspan
+       xml:space="preserve"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/acknow-option.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.25px;font-family:saxMono;-inkscape-font-specification:saxMono"
          y="614.3349"
          x="580.47949"
@@ -470,14 +536,20 @@
        width="32"
        height="32"
        x="581.3385"
-       y="623.03632" />
+       y="623.03632"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/about/background.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.7507143px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#e4e4e4;fill-opacity:1;stroke:none"
        x="580.22687"
        y="512.8349"
        id="text7256"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/about-option-s.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan7258"
          x="580.22687"
@@ -489,7 +561,10 @@
        y="555.3349"
        x="579.67346"
        style="font-style:normal;font-weight:normal;font-size:10.7507143px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#e4e4e4;fill-opacity:1;stroke:none"
-       xml:space="preserve"><tspan
+       xml:space="preserve"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/license-option-s.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:27.5px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:#e4e4e4;fill-opacity:1"
          y="555.3349"
          x="579.67346"
@@ -501,7 +576,10 @@
        x="580.47949"
        y="593.8349"
        id="text7264"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/acknow-option-s.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan7266"
          x="580.47949"
@@ -513,7 +591,10 @@
        x="1040.6899"
        y="640.9248"
        id="text5138-3"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/acknow-text.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          id="tspan5160-6"
          sodipodi:role="line"
          x="1040.6899"
