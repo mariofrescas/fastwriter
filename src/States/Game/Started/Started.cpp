@@ -43,21 +43,25 @@ Started::Started(StateManager& stateManager)
     const GameConf& gConf = confMngr.getCurrentConf();
     const sf::Vector2u& windowSize = getStateManager().getSharedContext().window.getSize();
 
-    background.setTexture(resMngr.getTexture(Textures::ID::Background));
+    background.setTexture(resMngr.getTexture(Textures::ID::Game));
+    background.setTextureRect(sf::IntRect(2, 2, 32, 32));
+    background.setScale
+    (   windowSize.x / background.getLocalBounds().width,
+        windowSize.y / background.getLocalBounds().width
+    );
 
-    constexpr float gcw = 1129.520;
-    constexpr float gch = 757.696;
+    constexpr float gcw = 1130;
+    constexpr float gch = 758;
     float gcx = (windowSize.x / 2) - (gcw / 2);
     float gcy = (windowSize.y / 2) - (gch / 2);
 
     gameCase.setTexture(resMngr.getTexture(Textures::ID::Game));
-    gameCase.setTextureRect(sf::IntRect(0, 0, gcw, gch));
+    gameCase.setTextureRect(sf::IntRect(2, 144, gcw, gch));
     gameCase.setPosition(gcx, gcy);
 
-
     wordsCover.setTexture(resMngr.getTexture(Textures::ID::Game));
-    wordsCover.setTextureRect(sf::IntRect(129.670, 172, 876.108, 43));
-    wordsCover.setPosition(gcx + 129.670, gcy + 172);
+    wordsCover.setTextureRect(sf::IntRect(70, 2, 1079, 140));
+    wordsCover.setPosition(gcx + 26, gcy + 31);
 
     points = std::make_unique<PointsControl>
     (
@@ -69,8 +73,8 @@ Started::Started(StateManager& stateManager)
     wantPoints = std::make_unique<WantPointsControl>
     (
         gConf.getWantPoints(),
-        sf::Color(27, 156, 63),
-        sf::FloatRect(gcx + 81, gcy + 135, 252, 12)
+        sf::Color::White,
+        sf::FloatRect(gcx + 81, gcy + 135, 252, 11)
     );
 
     time = std::make_unique<TimeControl>
@@ -84,8 +88,8 @@ Started::Started(StateManager& stateManager)
     (
         sf::milliseconds(gConf.getShiftModeDuration()),
         sf::milliseconds(gConf.getShiftModeNecessaryTime()),
-        sf::Color(140, 26, 50),
-        sf::FloatRect(gcx + 369, gcy + 135 , 396, 12)
+        sf::Color::White,
+        sf::FloatRect(gcx + 369, gcy + 135 , 396, 11)
     );
 
     lifes = std::make_unique<LifesControl>
@@ -103,7 +107,7 @@ Started::Started(StateManager& stateManager)
         sf::milliseconds(gConf.getAddInterval()),
         sf::Vector2f(gcx + 800, gcy + 124),
         resMngr.getTexture(Textures::ID::Game),
-        sf::IntRect(1129.520, 0, 23, 23)
+        sf::IntRect(36, 2, 32, 33)
     );
 
     words = std::make_unique<WordControl>
@@ -235,17 +239,17 @@ void Started::update(const sf::Time& dt)
         lifes->decrement(gConf.getLifesDecrement());
         if (!lifes->remain())
         {
-            getStateManager().getSharedContext().musicPlayer.stop();
-            getStateManager().getSharedContext().soundPlayer.play
-            (
-                Sounds::ID::GameEnd
-            );
-            getStateManager().setCurrentState
-            (
-                States::ID::MainMenu,
-                Transitions::ID::CircleClose,
-                sf::milliseconds(1000)
-            );
+//            getStateManager().getSharedContext().musicPlayer.stop();
+//            getStateManager().getSharedContext().soundPlayer.play
+//            (
+//                Sounds::ID::GameEnd
+//            );
+//            getStateManager().setCurrentState
+//            (
+//                States::ID::MainMenu,
+//                Transitions::ID::CircleClose,
+//                sf::milliseconds(1000)
+//            );
         }
     }
 

@@ -1,0 +1,48 @@
+{"frames": [
+
+{
+	"filename": "background.png",
+	"frame": {"x":2,"y":2,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "cleaner.png",
+	"frame": {"x":36,"y":2,"w":32,"h":33},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":33},
+	"sourceSize": {"w":32,"h":33},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "container.png",
+	"frame": {"x":2,"y":144,"w":1130,"h":758},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1130,"h":758},
+	"sourceSize": {"w":1130,"h":758},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "control-panel.png",
+	"frame": {"x":70,"y":2,"w":1079,"h":140},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1079,"h":140},
+	"sourceSize": {"w":1079,"h":140},
+	"pivot": {"x":0.5,"y":0.5}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "started.png",
+	"format": "RGBA8888",
+	"size": {"w":1151,"h":904},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:9007d0fe648f01c9359751b000e860d8:ea446bbbdfbc1264c38ca68ae138368c:d5fff5b8e15ab006bee6a36cc125a071$"
+}
+}
