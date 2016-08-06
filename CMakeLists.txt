@@ -74,6 +74,9 @@ set(SOURCES
     src/Main.cpp
     src/Game/Game.cpp
     src/Gui/GraphicMenu.cpp
+    src/Gui/TextureBar.cpp
+    src/Gui/OneDirectionBar.cpp
+    src/Gui/BidirectionalBar.cpp
     src/ResourceManager/ResourceManager.cpp
     src/ResourceManager/ResourceHolder.inl
     src/MusicPlayer/MusicPlayer.cpp

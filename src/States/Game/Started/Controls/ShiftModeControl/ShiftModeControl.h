@@ -27,8 +27,8 @@
 #define SHIFTMODECONTROL_H
 
 #include <memory>
+#include "BidirectionalBar.h"
 #include <SFML/System/Time.hpp>
-#include <SFML/Graphics/RectangleShape.hpp>
 
 ////////////////////////////////////////////////////////////
 /// \brief Describe el control logico-grafico del modo Shift
@@ -43,14 +43,22 @@ public:
     /// \brief Crea un control para el modo Shift
     /// \param duration Duracion del modo
     /// \param necessary Tiempo de recarga
-    /// \param color Color de la representacion grafica
-    /// \param rect Posicion y dimension de la rep. grafica
+    /// \param position Posicion de la barra en la escena
+    /// \param start Rect en textura de la rep. grafica inicial
+    /// \param middle Rect en textura de la rep. grafica de en medio
+    /// \param end Rect en textura de la rep. grafica final
+    /// \param total Rect de la rep. grafica total: start + middle + end
+    /// \param texture Textura de donde se obtienen los graficos
     ///
     ////////////////////////////////////////////////////////////
     ShiftModeControl(const sf::Time& duration,
                      const sf::Time& necessary,
-                     const sf::Color& color,
-                     const sf::FloatRect rect);
+                     const sf::Vector2f& position,
+                     const sf::IntRect& start,
+                     const sf::IntRect& middle,
+                     const sf::IntRect& end,
+                     const sf::IntRect& total,
+                     const sf::Texture& texture);
 
     ////////////////////////////////////////////////////////////
     /// \brief Reconfigura las propiedades del control del modo Shift
@@ -76,10 +84,10 @@ public:
 
     ////////////////////////////////////////////////////////////
     /// \brief Obtiene la representacion grafica
-    /// \return Referencia hacia el rectangulo grafico
+    /// \return Referencia hacia la rep. grafica
     ///
     ////////////////////////////////////////////////////////////
-    const sf::RectangleShape& getGraph() const;
+    const TextureBar::Graph& getGraph() const;
 
     ////////////////////////////////////////////////////////////
     /// \brief Activa el modo Shift
@@ -107,9 +115,8 @@ private:
     sf::Time necessary;       ///< Tiempo de recarga
     bool     canActiveShift;  ///< Es posible activar el modo
     bool     isShiftActive;   ///< Esta activado el modo
-    float    defXpos;         ///< Posicion por defecto del graph
-    float    defWidth;        ///< Anchura por defecto dle graph
-    sf::RectangleShape graph; ///< Representacion grafica
+    float    defWidth;        ///< Anchura total por defecto del graph
+    BidirectionalBar graph;   ///< Representacion grafica
 
     ////////////////////////////////////////////////////////////
     /// \brief Actualiza la representacion grafica

@@ -26,16 +26,18 @@
 #include "WantPointsControl.h"
 
 WantPointsControl::WantPointsControl(int wantPoints,
-                                     const sf::Color& color,
-                                     const sf::FloatRect& rect)
+                                     const sf::Vector2f& position,
+                                     const sf::IntRect& start,
+                                     const sf::IntRect& middle,
+                                     const sf::IntRect& end,
+                                     const sf::IntRect& total,
+                                     const sf::Texture& texture)
     : points(0),
       wantPoints(wantPoints),
       isWantPointsFull(false),
-      defWidth(rect.width),
-      graph(sf::Vector2f(rect.width, rect.height))
+      defWidth((total.width - start.width) - start.width),
+      graph(position, start, middle, end, total, texture)
 {
-    graph.setFillColor(color);
-    graph.setPosition(rect.left, rect.top);
 }
 
 void WantPointsControl::reset()
@@ -44,9 +46,9 @@ void WantPointsControl::reset()
     updateGraph();
 }
 
-const sf::RectangleShape& WantPointsControl::getGraph() const
+const TextureBar::Graph& WantPointsControl::getGraph() const
 {
-    return graph;
+    return graph.getGraph();
 }
 
 void WantPointsControl::addPoints(int increment)
@@ -68,8 +70,11 @@ void WantPointsControl::updateGraph()
     int ap = points;
     int as = (ap * ts) / tp;
 
+    graph.adjustMiddle(as);
+
     if (ap == tp)
     {
+        graph.empty();
         isWantPointsFull = true;
         points = 0;
     }
@@ -77,6 +82,4 @@ void WantPointsControl::updateGraph()
     {
         isWantPointsFull = false;
     }
-
-    graph.setSize(sf::Vector2f(as, graph.getSize().y));
 }

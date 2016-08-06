@@ -27,7 +27,7 @@
 #define WANTPOINTSCONTROL_H
 
 #include <memory>
-#include <SFML/Graphics/RectangleShape.hpp>
+#include "OneDirectionBar.h"
 
 ////////////////////////////////////////////////////////////
 /// \brief Describe el control logico-grafico de puntos deseados
@@ -41,13 +41,21 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Crea un control para los puntos deseados
     /// \param wantPoints Puntos deseados
-    /// \param color Color de la representacion grafica
-    /// \param rect Posicion y dimension de la rep. grafica
+    /// \param position Posicion de la barra en la escena
+    /// \param start Rect en textura de la rep. grafica inicial
+    /// \param middle Rect en textura de la rep. grafica de en medio
+    /// \param end Rect en textura de la rep. grafica final
+    /// \param total Rect de la rep. grafica total: start + middle + end
+    /// \param texture Textura de donde se obtienen los graficos
     ///
     ////////////////////////////////////////////////////////////
     WantPointsControl(int wantPoints,
-                      const sf::Color& color,
-                      const sf::FloatRect& rect);
+                      const sf::Vector2f& position,
+                      const sf::IntRect& start,
+                      const sf::IntRect& middle,
+                      const sf::IntRect& end,
+                      const sf::IntRect& total,
+                      const sf::Texture& texture);
 
     ////////////////////////////////////////////////////////////
     /// \brief Reinicia el control a los valores por defecto
@@ -57,10 +65,10 @@ public:
 
     ////////////////////////////////////////////////////////////
     /// \brief Obtiene la representacion grafica
-    /// \return Referencia hacia el texto grafico
+    /// \return Referencia hacia la rep. grafica
     ///
     ////////////////////////////////////////////////////////////
-    const sf::RectangleShape& getGraph() const;
+    const TextureBar::Graph& getGraph() const;
 
     ////////////////////////////////////////////////////////////
     /// \brief Aumenta los puntos base
@@ -81,7 +89,7 @@ private:
     int   wantPoints;       ///< Puntos deseados
     bool  isWantPointsFull; ///< Ya se tienen todos los puntos deseados
     float defWidth;         ///< Ancho total de la rep. grafica
-    sf::RectangleShape graph; ///< Representacion grafica
+    OneDirectionBar graph;  ///< Representacion grafica
 
     ////////////////////////////////////////////////////////////
     /// \brief Actualiza la representacion grafica

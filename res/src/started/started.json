@@ -20,7 +20,7 @@
 },
 {
 	"filename": "container.png",
-	"frame": {"x":2,"y":144,"w":1130,"h":758},
+	"frame": {"x":2,"y":179,"w":1130,"h":758},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":1130,"h":758},
@@ -29,11 +29,29 @@
 },
 {
 	"filename": "control-panel.png",
-	"frame": {"x":70,"y":2,"w":1079,"h":140},
+	"frame": {"x":2,"y":37,"w":1079,"h":140},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":1079,"h":140},
 	"sourceSize": {"w":1079,"h":140},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "shift-mode-bar.png",
+	"frame": {"x":334,"y":2,"w":411,"h":27},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":411,"h":27},
+	"sourceSize": {"w":411,"h":27},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "want-points-bar.png",
+	"frame": {"x":70,"y":2,"w":262,"h":23},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":262,"h":23},
+	"sourceSize": {"w":262,"h":23},
 	"pivot": {"x":0.5,"y":0.5}
 }],
 "meta": {
@@ -41,8 +59,8 @@
 	"version": "1.0",
 	"image": "started.png",
 	"format": "RGBA8888",
-	"size": {"w":1151,"h":904},
+	"size": {"w":1134,"h":939},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:9007d0fe648f01c9359751b000e860d8:ea446bbbdfbc1264c38ca68ae138368c:d5fff5b8e15ab006bee6a36cc125a071$"
+	"smartupdate": "$TexturePacker:SmartUpdate:cf7583cbfa7ad4baa9f783fd76915dc2:f1657d5abcfb20795177b44c57688770:d5fff5b8e15ab006bee6a36cc125a071$"
 }
 }

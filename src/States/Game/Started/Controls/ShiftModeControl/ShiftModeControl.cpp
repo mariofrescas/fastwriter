@@ -27,18 +27,20 @@
 
 ShiftModeControl::ShiftModeControl(const sf::Time& duration,
                                    const sf::Time& necessary,
-                                   const sf::Color& color,
-                                   const sf::FloatRect rect)
+                                   const sf::Vector2f& position,
+                                   const sf::IntRect& start,
+                                   const sf::IntRect& middle,
+                                   const sf::IntRect& end,
+                                   const sf::IntRect& total,
+                                   const sf::Texture& texture)
     : duration(duration),
       necessary(necessary),
       canActiveShift(true),
       isShiftActive(false),
-      defXpos(rect.left),
-      defWidth(rect.width),
-      graph(sf::Vector2f(rect.width, rect.height))
+      defWidth((total.width - start.width) - start.width),
+      graph(position, start, middle, end, total, texture)
 {
-    graph.setFillColor(color);
-    graph.setPosition(rect.left, rect.top);
+    graph.fillFull();
 }
 
 void ShiftModeControl::reconfigure(const sf::Time& duration,
@@ -53,8 +55,7 @@ void ShiftModeControl::reset()
     elapsed = sf::Time::Zero;
     canActiveShift = true;
     isShiftActive = false;
-    graph.setPosition(defXpos, graph.getPosition().y);
-    graph.setSize(sf::Vector2f(defWidth, graph.getSize().y));
+    graph.fillFull();
 }
 
 void ShiftModeControl::update(const sf::Time& dt)
@@ -85,9 +86,9 @@ void ShiftModeControl::update(const sf::Time& dt)
     }
 }
 
-const sf::RectangleShape& ShiftModeControl::getGraph() const
+const TextureBar::Graph& ShiftModeControl::getGraph() const
 {
-    return graph;
+    return graph.getGraph();
 }
 
 void ShiftModeControl::active()
@@ -114,6 +115,5 @@ void ShiftModeControl::updateGraph(bool isGrowing)
     int at = (isGrowing)? elapsed.asMilliseconds() : tt - elapsed.asMilliseconds();
     int as = (at * ts) / tt;
 
-    graph.setSize(sf::Vector2f(as, graph.getSize().y));
-    graph.setPosition((defXpos + (defWidth / 2)) - (as / 2), graph.getPosition().y);
+    graph.adjustMiddle(as);
 }

@@ -192,6 +192,8 @@
             <filename>cleaner.png</filename>
             <filename>container.png</filename>
             <filename>control-panel.png</filename>
+            <filename>want-points-bar.png</filename>
+            <filename>shift-mode-bar.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

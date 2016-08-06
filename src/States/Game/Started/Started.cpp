@@ -56,11 +56,11 @@ Started::Started(StateManager& stateManager)
     float gcy = (windowSize.y / 2) - (gch / 2);
 
     gameCase.setTexture(resMngr.getTexture(Textures::ID::Game));
-    gameCase.setTextureRect(sf::IntRect(2, 144, gcw, gch));
+    gameCase.setTextureRect(sf::IntRect(2, 179, gcw, gch));
     gameCase.setPosition(gcx, gcy);
 
     wordsCover.setTexture(resMngr.getTexture(Textures::ID::Game));
-    wordsCover.setTextureRect(sf::IntRect(70, 2, 1079, 140));
+    wordsCover.setTextureRect(sf::IntRect(2, 37, 1079, 140));
     wordsCover.setPosition(gcx + 26, gcy + 31);
 
     points = std::make_unique<PointsControl>
@@ -73,8 +73,12 @@ Started::Started(StateManager& stateManager)
     wantPoints = std::make_unique<WantPointsControl>
     (
         gConf.getWantPoints(),
-        sf::Color::White,
-        sf::FloatRect(gcx + 81, gcy + 135, 252, 11)
+        sf::Vector2f(gcx + 76, gcy + 130),
+        sf::IntRect(70, 2, 10, 23),
+        sf::IntRect(70 + 10, 2, 1, 23),
+        sf::IntRect(70 + 252, 2, 10, 23),
+        sf::IntRect(70, 2, 262, 23),
+        resMngr.getTexture(Textures::ID::Game)
     );
 
     time = std::make_unique<TimeControl>
@@ -88,8 +92,12 @@ Started::Started(StateManager& stateManager)
     (
         sf::milliseconds(gConf.getShiftModeDuration()),
         sf::milliseconds(gConf.getShiftModeNecessaryTime()),
-        sf::Color::White,
-        sf::FloatRect(gcx + 369, gcy + 135 , 396, 11)
+        sf::Vector2f(gcx + 361, gcy + 128),
+        sf::IntRect(334, 2, 10, 27),
+        sf::IntRect(334 + 10, 2, 1, 27),
+        sf::IntRect(334 + 395, 2, 15, 27),
+        sf::IntRect(334, 2, 411, 27),
+        resMngr.getTexture(Textures::ID::Game)
     );
 
     lifes = std::make_unique<LifesControl>
@@ -303,9 +311,13 @@ void Started::draw()
 
     window.draw(wordsCover);
     window.draw(points->getGraph());
-    window.draw(wantPoints->getGraph());
+    window.draw(wantPoints->getGraph().start);
+    window.draw(wantPoints->getGraph().middle);
+    window.draw(wantPoints->getGraph().end);
     window.draw(time->getGraph());
-    window.draw(shiftMode->getGraph());
+    window.draw(shiftMode->getGraph().start);
+    window.draw(shiftMode->getGraph().middle);
+    window.draw(shiftMode->getGraph().end);
     window.draw(lifes->getGraph());
 
     for (auto& cleaner : cleaners->getGraph())
@@ -327,9 +339,13 @@ const sf::Texture* Started::getSnapShotTexture()
 
     snapShot.draw(wordsCover);
     snapShot.draw(points->getGraph());
-    snapShot.draw(wantPoints->getGraph());
+    snapShot.draw(wantPoints->getGraph().start);
+    snapShot.draw(wantPoints->getGraph().middle);
+    snapShot.draw(wantPoints->getGraph().end);
     snapShot.draw(time->getGraph());
-    snapShot.draw(shiftMode->getGraph());
+    snapShot.draw(shiftMode->getGraph().start);
+    snapShot.draw(shiftMode->getGraph().middle);
+    snapShot.draw(shiftMode->getGraph().end);
     snapShot.draw(lifes->getGraph());
 
     for (auto& cleaner : cleaners->getGraph())
