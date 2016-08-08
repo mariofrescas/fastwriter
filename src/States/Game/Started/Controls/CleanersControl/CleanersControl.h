@@ -35,7 +35,7 @@
 /// \brief Describe el control logico-grafico de limpiadores
 ///
 ////////////////////////////////////////////////////////////
-class CleanersControl
+class CleanersControl : public sf::Drawable, sf::Transformable
 {
 public:
     using Ptr = std::unique_ptr<CleanersControl>; ///< Puntero unico
@@ -44,29 +44,29 @@ public:
     /// \brief Crea un control de limpiadores
     /// \param defaultCleaners Numero por defecto de limpiadores
     /// \param maxCleaners Numero maximo de limpiadores
-    /// \param addInterval Tiemponecesario para agregar un limpiador
-    /// \param position Posicion del primer limpiador
-    /// \param gameTexture Textura donde se encuentra la rep. grafica
-    /// \param location Rectangulo donde se encuentra la rep. grafica
+    /// \param necessary Tiempo necesario para agregar un limpiador
+    /// \param position Posicion del control en la escena
+    /// \param rect Rect de la rep. graf. en la textura
+    /// \param texture Textura de la rep. graf.
     ///
     ////////////////////////////////////////////////////////////
     CleanersControl(int defaultCleaners,
                     int maxCleaners,
-                    const sf::Time& addInterval,
+                    const sf::Time& necessary,
                     const sf::Vector2f& position,
-                    const sf::Texture& gameTexture,
-                    const sf::IntRect& location);
+                    const sf::IntRect& rect,
+                    const sf::Texture& texture);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Reconfigura las propiedades del control de limpiadores
+    /// \brief Reconfigura las propiedades del control
     /// \param defaultCleaners Numero por defecto de limpiadores
     /// \param maxCleaners Numero maximo de limpiadores
-    /// \param addInterval Tiemponecesario para agregar un limpiador
+    /// \param necessary Tiempo necesario para agregar un limpiador
     ///
     ////////////////////////////////////////////////////////////
     void reconfigure(int defaultCleaners,
                      int maxCleaners,
-                     const sf::Time& addInterval);
+                     const sf::Time& necessary);
 
     ////////////////////////////////////////////////////////////
     /// \brief Reinicia el control a los valores por defecto
@@ -75,16 +75,8 @@ public:
     void reset();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Obtiene la representacion grafica
-    /// \return Referencia hacia la lista de limpiadores
-    ///
-    ////////////////////////////////////////////////////////////
-    const std::list<sf::Sprite>& getGraph() const;
-
-
-    ////////////////////////////////////////////////////////////
     /// \brief Acumula el tiempo para agregar el limpiador
-    /// \param dt Cantidad de tiempo
+    /// \param dt Intervalo de tiempo transcurrido
     ///
     ////////////////////////////////////////////////////////////
     void addTime(const sf::Time& dt);
@@ -103,21 +95,28 @@ public:
     bool canClean() const;
 
 private:
-    int                defaultCleaners; ///< Numero por defecto de limpiadores
-    int                maxCleaners;     ///< Numero maximo de limpiadores
-    int                cleaners;        ///< Numero actual de limpiadores
-    sf::Time           elapsed;         ///< Tiempo acumulado
-    sf::Time           addInterval;     ///< Tiempo necesario
-    sf::Vector2f       position;        ///< Posicion de la rep. grafica
-    const sf::Texture& texture;         ///< Textura donde esta la rep. grafica
-    sf::IntRect        location;        ///< Localizacion en la textura de la rep. grafica
-    std::list<sf::Sprite> graph;        ///< Representacion grafica
+    int                   defaultCleaners; ///< Numero por defecto de limpiadores
+    int                   maxCleaners;     ///< Numero maximo de limpiadores
+    sf::Time              elapsed;         ///< Tiempo acumulado
+    sf::Time              necessary;       ///< Tiempo necesario
+    sf::IntRect           rect;            ///< Rect de la rep. graf. en la textura
+    const sf::Texture&    texture;         ///< Textura de la rep. graf.
+    std::list<sf::Sprite> graph;           ///< Rep. graf.
 
     ////////////////////////////////////////////////////////////
     /// \brief Crea las rep. graficas por defecto de los limpiadores
     ///
     ////////////////////////////////////////////////////////////
     void addDefaultCleaners();
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Dibuja la rep. graf.
+    /// \param target Objetivo donde se dibujara
+    /// \param states Estados de renderizacion
+    ///
+    ////////////////////////////////////////////////////////////
+    virtual void draw(sf::RenderTarget &target,
+                      sf::RenderStates states) const override;
 };
 
 #endif // CLEANERSCONTROL_H

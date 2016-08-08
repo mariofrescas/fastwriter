@@ -151,8 +151,8 @@ Started::Started(StateManager& stateManager)
         gConf.getMaxCleaners(),
         sf::milliseconds(gConf.getAddInterval()),
         sf::Vector2f(gcx + 800, gcy + 124),
-        resMngr.getTexture(Textures::ID::Game),
-        sf::IntRect(36, 2, 32, 33)
+        sf::IntRect(36, 2, 32, 33),
+        resMngr.getTexture(Textures::ID::Game)
     );
 
     words = std::make_unique<WordControl>
@@ -356,11 +356,7 @@ void Started::draw()
     window.draw(shiftMode->getGraph().middle);
     window.draw(shiftMode->getGraph().end);
     window.draw(*lifes.get());
-
-    for (auto& cleaner : cleaners->getGraph())
-    {
-        window.draw(cleaner);
-    }
+    window.draw(*cleaners.get());
 }
 
 const sf::Texture* Started::getSnapShotTexture()
@@ -384,11 +380,7 @@ const sf::Texture* Started::getSnapShotTexture()
     snapShot.draw(shiftMode->getGraph().middle);
     snapShot.draw(shiftMode->getGraph().end);
     snapShot.draw(*lifes.get());
-
-    for (auto& cleaner : cleaners->getGraph())
-    {
-        snapShot.draw(cleaner);
-    }
+    snapShot.draw(*cleaners.get());
     snapShot.display();
 
     return &snapShot.getTexture();

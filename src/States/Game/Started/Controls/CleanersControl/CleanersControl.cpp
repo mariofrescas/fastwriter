@@ -25,52 +25,51 @@
 
 #include "CleanersControl.h"
 
+#include <SFML/Graphics/RenderTarget.hpp>
+
 CleanersControl::CleanersControl(int defaultCleaners,
                                  int maxCleaners,
-                                 const sf::Time& addInterval,
+                                 const sf::Time& necessary,
                                  const sf::Vector2f& position,
-                                 const sf::Texture& gameTexture,
-                                 const sf::IntRect& location)
-    : defaultCleaners(defaultCleaners),
-      maxCleaners(maxCleaners),
-      cleaners(defaultCleaners),
-      addInterval(addInterval),
-      position(position),
-      texture(gameTexture),
-      location(location)
-
+                                 const sf::IntRect& rect,
+                                 const sf::Texture& texture)
+ :
+    defaultCleaners(defaultCleaners),
+    maxCleaners(maxCleaners),
+    necessary(necessary),
+    rect(rect),
+    texture(texture)
 {
+    setPosition(position);
     addDefaultCleaners();
 }
 
 void CleanersControl::reconfigure(int defaultCleaners,
                                   int maxCleaners,
-                                  const sf::Time& addInterval)
+                                  const sf::Time& necessary)
 {
     this->defaultCleaners = defaultCleaners;
     this->maxCleaners = maxCleaners;
-    this->addInterval = addInterval;
+    this->necessary = necessary;
 }
 
 void CleanersControl::reset()
 {
-    cleaners = defaultCleaners;
     graph.clear();
     addDefaultCleaners();
 }
 
 void CleanersControl::addTime(const sf::Time& dt)
 {
-    if (cleaners <= maxCleaners)
+    if (graph.size() <= maxCleaners)
     {
         elapsed += dt;
 
-        if (elapsed > addInterval)
+        if (elapsed >= necessary)
         {
             elapsed = sf::Time::Zero;
-            ++cleaners;
-            sf::Sprite sp(texture, location);
-            sp.setPosition(position.x + (location.width * graph.size()), position.y);
+            sf::Sprite sp(texture, rect);
+            sp.setPosition(0 + (rect.width * graph.size()), 0);
             graph.push_back(sp);
         }
     }
@@ -78,29 +77,34 @@ void CleanersControl::addTime(const sf::Time& dt)
 
 void CleanersControl::clean()
 {
-    if (cleaners > 0)
+    if (!graph.empty())
     {
-        --cleaners;
         graph.pop_back();
     }
 }
 
 bool CleanersControl::canClean() const
 {
-    return cleaners > 0;
-}
-
-const std::list<sf::Sprite>& CleanersControl::getGraph() const
-{
-    return graph;
+    return !graph.empty();
 }
 
 void CleanersControl::addDefaultCleaners()
 {
     for (int i = 0; i < defaultCleaners; ++i)
     {
-        sf::Sprite sp(texture, location);
-        sp.setPosition(position.x + (location.width * i), position.y);
+        sf::Sprite sp(texture, rect);
+        sp.setPosition(0 + (rect.width * i), 0);
         graph.push_back(sp);
+    }
+}
+
+void CleanersControl::draw(sf::RenderTarget& target,
+                           sf::RenderStates states) const
+{
+    states.transform *= getTransform();
+
+    for (auto& s : graph)
+    {
+        target.draw(s, states);
     }
 }
