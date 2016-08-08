@@ -26,32 +26,33 @@
 #ifndef LIFESCONTROL_H
 #define LIFESCONTROL_H
 
-#include <SFML/Graphics/Text.hpp>
+#include <memory>
+#include "TextureNumber.h"
 
 ////////////////////////////////////////////////////////////
 /// \brief Describe el control logico-grafico de vidas
 ///
 ////////////////////////////////////////////////////////////
-class LifesControl
+class LifesControl : public sf::Drawable, public sf::Transformable
 {
 public:
     typedef std::unique_ptr<LifesControl> Ptr; ///< Puntero unico
 
     ////////////////////////////////////////////////////////////
     /// \brief Crea un control de vidas
-    /// \param defaultLifes Vidas por defecto
-    /// \param charSize Tamaño del texto grafico
-    /// \param position Posicion del texto grafico
-    /// \param font Fuente del texto grafico
+    /// \param defaultLifes Numero inicial de vidas
+    /// \param position Posicion del control en la escena
+    /// \param rects Rect de la rep. graf. en la textura
+    /// \param texture Textura de las rep. graf.
     ///
     ////////////////////////////////////////////////////////////
     LifesControl(int defaultLifes,
-                 unsigned charSize,
                  const sf::Vector2f& position,
-                 const sf::Font& font);
+                 const std::array<sf::IntRect, 10>& rects,
+                 const sf::Texture& texture);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Reconfigura las propiedades del control de vidas
+    /// \brief Reconfigura las propiedades del control
     /// \param defaultLifes Vidas por defecto
     ///
     ////////////////////////////////////////////////////////////
@@ -64,44 +65,46 @@ public:
     void reset();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Obtiene la representacion grafica
-    /// \return Referencia hacia el texto grafico
-    ///
-    ////////////////////////////////////////////////////////////
-    const sf::Text& getGraph() const;
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Incrementa los puntos de vida en el control
+    /// \brief Incrementa los puntos de vida
     /// \param increment Incremento en la vida
     ///
     ////////////////////////////////////////////////////////////
     void increment(int increment);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Decrementa los puntos de vida el control
+    /// \brief Decrementa los puntos de vida
     /// \param decrement Decremento en la vida
     ///
     ////////////////////////////////////////////////////////////
     void decrement(int decrement);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Comprueba si aun quedan vidas en el control
+    /// \brief Comprueba si aun quedan vidas
     /// \return True = Aun quedan vidas
     ///
     ////////////////////////////////////////////////////////////
     bool remain() const;
 
 private:
-    int      lifes;        ///< Numero de vidas
-    int      defaultLifes; ///< Vidas por defecto
-    bool     remainLifes;  ///< Aun quedan vidas
-    sf::Text graph;        ///< Representacion grafica
+    int              lifes;        ///< Numero de vidas
+    int              defaultLifes; ///< Vidas por defecto
+    bool             remainLifes;  ///< Aun quedan vidas
+    TextureNumber<5> graph;        ///< Rep. graf. de vidas
 
     ////////////////////////////////////////////////////////////
-    /// \brief Actualiza la representacion grafica
+    /// \brief Actualiza la rep. graf.
     ///
     ////////////////////////////////////////////////////////////
     void updateGraph();
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Dibuja la rep. graf.
+    /// \param target Objetivo donde se dibujara
+    /// \param states Estados de renderizacion
+    ///
+    ////////////////////////////////////////////////////////////
+    virtual void draw(sf::RenderTarget &target,
+                      sf::RenderStates states) const override;
 };
 
 #endif // LIFESCONTROL_H

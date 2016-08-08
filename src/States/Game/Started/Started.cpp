@@ -116,9 +116,21 @@ Started::Started(StateManager& stateManager)
     lifes = std::make_unique<LifesControl>
     (
         gConf.getInitLifes(),
-        90,
-        sf::Vector2f(gcx + 803, gcy + 35),
-        resMngr.getFont(Fonts::ID::Default)
+        sf::Vector2f(gcx + 803, gcy + 45),
+        std::array<sf::IntRect, 10>
+        {
+            sf::IntRect(2, 2, 52, 82),
+            sf::IntRect(2, 86, 47, 80),
+            sf::IntRect(2, 168, 52, 81),
+            sf::IntRect(2, 251, 52, 81),
+            sf::IntRect(2, 334, 53, 82),
+            sf::IntRect(2, 418, 52, 81),
+            sf::IntRect(2, 501, 52, 82),
+            sf::IntRect(2, 585, 53, 81),
+            sf::IntRect(2, 668, 52, 82),
+            sf::IntRect(2, 752, 52, 82)
+        },
+        resMngr.getTexture(Textures::ID::Numbers)
     );
 
     cleaners = std::make_unique<CleanersControl>
@@ -331,7 +343,7 @@ void Started::draw()
     window.draw(shiftMode->getGraph().start);
     window.draw(shiftMode->getGraph().middle);
     window.draw(shiftMode->getGraph().end);
-    window.draw(lifes->getGraph());
+    window.draw(*lifes.get());
 
     for (auto& cleaner : cleaners->getGraph())
     {
@@ -359,7 +371,7 @@ const sf::Texture* Started::getSnapShotTexture()
     snapShot.draw(shiftMode->getGraph().start);
     snapShot.draw(shiftMode->getGraph().middle);
     snapShot.draw(shiftMode->getGraph().end);
-    snapShot.draw(lifes->getGraph());
+    snapShot.draw(*lifes.get());
 
     for (auto& cleaner : cleaners->getGraph())
     {

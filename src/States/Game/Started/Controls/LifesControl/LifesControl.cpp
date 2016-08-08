@@ -26,15 +26,21 @@
 #include "LifesControl.h"
 
 LifesControl::LifesControl(int defaultLifes,
-                           unsigned charSize,
                            const sf::Vector2f& position,
-                           const sf::Font& font)
-    : lifes(defaultLifes),
-      defaultLifes(defaultLifes),
-      remainLifes(true),
-      graph("00000", font, charSize)
+                           const std::array<sf::IntRect, 10>& rects,
+                           const sf::Texture& texture)
+ :
+    lifes(defaultLifes),
+    defaultLifes(defaultLifes),
+    remainLifes(true),
+    graph
+    (
+        sf::Vector2f(0, 0),
+        rects,
+        texture
+    )
 {
-    graph.setPosition(position);
+    setPosition(position);
     updateGraph();
 }
 
@@ -48,11 +54,6 @@ void LifesControl::reset()
     lifes = defaultLifes;
     remainLifes = true;
     updateGraph();
-}
-
-const sf::Text& LifesControl::getGraph() const
-{
-    return graph;
 }
 
 void LifesControl::increment(int increment)
@@ -84,11 +85,19 @@ bool LifesControl::remain() const
 void LifesControl::updateGraph()
 {
     std::string s;
-    s += (lifes < 10000)? "0": "";
-    s += (lifes < 1000)? "0": "";
-    s += (lifes < 100)? "0": "";
-    s += (lifes < 10)? "0": "";
-    s += std::to_string(lifes);
+    s.append((lifes < 10000)? "0" : "");
+    s.append((lifes < 1000)? "0" : "");
+    s.append((lifes < 100)? "0" : "");
+    s.append((lifes < 10)? "0" : "");
+    s.append(std::to_string(lifes));
 
-    graph.setString(s);
+    graph.setNumber(s);
+}
+
+void LifesControl::draw(sf::RenderTarget& target,
+                        sf::RenderStates states) const
+{
+    states.transform *= getTransform();
+
+    target.draw(graph, states);
 }
