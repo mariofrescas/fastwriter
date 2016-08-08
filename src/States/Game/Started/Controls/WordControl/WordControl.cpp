@@ -26,6 +26,7 @@
 #include "WordControl.h"
 
 #include <random>
+#include <SFML/Graphics/RenderTarget.hpp>
 
 WordControl::WordControl(const std::string& dictionaryPath,
                          const sf::FloatRect& dropArea,
@@ -33,6 +34,8 @@ WordControl::WordControl(const std::string& dictionaryPath,
     : dropArea(dropArea),
       lettTexture(lettersTexture)
 {
+    setPosition(dropArea.left, dropArea.top);
+
     dictionary = std::make_unique<Dictionary>(dictionaryPath);
     wordMap = std::make_unique<WordMap>(dictionary->getWords());
 }
@@ -77,7 +80,7 @@ void WordControl::drop(const sf::Time& elapsed, const WordConfig& config)
         float wordVel = config.velocity;
 
         int wordSize = word.size();
-        int wordXpos = rand(dropArea.left, dropArea.width - (wordSize * 43));
+        int wordXpos = rand(0, dropArea.width - (wordSize * 43));
 
         for (int i = 0; i != wordSize; ++i)
         {
@@ -90,7 +93,7 @@ void WordControl::drop(const sf::Time& elapsed, const WordConfig& config)
             );
 
             sf::Sprite lettSprite(lettTexture, lettRect);
-            lettSprite.setPosition(wordXpos + (i * 43), dropArea.top);
+            lettSprite.setPosition(wordXpos + (i * 43), 0);
 
             letters.push_back(Letter{lettChar, wordVel, lettSprite});
         }
@@ -111,7 +114,7 @@ int WordControl::trap()
 {
     sf::FloatRect trapRect
     (
-        dropArea.left, dropArea.top + dropArea.height,
+        0, 0 + dropArea.height,
         dropArea.width, 1
     );
 
@@ -130,11 +133,6 @@ int WordControl::trap()
     }
 
     return counter;
-}
-
-const std::list<WordControl::Letter>& WordControl::getGraph() const
-{
-    return letters;
 }
 
 int WordControl::decodeLettChar(char letter) const
@@ -195,4 +193,15 @@ int WordControl::rand(int min, int max) const
     std::uniform_int_distribution<int> uni(min, max);
 
     return uni(rng);
+}
+
+void WordControl::draw(sf::RenderTarget& target,
+                       sf::RenderStates states) const
+{
+    states.transform *= getTransform();
+
+    for (auto& s : letters)
+    {
+        target.draw(s.graph, states);
+    }
 }

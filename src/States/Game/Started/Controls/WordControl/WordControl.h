@@ -35,10 +35,10 @@
 #include <SFML/Graphics/Sprite.hpp>
 
 ////////////////////////////////////////////////////////////
-/// \brief Describe el control logico-grafico de las palabras
+/// \brief Describe el control logico-grafico de palabras
 ///
 ////////////////////////////////////////////////////////////
-class WordControl
+class WordControl : public sf::Drawable, public sf::Transformable
 {
 public:
     using Ptr = std::unique_ptr<WordControl>; ///< Puntero unico
@@ -49,9 +49,9 @@ public:
     ////////////////////////////////////////////////////////////
     struct Letter
     {
-        char  character;  ///< Character de la letra
-        float velocity;   ///< Velocidad de "caida"
-        sf::Sprite graph; ///< Representacion grafica
+        char       character;  ///< Character de la letra
+        float      velocity;   ///< Velocidad de "caida"
+        sf::Sprite graph;      ///< Rep. graf.
     };
 
     ////////////////////////////////////////////////////////////
@@ -66,7 +66,7 @@ public:
     };
 
     ////////////////////////////////////////////////////////////
-    /// \brief Crea un control de letras
+    /// \brief Crea un control de palabras
     /// \param dictionaryPath Ubicacion del archivo de palabras
     /// \param dropArea Area de dropeo del control
     /// \param lettersTextura Textura para las letras
@@ -121,18 +121,11 @@ public:
     ////////////////////////////////////////////////////////////
     int trap();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Obtiene la representacion grafica
-    /// \return Referencia hacia la rep. grafica
-    ///
-    ////////////////////////////////////////////////////////////
-    const std::list<Letter>& getGraph() const;
-
 private:
     sf::Time           elapsedTime; ///< Tiempo transcurrido
     std::list<Letter>  letters;     ///< Lista de letras
     sf::FloatRect      dropArea;    ///< Area de trabajo
-    const sf::Texture& lettTexture; ///< Textura para las letras
+    const sf::Texture& lettTexture; ///< Textura de las rep. graf.
     Dictionary::Ptr    dictionary;  ///< Lista de palabras (characteres)
     WordMap::Ptr       wordMap;     ///< Mapa de palabras (longitud=>palabra)
 
@@ -160,6 +153,15 @@ private:
     ///
     ////////////////////////////////////////////////////////////
     int rand(int min, int max) const;
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Dibuja la rep. graf.
+    /// \param target Objetivo donde se dibujara
+    /// \param states Estados de renderizacion
+    ///
+    ////////////////////////////////////////////////////////////
+    virtual void draw(sf::RenderTarget &target,
+                      sf::RenderStates states) const override;
 };
 
 #endif // WORDCONTROL_H

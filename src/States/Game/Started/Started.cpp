@@ -158,7 +158,7 @@ Started::Started(StateManager& stateManager)
     words = std::make_unique<WordControl>
     (
         resMngr.getDictionary(Dictionaries::ID::EN_DIC),
-        sf::FloatRect(gcx + 129.670, gcy + 172, 1100, 520),
+        sf::FloatRect(gcx + 35, gcy + 130, 1060, 540),
         resMngr.getTexture(Textures::ID::Letters)
     );
 
@@ -340,12 +340,7 @@ void Started::draw()
 
     window.draw(background);
     window.draw(gameCase);
-
-    for (auto& letter : words->getGraph())
-    {
-        window.draw(letter.graph);
-    }
-
+    window.draw(*words.get());
     window.draw(controlPanel);
     window.draw(*points.get());
     window.draw(*wantPoints.get());
@@ -360,12 +355,7 @@ const sf::Texture* Started::getSnapShotTexture()
     snapShot.clear();
     snapShot.draw(background);
     snapShot.draw(gameCase);
-
-    for (auto& letter : words->getGraph())
-    {
-        snapShot.draw(letter.graph);
-    }
-
+    snapShot.draw(*words.get());
     snapShot.draw(controlPanel);
     snapShot.draw(*points.get());
     snapShot.draw(*wantPoints.get());
