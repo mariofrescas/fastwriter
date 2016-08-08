@@ -25,24 +25,26 @@
 
 #include "PointsControl.h"
 
-PointsControl::PointsControl(unsigned charSize,
-                             const sf::Vector2f& position,
-                             const sf::Font& font)
-    : points(0),
-      graph("00000", font, charSize)
+PointsControl::PointsControl(const sf::Vector2f& position,
+                             const std::array<sf::IntRect, 10>& rects,
+                             const sf::Texture& texture)
+ :
+    points(0),
+    graph
+    (
+        sf::Vector2f(0, 0),
+        rects,
+        texture
+    )
 {
-    graph.setPosition(position);
+    setPosition(position);
+    updateGraph();
 }
 
 void PointsControl::reset()
 {
     points = 0;
     updateGraph();
-}
-
-const sf::Text& PointsControl::getGraph() const
-{
-    return graph;
 }
 
 void PointsControl::increment(int increment)
@@ -68,11 +70,19 @@ void PointsControl::decrement(int decrement)
 void PointsControl::updateGraph()
 {
     std::string s;
-    s += (points < 10000)? "0": "";
-    s += (points < 1000)? "0": "";
-    s += (points < 100)? "0": "";
-    s += (points < 10)? "0": "";
-    s += std::to_string(points);
+    s.append((points < 10000)? "0" : "");
+    s.append((points < 1000)? "0" : "");
+    s.append((points < 100)? "0" : "");
+    s.append((points < 10)? "0" : "");
+    s.append(std::to_string(points));
 
-    graph.setString(s);
+    graph.setNumber(s);
+}
+
+void PointsControl::draw(sf::RenderTarget& target,
+                         sf::RenderStates states) const
+{
+    states.transform *= getTransform();
+
+    target.draw(graph, states);
 }

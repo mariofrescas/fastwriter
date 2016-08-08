@@ -26,27 +26,28 @@
 #ifndef POINTSCONTROL_H
 #define POINTSCONTROL_H
 
-#include <SFML/Graphics/Text.hpp>
+#include <memory>
+#include "TextureNumber.h"
 
 ////////////////////////////////////////////////////////////
 /// \brief Describe el control logico-grafico de puntos
 ///
 ////////////////////////////////////////////////////////////
-class PointsControl
+class PointsControl : public sf::Drawable, public sf::Transformable
 {
 public:
     using Ptr = std::unique_ptr<PointsControl>; ///< Puntero unico
 
     ////////////////////////////////////////////////////////////
     /// \brief Crea un control de puntos
-    /// \param charSize Tamaño del texto grafico
-    /// \param position Posicion del texto grafico
-    /// \param font Fuente del texto grafico
+    /// \param position Posicion del control en la escena
+    /// \param rects Rects de las rep. graf. en la textura
+    /// \param texture Textura de las rep. graf.
     ///
     ////////////////////////////////////////////////////////////
-    PointsControl(unsigned charSize,
-                  const sf::Vector2f& position,
-                  const sf::Font& font);
+    PointsControl(const sf::Vector2f& position,
+                  const std::array<sf::IntRect, 10>& rects,
+                  const sf::Texture& texture);
 
     ////////////////////////////////////////////////////////////
     /// \brief Reinicia el control a los valores por defecto
@@ -55,35 +56,37 @@ public:
     void reset();
 
     ////////////////////////////////////////////////////////////
-    /// \brief Obtiene la representacion grafica
-    /// \return Referencia hacia el texto grafico
-    ///
-    ////////////////////////////////////////////////////////////
-    const sf::Text& getGraph() const;
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Incrementa los puntos en el control
+    /// \brief Incrementa los puntos
     /// \param increment Incremento en los puntos
     ///
     ////////////////////////////////////////////////////////////
     void increment(int increment);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Decrementa los puntos en el control
+    /// \brief Decrementa los puntos
     /// \param decrement Decremento en los puntos
     ///
     ////////////////////////////////////////////////////////////
     void decrement(int decrement);
 
 private:
-    int      points; ///< Puntos
-    sf::Text graph;  ///< Representacion grafica
+    int              points; ///< Puntos
+    TextureNumber<5> graph;  ///< Rep. graf. de vidas
 
     ////////////////////////////////////////////////////////////
-    /// \brief Actualiza la representacion grafica
+    /// \brief Actualiza la rep. graf.
     ///
     ////////////////////////////////////////////////////////////
     void updateGraph();
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Dibuja la rep. graf.
+    /// \param target Objetivo donde se dibujara
+    /// \param states Estados de renderizacion
+    ///
+    ////////////////////////////////////////////////////////////
+    virtual void draw(sf::RenderTarget &target,
+                      sf::RenderStates states) const override;
 };
 
 #endif // POINTSCONTROL_H

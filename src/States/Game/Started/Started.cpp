@@ -65,9 +65,21 @@ Started::Started(StateManager& stateManager)
 
     points = std::make_unique<PointsControl>
     (
-        90,
-        sf::Vector2f(gcx + 84, gcy + 35),
-        resMngr.getFont(Fonts::ID::Default)
+        sf::Vector2f(gcx + 75, gcy + 45),
+        std::array<sf::IntRect, 10>
+        {
+            sf::IntRect(2, 2, 52, 82),
+            sf::IntRect(2, 86, 47, 80),
+            sf::IntRect(2, 168, 52, 81),
+            sf::IntRect(2, 251, 52, 81),
+            sf::IntRect(2, 334, 53, 82),
+            sf::IntRect(2, 418, 52, 81),
+            sf::IntRect(2, 501, 52, 82),
+            sf::IntRect(2, 585, 53, 81),
+            sf::IntRect(2, 668, 52, 82),
+            sf::IntRect(2, 752, 52, 82)
+        },
+        resMngr.getTexture(Textures::ID::Numbers)
     );
 
     wantPoints = std::make_unique<WantPointsControl>
@@ -335,7 +347,7 @@ void Started::draw()
     }
 
     window.draw(wordsCover);
-    window.draw(points->getGraph());
+    window.draw(*points.get());
     window.draw(wantPoints->getGraph().start);
     window.draw(wantPoints->getGraph().middle);
     window.draw(wantPoints->getGraph().end);
@@ -363,7 +375,7 @@ const sf::Texture* Started::getSnapShotTexture()
     }
 
     snapShot.draw(wordsCover);
-    snapShot.draw(points->getGraph());
+    snapShot.draw(*points.get());
     snapShot.draw(wantPoints->getGraph().start);
     snapShot.draw(wantPoints->getGraph().middle);
     snapShot.draw(wantPoints->getGraph().end);
