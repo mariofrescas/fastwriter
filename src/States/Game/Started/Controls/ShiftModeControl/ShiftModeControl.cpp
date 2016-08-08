@@ -25,6 +25,8 @@
 
 #include "ShiftModeControl.h"
 
+#include <SFML/Graphics/RenderTarget.hpp>
+
 ShiftModeControl::ShiftModeControl(const sf::Time& duration,
                                    const sf::Time& necessary,
                                    const sf::Vector2f& position,
@@ -38,8 +40,9 @@ ShiftModeControl::ShiftModeControl(const sf::Time& duration,
       canActiveShift(true),
       isShiftActive(false),
       defWidth((total.width - start.width) - start.width),
-      graph(position, start, middle, end, total, texture)
+      graph(sf::Vector2f(0, 0), start, middle, end, total, texture)
 {
+    setPosition(position);
     graph.fillFull();
 }
 
@@ -86,11 +89,6 @@ void ShiftModeControl::update(const sf::Time& dt)
     }
 }
 
-const TextureBar::Graph& ShiftModeControl::getGraph() const
-{
-    return graph.getGraph();
-}
-
 void ShiftModeControl::active()
 {
     isShiftActive = true;
@@ -116,4 +114,12 @@ void ShiftModeControl::updateGraph(bool isGrowing)
     int as = (at * ts) / tt;
 
     graph.adjustMiddle(as);
+}
+
+void ShiftModeControl::draw(sf::RenderTarget& target,
+                            sf::RenderStates states) const
+{
+    states.transform *= getTransform();
+
+    target.draw(graph, states);
 }

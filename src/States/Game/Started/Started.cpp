@@ -348,13 +348,9 @@ void Started::draw()
 
     window.draw(wordsCover);
     window.draw(*points.get());
-    window.draw(wantPoints->getGraph().start);
-    window.draw(wantPoints->getGraph().middle);
-    window.draw(wantPoints->getGraph().end);
+    window.draw(*wantPoints.get());
     window.draw(*time.get());
-    window.draw(shiftMode->getGraph().start);
-    window.draw(shiftMode->getGraph().middle);
-    window.draw(shiftMode->getGraph().end);
+    window.draw(*shiftMode.get());
     window.draw(*lifes.get());
     window.draw(*cleaners.get());
 }
@@ -372,13 +368,9 @@ const sf::Texture* Started::getSnapShotTexture()
 
     snapShot.draw(wordsCover);
     snapShot.draw(*points.get());
-    snapShot.draw(wantPoints->getGraph().start);
-    snapShot.draw(wantPoints->getGraph().middle);
-    snapShot.draw(wantPoints->getGraph().end);
+    snapShot.draw(*wantPoints.get());
     snapShot.draw(*time.get());
-    snapShot.draw(shiftMode->getGraph().start);
-    snapShot.draw(shiftMode->getGraph().middle);
-    snapShot.draw(shiftMode->getGraph().end);
+    snapShot.draw(*shiftMode.get());
     snapShot.draw(*lifes.get());
     snapShot.draw(*cleaners.get());
     snapShot.display();

@@ -33,7 +33,7 @@
 /// \brief Describe el control logico-grafico de puntos deseados
 ///
 ////////////////////////////////////////////////////////////
-class WantPointsControl
+class WantPointsControl : public sf::Drawable, public sf::Transformable
 {
 public:
     using Ptr = std::unique_ptr<WantPointsControl>; ///< Puntero unico
@@ -41,12 +41,12 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Crea un control para los puntos deseados
     /// \param wantPoints Puntos deseados
-    /// \param position Posicion de la barra en la escena
-    /// \param start Rect en textura de la rep. grafica inicial
-    /// \param middle Rect en textura de la rep. grafica de en medio
-    /// \param end Rect en textura de la rep. grafica final
-    /// \param total Rect de la rep. grafica total: start + middle + end
-    /// \param texture Textura de donde se obtienen los graficos
+    /// \param position Posicion del control en la escena
+    /// \param start Rect de la rep. graf. de la parte inicial en la textura
+    /// \param middle Rect de la rep. graf. de la parte mediana en la textura
+    /// \param end Rect de la rep. graf. de la parte final en la textura
+    /// \param total Rect de la rep. graf. total: start + middle + end
+    /// \param texture Textura de las rep. graf.
     ///
     ////////////////////////////////////////////////////////////
     WantPointsControl(int wantPoints,
@@ -62,13 +62,6 @@ public:
     ///
     ////////////////////////////////////////////////////////////
     void reset();
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Obtiene la representacion grafica
-    /// \return Referencia hacia la rep. grafica
-    ///
-    ////////////////////////////////////////////////////////////
-    const TextureBar::Graph& getGraph() const;
 
     ////////////////////////////////////////////////////////////
     /// \brief Aumenta los puntos base
@@ -88,14 +81,23 @@ private:
     int   points;           ///< Puntos base
     int   wantPoints;       ///< Puntos deseados
     bool  isWantPointsFull; ///< Ya se tienen todos los puntos deseados
-    float defWidth;         ///< Ancho total de la rep. grafica
-    OneDirectionBar graph;  ///< Representacion grafica
+    float defWidth;         ///< Anchura total de la barra
+    OneDirectionBar graph;  ///< Rep. graf.
 
     ////////////////////////////////////////////////////////////
-    /// \brief Actualiza la representacion grafica
+    /// \brief Actualiza la rep. graf.
     ///
     ////////////////////////////////////////////////////////////
     void updateGraph();
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Dibuja la rep. graf.
+    /// \param target Objetivo donde se dibujara
+    /// \param states Estados de renderizacion
+    ///
+    ////////////////////////////////////////////////////////////
+    virtual void draw(sf::RenderTarget &target,
+                      sf::RenderStates states) const override;
 };
 
 #endif // WANTPOINTSCONTROL_H

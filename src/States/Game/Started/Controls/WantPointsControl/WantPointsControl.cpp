@@ -25,6 +25,8 @@
 
 #include "WantPointsControl.h"
 
+#include <SFML/Graphics/RenderTarget.hpp>
+
 WantPointsControl::WantPointsControl(int wantPoints,
                                      const sf::Vector2f& position,
                                      const sf::IntRect& start,
@@ -36,19 +38,15 @@ WantPointsControl::WantPointsControl(int wantPoints,
       wantPoints(wantPoints),
       isWantPointsFull(false),
       defWidth((total.width - start.width) - start.width),
-      graph(position, start, middle, end, total, texture)
+      graph(sf::Vector2f(0, 0), start, middle, end, total, texture)
 {
+    setPosition(position);
 }
 
 void WantPointsControl::reset()
 {
     points = 0;
     updateGraph();
-}
-
-const TextureBar::Graph& WantPointsControl::getGraph() const
-{
-    return graph.getGraph();
 }
 
 void WantPointsControl::addPoints(int increment)
@@ -82,4 +80,12 @@ void WantPointsControl::updateGraph()
     {
         isWantPointsFull = false;
     }
+}
+
+void WantPointsControl::draw(sf::RenderTarget& target,
+                             sf::RenderStates states) const
+{
+    states.transform *= getTransform();
+
+    target.draw(graph, states);
 }

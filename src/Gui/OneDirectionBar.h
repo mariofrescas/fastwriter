@@ -38,11 +38,11 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Crea una barra de una sola direccion
     /// \param position Posicion de la barra en la escena
-    /// \param start Rect en textura de la rep. grafica inicial
-    /// \param middle Rect en textura de la rep. grafica de en medio
-    /// \param end Rect en textura de la rep. grafica final
-    /// \param total Rect de la rep. grafica total: start + middle + end
-    /// \param texture Textura de donde se obtienen los graficos
+    /// \param start Rect de la rep. graf. de la parte inicial en la textura
+    /// \param middle Rect de la rep. graf. de la parte mediana en la textura
+    /// \param end Rect de la rep. graf. de la parte final en la textura
+    /// \param total Rect de la rep. graf. total: start + middle + end
+    /// \param texture Textura de las rep. graf.
     ///
     ////////////////////////////////////////////////////////////
     OneDirectionBar(const sf::Vector2f& position,
@@ -54,7 +54,7 @@ public:
 
 protected:
     ////////////////////////////////////////////////////////////
-    /// \brief Ajusta la dimencion de la barra
+    /// \brief Actualiza las propiedades de la rep. graf. mediana
     /// \param size Nuevo tamaño de la barra
     ///
     ////////////////////////////////////////////////////////////

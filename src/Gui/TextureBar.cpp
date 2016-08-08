@@ -25,15 +25,7 @@
 
 #include "TextureBar.h"
 
-TextureBar::Graph::Graph(const sf::RectangleShape& start,
-                         const sf::RectangleShape& middle,
-                         const sf::RectangleShape& end)
-    :
-      start(start),
-      middle(middle),
-      end(end)
-{
-}
+#include <SFML/Graphics/RenderTarget.hpp>
 
 TextureBar::TextureBar(const sf::Vector2f& position,
                        const sf::IntRect& start,
@@ -43,31 +35,24 @@ TextureBar::TextureBar(const sf::Vector2f& position,
                        const sf::Texture& texture)
     :
       middle(sf::Vector2f(middle.width, middle.height)),
-      defX(position.x + start.width),
+      defX(0 + start.width),
       total(total),
       start(sf::Vector2f(start.width, start.height)),
       end(sf::Vector2f(end.width, end.height))
 {
+    setPosition(position);
+
     this->start.setTexture(&texture);
     this->start.setTextureRect(start);
-    this->start.setPosition(position);
+    this->start.setPosition(0, 0);
 
     this->middle.setTexture(&texture);
     this->middle.setTextureRect(middle);
-    this->middle.setPosition(position.x + this->start.getSize().x, position.y);
+    this->middle.setPosition(0 + this->start.getSize().x, 0);
 
     this->end.setTexture(&texture);
     this->end.setTextureRect(end);
-    this->end.setPosition
-    (
-        this->middle.getPosition().x + this->middle.getSize().x,
-        position.y
-    );
-}
-
-const TextureBar::Graph& TextureBar::getGraph() const
-{
-    return graph;
+    this->end.setPosition(this->middle.getPosition().x + this->middle.getSize().x, 0);
 }
 
 void TextureBar::fillFull()
@@ -159,4 +144,14 @@ bool TextureBar::checkIsFullGrown()
 bool TextureBar::checkIsFullShrank()
 {
     return (start.getPosition().x + start.getSize().x) >= end.getPosition().x;
+}
+
+void TextureBar::draw(sf::RenderTarget& target,
+                      sf::RenderStates states) const
+{
+    states.transform *= getTransform();
+
+    target.draw(start, states);
+    target.draw(middle, states);
+    target.draw(end, states);
 }

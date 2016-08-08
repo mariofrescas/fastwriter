@@ -34,7 +34,7 @@
 /// \brief Describe el control logico-grafico del modo Shift
 ///
 ////////////////////////////////////////////////////////////
-class ShiftModeControl
+class ShiftModeControl : public sf::Drawable, public sf::Transformable
 {
 public:
     using Ptr = std::unique_ptr<ShiftModeControl>; ///< Puntero unico
@@ -43,12 +43,12 @@ public:
     /// \brief Crea un control para el modo Shift
     /// \param duration Duracion del modo
     /// \param necessary Tiempo de recarga
-    /// \param position Posicion de la barra en la escena
-    /// \param start Rect en textura de la rep. grafica inicial
-    /// \param middle Rect en textura de la rep. grafica de en medio
-    /// \param end Rect en textura de la rep. grafica final
-    /// \param total Rect de la rep. grafica total: start + middle + end
-    /// \param texture Textura de donde se obtienen los graficos
+    /// \param position Posicion del control en la escena
+    /// \param start Rect de la rep. graf. de la parte inicial en la textura
+    /// \param middle Rect de la rep. graf. de la parte mediana en la textura
+    /// \param end Rect de la rep. graf. de la parte final en la textura
+    /// \param total Rect de la rep. graf. total: start + middle + end
+    /// \param texture Textura de las rep. graf.
     ///
     ////////////////////////////////////////////////////////////
     ShiftModeControl(const sf::Time& duration,
@@ -61,7 +61,7 @@ public:
                      const sf::Texture& texture);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Reconfigura las propiedades del control del modo Shift
+    /// \brief Reconfigura las propiedades del control
     /// \param duration Duracion del modo
     /// \param necessary Tiempo de recarga
     ///
@@ -81,13 +81,6 @@ public:
     ///
     ////////////////////////////////////////////////////////////
     void update(const sf::Time& dt);
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Obtiene la representacion grafica
-    /// \return Referencia hacia la rep. grafica
-    ///
-    ////////////////////////////////////////////////////////////
-    const TextureBar::Graph& getGraph() const;
 
     ////////////////////////////////////////////////////////////
     /// \brief Activa el modo Shift
@@ -115,15 +108,23 @@ private:
     sf::Time necessary;       ///< Tiempo de recarga
     bool     canActiveShift;  ///< Es posible activar el modo
     bool     isShiftActive;   ///< Esta activado el modo
-    float    defWidth;        ///< Anchura total por defecto del graph
-    BidirectionalBar graph;   ///< Representacion grafica
+    float    defWidth;        ///< Anchura total de la barra
+    BidirectionalBar graph;   ///< Rep. graf.
 
     ////////////////////////////////////////////////////////////
-    /// \brief Actualiza la representacion grafica
-    /// \param isGrowing Identifica si el control esta creciendo
+    /// \brief Actualiza la rep. graf.
     ///
     ////////////////////////////////////////////////////////////
     void updateGraph(bool isGrowing);
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Dibuja la rep. graf.
+    /// \param target Objetivo donde se dibujara
+    /// \param states Estados de renderizacion
+    ///
+    ////////////////////////////////////////////////////////////
+    virtual void draw(sf::RenderTarget &target,
+                      sf::RenderStates states) const override;
 };
 
 #endif // SHIFTMODECONTROL_H

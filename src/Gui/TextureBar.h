@@ -34,42 +34,21 @@ namespace sf
 }
 
 ////////////////////////////////////////////////////////////
-/// \brief Describe una barra redimensionable de una textura
+/// \brief Describe una rep. graf. de una barra redimensionable
 ///
 ////////////////////////////////////////////////////////////
-class TextureBar
+class TextureBar : public sf::Drawable, public sf::Transformable
 {
 public:
-    ////////////////////////////////////////////////////////////
-    /// \brief Encapsula la representacion grafica
-    ///
-    ////////////////////////////////////////////////////////////
-    struct Graph
-    {
-        ////////////////////////////////////////////////////////////
-        /// \brief Crea un objeto contenedor de la rep. grafica
-        /// \param start Referencia hacia la rep. grafica de inicio
-        /// \param middle Referencia hacia la rep. grafica de en medio
-        /// \param end Referencia hacia la rep. grafica final
-        ///
-        ////////////////////////////////////////////////////////////
-        Graph(const sf::RectangleShape& start,
-              const sf::RectangleShape& middle,
-              const sf::RectangleShape& end);
-
-        const sf::RectangleShape& start;  ///< Rep. grafica inicial
-        const sf::RectangleShape& middle; ///< Rep. grafica de en medio
-        const sf::RectangleShape& end;    ///< Rep. grafica final
-    };
 
     ////////////////////////////////////////////////////////////
-    /// \brief Crea una barra en base a una textura
+    /// \brief Crea una rep. graf. de una barra redimensionable
     /// \param position Posicion de la barra en la escena
-    /// \param start Rect en textura de la rep. grafica inicial
-    /// \param middle Rect en textura de la rep. grafica de en medio
-    /// \param end Rect en textura de la rep. grafica final
-    /// \param total Rect de la rep. grafica total: start + middle + end
-    /// \param texture Textura de donde se obtienen los graficos
+    /// \param start Rect de la rep. graf. de la parte inicial en la textura
+    /// \param middle Rect de la rep. graf. de la parte mediana en la textura
+    /// \param end Rect de la rep. graf. de la parte final en la textura
+    /// \param total Rect de la rep. graf. total: start + middle + end
+    /// \param texture Textura de las rep. graf.
     ///
     ////////////////////////////////////////////////////////////
     TextureBar(const sf::Vector2f& position,
@@ -78,13 +57,6 @@ public:
                const sf::IntRect& end,
                const sf::IntRect& total,
                const sf::Texture& texture);
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Obtiene la rep. grafica
-    /// \return Referencia al objeto encapsulador de la rep. grafica
-    ///
-    ////////////////////////////////////////////////////////////
-    const Graph& getGraph() const;
 
     ////////////////////////////////////////////////////////////
     /// \brief Llena la barra completamente
@@ -112,10 +84,10 @@ public:
     virtual ~TextureBar();
 
 protected:
-    sf::RectangleShape middle; ///< Rep. de en medio
+    sf::RectangleShape middle; ///< Rep. graf. mediana
 
     ////////////////////////////////////////////////////////////
-    /// \brief Actualiza las propiedades de la rep. de en medio
+    /// \brief Actualiza las propiedades de la rep. graf. mediana
     /// \param size Nuevo tamaño de la barra
     ///
     ////////////////////////////////////////////////////////////
@@ -126,11 +98,10 @@ private:
     sf::IntRect        total; ///< Rect de la rep. total
     sf::RectangleShape start; ///< Rep. grafica de inicio
     sf::RectangleShape end;   ///< Rep. grafica final
-    Graph graph = {start, middle, end}; ///< Encapsulacion grafica
 
     ////////////////////////////////////////////////////////////
-    /// \brief Ajusta las posiciones de las rep. de inicio y final
-    ///        con respecto a la rep. grafica de en medio
+    /// \brief Ajusta las posiciones de las rep. graf. de inicio y final
+    ///        con respecto a la rep. graf. mediana (start - middle - final)
     ///
     ////////////////////////////////////////////////////////////
     void updateEdges();
@@ -149,6 +120,15 @@ private:
     ///
     ////////////////////////////////////////////////////////////
     bool checkIsFullShrank();
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Dibuja la rep. graf.
+    /// \param target Objetivo donde se dibujara
+    /// \param states Estados de renderizacion
+    ///
+    ////////////////////////////////////////////////////////////
+    virtual void draw(sf::RenderTarget& target,
+                      sf::RenderStates states) const override;
 };
 
 #endif // TEXTUREBAR_H
