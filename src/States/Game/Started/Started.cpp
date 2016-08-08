@@ -83,9 +83,22 @@ Started::Started(StateManager& stateManager)
 
     time = std::make_unique<TimeControl>
     (
-        90,
-        sf::Vector2f(gcx + 370, gcy + 35),
-        resMngr.getFont(Fonts::ID::Default)
+        sf::Vector2f(gcx + 390, gcy + 45),
+        std::array<sf::IntRect, 11>
+        {
+            sf::IntRect(2, 2, 52, 82),
+            sf::IntRect(2, 86, 47, 80),
+            sf::IntRect(2, 168, 52, 81),
+            sf::IntRect(2, 251, 52, 81),
+            sf::IntRect(2, 334, 53, 82),
+            sf::IntRect(2, 418, 52, 81),
+            sf::IntRect(2, 501, 52, 82),
+            sf::IntRect(2, 585, 53, 81),
+            sf::IntRect(2, 668, 52, 82),
+            sf::IntRect(2, 752, 52, 82),
+            sf::IntRect(2, 836, 26, 65)
+        },
+        resMngr.getTexture(Textures::ID::Numbers)
     );
 
     shiftMode = std::make_unique<ShiftModeControl>
@@ -219,7 +232,7 @@ void Started::update(const sf::Time& dt)
 {
     const GameConf& gConf = confMngr.getCurrentConf();
 
-    time->update(dt);
+    time->tick(dt);
     shiftMode->update(dt);
     cleaners->addTime(dt);
 
@@ -314,7 +327,7 @@ void Started::draw()
     window.draw(wantPoints->getGraph().start);
     window.draw(wantPoints->getGraph().middle);
     window.draw(wantPoints->getGraph().end);
-    window.draw(time->getGraph());
+    window.draw(*time.get());
     window.draw(shiftMode->getGraph().start);
     window.draw(shiftMode->getGraph().middle);
     window.draw(shiftMode->getGraph().end);
@@ -342,7 +355,7 @@ const sf::Texture* Started::getSnapShotTexture()
     snapShot.draw(wantPoints->getGraph().start);
     snapShot.draw(wantPoints->getGraph().middle);
     snapShot.draw(wantPoints->getGraph().end);
-    snapShot.draw(time->getGraph());
+    snapShot.draw(*time.get());
     snapShot.draw(shiftMode->getGraph().start);
     snapShot.draw(shiftMode->getGraph().middle);
     snapShot.draw(shiftMode->getGraph().end);

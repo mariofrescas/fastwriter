@@ -75,6 +75,7 @@ set(SOURCES
     src/Game/Game.cpp
     src/Gui/GraphicMenu.cpp
     src/Gui/TextureBar.cpp
+    src/Gui/TextureNumber.inl
     src/Gui/OneDirectionBar.cpp
     src/Gui/BidirectionalBar.cpp
     src/ResourceManager/ResourceManager.cpp

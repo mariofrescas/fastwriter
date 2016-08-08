@@ -45,6 +45,7 @@ ResourceManager::ResourceManager(const std::string& path)
     textureHolder.load(Textures::ID::Wellcome, path + "res/textures/wellcome.png");
     textureHolder.load(Textures::ID::Game, path + "res/textures/started.png");
     textureHolder.load(Textures::ID::Letters, path + "res/textures/letters.png");
+    textureHolder.load(Textures::ID::Numbers, path + "res/textures/numbers.png");
 
     soundHolder.load(Sounds::ID::MenuOpen, path + "res/sounds/menu-open.ogg");
     soundHolder.load(Sounds::ID::MenuClose, path + "res/sounds/menu-close.ogg");

@@ -25,21 +25,71 @@
 
 #include "TimeControl.h"
 
-TimeControl::TimeControl(unsigned charSize,
-                         const sf::Vector2f& position,
-                         const sf::Font& font)
-    : graph("00:00:00", font, charSize)
+TimeControl::TimeControl(const sf::Vector2f& position,
+                         const std::array<sf::IntRect, 11>& rects,
+                         const sf::Texture& texture)
+ :
+    hours
+    (
+        sf::Vector2f(0, 0),
+        std::array<sf::IntRect, 10>
+        {
+            rects[0], rects[1], rects[2], rects[3], rects[4],
+            rects[5], rects[6], rects[7], rects[8], rects[9],
+        },
+        texture
+    ),
+    separator1(texture),
+    minutes
+    (
+        sf::Vector2f(0, 0),
+        std::array<sf::IntRect, 10>
+        {
+            rects[0], rects[1], rects[2], rects[3], rects[4],
+            rects[5], rects[6], rects[7], rects[8], rects[9],
+        },
+        texture
+    ),
+    separator2(texture),
+    seconds
+    (
+        sf::Vector2f(0, 0),
+        std::array<sf::IntRect, 10>
+        {
+            rects[0], rects[1], rects[2], rects[3], rects[4],
+            rects[5], rects[6], rects[7], rects[8], rects[9],
+        },
+        texture
+    )
 {
-    graph.setPosition(position);
+    setPosition(position);
+
+    separator1.setTextureRect(rects[10]);
+    separator1.setPosition
+    (
+        hours.getPosition().x + (rects[0].width * 2),
+        (rects[0].height / 2) - (rects[10].height / 2)
+    );
+
+    minutes.setPosition(separator1.getPosition().x + rects[10].width, 0);
+
+    separator2.setTextureRect(rects[10]);
+    separator2.setPosition
+    (
+        minutes.getPosition().x + (rects[0].width * 2),
+        (rects[0].height / 2) - (rects[10].height / 2)
+    );
+
+    seconds.setPosition(separator2.getPosition().x + rects[10].width, 0);
 }
 
 void TimeControl::reset()
 {
     elapsed = sf::Time::Zero;
-    update(sf::Time::Zero);
+    tick(sf::Time::Zero);
 }
 
-void TimeControl::update(const sf::Time& dt)
+void TimeControl::tick(const sf::Time& dt)
 {
     elapsed += dt;
 
@@ -47,18 +97,37 @@ void TimeControl::update(const sf::Time& dt)
     int m = (elapsed / sf::seconds(60)) - (h * 60);
     int s = (elapsed - sf::seconds(h * 3600) - sf::seconds(m * 60)).asSeconds();
 
-    std::string time;
-    time.reserve(8);
-    time.append((h < 10)? std::string("0").append(std::to_string(h)) : std::to_string(h));
-    time.append(":");
-    time.append((m < 10)? std::string("0").append(std::to_string(m)) : std::to_string(m));
-    time.append(":");
-    time.append((s < 10)? std::string("0").append(std::to_string(s)) : std::to_string(s));
-
-    graph.setString(time);
+    hours.setNumber
+    (
+        (h < 10)?
+            std::string("0").append(std::to_string(h))
+        :
+            std::to_string(h)
+    );
+    minutes.setNumber
+    (
+        (m < 10)?
+            std::string("0").append(std::to_string(m))
+        :
+            std::to_string(m)
+    );
+    seconds.setNumber
+    (
+        (s < 10)?
+            std::string("0").append(std::to_string(s))
+        :
+            std::to_string(s)
+    );
 }
 
-const sf::Text& TimeControl::getGraph() const
+void TimeControl::draw(sf::RenderTarget& target,
+                       sf::RenderStates states) const
 {
-    return graph;
+    states.transform *= getTransform();
+
+    target.draw(hours, states);
+    target.draw(separator1, states);
+    target.draw(minutes, states);
+    target.draw(separator2, states);
+    target.draw(seconds, states);
 }
