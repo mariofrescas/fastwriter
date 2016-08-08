@@ -58,7 +58,7 @@ public:
 private:
     sf::Sprite             background;    ///< Fondo
     sf::Sprite             gameCase;      ///< Tablero de juego
-    sf::Sprite             wordsCover;    ///< Ocultar la aparicion de las letras
+    sf::Sprite             controlPanel;  ///< Panel de controles
     PointsControl::Ptr     points;        ///< Control de puntos
     WantPointsControl::Ptr wantPoints;    ///< Control de puntos deseados
     TimeControl::Ptr       time;          ///< Control de tiempo transcurrido

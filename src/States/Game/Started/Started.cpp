@@ -59,9 +59,9 @@ Started::Started(StateManager& stateManager)
     gameCase.setTextureRect(sf::IntRect(2, 179, gcw, gch));
     gameCase.setPosition(gcx, gcy);
 
-    wordsCover.setTexture(resMngr.getTexture(Textures::ID::Game));
-    wordsCover.setTextureRect(sf::IntRect(2, 37, 1079, 140));
-    wordsCover.setPosition(gcx + 26, gcy + 31);
+    controlPanel.setTexture(resMngr.getTexture(Textures::ID::Game));
+    controlPanel.setTextureRect(sf::IntRect(2, 37, 1079, 140));
+    controlPanel.setPosition(gcx + 26, gcy + 31);
 
     points = std::make_unique<PointsControl>
     (
@@ -346,7 +346,7 @@ void Started::draw()
         window.draw(letter.graph);
     }
 
-    window.draw(wordsCover);
+    window.draw(controlPanel);
     window.draw(*points.get());
     window.draw(*wantPoints.get());
     window.draw(*time.get());
@@ -366,7 +366,7 @@ const sf::Texture* Started::getSnapShotTexture()
         snapShot.draw(letter.graph);
     }
 
-    snapShot.draw(wordsCover);
+    snapShot.draw(controlPanel);
     snapShot.draw(*points.get());
     snapShot.draw(*wantPoints.get());
     snapShot.draw(*time.get());
