@@ -112,14 +112,7 @@ QuitConfirm::QuitConfirm(StateManager& stateManager, State* parent)
 
 void QuitConfirm::handleInput(const sf::Event& event)
 {
-    if (event.type == sf::Event::MouseMoved)
-    {
-        quitConfirmMenu->setCurrentOption
-        (
-            sf::Vector2f(event.mouseMove.x, event.mouseMove.y)
-        );
-    }
-    else if (event.type == sf::Event::MouseButtonPressed)
+    if (event.type == sf::Event::MouseButtonPressed)
     {
         quitConfirmMenu->execCurrentOption
         (
@@ -131,6 +124,11 @@ void QuitConfirm::handleInput(const sf::Event& event)
 
 void QuitConfirm::update(const sf::Time&)
 {
+    sf::RenderWindow& window = getStateManager().getSharedContext().window;
+    quitConfirmMenu->setCurrentOption
+    (
+        static_cast<sf::Vector2f>(sf::Mouse::getPosition(window))
+    );
 }
 
 void QuitConfirm::draw()

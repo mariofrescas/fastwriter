@@ -113,14 +113,7 @@ RestartConfirm::RestartConfirm(StateManager& stateManager, State* parent)
 
 void RestartConfirm::handleInput(const sf::Event& event)
 {
-    if (event.type == sf::Event::MouseMoved)
-    {
-        restartConfirmMenu->setCurrentOption
-        (
-            sf::Vector2f(event.mouseMove.x, event.mouseMove.y)
-        );
-    }
-    else if (event.type == sf::Event::MouseButtonPressed)
+    if (event.type == sf::Event::MouseButtonPressed)
     {
         restartConfirmMenu->execCurrentOption
         (
@@ -132,6 +125,11 @@ void RestartConfirm::handleInput(const sf::Event& event)
 
 void RestartConfirm::update(const sf::Time&)
 {
+    sf::RenderWindow& window = getStateManager().getSharedContext().window;
+    restartConfirmMenu->setCurrentOption
+    (
+        static_cast<sf::Vector2f>(sf::Mouse::getPosition(window))
+    );
 }
 
 void RestartConfirm::draw()

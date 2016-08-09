@@ -131,14 +131,7 @@ Paused::Paused(StateManager& stateManager, State* parent)
 
 void Paused::handleInput(const sf::Event& event)
 {
-    if (event.type == sf::Event::MouseMoved)
-    {
-        pausedMenu->setCurrentOption
-        (
-            sf::Vector2f(event.mouseMove.x, event.mouseMove.y)
-        );
-    }
-    else if (event.type == sf::Event::MouseButtonPressed)
+    if (event.type == sf::Event::MouseButtonPressed)
     {
         pausedMenu->execCurrentOption
         (
@@ -150,6 +143,11 @@ void Paused::handleInput(const sf::Event& event)
 
 void Paused::update(const sf::Time&)
 {
+    sf::RenderWindow& window = getStateManager().getSharedContext().window;
+    pausedMenu->setCurrentOption
+    (
+        static_cast<sf::Vector2f>(sf::Mouse::getPosition(window))
+    );
 }
 
 void Paused::draw()

@@ -127,11 +127,7 @@ MainMenu::MainMenu(StateManager& stateManager)
 
 void MainMenu::handleInput(const sf::Event& event)
 {
-    if (event.type == sf::Event::MouseMoved)
-    {
-        mainMenu->setCurrentOption(sf::Vector2f(event.mouseMove.x, event.mouseMove.y));
-    }
-    else if (event.type == sf::Event::MouseButtonPressed)
+    if (event.type == sf::Event::MouseButtonPressed)
     {
         mainMenu->execCurrentOption(sf::Vector2f(event.mouseButton.x, event.mouseButton.y));
         reset();
@@ -140,6 +136,11 @@ void MainMenu::handleInput(const sf::Event& event)
 
 void MainMenu::update(const sf::Time&)
 {
+    sf::RenderWindow& window = getStateManager().getSharedContext().window;
+    mainMenu->setCurrentOption
+    (
+        static_cast<sf::Vector2f>(sf::Mouse::getPosition(window))
+    );
 }
 
 void MainMenu::draw()

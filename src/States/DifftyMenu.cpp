@@ -169,14 +169,7 @@ DifftyMenu::DifftyMenu(StateManager& stateManager)
 
 void DifftyMenu::handleInput(const sf::Event& event)
 {
-    if (event.type == sf::Event::MouseMoved)
-    {
-        difftyMenu->setCurrentOption
-        (
-            sf::Vector2f(event.mouseMove.x, event.mouseMove.y)
-        );
-    }
-    else if (event.type == sf::Event::MouseButtonPressed)
+    if (event.type == sf::Event::MouseButtonPressed)
     {
         difftyMenu->execCurrentOption
         (
@@ -188,6 +181,11 @@ void DifftyMenu::handleInput(const sf::Event& event)
 
 void DifftyMenu::update(const sf::Time&)
 {
+    sf::RenderWindow& window = getStateManager().getSharedContext().window;
+    difftyMenu->setCurrentOption
+    (
+        static_cast<sf::Vector2f>(sf::Mouse::getPosition(window))
+    );
 }
 
 void DifftyMenu::draw()

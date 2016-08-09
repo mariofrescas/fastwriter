@@ -151,11 +151,7 @@ About::About(StateManager& stateManager)
 
 void About::handleInput(const sf::Event& event)
 {
-    if (event.type == sf::Event::MouseMoved)
-    {
-        options->setCurrentOption(sf::Vector2f(event.mouseMove.x, event.mouseMove.y));
-    }
-    else if (event.type == sf::Event::MouseButtonPressed)
+    if (event.type == sf::Event::MouseButtonPressed)
     {
         options->execCurrentOption(sf::Vector2f(event.mouseButton.x, event.mouseButton.y));
     }
@@ -163,6 +159,11 @@ void About::handleInput(const sf::Event& event)
 
 void About::update(const sf::Time&)
 {
+    sf::RenderWindow& window = getStateManager().getSharedContext().window;
+    options->setCurrentOption
+    (
+        static_cast<sf::Vector2f>(sf::Mouse::getPosition(window))
+    );
 }
 
 void About::draw()
