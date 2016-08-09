@@ -1,0 +1,120 @@
+{"frames": [
+
+{
+	"filename": "about-option-s.png",
+	"frame": {"x":2,"y":2,"w":271,"h":74},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":271,"h":74},
+	"sourceSize": {"w":271,"h":74},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "about-option.png",
+	"frame": {"x":275,"y":2,"w":271,"h":74},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":271,"h":74},
+	"sourceSize": {"w":271,"h":74},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "background.png",
+	"frame": {"x":548,"y":2,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "container.png",
+	"frame": {"x":2,"y":78,"w":572,"h":624},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":572,"h":624},
+	"sourceSize": {"w":572,"h":624},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "exit-option-s.png",
+	"frame": {"x":2,"y":704,"w":214,"h":73},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":214,"h":73},
+	"sourceSize": {"w":214,"h":73},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "exit-option.png",
+	"frame": {"x":218,"y":704,"w":214,"h":73},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":214,"h":73},
+	"sourceSize": {"w":214,"h":73},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "help-option-s.png",
+	"frame": {"x":434,"y":704,"w":213,"h":80},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":0,"w":213,"h":80},
+	"sourceSize": {"w":218,"h":80},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "help-option.png",
+	"frame": {"x":2,"y":786,"w":213,"h":80},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":0,"w":213,"h":80},
+	"sourceSize": {"w":218,"h":80},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "new-game-option-s.png",
+	"frame": {"x":217,"y":786,"w":437,"h":71},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":437,"h":71},
+	"sourceSize": {"w":437,"h":71},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "new-game-option.png",
+	"frame": {"x":2,"y":868,"w":437,"h":71},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":437,"h":71},
+	"sourceSize": {"w":437,"h":71},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "scores-option-s.png",
+	"frame": {"x":2,"y":941,"w":326,"h":71},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":326,"h":71},
+	"sourceSize": {"w":326,"h":71},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "scores-option.png",
+	"frame": {"x":330,"y":941,"w":326,"h":71},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":326,"h":71},
+	"sourceSize": {"w":326,"h":71},
+	"pivot": {"x":0.5,"y":0.5}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "main-menu.png",
+	"format": "RGBA8888",
+	"size": {"w":658,"h":1014},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:c0762e1ee71468fc2b020562b1818bc7:112f4849fc588d0a2fd67ad2b2866d9e:b0dc55a7caf07f1564454b630155012a$"
+}
+}
