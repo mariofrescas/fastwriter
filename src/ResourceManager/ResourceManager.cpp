@@ -34,7 +34,6 @@ ResourceManager::ResourceManager(const std::string& path)
     shaderHolder.load(Shaders::ID::Fade, path + "res/shaders/fade.frag", sf::Shader::Fragment);
     shaderHolder.load(Shaders::ID::Circle, path + "res/shaders/circle.frag", sf::Shader::Fragment);
 
-    textureHolder.load(Textures::ID::Background, path + "res/textures/background.png");
     textureHolder.load(Textures::ID::MainMenu, path + "res/textures/main-menu.png");
     textureHolder.load(Textures::ID::About, path + "res/textures/about.png");
     textureHolder.load(Textures::ID::DifftyMenu, path + "res/textures/difficulty-menu.png");

@@ -59,7 +59,6 @@ namespace Textures
     ////////////////////////////////////////////////////////////
     enum class ID
     {
-        Background,     ///< Textura de fondo general para el juego
         Wellcome,       ///< Textura para la escena de bienvenida
         MainMenu,       ///< Textura para la escena del menu principal
         About,          ///< Texutra para la escena de informacion "acerca de..."
