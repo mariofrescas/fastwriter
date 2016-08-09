@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Fastwriter
+GenericName=A Keyboard Game
+Comment=Type as fast as you can!
+Icon=@INSTALL_FULLPATH_RES@/res/icons/fastwriter.svg
+Exec=fastwriter
+Type=Application
+Terminal=false
+Categories=Game;BlocksGame;
