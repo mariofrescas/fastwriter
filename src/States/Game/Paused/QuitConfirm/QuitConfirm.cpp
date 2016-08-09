@@ -38,20 +38,20 @@ QuitConfirm::QuitConfirm(StateManager& stateManager, State* parent)
     const sf::Vector2u& windowSize = getStateManager().getSharedContext().window.getSize();
 
     background.setTexture(resMngr.getTexture(Textures::ID::QuitConfirm));
-    background.setTextureRect(sf::IntRect(0, 395, 32, 32));
+    background.setTextureRect(sf::IntRect(914, 160, 32, 32));
     background.setScale
     (   windowSize.x / background.getLocalBounds().width,
         windowSize.y / background.getLocalBounds().width
     );
 
-    constexpr float cw = 1069.727;
-    constexpr float ch = 191.313;
-    float cx = (windowSize.x / 2) - (cw / 2);
-    float cy = (windowSize.y / 2) - (ch / 2);
+    constexpr int cw = 940;
+    constexpr int ch = 156;
+    int cx = (windowSize.x / 2) - (cw / 2);
+    int cy = (windowSize.y / 2) - (ch / 2);
 
-    constexpr float mc = 500;
-    float mx = cx + 55;
-    float my = cy + 55;
+    constexpr int mc = 430;
+    int mx = cx + 52;
+    int my = cy + 47;
 
     quitConfirmMenu = std::make_unique<GraphicMenu>
     (
@@ -73,8 +73,8 @@ QuitConfirm::QuitConfirm(StateManager& stateManager, State* parent)
                     );
                 },
                 sf::Vector2f(mx, my),
-                sf::IntRect(56, 208, 339, 79),
-                sf::IntRect(56, 298, 339, 79)
+                sf::IntRect(659, 160, 253, 57),
+                sf::IntRect(404, 160, 253, 57)
             },
             GraphicMenu::MenuOptionData
             {
@@ -92,14 +92,14 @@ QuitConfirm::QuitConfirm(StateManager& stateManager, State* parent)
                     );
                 },
                 sf::Vector2f(mx + (mc * 1), my),
-                sf::IntRect(554, 203, 267, 90),
-                sf::IntRect(554, 293, 267, 90)
+                sf::IntRect(203, 160, 199, 66),
+                sf::IntRect(2, 160, 199, 66)
             }
         },
         GraphicMenu::MenuContainerData
         {
             sf::Vector2f(cx, cy),
-            sf::IntRect(0, 0, cw, ch)
+            sf::IntRect(2, 2, cw, ch)
         },
         resMngr.getTexture(Textures::ID::QuitConfirm)
     );
