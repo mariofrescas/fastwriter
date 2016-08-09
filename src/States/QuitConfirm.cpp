@@ -106,7 +106,7 @@ QuitConfirm::QuitConfirm(StateManager& stateManager, State* parent)
 
     if (!snapShot.create(windowSize.x, windowSize.y))
     {
-        throw std::runtime_error("Can not create MainMenu Render Texture");
+        throw std::runtime_error("Can not create QuitConfirm Render Texture");
     }
 }
 

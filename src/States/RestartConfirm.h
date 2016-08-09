@@ -47,7 +47,7 @@ public:
     virtual void reset() override;
 
 private:
-    sf::Sprite        background   ;      ///< Fondo negro semi-transparente
+    sf::Sprite        background;         ///< Fondo negro semi-transparente
     GraphicMenu::Ptr  restartConfirmMenu; ///< Menu para confirmar reinicar el juego
     sf::RenderTexture snapShot;           ///< Captura de la escena
 };

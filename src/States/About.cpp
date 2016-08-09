@@ -145,7 +145,7 @@ About::About(StateManager& stateManager)
 
     if (!snapShot.create(windowSize.x, windowSize.y))
     {
-        throw std::runtime_error("Can not create Wellcome Render Texture");
+        throw std::runtime_error("Can not create About Render Texture");
     }
 }
 
