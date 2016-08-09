@@ -43,9 +43,6 @@ include_directories(
     src/SoundPlayer/
     src/StateManager/
     src/Transitions/
-    src/Transitions/CircleClose/
-    src/Transitions/CircleOpen/
-    src/Transitions/Fade/
     src/States/About/
     src/States/Black/
     src/States/DifficultyMenu/
@@ -85,9 +82,9 @@ set(SOURCES
     src/StateManager/State.cpp
     src/StateManager/StateManager.cpp
     src/Transitions/Transition.cpp
-    src/Transitions/CircleClose/CircleClose.cpp
-    src/Transitions/CircleOpen/CircleOpen.cpp
-    src/Transitions/Fade/Fade.cpp
+    src/Transitions/CircleClose.cpp
+    src/Transitions/CircleOpen.cpp
+    src/Transitions/Fade.cpp
     src/States/About/About.cpp
     src/States/Black/Black.cpp
     src/States/DifficultyMenu/DifftyMenu.cpp
