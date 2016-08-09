@@ -315,9 +315,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.5"
-     inkscape:cx="418.91231"
-     inkscape:cy="490.05306"
+     inkscape:zoom="0.35355339"
+     inkscape:cx="332.30535"
+     inkscape:cy="356.69827"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -347,7 +347,7 @@
      id="layer1"
      transform="translate(0,-284.36218)">
     <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       style="fill:#f2ffd9;fill-opacity:1;stroke:none"
        id="rect3063-6"
        width="1366"
        height="768"
