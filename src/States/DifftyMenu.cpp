@@ -193,24 +193,14 @@ void DifftyMenu::draw()
     sf::RenderWindow& window = getStateManager().getSharedContext().window;
 
     window.draw(background);
-    window.draw(difftyMenu->getGraphicMenu().container.graph);
-
-    for (const auto& opt : difftyMenu->getGraphicMenu().options)
-    {
-        window.draw(opt.graph);
-    }
+    window.draw(*difftyMenu.get());
 }
 
 const sf::Texture* DifftyMenu::getSnapShotTexture()
 {
     snapShot.clear();
     snapShot.draw(background);
-    snapShot.draw(difftyMenu->getGraphicMenu().container.graph);
-
-    for (const auto& opt : difftyMenu->getGraphicMenu().options)
-    {
-        snapShot.draw(opt.graph);
-    }
+    snapShot.draw(*difftyMenu.get());
     snapShot.display();
 
     return &snapShot.getTexture();

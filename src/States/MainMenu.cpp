@@ -148,24 +148,14 @@ void MainMenu::draw()
     sf::RenderWindow& window = getStateManager().getSharedContext().window;
 
     window.draw(background);
-    window.draw(mainMenu->getGraphicMenu().container.graph);
-
-    for (const auto& opt : mainMenu->getGraphicMenu().options)
-    {
-        window.draw(opt.graph);
-    }
+    window.draw(*mainMenu.get());
 }
 
 const sf::Texture* MainMenu::getSnapShotTexture()
 {
     snapShot.clear();
     snapShot.draw(background);
-    snapShot.draw(mainMenu->getGraphicMenu().container.graph);
-
-    for (const auto& opt : mainMenu->getGraphicMenu().options)
-    {
-        snapShot.draw(opt.graph);
-    }
+    snapShot.draw(*mainMenu.get());
     snapShot.display();
 
     return &snapShot.getTexture();

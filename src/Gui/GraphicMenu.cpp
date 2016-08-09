@@ -25,6 +25,8 @@
 
 #include "GraphicMenu.h"
 
+#include <SFML/Graphics/RenderTarget.hpp>
+
 GraphicMenu::GraphicMenu(const std::list<MenuOptionData>& menuData,
                          const MenuContainerData& containerData,
                          const sf::Texture& texture)
@@ -73,7 +75,14 @@ void GraphicMenu::execCurrentOption(const sf::Vector2f& point)
     }
 }
 
-const GraphicMenu::Menu& GraphicMenu::getGraphicMenu() const
+void GraphicMenu::draw(sf::RenderTarget& target,
+                       sf::RenderStates states) const
 {
-    return menu;
+    states.transform *= getTransform();
+
+    target.draw(menu.container.graph, states);
+    for (auto& s : menu.options)
+    {
+        target.draw(s.graph, states);
+    }
 }

@@ -138,13 +138,7 @@ void RestartConfirm::draw()
 
     window.draw(sf::Sprite(*getParentState().getSnapShotTexture()));
     window.draw(background);
-
-    window.draw(restartConfirmMenu->getGraphicMenu().container.graph);
-
-    for (const auto& opt : restartConfirmMenu->getGraphicMenu().options)
-    {
-        window.draw(opt.graph);
-    }
+    window.draw(*restartConfirmMenu.get());
 }
 
 const sf::Texture* RestartConfirm::getSnapShotTexture()
@@ -152,13 +146,7 @@ const sf::Texture* RestartConfirm::getSnapShotTexture()
     snapShot.clear();
     snapShot.draw(sf::Sprite(*getParentState().getSnapShotTexture()));
     snapShot.draw(background);
-
-    snapShot.draw(restartConfirmMenu->getGraphicMenu().container.graph);
-
-    for (const auto& opt : restartConfirmMenu->getGraphicMenu().options)
-    {
-        snapShot.draw(opt.graph);
-    }
+    snapShot.draw(*restartConfirmMenu.get());
     snapShot.display();
 
     return &snapShot.getTexture();

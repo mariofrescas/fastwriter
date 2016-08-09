@@ -137,13 +137,7 @@ void QuitConfirm::draw()
 
     window.draw(sf::Sprite(*getParentState().getSnapShotTexture()));
     window.draw(background);
-
-    window.draw(quitConfirmMenu->getGraphicMenu().container.graph);
-
-    for (const auto& opt : quitConfirmMenu->getGraphicMenu().options)
-    {
-        window.draw(opt.graph);
-    }
+    window.draw(*quitConfirmMenu.get());
 }
 
 const sf::Texture* QuitConfirm::getSnapShotTexture()
@@ -151,13 +145,7 @@ const sf::Texture* QuitConfirm::getSnapShotTexture()
     snapShot.clear();
     snapShot.draw(sf::Sprite(*getParentState().getSnapShotTexture()));
     snapShot.draw(background);
-
-    snapShot.draw(quitConfirmMenu->getGraphicMenu().container.graph);
-
-    for (const auto& opt : quitConfirmMenu->getGraphicMenu().options)
-    {
-        snapShot.draw(opt.graph);
-    }
+    snapShot.draw(*quitConfirmMenu.get());
     snapShot.display();
 
     return &snapShot.getTexture();

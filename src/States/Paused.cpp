@@ -156,13 +156,7 @@ void Paused::draw()
 
     window.draw(sf::Sprite(*getParentState().getSnapShotTexture()));
     window.draw(background);
-
-    window.draw(pausedMenu->getGraphicMenu().container.graph);
-
-    for (const auto& opt : pausedMenu->getGraphicMenu().options)
-    {
-        window.draw(opt.graph);
-    }
+    window.draw(*pausedMenu.get());
 }
 
 const sf::Texture* Paused::getSnapShotTexture()
@@ -170,13 +164,7 @@ const sf::Texture* Paused::getSnapShotTexture()
     snapShot.clear();
     snapShot.draw(sf::Sprite(*getParentState().getSnapShotTexture()));
     snapShot.draw(background);
-
-    snapShot.draw(pausedMenu->getGraphicMenu().container.graph);
-
-    for (const auto& opt : pausedMenu->getGraphicMenu().options)
-    {
-        snapShot.draw(opt.graph);
-    }
+    snapShot.draw(*pausedMenu.get());
     snapShot.display();
 
     return &snapShot.getTexture();

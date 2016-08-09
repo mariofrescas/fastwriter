@@ -173,10 +173,7 @@ void About::draw()
     window.draw(background);
     window.draw(container);
     window.draw(*currentMsg);
-    for (const auto& opt : options->getGraphicMenu().options)
-    {
-        window.draw(opt.graph);
-    }
+    window.draw(*options.get());
 }
 
 const sf::Texture* About::getSnapShotTexture()
@@ -185,10 +182,7 @@ const sf::Texture* About::getSnapShotTexture()
     snapShot.draw(background);
     snapShot.draw(container);
     snapShot.draw(*currentMsg);
-    for (const auto& opt : options->getGraphicMenu().options)
-    {
-        snapShot.draw(opt.graph);
-    }
+    snapShot.draw(*options.get());
     snapShot.display();
 
     return &snapShot.getTexture();

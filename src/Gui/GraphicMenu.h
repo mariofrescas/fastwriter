@@ -34,21 +34,21 @@
 /// \brief Describe un menu logico-grafico
 ///
 ////////////////////////////////////////////////////////////
-class GraphicMenu
+class GraphicMenu : public sf::Drawable, public sf::Transformable
 {
 public:
     using Ptr = std::unique_ptr<GraphicMenu>; ///< Puntero unico
 
     ////////////////////////////////////////////////////////////
-    /// \brief Informacion acerca de cada una de las opciones del menu
+    /// \brief Info. acerca de cada una de las opciones del menu
     ///
     ////////////////////////////////////////////////////////////
     struct MenuOptionData
     {
-        std::function<void()> action; ///< Accion cuando se de click
-        sf::Vector2f pos;             ///< Posicion
-        sf::IntRect normal;           ///< Rect en textura en estado normal
-        sf::IntRect hover;            ///< Rect en textura en estado "hover"
+        std::function<void()> action; ///< Accion de la opcion
+        sf::Vector2f pos;             ///< Posicion en la escena
+        sf::IntRect normal;           ///< Rect de la rep. graf. "normal" en la textura
+        sf::IntRect hover;            ///< Rect de la rep. graf. "sobre" en la textura
     };
 
     ////////////////////////////////////////////////////////////
@@ -57,18 +57,18 @@ public:
     ////////////////////////////////////////////////////////////
     struct MenuOption
     {
-        MenuOptionData data;  ///< Informacion
-        sf::Sprite     graph; ///< Rep. grafica
+        MenuOptionData data;  ///< Info.
+        sf::Sprite     graph; ///< Rep. graf.
     };
 
     ////////////////////////////////////////////////////////////
-    /// \brief Informacion acerca del contenedor del menu
+    /// \brief Info. acerca del contenedor del menu
     ///
     ////////////////////////////////////////////////////////////
     struct MenuContainerData
     {
-        sf::Vector2f pos;  ///< Posicion
-        sf::IntRect  rect; ///< Rect en la textura
+        sf::Vector2f pos;  ///< Posicion en la escena
+        sf::IntRect  rect; ///< Rect de la rep. graf. en la textura
     };
 
     ////////////////////////////////////////////////////////////
@@ -77,8 +77,8 @@ public:
     ////////////////////////////////////////////////////////////
     struct MenuContainer
     {
-        MenuContainerData data;  ///< Informacion
-        sf::Sprite        graph; ///< Rep. grafica
+        MenuContainerData data;  ///< Info.
+        sf::Sprite        graph; ///< Rep. graf.
     };
 
     ////////////////////////////////////////////////////////////
@@ -92,10 +92,10 @@ public:
     };
 
     ////////////////////////////////////////////////////////////
-    /// \brief Crea un menu grafico
-    /// \param menusData Informacion acerca de las opciones del menu
-    /// \param containerData Informacion acerca del contenedor del menu
-    /// \param texture Textura donde se encuentran los elementros del menu
+    /// \brief Crea un menu logico-grafico
+    /// \param menuData Info. acerca de las opciones del menu
+    /// \param containerData Info. acerca del contenedor del menu
+    /// \param texture Textura de las rep. graf.
     ///
     ////////////////////////////////////////////////////////////
     GraphicMenu(const std::list<MenuOptionData>& menuData,
@@ -104,28 +104,30 @@ public:
 
 
     ////////////////////////////////////////////////////////////
-    /// \brief Cambia de color el texto si el cursor se encuentra
-    ///        sobre alguna opcion del menu
+    /// \brief Cambia la rep. graf. "normal" por "sobre" que se
+    ///        encuentra bajo el cursor
     /// \param point Posicion del cursor
     ///
     ////////////////////////////////////////////////////////////
     void setCurrentOption(const sf::Vector2f& point);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Ejecuta la "action" del menu que se encuentra en point
+    /// \brief Ejecuta la accion del menu que se encuentra bajo el cursor
     /// \param point Posicion del cursor
     ///
     ////////////////////////////////////////////////////////////
     void execCurrentOption(const sf::Vector2f& point);
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Obtiene el menu grafico
-    /// \return Referencia hacia el menu
-    ///
-    ////////////////////////////////////////////////////////////
-    const Menu& getGraphicMenu() const;
-
 private:
     Menu menu; ///< Menu grafico
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Dibuja la rep. graf.
+    /// \param target Objetivo donde se dibujara
+    /// \param states Estados de renderizacion
+    ///
+    ////////////////////////////////////////////////////////////
+    virtual void draw(sf::RenderTarget& target,
+                      sf::RenderStates states) const override;
 };
 #endif // GRAPHICSMENU_H
