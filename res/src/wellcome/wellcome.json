@@ -1,0 +1,30 @@
+{"frames": [
+
+{
+	"filename": "background.png",
+	"frame": {"x":2,"y":2,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "wellcome.png",
+	"frame": {"x":36,"y":2,"w":1502,"h":332},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1502,"h":332},
+	"sourceSize": {"w":1502,"h":332},
+	"pivot": {"x":0.5,"y":0.5}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "wellcome.png",
+	"format": "RGBA8888",
+	"size": {"w":1540,"h":336},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:1deb71357fe1420b8ff2b32148b43f78:f63e0c450d9e3d288327a6678f680590:1d19d7d9b14e287049264d73f35dd4e0$"
+}
+}

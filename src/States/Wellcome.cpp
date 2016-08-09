@@ -37,9 +37,15 @@ Wellcome::Wellcome(StateManager& stateManager)
     ResourceManager& resMngr = getStateManager().getSharedContext().resourceManager;
     const sf::Vector2u& windowSize = getStateManager().getSharedContext().window.getSize();
 
-    background.setTexture(resMngr.getTexture(Textures::ID::Background));
+    background.setTexture(resMngr.getTexture(Textures::ID::Wellcome));
+    background.setTextureRect(sf::IntRect(2, 2, 32, 32));
+    background.setScale
+    (   windowSize.x / background.getLocalBounds().width,
+        windowSize.y / background.getLocalBounds().width
+    );
 
     wellcome.setTexture(resMngr.getTexture(Textures::ID::Wellcome));
+    wellcome.setTextureRect(sf::IntRect(36 + 68, 2, 1366, 332));
     wellcome.setPosition(0, (windowSize.y / 2) - (wellcome.getTextureRect().height / 2));
 
     if (!snapShot.create(windowSize.x, windowSize.y))
