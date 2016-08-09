@@ -36,80 +36,64 @@ find_package(SFML 2 REQUIRED system window graphics audio)
 
 include_directories(
     ${PROJECT_BINARY_DIR}
+    src/ConfManager/
+    src/Confs/
+    src/Controls/
+    src/Dictionary/
     src/Game/
     src/Gui/
-    src/ResourceManager/
     src/MusicPlayer/
+    src/ResourceManager/
     src/SoundPlayer/
     src/StateManager/
+    src/States/
     src/Transitions/
-    src/States/About/
-    src/States/Black/
-    src/States/DifficultyMenu/
-    src/States/MainMenu/
-    src/States/Wellcome/
-    src/States/Game/Paused/
-    src/States/Game/Paused/QuitConfirm/
-    src/States/Game/Paused/RestartConfirm/
-    src/States/Game/Starting/
-    src/States/Game/Starting/Controls/CountDownControl/
-    src/States/Game/Started/
-    src/States/Game/Started/ConfManager/
-    src/States/Game/Started/Confs/
-    src/States/Game/Started/Controls/CleanersControl/
-    src/States/Game/Started/Controls/LifesControl/
-    src/States/Game/Started/Controls/PointsControl/
-    src/States/Game/Started/Controls/ShiftModeControl/
-    src/States/Game/Started/Controls/TimeControl/
-    src/States/Game/Started/Controls/WantPointsControl/
-    src/States/Game/Started/Controls/WordControl/
-    src/States/Game/Started/Controls/WordControl/Dictionary/
-    src/States/Game/Started/Controls/WordControl/WordMap/
+    src/WordMap/
 )
 
 set(SOURCES
-    src/Main.cpp
+    src/ConfManager/GameConf.cpp
+    src/ConfManager/GameConfManager.cpp
+    src/Confs/ExpertConf.cpp
+    src/Confs/HardConf.cpp
+    src/Confs/NormalConf.cpp
+    src/Controls/CleanersControl.cpp
+    src/Controls/CountDownControl.cpp
+    src/Controls/LifesControl.cpp
+    src/Controls/PointsControl.cpp
+    src/Controls/ShiftModeControl.cpp
+    src/Controls/TimeControl.cpp
+    src/Controls/WantPointsControl.cpp
+    src/Controls/WordControl.cpp
+    src/Dictionary/Dictionary.cpp
     src/Game/Game.cpp
+    src/Gui/BidirectionalBar.cpp
     src/Gui/GraphicMenu.cpp
+    src/Gui/OneDirectionBar.cpp
     src/Gui/TextureBar.cpp
     src/Gui/TextureNumber.inl
-    src/Gui/OneDirectionBar.cpp
-    src/Gui/BidirectionalBar.cpp
+    src/MusicPlayer/MusicPlayer.cpp
     src/ResourceManager/ResourceManager.cpp
     src/ResourceManager/ResourceHolder.inl
-    src/MusicPlayer/MusicPlayer.cpp
     src/SoundPlayer/SoundPlayer.cpp
     src/StateManager/State.cpp
     src/StateManager/StateManager.cpp
-    src/Transitions/Transition.cpp
+    src/States/About.cpp
+    src/States/Black.cpp
+    src/States/DifftyMenu.cpp
+    src/States/MainMenu.cpp
+    src/States/Paused.cpp
+    src/States/QuitConfirm.cpp
+    src/States/RestartConfirm.cpp
+    src/States/Started.cpp
+    src/States/Starting.cpp
+    src/States/Wellcome.cpp
     src/Transitions/CircleClose.cpp
     src/Transitions/CircleOpen.cpp
     src/Transitions/Fade.cpp
-    src/States/About/About.cpp
-    src/States/Black/Black.cpp
-    src/States/DifficultyMenu/DifftyMenu.cpp
-    src/States/MainMenu/MainMenu.cpp
-    src/States/Wellcome/Wellcome.cpp
-    src/States/Game/Paused/Paused.cpp
-    src/States/Game/Paused/QuitConfirm/QuitConfirm.cpp
-    src/States/Game/Paused/RestartConfirm/RestartConfirm.cpp
-    src/States/Game/Starting/Starting.cpp
-    src/States/Game/Starting/Controls/CountDownControl/CountDownControl.cpp
-    src/States/Game/Started/Started.cpp
-    src/States/Game/Started/ConfManager/GameConf.cpp
-    src/States/Game/Started/ConfManager/GameConfManager.cpp
-    src/States/Game/Started/Confs/ExpertConf.cpp
-    src/States/Game/Started/Confs/HardConf.cpp
-    src/States/Game/Started/Confs/NormalConf.cpp
-    src/States/Game/Started/Controls/CleanersControl/CleanersControl.cpp
-    src/States/Game/Started/Controls/LifesControl/LifesControl.cpp
-    src/States/Game/Started/Controls/PointsControl/PointsControl.cpp
-    src/States/Game/Started/Controls/ShiftModeControl/ShiftModeControl.cpp
-    src/States/Game/Started/Controls/TimeControl/TimeControl.cpp
-    src/States/Game/Started/Controls/WantPointsControl/WantPointsControl.cpp
-    src/States/Game/Started/Controls/WordControl/WordControl.cpp
-    src/States/Game/Started/Controls/WordControl/Dictionary/Dictionary.cpp
-    src/States/Game/Started/Controls/WordControl/WordMap/WordMap.cpp
+    src/Transitions/Transition.cpp
+    src/WordMap/WordMap.cpp
+    src/Main.cpp
 )
 
 add_executable(${EXECUTABLE_NAME} ${SOURCES})
