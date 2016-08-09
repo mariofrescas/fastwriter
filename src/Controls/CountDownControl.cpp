@@ -34,6 +34,7 @@ CountDownControl::CountDownControl(const sf::Time& start,
       graph(sf::Vector2f(0, 0), rects, texture)
 {
     setPosition(position);
+    graph.setNumber("3");
 }
 
 bool CountDownControl::finished(const sf::Time& dt)
