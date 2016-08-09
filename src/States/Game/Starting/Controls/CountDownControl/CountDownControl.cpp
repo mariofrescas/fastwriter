@@ -26,16 +26,14 @@
 #include "CountDownControl.h"
 
 CountDownControl::CountDownControl(const sf::Time& start,
-                                   const sf::Color& color,
-                                   unsigned charSize,
                                    const sf::Vector2f& position,
-                                   const sf::Font& font)
+                                   const std::array<sf::IntRect, 10>& rects,
+                                   const sf::Texture& texture)
     : start(start),
       elapsed(start),
-      graph(std::to_string(static_cast<int>(elapsed.asSeconds())), font, charSize)
+      graph(sf::Vector2f(0, 0), rects, texture)
 {
-    graph.setPosition(position);
-    graph.setColor(color);
+    setPosition(position);
 }
 
 bool CountDownControl::finished(const sf::Time& dt)
@@ -49,7 +47,7 @@ bool CountDownControl::finished(const sf::Time& dt)
         elapsed = sf::Time::Zero;
     }
 
-    graph.setString(std::to_string(static_cast<int>(elapsed.asSeconds())));
+    graph.setNumber(std::to_string(static_cast<int>(elapsed.asSeconds())));
 
     return ret;
 }
@@ -57,10 +55,13 @@ bool CountDownControl::finished(const sf::Time& dt)
 void CountDownControl::reset()
 {
     elapsed = start;
-    graph.setString(std::to_string(static_cast<int>(elapsed.asSeconds())));
+    graph.setNumber(std::to_string(static_cast<int>(elapsed.asSeconds())));
 }
 
-const sf::Text& CountDownControl::getGraph() const
+void CountDownControl::draw(sf::RenderTarget& target,
+                            sf::RenderStates states) const
 {
-    return graph;
+    states.transform *= getTransform();
+
+    target.draw(graph, states);
 }

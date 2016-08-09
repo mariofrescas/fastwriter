@@ -42,14 +42,14 @@ Starting::Starting(StateManager& stateManager, State* parent)
     const sf::Vector2u& windowSize = getStateManager().getSharedContext().window.getSize();
 
     background.setTexture(resMngr.getTexture(Textures::ID::Starting));
-    background.setTextureRect(sf::IntRect(284, 0, 31, 32));
+    background.setTextureRect(sf::IntRect(2, 2, 32, 32));
     background.setScale
     (   windowSize.x / background.getLocalBounds().width,
         windowSize.y / background.getLocalBounds().width
     );
 
     starting.setTexture(resMngr.getTexture(Textures::ID::Starting));
-    starting.setTextureRect(sf::IntRect(0, 0, 283, 272));
+    starting.setTextureRect(sf::IntRect(112, 169, 268, 268));
     starting.setPosition
     (
         (windowSize.x / 2) - (starting.getGlobalBounds().width / 2),
@@ -59,15 +59,26 @@ Starting::Starting(StateManager& stateManager, State* parent)
     countDown = std::make_unique<CountDownControl>
     (
         sf::seconds(3),
-        sf::Color(130, 130, 130, 255),
-        210,
-        sf::Vector2f((windowSize.x / 2) - 57, (windowSize.y / 2) - 135),
-        resMngr.getFont(Fonts::ID::Default)
+        sf::Vector2f((windowSize.x / 2) - (110 / 2), (windowSize.y / 2) - (168 / 2)),
+        std::array<sf::IntRect, 10>
+        {
+            sf::IntRect(2, 169, 108, 168),
+            sf::IntRect(36, 2, 96, 162),
+            sf::IntRect(134, 2, 108, 165),
+            sf::IntRect(244, 2, 110, 165),
+            sf::IntRect(0, 0, 0, 0),
+            sf::IntRect(0, 0, 0, 0),
+            sf::IntRect(0, 0, 0, 0),
+            sf::IntRect(0, 0, 0, 0),
+            sf::IntRect(0, 0, 0, 0),
+            sf::IntRect(0, 0, 0, 0)
+        },
+        resMngr.getTexture(Textures::ID::Starting)
     );
 
     if (!snapShot.create(windowSize.x, windowSize.y))
     {
-        throw std::runtime_error("Can not create MainMenu Render Texture");
+        throw std::runtime_error("Can not create Starting Render Texture");
     }
 }
 
@@ -142,7 +153,7 @@ void Starting::draw()
     window.draw(sf::Sprite(*getParentState().getSnapShotTexture()));
     window.draw(background);
     window.draw(starting);
-    window.draw(countDown->getGraph());
+    window.draw(*countDown.get());
 }
 
 const sf::Texture* Starting::getSnapShotTexture()
@@ -151,7 +162,7 @@ const sf::Texture* Starting::getSnapShotTexture()
     snapShot.draw(sf::Sprite(*getParentState().getSnapShotTexture()));
     snapShot.draw(background);
     snapShot.draw(starting);
-    snapShot.draw(countDown->getGraph());
+    snapShot.draw(*countDown.get());
     snapShot.display();
 
     return &snapShot.getTexture();

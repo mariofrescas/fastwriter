@@ -26,14 +26,15 @@
 #ifndef COUNTDOWNCONTROL_H
 #define COUNTDOWNCONTROL_H
 
+#include <memory>
+#include "TextureNumber.h"
 #include <SFML/System/Time.hpp>
-#include <SFML/Graphics/Text.hpp>
 
 ////////////////////////////////////////////////////////////
-/// \brief Describe el control logico-grafico para la cuenta regresiva
+/// \brief Describe el control logico-grafico de cuenta regresiva
 ///
 ////////////////////////////////////////////////////////////
-class CountDownControl
+class CountDownControl : public sf::Drawable, public sf::Transformable
 {
 public:
     using Ptr = std::unique_ptr<CountDownControl>; ///< Puntero unico
@@ -41,17 +42,15 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Crea un control de cuenta regresiva
     /// \param start Duracion de la cuenta
-    /// \param color Color del texto
-    /// \param charSize Tamaño del texto grafico
-    /// \param position Posicion del texto grafico
-    /// \param font Fuente del texto grafico
+    /// \param position Posicion del control en la escena
+    /// \param rects Rects de las rep. graf. en la textura
+    /// \param texture Textura de las rep. graf.
     ///
     ////////////////////////////////////////////////////////////
     CountDownControl(const sf::Time& start,
-                     const sf::Color& color,
-                     unsigned charSize,
                      const sf::Vector2f& position,
-                     const sf::Font& font);
+                     const std::array<sf::IntRect, 10>& rects,
+                     const sf::Texture& texture);
 
     ////////////////////////////////////////////////////////////
     /// \brief Agregra el tiempo dt y comprueba si la cuenta ya termino
@@ -67,17 +66,19 @@ public:
     ////////////////////////////////////////////////////////////
     void reset();
 
+private:
+    sf::Time         start;   ///< Duracion de la cuenta
+    sf::Time         elapsed; ///< Tiempo transcurrido
+    TextureNumber<1> graph;   ///< Representacion grafica
+
     ////////////////////////////////////////////////////////////
-    /// \brief Obtiene la representacion grafica
-    /// \return Referencia hacia el texto grafico
+    /// \brief Dibuja la rep. graf.
+    /// \param target Objetivo donde se dibujara
+    /// \param states Estados de renderizacion
     ///
     ////////////////////////////////////////////////////////////
-    const sf::Text& getGraph() const;
-
-private:
-    sf::Time start;   ///< Duracion de la cuenta
-    sf::Time elapsed; ///< Tiempo transcurrido
-    sf::Text graph;   ///< Representacion grafica
+    virtual void draw(sf::RenderTarget &target,
+                      sf::RenderStates states) const override;
 };
 
 #endif // COUNTDOWNCONTROL_H
