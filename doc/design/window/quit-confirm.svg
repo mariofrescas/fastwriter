@@ -63,45 +63,6 @@
     <filter
        inkscape:collect="always"
        style="color-interpolation-filters:sRGB"
-       id="filter4271"
-       x="-0.036510386"
-       width="1.0730208"
-       y="-0.16824068"
-       height="1.3364815">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="7.0040039"
-         id="feGaussianBlur4273" />
-    </filter>
-    <filter
-       inkscape:collect="always"
-       style="color-interpolation-filters:sRGB"
-       id="filter4203"
-       x="-0.034842558"
-       width="1.0696851"
-       y="-0.21585211"
-       height="1.4317042">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="8.9797852"
-         id="feGaussianBlur4205" />
-    </filter>
-    <filter
-       inkscape:collect="always"
-       style="color-interpolation-filters:sRGB"
-       id="filter8051"
-       x="-0.047343936"
-       width="1.0946879"
-       y="-0.37209375"
-       height="1.7441875">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="19.845"
-         id="feGaussianBlur8053" />
-    </filter>
-    <filter
-       inkscape:collect="always"
-       style="color-interpolation-filters:sRGB"
        id="filter34975"
        x="-0.055998977"
        width="1.111998"
@@ -445,9 +406,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.5"
-     inkscape:cx="635.66593"
-     inkscape:cy="327.33021"
+     inkscape:zoom="0.25"
+     inkscape:cx="-169.70278"
+     inkscape:cy="723.1772"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -481,88 +442,6 @@
        cx="653.41388"
        cy="569.68219"
        r="30.195591" />
-    <rect
-       y="-6.5780773"
-       x="338.39191"
-       height="128"
-       width="1006"
-       id="rect8009"
-       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter8051)" />
-    <rect
-       style="opacity:1;fill:#535353;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect7013"
-       width="1006"
-       height="128"
-       x="338.39191"
-       y="-6.5780773" />
-    <g
-       id="g8295"
-       transform="translate(158.39192,-610.94026)">
-      <rect
-         y="614.34949"
-         x="191.49146"
-         height="108.02537"
-         width="491.70169"
-         id="rect3063-4-3-1-72"
-         style="fill:#ffba00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-      <text
-         transform="matrix(0.74500254,0,0,0.74500254,-860.89753,286.67806)"
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:none;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4203)"
-         x="1429.0615"
-         y="561.79077"
-         id="text4199"
-         sodipodi:linespacing="125%"><tspan
-           sodipodi:role="line"
-           id="tspan4201"
-           x="1429.0615"
-           y="561.79077"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:144px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">Cancel</tspan></text>
-      <text
-         sodipodi:linespacing="125%"
-         id="text4050"
-         y="705.21362"
-         x="203.7569"
-         style="font-style:normal;font-weight:normal;font-size:29.80010223px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:107.28036499px;font-family:saxMono;-inkscape-font-specification:saxMono"
-           y="705.21362"
-           x="203.7569"
-           id="tspan4052"
-           sodipodi:role="line">Cancel</tspan></text>
-    </g>
-    <rect
-       style="fill:#ff1800;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect3063-4-3-1-8"
-       width="491.70169"
-       height="108.02537"
-       x="844.81232"
-       y="3.4092274" />
-    <text
-       sodipodi:linespacing="125%"
-       id="text4267"
-       y="707.19965"
-       x="1430.5381"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:none;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4271)"
-       xml:space="preserve"
-       transform="matrix(0.74500254,0,0,0.74500254,-207.57668,-437.28047)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:144px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         y="707.19965"
-         x="1430.5381"
-         id="tspan4269"
-         sodipodi:role="line">Quit!</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:29.80010223px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       x="858.1778"
-       y="89.585068"
-       id="text4050-6"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan4052-7"
-         x="858.1778"
-         y="89.585068"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:107.28036499px;font-family:saxMono;-inkscape-font-specification:saxMono">Quit!</tspan></text>
     <rect
        style="fill:#f5ffd7;fill-opacity:1;stroke:none"
        id="rect3063-6"
