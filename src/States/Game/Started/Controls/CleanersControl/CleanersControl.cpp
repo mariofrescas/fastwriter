@@ -55,6 +55,7 @@ void CleanersControl::reconfigure(int defaultCleaners,
 
 void CleanersControl::reset()
 {
+    elapsed = sf::Time::Zero;
     graph.clear();
     addDefaultCleaners();
 }
