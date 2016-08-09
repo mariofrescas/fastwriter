@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/difficulty-menu.png"
+   inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/diffty-menu/container.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90"
    sodipodi:docname="difficulty-menu.svg">
@@ -46,19 +46,6 @@
          inkscape:collect="always"
          stdDeviation="8.9797852"
          id="feGaussianBlur4205" />
-    </filter>
-    <filter
-       inkscape:collect="always"
-       style="color-interpolation-filters:sRGB"
-       id="filter4271"
-       x="-0.036510386"
-       width="1.0730208"
-       y="-0.16824068"
-       height="1.3364815">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="7.0040039"
-         id="feGaussianBlur4273" />
     </filter>
     <filter
        inkscape:collect="always"
@@ -99,6 +86,19 @@
          stdDeviation="5.259993"
          id="feGaussianBlur4525" />
     </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter5211"
+       x="-0.048524312"
+       width="1.0970486"
+       y="-0.13947873"
+       height="1.2789575">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="4.2793711"
+         id="feGaussianBlur5213" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -107,9 +107,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="542.45826"
-     inkscape:cy="247.56679"
+     inkscape:zoom="0.5"
+     inkscape:cx="72.78956"
+     inkscape:cy="173.40614"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -127,7 +127,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -142,21 +142,30 @@
        height="430.76242"
        width="480.25858"
        id="rect7083"
-       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter7168)" />
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter7168)"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/diffty-menu/container.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <rect
        style="opacity:1;fill:#535353;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect7013"
        width="480.25858"
        height="430.76242"
        x="38.262882"
-       y="583.33685" />
+       y="583.33685"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/diffty-menu/container.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <rect
        style="fill:#37c8bd;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3063-4-3-1-72"
        width="466.70184"
        height="102.53298"
        x="46.049778"
-       y="591.46881" />
+       y="591.46881"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/diffty-menu/container.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <text
        sodipodi:linespacing="125%"
        id="text4199"
@@ -164,7 +173,10 @@
        x="368.06158"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:none;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4203)"
        xml:space="preserve"
-       transform="matrix(0.70712401,0,0,0.70712401,-202.57355,378.01474)"><tspan
+       transform="matrix(0.70712401,0,0,0.70712401,-202.57355,378.01474)"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/diffty-menu/container.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:144px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          y="424.29077"
          x="368.06158"
@@ -176,7 +188,10 @@
        x="564.32526"
        y="678.04089"
        id="text4050"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/diffty-menu/normal-option.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan4052"
          x="564.32526"
@@ -188,27 +203,20 @@
        width="466.70184"
        height="102.53298"
        x="46.049778"
-       y="695.41602" />
-    <text
-       sodipodi:linespacing="125%"
-       id="text4267"
-       y="569.69965"
-       x="369.53815"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:none;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4271)"
-       xml:space="preserve"
-       transform="matrix(0.70712401,0,0,0.70712401,-259.57355,382.53995)"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:144px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         y="569.69965"
-         x="369.53815"
-         id="tspan4269"
-         sodipodi:role="line"> Hard </tspan></text>
+       y="695.41602"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/diffty-menu/container.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:28.28495979px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        x="563.57947"
        y="781.62726"
        id="text4050-6"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/diffty-menu/hard-option.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan4052-7"
          x="563.57947"
@@ -220,7 +228,10 @@
        width="466.70184"
        height="102.53298"
        x="46.049778"
-       y="903.31049" />
+       y="903.31049"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/diffty-menu/container.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <text
        sodipodi:linespacing="125%"
        id="text4531"
@@ -228,7 +239,10 @@
        x="368.99066"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:none;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4535)"
        xml:space="preserve"
-       transform="matrix(0.70712401,0,0,0.70712401,-202.57355,376.01476)"><tspan
+       transform="matrix(0.70712401,0,0,0.70712401,-202.57355,376.01476)"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/diffty-menu/container.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:144px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          y="870.74237"
          x="368.99066"
@@ -240,7 +254,10 @@
        x="563.67889"
        y="993.73761"
        id="text4050-57"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/diffty-menu/back-option.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan4052-734"
          x="563.67889"
@@ -248,7 +265,10 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:101.82585907px;font-family:saxMono;-inkscape-font-specification:saxMono">Back</tspan></text>
     <g
        id="g5942"
-       transform="translate(-15.556349,-3.46556)">
+       transform="translate(-15.556349,-3.46556)"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/diffty-menu/expert-option.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <g
          transform="translate(-5.6568541,0)"
          id="g5936">
@@ -285,10 +305,16 @@
        width="466.70184"
        height="102.53298"
        x="46.049778"
-       y="799.36322" />
+       y="799.36322"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/diffty-menu/container.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <g
        id="g6008"
-       transform="translate(0,-0.6169322)">
+       transform="translate(0,-0.6169322)"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/diffty-menu/container.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <text
          transform="matrix(0.70712401,0,0,0.70712401,-202.57355,378.01476)"
          xml:space="preserve"
@@ -322,7 +348,10 @@
        y="678.04089"
        x="904.32526"
        style="font-style:normal;font-weight:normal;font-size:28.28495979px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#e4e4e4;fill-opacity:1;stroke:none"
-       xml:space="preserve"><tspan
+       xml:space="preserve"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/diffty-menu/normal-option-s.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:101.82585907px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:#e4e4e4;fill-opacity:1"
          y="678.04089"
          x="904.32526"
@@ -334,7 +363,10 @@
        y="781.62726"
        x="903.57947"
        style="font-style:normal;font-weight:normal;font-size:28.28495979px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#e4e4e4;fill-opacity:1;stroke:none"
-       xml:space="preserve"><tspan
+       xml:space="preserve"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/diffty-menu/hard-option-s.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:101.82585907px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:#e4e4e4;fill-opacity:1"
          y="781.62726"
          x="903.57947"
@@ -346,7 +378,10 @@
        y="993.73761"
        x="903.67889"
        style="font-style:normal;font-weight:normal;font-size:28.28495979px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#e4e4e4;fill-opacity:1;stroke:none"
-       xml:space="preserve"><tspan
+       xml:space="preserve"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/diffty-menu/back-option-s.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:101.82585907px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:#e4e4e4;fill-opacity:1"
          y="993.73761"
          x="903.67889"
@@ -354,7 +389,10 @@
          sodipodi:role="line">Back</tspan></text>
     <g
        id="g5982"
-       transform="translate(-15.556349,0)">
+       transform="translate(-15.556349,0)"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/diffty-menu/expert-option-s.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:28.28495979px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#e4e4e4;fill-opacity:1;stroke:none"
@@ -381,5 +419,30 @@
            id="tspan5971"
            sodipodi:role="line">p</tspan></text>
     </g>
+    <rect
+       style="fill:#f2ffd9;fill-opacity:1;stroke:none"
+       id="rect3063-6"
+       width="32"
+       height="32"
+       x="835.35657"
+       y="940.19562"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/diffty-menu/background.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text5107"
+       y="784.69836"
+       x="56.119453"
+       style="font-style:normal;font-weight:normal;font-size:28.28495979px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:3.53600001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter5211)"
+       xml:space="preserve"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/diffty-menu/container.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:101.82585907px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:none;fill-opacity:1;stroke:#000000;stroke-width:3.53600001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         y="784.69836"
+         x="56.119453"
+         id="tspan5109"
+         sodipodi:role="line">Hard</tspan></text>
   </g>
 </svg>

@@ -38,16 +38,22 @@ DifftyMenu::DifftyMenu(StateManager& stateManager)
     ResourceManager& resMngr = getStateManager().getSharedContext().resourceManager;
     const sf::Vector2u& windowSize = getStateManager().getSharedContext().window.getSize();
 
-    constexpr float cw = 556.784;
-    constexpr float ch = 507.288;
-    float cx = (windowSize.x / 2) - (cw / 2);
-    float cy = (windowSize.y / 2) - (ch / 2);
+    constexpr int cw = 557;
+    constexpr int ch = 507;
+    int cx = (windowSize.x / 2) - (cw / 2);
+    int cy = (windowSize.y / 2) - (ch / 2);
 
-    constexpr float mc = 104;
-    float mx = cx + 62;
-    float my = cy + 62;
+    constexpr int mc = 104;
+    int mx = cx + 62;
+    int my = cy + 62;
 
-    background.setTexture(resMngr.getTexture(Textures::ID::Background));
+    background.setTexture(resMngr.getTexture(Textures::ID::DifftyMenu));
+    background.setTextureRect(sf::IntRect(432, 2, 32, 32));
+    background.setScale
+    (   windowSize.x / background.getLocalBounds().width,
+        windowSize.y / background.getLocalBounds().width
+    );
+
     difftyMenu = std::make_unique<GraphicMenu>
     (
         std::list<GraphicMenu::MenuOptionData>
@@ -76,8 +82,8 @@ DifftyMenu::DifftyMenu(StateManager& stateManager)
                     );
                 },
                 sf::Vector2f(mx, my),
-                sf::IntRect(569.098, 62.381, 323.576, 73),
-                sf::IntRect(909.098, 62.381, 323.576, 73)
+                sf::IntRect(2, 824, 324, 73),
+                sf::IntRect(216, 748, 324, 73)
             },
             GraphicMenu::MenuOptionData
             {
@@ -103,8 +109,8 @@ DifftyMenu::DifftyMenu(StateManager& stateManager)
                     );
                 },
                 sf::Vector2f(mx, my + (mc * 1)),
-                sf::IntRect(569.098, 164.973, 212, 74),
-                sf::IntRect(909.098, 164.973, 212, 74)
+                sf::IntRect(2, 748, 212, 74),
+                sf::IntRect(330, 667, 212, 74)
             },
             GraphicMenu::MenuOptionData
             {
@@ -130,8 +136,8 @@ DifftyMenu::DifftyMenu(StateManager& stateManager)
                     );
                 },
                 sf::Vector2f(mx, my + (mc  * 2)),
-                sf::IntRect(569.098, 268.559, 326, 79),
-                sf::IntRect(909.098, 268.559, 326, 79)
+                sf::IntRect(2, 667, 326, 79),
+                sf::IntRect(2, 586, 326, 79)
             },
             GraphicMenu::MenuOptionData
             {
@@ -149,21 +155,21 @@ DifftyMenu::DifftyMenu(StateManager& stateManager)
                     );
                 },
                 sf::Vector2f(mx, my + (mc * 3)),
-                sf::IntRect(569.098, 377.083, 213.148, 74),
-                sf::IntRect(909.098, 377.083, 213.148, 74)
+                sf::IntRect(217, 2, 213, 73),
+                sf::IntRect(2, 2, 213, 73)
             }
         },
         GraphicMenu::MenuContainerData
         {
             sf::Vector2f(cx, cy),
-            sf::IntRect(0, 0, cw, ch)
+            sf::IntRect(2, 77, cw, ch)
         },
         resMngr.getTexture(Textures::ID::DifftyMenu)
     );
 
     if (!snapShot.create(windowSize.x, windowSize.y))
     {
-        throw std::runtime_error("Can not create DiftyMenu Render Texture");
+        throw std::runtime_error("Can not create DifftyMenu Render Texture");
     }
 }
 
