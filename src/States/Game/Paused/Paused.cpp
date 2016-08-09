@@ -38,20 +38,20 @@ Paused::Paused(StateManager& stateManager, State* parent)
     const sf::Vector2u& windowSize = getStateManager().getSharedContext().window.getSize();
 
     background.setTexture(resMngr.getTexture(Textures::ID::Paused));
-    background.setTextureRect(sf::IntRect(1398, 0, 31, 32));
+    background.setTextureRect(sf::IntRect(2, 2, 32, 32));
     background.setScale
     (   windowSize.x / background.getLocalBounds().width,
         windowSize.y / background.getLocalBounds().width
     );
 
-    constexpr float cw = 556.062;
-    constexpr float ch = 394.947;
+    constexpr int cw = 491;
+    constexpr int ch = 295;
     float cx = (windowSize.x / 2) - (cw / 2);
     float cy = (windowSize.y / 2) - (ch / 2);
 
-    constexpr float mc = 110;
-    float mx = cx + 52;
-    float my = cy + 47;
+    constexpr int mc = 75;
+    int mx = cx + 45;
+    int my = cy + 43;
 
     pausedMenu = std::make_unique<GraphicMenu>
     (
@@ -73,8 +73,8 @@ Paused::Paused(StateManager& stateManager, State* parent)
                     );
                 },
                 sf::Vector2f(mx, my),
-                sf::IntRect(582, 31, 401, 73),
-                sf::IntRect(994, 31, 401, 73)
+                sf::IntRect(303, 427, 299, 54),
+                sf::IntRect(2, 427, 299, 54)
             },
             GraphicMenu::MenuOptionData
             {
@@ -92,8 +92,8 @@ Paused::Paused(StateManager& stateManager, State* parent)
                     );
                 },
                 sf::Vector2f(mx, my + (mc * 1)),
-                sf::IntRect(582, 135, 402, 79),
-                sf::IntRect(994, 135, 402, 79)
+                sf::IntRect(304, 367, 300, 58),
+                sf::IntRect(2, 367, 300, 58)
             },
             GraphicMenu::MenuOptionData
             {
@@ -111,14 +111,14 @@ Paused::Paused(StateManager& stateManager, State* parent)
                     );
                 },
                 sf::Vector2f(mx, my + (mc  * 2)),
-                sf::IntRect(582, 241, 226, 89),
-                sf::IntRect(994, 241, 226, 89)
+                sf::IntRect(173, 299, 169, 66),
+                sf::IntRect(2, 299, 169, 66)
             }
         },
         GraphicMenu::MenuContainerData
         {
             sf::Vector2f(cx, cy),
-            sf::IntRect(0, 0, cw, ch)
+            sf::IntRect(36, 2, 491, 295)
         },
         resMngr.getTexture(Textures::ID::Paused)
     );
