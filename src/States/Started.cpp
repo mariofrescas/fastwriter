@@ -401,7 +401,7 @@ void Started::handleInputLetter(char letter)
         (
             Sounds::ID::LetterTakeFail
         );
-        points->decrement(gConf.getPointsIncrement());
+        points->decrement(gConf.getPointsDecrement());
     }
 }
 
