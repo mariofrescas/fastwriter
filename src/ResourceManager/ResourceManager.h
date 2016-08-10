@@ -142,6 +142,7 @@ namespace Music
 class ResourceManager
 {
 public:
+
     ////////////////////////////////////////////////////////////
     /// \brief Carga e inicializa los recursos y los relaciona con un id
     /// \param path Ruta donde se encuentran los recursos

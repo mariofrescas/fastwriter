@@ -35,6 +35,7 @@
 class BidirectionalBar : public TextureBar
 {
 public:
+
     ////////////////////////////////////////////////////////////
     /// \brief Crea una barra bidireccional
     /// \param position Posicion de la barra en la escena

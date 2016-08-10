@@ -41,6 +41,7 @@ class ResourceManager;
 class MusicPlayer
 {
 public:
+
     ////////////////////////////////////////////////////////////
     /// \brief Crea un reproductor de temas
     /// \param resMngr Obtiene las rutas de los temas musicales

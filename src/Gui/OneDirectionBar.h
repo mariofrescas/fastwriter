@@ -35,6 +35,7 @@
 class OneDirectionBar : public TextureBar
 {
 public:
+
     ////////////////////////////////////////////////////////////
     /// \brief Crea una barra de una sola direccion
     /// \param position Posicion de la barra en la escena

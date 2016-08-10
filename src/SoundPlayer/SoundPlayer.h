@@ -37,6 +37,7 @@
 class SoundPlayer
 {
 public:
+
     ////////////////////////////////////////////////////////////
     /// \brief Crea una administrador de efectos de sonidos que
     ///        conoce al administrador de recursos
