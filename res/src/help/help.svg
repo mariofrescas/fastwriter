@@ -9,43 +9,18 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="1366"
-   height="768"
-   id="svg3055"
+   width="1470.089"
+   height="624.03802"
+   viewBox="0 0 1470.089 624.03802"
+   id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="help.svg"
-   inkscape:export-filename="/home/mario/Documents/Codigos/Qt/build-Test-Desktop-Debug/Main.png"
+   inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/about.png"
    inkscape:export-xdpi="90"
-   inkscape:export-ydpi="90">
+   inkscape:export-ydpi="90"
+   sodipodi:docname="help.svg">
   <defs
-     id="defs3057">
-    <filter
-       inkscape:collect="always"
-       style="color-interpolation-filters:sRGB"
-       id="filter4527"
-       x="-0.057526782"
-       width="1.1150537"
-       y="-0.12288918"
-       height="1.2457784">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="5.259993"
-         id="feGaussianBlur4529" />
-    </filter>
-    <filter
-       inkscape:collect="always"
-       style="color-interpolation-filters:sRGB"
-       id="filter4523"
-       x="-0.040972408"
-       width="1.0819448"
-       y="-0.12339594"
-       height="1.246792">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="5.259993"
-         id="feGaussianBlur4525" />
-    </filter>
+     id="defs4">
     <filter
        inkscape:collect="always"
        style="color-interpolation-filters:sRGB"
@@ -72,6 +47,32 @@
          stdDeviation="7.0040039"
          id="feGaussianBlur4273-9" />
     </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter4523"
+       x="-0.040972408"
+       width="1.0819448"
+       y="-0.12339594"
+       height="1.246792">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="5.259993"
+         id="feGaussianBlur4525" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter4527"
+       x="-0.057526782"
+       width="1.1150537"
+       y="-0.12288918"
+       height="1.2457784">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="5.259993"
+         id="feGaussianBlur4529" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -80,27 +81,27 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.5"
-     inkscape:cx="488.16402"
-     inkscape:cy="365.23442"
+     inkscape:zoom="1"
+     inkscape:cx="1126.3504"
+     inkscape:cy="282.41316"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
+     units="px"
      inkscape:window-width="1366"
      inkscape:window-height="723"
      inkscape:window-x="0"
      inkscape:window-y="22"
-     inkscape:window-maximized="0"
-     showguides="false" />
+     inkscape:window-maximized="0" />
   <metadata
-     id="metadata3060">
+     id="metadata7">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -108,50 +109,69 @@
      inkscape:label="Capa 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-284.36218)">
+     transform="translate(0,-428.32416)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="827.39948"
+       y="758.14026"
+       id="text5340"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5342"
+         x="827.39948"
+         y="758.14026" /></text>
     <rect
-       style="fill:#f2ffd9;fill-opacity:1;stroke:none"
-       id="rect3063-6"
-       width="1366"
-       height="768"
-       x="0"
-       y="284.36221" />
-    <rect
-       y="403.86218"
-       x="281.3707"
+       y="467.40729"
+       x="55.954865"
        height="529"
        width="803.25861"
        id="rect8300"
-       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter8302)" />
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter8302)"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/text11050.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <rect
        style="opacity:1;fill:#535353;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect7013"
        width="801.25861"
        height="527"
-       x="282.3707"
-       y="405.86218" />
+       x="56.954865"
+       y="469.40729"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/text11050.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <rect
        style="fill:#37c8b9;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3063-4-3-1-8"
        width="786.79297"
        height="514.62408"
-       x="290.11203"
-       y="412.89578" />
+       x="64.696198"
+       y="476.44089"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/text11050.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <rect
-       y="-509.79214"
-       x="289.61194"
+       y="-573.33728"
+       x="64.196106"
        height="1.3502808"
        width="787.79303"
        id="rect18855"
        style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.59000003;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       transform="scale(1,-1)" />
+       transform="scale(1,-1)"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/text11050.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <rect
        style="fill:#37b2c8;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect3063-4-3-1-8-4"
        width="177.38678"
        height="38.971336"
-       x="890.82715"
-       y="878.3988" />
+       x="665.41132"
+       y="941.94391"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/text11050.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <text
        sodipodi:linespacing="125%"
        id="text4267-8"
@@ -159,7 +179,10 @@
        x="369.53815"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:none;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4271-3)"
        xml:space="preserve"
-       transform="matrix(0.26876785,0,0,0.26876785,796.32893,757.75902)"><tspan
+       transform="matrix(0.26876785,0,0,0.26876785,570.91311,821.30413)"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/text11050.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:144px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          y="569.69965"
          x="369.53815"
@@ -168,25 +191,30 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.7507143px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       x="895.64886"
-       y="910.87598"
+       x="917.72034"
+       y="974.42108"
        id="text4050-6-2"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan4052-7-9"
-         x="895.64886"
-         y="910.87598"
+         x="917.72034"
+         y="974.42108"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:38.70257187px;font-family:saxMono;-inkscape-font-specification:saxMono">Back</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text4188"
-       y="481.91843"
-       x="315.66376"
+       y="545.46356"
+       x="90.247925"
        style="font-style:normal;font-weight:normal;font-size:28.28495979px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       xml:space="preserve"><tspan
+       xml:space="preserve"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/text11050.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:101.82585907px;font-family:saxMono;-inkscape-font-specification:saxMono"
-         y="481.91843"
-         x="315.66376"
+         y="545.46356"
+         x="90.247925"
          id="tspan4190"
          sodipodi:role="line">   p</tspan></text>
     <text
@@ -196,7 +224,10 @@
        y="703.65778"
        id="text4275"
        sodipodi:linespacing="125%"
-       transform="matrix(0.70712401,0,0,0.70712401,56.144333,-15.654893)"><tspan
+       transform="matrix(0.70712401,0,0,0.70712401,-169.27149,47.890225)"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/text11050.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan4277"
          x="367.0069"
@@ -205,14 +236,17 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:28.28495979px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       x="315.66376"
-       y="495.00949"
+       x="90.247925"
+       y="558.55463"
        id="text4050-5"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/text11050.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan4052-73"
-         x="315.66376"
-         y="495.00949"
+         x="90.247925"
+         y="558.55463"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:101.82585907px;font-family:saxMono;-inkscape-font-specification:saxMono">Hel</tspan></text>
     <text
        sodipodi:linespacing="125%"
@@ -221,7 +255,10 @@
        x="367.0069"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:none;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4527)"
        xml:space="preserve"
-       transform="matrix(0.70712401,0,0,0.70712401,56.144333,-15.654893)"><tspan
+       transform="matrix(0.70712401,0,0,0.70712401,-169.27149,47.890225)"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/text11050.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:144px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          y="722.17084"
          x="367.0069"
@@ -230,160 +267,196 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="679.32086"
-       y="538.61475"
+       x="453.90506"
+       y="602.15991"
        id="text8784"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/text11050.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
-         x="679.32086"
-         y="538.61475"
+         x="453.90506"
+         y="602.15991"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:#ffffff"
          id="tspan8788">Want Points</tspan><tspan
          sodipodi:role="line"
-         x="679.32086"
-         y="563.61475"
+         x="453.90506"
+         y="627.15991"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:saxMono;-inkscape-font-specification:saxMono"
          id="tspan9238">- Increments when Points increments</tspan><tspan
          sodipodi:role="line"
-         x="679.32086"
-         y="588.61475"
+         x="453.90506"
+         y="652.15991"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:saxMono;-inkscape-font-specification:saxMono"
          id="tspan7031">- Right bar</tspan><tspan
          sodipodi:role="line"
-         x="679.32086"
-         y="613.61475"
+         x="453.90506"
+         y="677.15991"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:saxMono;-inkscape-font-specification:saxMono"
          id="tspan11086">- No decrements</tspan><tspan
          sodipodi:role="line"
-         x="679.32086"
-         y="638.61475"
+         x="453.90506"
+         y="702.15991"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:saxMono;-inkscape-font-specification:saxMono"
          id="tspan9242">- When is full:</tspan><tspan
          sodipodi:role="line"
-         x="679.32086"
-         y="663.61475"
+         x="453.90506"
+         y="727.15991"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:saxMono;-inkscape-font-specification:saxMono"
          id="tspan11104">  - Increment lifes by 1!</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text8792"
-       y="692.21686"
-       x="679.32086"
+       y="755.76202"
+       x="453.90506"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
+       xml:space="preserve"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/text11050.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:#ffffff"
-         y="692.21686"
-         x="679.32086"
+         y="755.76202"
+         x="453.90506"
          sodipodi:role="line"
          id="tspan9228">Shift Mode</tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:saxMono;-inkscape-font-specification:saxMono"
-         y="717.21686"
-         x="679.32086"
+         y="780.76202"
+         x="453.90506"
          sodipodi:role="line"
          id="tspan9230">- Stops words downfall</tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:saxMono;-inkscape-font-specification:saxMono"
-         y="742.21686"
-         x="679.32086"
+         y="805.76202"
+         x="453.90506"
          sodipodi:role="line"
          id="tspan7033">- Middle bar</tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:saxMono;-inkscape-font-specification:saxMono"
-         y="767.21686"
-         x="679.32086"
+         y="830.76202"
+         x="453.90506"
          sodipodi:role="line"
          id="tspan11090">- Auto-Regen (1|2|3 min.)</tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:saxMono;-inkscape-font-specification:saxMono"
-         y="792.21686"
-         x="679.32086"
+         y="855.76202"
+         x="453.90506"
          sodipodi:role="line"
          id="tspan11094">- While activated:</tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:saxMono;-inkscape-font-specification:saxMono"
-         y="817.21686"
-         x="679.32086"
+         y="880.76202"
+         x="453.90506"
          sodipodi:role="line"
          id="tspan11096">  - The game time goes on</tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:saxMono;-inkscape-font-specification:saxMono"
-         y="842.21686"
-         x="679.32086"
+         y="905.76202"
+         x="453.90506"
          sodipodi:role="line"
          id="tspan11098">  - You can take words</tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:saxMono;-inkscape-font-specification:saxMono"
-         y="867.21686"
-         x="679.32086"
+         y="930.76202"
+         x="453.90506"
          sodipodi:role="line"
          id="tspan11100">  - You can activate cleaners</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="306.76123"
-       y="690.13678"
+       x="81.345398"
+       y="753.68195"
        id="text8796"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/text11050.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
-         x="306.76123"
-         y="690.13678"
+         x="81.345398"
+         y="753.68195"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:#ffffff"
          id="tspan9234">Cleaners</tspan><tspan
          sodipodi:role="line"
-         x="306.76123"
-         y="715.13678"
+         x="81.345398"
+         y="778.68195"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:saxMono;-inkscape-font-specification:saxMono"
          id="tspan9236">- Takes all words in the screen</tspan><tspan
          sodipodi:role="line"
-         x="306.76123"
-         y="740.13678"
+         x="81.345398"
+         y="803.68195"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:saxMono;-inkscape-font-specification:saxMono"
          id="tspan7037">- Left circles</tspan><tspan
          sodipodi:role="line"
-         x="306.76123"
-         y="765.13678"
+         x="81.345398"
+         y="828.68195"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:saxMono;-inkscape-font-specification:saxMono"
          id="tspan7029">- Auto-Regen (3|4|5 min.)</tspan><tspan
          sodipodi:role="line"
-         x="306.76123"
-         y="790.13678"
+         x="81.345398"
+         y="853.68195"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:saxMono;-inkscape-font-specification:saxMono"
          id="tspan11070">- Increments:</tspan><tspan
          sodipodi:role="line"
-         x="306.76123"
-         y="815.13678"
+         x="81.345398"
+         y="878.68195"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:saxMono;-inkscape-font-specification:saxMono"
          id="tspan11072">  - Points</tspan><tspan
          sodipodi:role="line"
-         x="306.76123"
-         y="840.13678"
+         x="81.345398"
+         y="903.68195"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:saxMono;-inkscape-font-specification:saxMono"
          id="tspan11074">  - Want Points</tspan><tspan
          sodipodi:role="line"
-         x="306.76123"
-         y="865.13678"
+         x="81.345398"
+         y="928.68195"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:saxMono;-inkscape-font-specification:saxMono"
          id="tspan11076">  - Lifes (Want Points = Full)</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:saxMono;-inkscape-font-specification:saxMono;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="305.92892"
-       y="538.01904"
+       x="80.513092"
+       y="601.56421"
        id="text11050"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/textures/text11050.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan11052"
-         x="305.92892"
-         y="538.01904"
+         x="80.513092"
+         y="601.56421"
          style="font-size:20px;fill:#ffffff">Keys</tspan><tspan
          sodipodi:role="line"
-         x="305.92892"
-         y="563.01904"
+         x="80.513092"
+         y="626.56421"
          id="tspan11060"
          style="font-size:20px">[Esc]:   Pause</tspan><tspan
          sodipodi:role="line"
-         x="305.92892"
-         y="588.01904"
+         x="80.513092"
+         y="651.56421"
          style="font-size:20px"
          id="tspan11062">[Shift]: Active Cleaner</tspan><tspan
          sodipodi:role="line"
-         x="305.92892"
-         y="613.01904"
+         x="80.513092"
+         y="676.56421"
          id="tspan11058"
          style="font-size:20px">[Space]: Active Shift Mode</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text9793"
+       y="974.42108"
+       x="1014.7203"
+       style="font-style:normal;font-weight:normal;font-size:10.7507143px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#e4e4e4;fill-opacity:1;stroke:none;"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:38.70257187px;font-family:saxMono;-inkscape-font-specification:saxMono;fill:#e4e4e4;fill-opacity:1;"
+         y="974.42108"
+         x="1014.7203"
+         id="tspan9795"
+         sodipodi:role="line">Back</tspan></text>
+    <rect
+       style="fill:#f2ffd9;fill-opacity:1;stroke:none"
+       id="rect3063-6"
+       width="32"
+       height="32"
+       x="921"
+       y="897.36218"
+       inkscape:export-filename="/home/mario/Dropbox/Codes/Sfml/Fastwriter/res/src/about/background.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
   </g>
 </svg>

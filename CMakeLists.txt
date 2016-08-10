@@ -87,6 +87,7 @@ set(SOURCES
     src/States/About.cpp
     src/States/Black.cpp
     src/States/DifftyMenu.cpp
+    src/States/Help.cpp
     src/States/MainMenu.cpp
     src/States/Paused.cpp
     src/States/QuitConfirm.cpp

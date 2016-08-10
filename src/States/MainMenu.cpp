@@ -85,7 +85,19 @@ MainMenu::MainMenu(StateManager& stateManager)
             },
             GraphicMenu::MenuOptionData
             {
-                [&] () { },
+                [&] ()
+                {
+                    getStateManager().getSharedContext().soundPlayer.play
+                    (
+                        Sounds::ID::MenuOpen
+                    );
+                    getStateManager().setCurrentState
+                    (
+                        States::ID::Help,
+                        Transitions::ID::Fade,
+                        sf::milliseconds(1000)
+                    );
+                },
                 sf::Vector2f(mx, my + (mc  * 2)),
                 sf::IntRect(2, 786, 213, 80),
                 sf::IntRect(434, 704, 213, 80)

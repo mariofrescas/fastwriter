@@ -67,6 +67,7 @@ namespace Textures
         Paused,         ///< Textura para la escena de juego pausado
         QuitConfirm,    ///< Textura para la escena de confirmar quitar el juego
         RestartConfirm, ///< Textura para la escena de confirmar reiniciar el juego
+        Help,           ///< Textura para la escena de ayuda
         Game,           ///< Textura para la escena del juego
         Letters,        ///< Texutra para todas las letras del juego
         Numbers         ///< Textura para contadores, temporizadores y relojes
