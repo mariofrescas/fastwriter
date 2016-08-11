@@ -27,17 +27,17 @@
 
 int NormalConf::getDropTime() const
 {
-    return 400;
+    return random(1000, 2000);
 }
 
 int NormalConf::getWordLength() const
 {
-    return random(1, 5);
+    return random(1, 10);
 }
 
 float NormalConf::getDropVelocity() const
 {
-    return 100;
+    return 50;
 }
 
 int NormalConf::getInitLifes() const
@@ -52,12 +52,12 @@ int NormalConf::getPointsIncrement() const
 
 int NormalConf::getPointsDecrement() const
 {
-    return 1;
+    return 10;
 }
 
 int NormalConf::getLifesIncrement() const
 {
-    return 1;
+    return 3;
 }
 
 int NormalConf::getLifesDecrement() const
@@ -87,10 +87,10 @@ int NormalConf::getDefaultCleaners() const
 
 int NormalConf::getMaxCleaners() const
 {
-    return 4;
+    return 5;
 }
 
 int NormalConf::getAddInterval() const
 {
-    return 5000;
+    return 240000;
 }
