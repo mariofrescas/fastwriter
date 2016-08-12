@@ -25,6 +25,7 @@
 
 #include "Started.h"
 
+#include "Results.h"
 #include "MusicPlayer.h"
 #include "SoundPlayer.h"
 #include "StateManager.h"
@@ -173,6 +174,8 @@ void Started::setGameDifficulty(const Configs::ID& diffty)
     confMngr.setCurrentConf(diffty);
     GameConf& cConf = confMngr.getCurrentConf();
 
+    results.setDiffty(diffty);
+
     shiftMode->reconfigure
     (
         sf::milliseconds(cConf.getShiftModeDuration()),
@@ -257,6 +260,7 @@ void Started::update(const sf::Time& dt)
     const GameConf& gConf = confMngr.getCurrentConf();
 
     time->tick(dt);
+    results.addElapsed(dt);
     shiftMode->update(dt);
     cleaners->addTime(dt);
 
@@ -284,17 +288,25 @@ void Started::update(const sf::Time& dt)
         lifes->decrement(gConf.getLifesDecrement());
         if (!lifes->remain())
         {
-//            getStateManager().getSharedContext().musicPlayer.stop();
-//            getStateManager().getSharedContext().soundPlayer.play
-//            (
-//                Sounds::ID::GameEnd
-//            );
-//            getStateManager().setCurrentState
-//            (
-//                States::ID::MainMenu,
-//                Transitions::ID::CircleClose,
-//                sf::milliseconds(1000)
-//            );
+            getStateManager().getSharedContext().musicPlayer.stop();
+            getStateManager().getSharedContext().soundPlayer.play
+            (
+                Sounds::ID::GameEnd
+            );
+            static_cast<Results&>
+            (
+                getStateManager().getState
+                (
+                    States::ID::Results
+                )
+            ).setResults(results.get());
+            getStateManager().getState(States::ID::Results).reset();
+            getStateManager().setCurrentState
+            (
+                States::ID::Results,
+                Transitions::ID::CircleClose,
+                sf::milliseconds(1000)
+            );
         }
     }
 
@@ -302,6 +314,7 @@ void Started::update(const sf::Time& dt)
     {
         --takeCount;
         points->increment(gConf.getPointsIncrement());
+        results.incPoints(gConf.getPointsIncrement());
         wantPoints->addPoints(gConf.getPointsIncrement());
 
         if (wantPoints->isFull())
@@ -311,6 +324,7 @@ void Started::update(const sf::Time& dt)
                 Sounds::ID::LifesIncrement
             );
             lifes->increment(gConf.getLifesIncrement());
+            results.incLifes(gConf.getLifesIncrement());
         }
     }
 
@@ -377,6 +391,7 @@ void Started::reset()
     lifes->reset();
     cleaners->reset();
     words->reset();
+    results.reset();
     trapCount = 0;
     takeCount = 0;
     shiftStarted = false;
@@ -402,6 +417,8 @@ void Started::handleInputLetter(char letter)
             Sounds::ID::LetterTakeFail
         );
         points->decrement(gConf.getPointsDecrement());
+        results.decPoints(gConf.getPointsDecrement());
+        results.incFails();
     }
 }
 
@@ -415,6 +432,7 @@ void Started::handleShiftModeActivation()
         );
         shiftStarted = true;
         shiftMode->active();
+        results.incShifts();
     }
 }
 
@@ -427,6 +445,7 @@ void Started::handleCleanerActivation()
             Sounds::ID::CleanerActive
         );
         cleaners->clean();
+        results.incCleaners();
         takeCount += words->takeAll();
     }
 }

@@ -1,0 +1,48 @@
+{"frames": [
+
+{
+	"filename": "background.png",
+	"frame": {"x":2,"y":2,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "container.png",
+	"frame": {"x":2,"y":36,"w":599,"h":648},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":599,"h":648},
+	"sourceSize": {"w":599,"h":648},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "continue-option-s.png",
+	"frame": {"x":204,"y":2,"w":166,"h":28},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":28},
+	"sourceSize": {"w":166,"h":28},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "continue-option.png",
+	"frame": {"x":36,"y":2,"w":166,"h":28},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":166,"h":28},
+	"sourceSize": {"w":166,"h":28},
+	"pivot": {"x":0.5,"y":0.5}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "results.png",
+	"format": "RGBA8888",
+	"size": {"w":603,"h":686},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:0a1c2e0ff3cdce3c7f1a30dd9b0e6bbc:23250be8bf90a2aa1d685f19e4860de3:6ff870ccc0e52152b2b735505eb5f6a8$"
+}
+}

@@ -54,6 +54,7 @@ namespace States
         DifftyMenu,    ///< Menu de seleccion de dificultad
         Starting,      ///< Iniciando el juego
         Started,       ///< Juego iniciado
+        Results,       ///< Resultados del juego
         Paused,        ///< Juego pausado
         QuitConfirm,   ///< Confirmar quitar el juego
         RestartConfirm ///< Confirmar reiniciar el juego

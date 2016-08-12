@@ -40,6 +40,7 @@
 #include "DifftyMenu.h"
 #include "Starting.h"
 #include "Started.h"
+#include "Results.h"
 #include "Paused.h"
 #include "QuitConfirm.h"
 #include "RestartConfirm.h"
@@ -72,6 +73,11 @@ StateManager::StateManager(const SharedContext& sharedContex)
     states[States::ID::About] = std::make_unique<About>(*this);
     states[States::ID::DifftyMenu] = std::make_unique<DifftyMenu>(*this);
     states[States::ID::Started] = std::make_unique<Started>(*this);
+    states[States::ID::Results] = std::make_unique<Results>
+    (
+        *this,
+        states[States::ID::Started].get()
+    );
     states[States::ID::Starting] = std::make_unique<Starting>
     (
         *this,

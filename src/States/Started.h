@@ -28,6 +28,7 @@
 
 #include "State.h"
 
+#include "ResultsControl.h"
 #include "PointsControl.h"
 #include "WantPointsControl.h"
 #include "TimeControl.h"
@@ -68,6 +69,7 @@ private:
     WordControl::Ptr       words;         ///< Control de palabras
     GameConfManager        confMngr;      ///< Configuracion de dificultad
     sf::RenderTexture      snapShot;      ///< Caputra de la escena
+    ResultsControl         results;       ///< Contine los resultados el juego
     int                    trapCount;     ///< Acomulacion de vidas perdidas
     int                    takeCount;     ///< Acomulacion de puntos ganados
     bool                   shiftStarted;  ///< Reproducir 1 sola vez finished

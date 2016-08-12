@@ -67,6 +67,7 @@ set(SOURCES
     src/Controls/CountDownControl.cpp
     src/Controls/LifesControl.cpp
     src/Controls/PointsControl.cpp
+    src/Controls/ResultsControl.cpp
     src/Controls/ShiftModeControl.cpp
     src/Controls/TimeControl.cpp
     src/Controls/WantPointsControl.cpp
@@ -92,6 +93,7 @@ set(SOURCES
     src/States/Paused.cpp
     src/States/QuitConfirm.cpp
     src/States/RestartConfirm.cpp
+    src/States/Results.cpp
     src/States/Started.cpp
     src/States/Starting.cpp
     src/States/Wellcome.cpp
@@ -120,4 +122,3 @@ include(InstallRequiredSystemLibraries)
     set(CPACK_PACKAGE_VERSION_MINOR ${PROJECT_VERSION_MINOR})
     set(CPACK_PACKAGE_VERSION_PATCH ${PROJECT_VERSION_PATCH})
 include(CPack)
-

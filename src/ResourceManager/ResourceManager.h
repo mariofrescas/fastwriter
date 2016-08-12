@@ -68,6 +68,7 @@ namespace Textures
         QuitConfirm,    ///< Textura para la escena de confirmar quitar el juego
         RestartConfirm, ///< Textura para la escena de confirmar reiniciar el juego
         Help,           ///< Textura para la escena de ayuda
+        Results,        ///< Textura para la escena de resultados de juego
         Game,           ///< Textura para la escena del juego
         Letters,        ///< Texutra para todas las letras del juego
         Numbers         ///< Textura para contadores, temporizadores y relojes
