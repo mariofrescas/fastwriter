@@ -27,7 +27,7 @@
 
 int NormalConf::getDropTime() const
 {
-    return random(1000, 2000);
+    return random(800, 1300);
 }
 
 int NormalConf::getWordLength() const
@@ -77,7 +77,7 @@ int NormalConf::getShiftModeDuration() const
 
 int NormalConf::getShiftModeNecessaryTime() const
 {
-    return 10000;
+    return 15000;
 }
 
 int NormalConf::getDefaultCleaners() const
@@ -92,5 +92,5 @@ int NormalConf::getMaxCleaners() const
 
 int NormalConf::getAddInterval() const
 {
-    return 240000;
+    return 300000;
 }

@@ -27,17 +27,17 @@
 
 int HardConf::getDropTime() const
 {
-    return random(500, 800);
+    return random(500, 20000);
 }
 
 int HardConf::getWordLength() const
 {
-    return random(1, 5);
+    return random(1, 16);
 }
 
 float HardConf::getDropVelocity() const
 {
-    return random(10, 50);
+    return 100;
 }
 
 int HardConf::getInitLifes() const

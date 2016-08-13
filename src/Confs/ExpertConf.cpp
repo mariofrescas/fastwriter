@@ -37,7 +37,7 @@ int ExpertConf::getWordLength() const
 
 float ExpertConf::getDropVelocity() const
 {
-    return random(10, 50);
+    return 150;
 }
 
 int ExpertConf::getInitLifes() const
