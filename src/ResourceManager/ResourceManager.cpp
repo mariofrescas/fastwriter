@@ -35,6 +35,7 @@ ResourceManager::ResourceManager(const std::string& path)
     shaderHolder.load(Shaders::ID::Circle, path + "res/shaders/circle.frag", sf::Shader::Fragment);
 
     textureHolder.load(Textures::ID::MainMenu, path + "res/textures/main-menu.png");
+    textureHolder.load(Textures::ID::Scores, path + "res/textures/scores.png");
     textureHolder.load(Textures::ID::About, path + "res/textures/about.png");
     textureHolder.load(Textures::ID::DifftyMenu, path + "res/textures/difficulty-menu.png");
     textureHolder.load(Textures::ID::Starting, path + "res/textures/starting.png");
@@ -64,6 +65,8 @@ ResourceManager::ResourceManager(const std::string& path)
     soundHolder.load(Sounds::ID::LetterTakeFail, path + "res/sounds/letter-take-fail.wav");
 
     musicHolder[Music::ID::Started] = path + "res/music/started.ogg";
+
+    otherHolder[Other::ID::Scores] = path + "res/scores/scores.dat";
 }
 
 const sf::Texture& ResourceManager::getTexture(const Textures::ID& textureId) const
@@ -94,4 +97,9 @@ const std::string& ResourceManager::getDictionary(const Dictionaries::ID& dicId)
 const std::string& ResourceManager::getMusic(const Music::ID& musicId) const
 {
     return musicHolder.at(musicId);
+}
+
+const std::string& ResourceManager::getOther(const Other::ID& otherId) const
+{
+    return otherHolder.at(otherId);
 }

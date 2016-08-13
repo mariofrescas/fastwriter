@@ -61,6 +61,7 @@ namespace Textures
     {
         Wellcome,       ///< Textura para la escena de bienvenida
         MainMenu,       ///< Textura para la escena del menu principal
+        Scores,         ///< Textura para la escena de puntuaciones
         About,          ///< Texutra para la escena de informacion "acerca de..."
         DifftyMenu,     ///< Textura para la escena del menu de dificultad
         Starting,       ///< Textura para la escena de "iniciando"
@@ -137,6 +138,18 @@ namespace Music
     };
 }
 
+namespace Other
+{
+    ////////////////////////////////////////////////////////////
+    /// \brief Identificardores de archivos generales
+    ///
+    ////////////////////////////////////////////////////////////
+    enum class ID
+    {
+        Scores ///< Archivo de puntuaciones
+    };
+}
+
 ////////////////////////////////////////////////////////////
 /// \brief Contenedor de los recursos necesarios por la aplicacion
 ///
@@ -200,6 +213,14 @@ public:
     ////////////////////////////////////////////////////////////
     const std::string& getMusic(const Music::ID& musicId) const;
 
+    ////////////////////////////////////////////////////////////
+    /// \brief Obtiene una referencia al archivo que concuerde con el id
+    /// \param otherId Identificador del archivo
+    /// \return Referencia hacia el archivo
+    ///
+    ////////////////////////////////////////////////////////////
+    const std::string& getOther(const Other::ID& otherId) const;
+
 private:
     ResourceHolder<Textures::ID, sf::Texture>   textureHolder; ///< Contenedor de texturas
     ResourceHolder<Fonts::ID, sf::Font>         fontHolder;    ///< Contenedor de fuentes
@@ -207,6 +228,7 @@ private:
     ResourceHolder<Sounds::ID, sf::SoundBuffer> soundHolder;   ///< Contenedor de efectos de sonido
     std::map<Music::ID, std::string>            musicHolder;   ///< Contenedor de temas musicales
     std::map<Dictionaries::ID, std::string>     dicHolder;     ///< Contenedor de diccionarios
+    std::map<Other::ID, std::string>            otherHolder;   ///< Contenedor de archivos generales
 };
 
 #endif // RESOURCEMANAGER_H

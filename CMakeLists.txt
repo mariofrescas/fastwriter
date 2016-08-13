@@ -50,6 +50,7 @@ include_directories(
     src/Gui/
     src/MusicPlayer/
     src/ResourceManager/
+    src/ScoresFile/
     src/SoundPlayer/
     src/StateManager/
     src/States/
@@ -68,6 +69,7 @@ set(SOURCES
     src/Controls/LifesControl.cpp
     src/Controls/PointsControl.cpp
     src/Controls/ResultsControl.cpp
+    src/Controls/ScoresControl.cpp
     src/Controls/ShiftModeControl.cpp
     src/Controls/TimeControl.cpp
     src/Controls/WantPointsControl.cpp
@@ -82,6 +84,7 @@ set(SOURCES
     src/MusicPlayer/MusicPlayer.cpp
     src/ResourceManager/ResourceManager.cpp
     src/ResourceManager/ResourceHolder.inl
+    src/ScoresFile/ScoresFile.cpp
     src/SoundPlayer/SoundPlayer.cpp
     src/StateManager/State.cpp
     src/StateManager/StateManager.cpp
@@ -94,6 +97,7 @@ set(SOURCES
     src/States/QuitConfirm.cpp
     src/States/RestartConfirm.cpp
     src/States/Results.cpp
+    src/States/Scores.cpp
     src/States/Started.cpp
     src/States/Starting.cpp
     src/States/Wellcome.cpp

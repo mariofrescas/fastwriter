@@ -25,6 +25,7 @@
 
 #include "MainMenu.h"
 
+#include "Scores.h"
 #include "SoundPlayer.h"
 #include "StateManager.h"
 #include "ResourceManager.h"
@@ -78,7 +79,26 @@ MainMenu::MainMenu(StateManager& stateManager)
             },
             GraphicMenu::MenuOptionData
             {
-                [&] () { },
+                [&] ()
+                {
+                    static_cast<Scores&>
+                    (
+                        getStateManager().getState
+                        (
+                            States::ID::Scores
+                        )
+                    ).updateScores();
+                    getStateManager().getSharedContext().soundPlayer.play
+                    (
+                        Sounds::ID::MenuOpen
+                    );
+                    getStateManager().setCurrentState
+                    (
+                        States::ID::Scores,
+                        Transitions::ID::Fade,
+                        sf::milliseconds(1000)
+                    );
+                },
                 sf::Vector2f(mx, my + (mc * 1)),
                 sf::IntRect(330, 941, 326, 71),
                 sf::IntRect(2, 941, 326, 71)

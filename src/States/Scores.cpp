@@ -23,45 +23,63 @@
 **
 *************************************************************************/
 
-#include "Results.h"
+#include "Scores.h"
 
-#include "ScoresFile.h"
 #include "SoundPlayer.h"
 #include "StateManager.h"
 #include "ResourceManager.h"
 #include <SFML/Window/Event.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 
-Results::Results(StateManager& stateManager, State* parent)
-    : State(stateManager, parent)
+Scores::Scores(StateManager& stateManager)
+    : State(stateManager)
 {
     ResourceManager& resMngr = getStateManager().getSharedContext().resourceManager;
     const sf::Vector2u& windowSize = getStateManager().getSharedContext().window.getSize();
 
-    background.setTexture(resMngr.getTexture(Textures::ID::Results));
-    background.setTextureRect(sf::IntRect(2, 2, 32, 32));
+    background.setTexture(resMngr.getTexture(Textures::ID::Scores));
+    background.setTextureRect(sf::IntRect(168, 2, 32, 32));
     background.setScale
     (   windowSize.x / background.getLocalBounds().width,
         windowSize.y / background.getLocalBounds().width
     );
 
-    constexpr int acw = 599;
-    constexpr int ach = 648;
+    constexpr int acw = 907;
+    constexpr int ach = 629;
     int acx = (windowSize.x / 2) - (acw / 2);
     int acy = (windowSize.y / 2) - (ach / 2);
 
-    container.setTexture(resMngr.getTexture(Textures::ID::Results));
+    container.setTexture(resMngr.getTexture(Textures::ID::Scores));
     container.setTextureRect(sf::IntRect(2, 36, acw, ach));
     container.setPosition(acx, acy);
 
-    for (std::size_t i = 0; i < results.size(); ++i)
-    {
-        results[i].setFont(resMngr.getFont(Fonts::ID::Default));
-        results[i].setColor(sf::Color::White);
-        results[i].setCharacterSize(25);
-        results[i].setPosition(acx + 425, acy + 165 + (32 * i));
-        results[i].setString("0");
-    }
+    scores = std::make_unique<ScoresControl>
+    (
+        resMngr.getOther(Other::ID::Scores),
+        resMngr.getFont(Fonts::ID::Default),
+        std::array<int, 6>
+        {
+            acx + 120,
+            acx + 260,
+            acx + 415,
+            acx + 525,
+            acx + 640,
+            acx + 750
+        },
+        std::array<int, 10>
+        {
+            acy + 185,
+            acy + 215,
+            acy + 248,
+            acy + 280,
+            acy + 310,
+            acy + 340,
+            acy + 373,
+            acy + 405,
+            acy + 435,
+            acy + 465
+        }
+    );
 
     options = std::make_unique<GraphicMenu>
     (
@@ -83,9 +101,9 @@ Results::Results(StateManager& stateManager, State* parent)
                     );
                     reset();
                 },
-                sf::Vector2f(acx + 373, acy + 539),
-                sf::IntRect(36, 2, 166, 28),
-                sf::IntRect(204, 2, 166, 28)
+                sf::Vector2f(acx + 664, acy + 524),
+                sf::IntRect(85, 2, 81, 28),
+                sf::IntRect(2, 2, 81, 28)
             }
         },
         GraphicMenu::MenuContainerData
@@ -93,51 +111,29 @@ Results::Results(StateManager& stateManager, State* parent)
             sf::Vector2f(0, 0),
             sf::IntRect(0, 0, 0, 0)
         },
-        resMngr.getTexture(Textures::ID::Results)
+        resMngr.getTexture(Textures::ID::Scores)
     );
 
     if (!snapShot.create(windowSize.x, windowSize.y))
     {
-        throw std::runtime_error("Can not create Results Render Texture");
+        throw std::runtime_error("Can not create Scores Render Texture");
     }
 }
 
-void Results::setResults(const std::array<std::string, 8>& results)
+void Scores::updateScores()
 {
-    for (std::size_t i = 0; i < results.size(); ++i)
-    {
-        this->results[i].setString(results[i]);
-    }
-
-    ScoresFile::trySaveScore
-    (
-        getStateManager().getSharedContext().resourceManager.getOther(Other::ID::Scores),
-        2,
-        std::array<std::string, 6>
-        {
-            results[0],
-            results[1],
-            results[2],
-            results[3],
-            results[4],
-            results[5]
-        }
-    );
+    scores->update();
 }
 
-void Results::handleInput(const sf::Event& event)
+void Scores::handleInput(const sf::Event& event)
 {
     if (event.type == sf::Event::MouseButtonPressed)
     {
-        options->execCurrentOption
-        (
-            sf::Vector2f(event.mouseButton.x, event.mouseButton.y)
-        );
-        reset();
+        options->execCurrentOption(sf::Vector2f(event.mouseButton.x, event.mouseButton.y));
     }
 }
 
-void Results::update(const sf::Time&)
+void Scores::update(const sf::Time&)
 {
     sf::RenderWindow& window = getStateManager().getSharedContext().window;
     options->setCurrentOption
@@ -146,37 +142,29 @@ void Results::update(const sf::Time&)
     );
 }
 
-void Results::draw()
+void Scores::draw()
 {
     sf::RenderWindow& window = getStateManager().getSharedContext().window;
 
-    window.draw(sf::Sprite(*getParentState().getSnapShotTexture()));
     window.draw(background);
     window.draw(container);
+    window.draw(*scores.get());
     window.draw(*options.get());
-    for (auto& r : results)
-    {
-        window.draw(r);
-    }
 }
 
-const sf::Texture* Results::getSnapShotTexture()
+const sf::Texture* Scores::getSnapShotTexture()
 {
     snapShot.clear();
-    snapShot.draw(sf::Sprite(*getParentState().getSnapShotTexture()));
     snapShot.draw(background);
     snapShot.draw(container);
+    snapShot.draw(*scores.get());
     snapShot.draw(*options.get());
-    for (auto& r : results)
-    {
-        snapShot.draw(r);
-    }
     snapShot.display();
 
     return &snapShot.getTexture();
 }
 
-void Results::reset()
+void Scores::reset()
 {
     options->setCurrentOption(sf::Vector2f(0, 0));
 }

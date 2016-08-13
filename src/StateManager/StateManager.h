@@ -49,6 +49,7 @@ namespace States
         Black,         ///< Escena negra de entrada
         Wellcome,      ///< Bienvenida
         MainMenu,      ///< Menu principal
+        Scores,        ///< Puntuaciones
         Help,          ///< Ayuda
         About,         ///< Acerca de...
         DifftyMenu,    ///< Menu de seleccion de dificultad
