@@ -40,6 +40,7 @@ public:
     ////////////////////////////////////////////////////////////
     /// \brief Obtiene la matriz de puntuaciones
     /// \param filename Ubicacion del archivo
+    /// \return Matriz de puntuaciones
     ///
     ////////////////////////////////////////////////////////////
     static Matrix loadFromFile(const std::string& filename);
