@@ -27,17 +27,17 @@
 
 int HardConf::getDropTime() const
 {
-    return random(500, 20000);
+    return random(800, 1300);
 }
 
 int HardConf::getWordLength() const
 {
-    return random(1, 16);
+    return random(1, 10);
 }
 
 float HardConf::getDropVelocity() const
 {
-    return 100;
+    return 50;
 }
 
 int HardConf::getInitLifes() const
@@ -52,12 +52,12 @@ int HardConf::getPointsIncrement() const
 
 int HardConf::getPointsDecrement() const
 {
-    return 1;
+    return 40;
 }
 
 int HardConf::getLifesIncrement() const
 {
-    return 1;
+    return 3;
 }
 
 int HardConf::getLifesDecrement() const
@@ -67,7 +67,7 @@ int HardConf::getLifesDecrement() const
 
 int HardConf::getWantPoints() const
 {
-    return 10;
+    return 100;
 }
 
 int HardConf::getShiftModeDuration() const
@@ -77,20 +77,20 @@ int HardConf::getShiftModeDuration() const
 
 int HardConf::getShiftModeNecessaryTime() const
 {
-    return 10000;
+    return 15000;
 }
 
 int HardConf::getDefaultCleaners() const
 {
-    return 2;
+    return 3;
 }
 
 int HardConf::getMaxCleaners() const
 {
-    return 4;
+    return 5;
 }
 
 int HardConf::getAddInterval() const
 {
-    return 5000;
+    return 300000;
 }

@@ -27,12 +27,12 @@
 
 int ExpertConf::getDropTime() const
 {
-    return random(500, 800);
+    return random(1600, 3000);
 }
 
 int ExpertConf::getWordLength() const
 {
-    return random(1, 5);
+    return random(6, 16);
 }
 
 float ExpertConf::getDropVelocity() const
@@ -52,12 +52,12 @@ int ExpertConf::getPointsIncrement() const
 
 int ExpertConf::getPointsDecrement() const
 {
-    return 1;
+    return 35;
 }
 
 int ExpertConf::getLifesIncrement() const
 {
-    return 1;
+    return 4;
 }
 
 int ExpertConf::getLifesDecrement() const
@@ -67,7 +67,7 @@ int ExpertConf::getLifesDecrement() const
 
 int ExpertConf::getWantPoints() const
 {
-    return 10;
+    return 100;
 }
 
 int ExpertConf::getShiftModeDuration() const
@@ -82,15 +82,15 @@ int ExpertConf::getShiftModeNecessaryTime() const
 
 int ExpertConf::getDefaultCleaners() const
 {
-    return 1;
+    return 2;
 }
 
 int ExpertConf::getMaxCleaners() const
 {
-    return 4;
+    return 5;
 }
 
 int ExpertConf::getAddInterval() const
 {
-    return 5000;
+    return 60000;
 }
