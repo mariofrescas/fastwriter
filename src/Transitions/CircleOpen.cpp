@@ -48,11 +48,11 @@ void CircleOpen::configure(const sf::Time& duration,
 {
     nextState = next;
     effectDuration = duration;
-    shader.setParameter("from", from);
-    shader.setParameter("to", to);
-    shader.setParameter("progress", progress);
-    shader.setParameter("resolution", sf::Vector2f(from.getSize().x, from.getSize().y));
-    shader.setParameter("smoothness", 3.f);
-    shader.setParameter("opening", true);
+    shader.setUniform("from", from);
+    shader.setUniform("to", to);
+    shader.setUniform("progress", progress);
+    shader.setUniform("resolution", sf::Vector2f(from.getSize().x, from.getSize().y));
+    shader.setUniform("smoothness", 3.f);
+    shader.setUniform("opening", true);
     handler.setTexture(from);
 }

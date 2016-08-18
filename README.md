@@ -14,7 +14,7 @@ TODO
 ### Dependencies
 * git >= 2.9.2
 * cmake >= 3.6
-* SFML >= 2.3.2
+* SFML >= 2.4.0
 
 ### Build
 ```

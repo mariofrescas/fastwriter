@@ -51,7 +51,7 @@ void ScoresControl::update()
         for (int j = 0; j < matrix[i].size(); ++j)
         {
             scores[i].at(j).setFont(font);
-            scores[i].at(j).setColor(sf::Color::Black);
+            scores[i].at(j).setFillColor(sf::Color::Black);
             scores[i].at(j).setString(matrix[i].at(j));
             scores[i].at(j).setPosition(x[i], y[j]);
         }

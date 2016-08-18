@@ -57,7 +57,7 @@ Results::Results(StateManager& stateManager, State* parent)
     for (std::size_t i = 0; i < results.size(); ++i)
     {
         results[i].setFont(resMngr.getFont(Fonts::ID::Default));
-        results[i].setColor(sf::Color::White);
+        results[i].setFillColor(sf::Color::White);
         results[i].setCharacterSize(25);
         results[i].setPosition(acx + 425, acy + 165 + (32 * i));
         results[i].setString("0");

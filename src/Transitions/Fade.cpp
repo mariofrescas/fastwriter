@@ -48,11 +48,11 @@ void Fade::configure(const sf::Time& duration,
 {
     nextState = next;
     effectDuration = duration;
-    shader.setParameter("from", from);
-    shader.setParameter("to", to);
-    shader.setParameter("progress", progress);
-    shader.setParameter("resolution", sf::Vector2f(from.getSize().x, from.getSize().y));
-    shader.setParameter("color", sf::Vector3f(0.95f, 1.0f, 0.85f));
-    shader.setParameter("colorPhase", 0.5f);
+    shader.setUniform("from", from);
+    shader.setUniform("to", to);
+    shader.setUniform("progress", progress);
+    shader.setUniform("resolution", sf::Vector2f(from.getSize().x, from.getSize().y));
+    shader.setUniform("color", sf::Vector3f(0.95f, 1.0f, 0.85f));
+    shader.setUniform("colorPhase", 0.5f);
     handler.setTexture(from);
 }

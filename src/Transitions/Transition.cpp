@@ -47,7 +47,7 @@ void Transition::handleInput(const sf::Event&)
 void Transition::update(const sf::Time& dt)
 {
     progress += 1 * (dt.asSeconds() / effectDuration.asSeconds());
-    shader.setParameter("progress", progress);
+    shader.setUniform("progress", progress);
 
     if (progress >= 1)
     {
