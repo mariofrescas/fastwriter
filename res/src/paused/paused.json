@@ -56,20 +56,20 @@
 },
 {
 	"filename": "resumen-option-s.png",
-	"frame": {"x":2,"y":427,"w":299,"h":54},
+	"frame": {"x":2,"y":427,"w":255,"h":54},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":299,"h":54},
-	"sourceSize": {"w":299,"h":54},
+	"spriteSourceSize": {"x":0,"y":0,"w":255,"h":54},
+	"sourceSize": {"w":255,"h":54},
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
 	"filename": "resumen-option.png",
-	"frame": {"x":303,"y":427,"w":299,"h":54},
+	"frame": {"x":259,"y":427,"w":255,"h":54},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":299,"h":54},
-	"sourceSize": {"w":299,"h":54},
+	"spriteSourceSize": {"x":0,"y":0,"w":255,"h":54},
+	"sourceSize": {"w":255,"h":54},
 	"pivot": {"x":0.5,"y":0.5}
 }],
 "meta": {
@@ -79,6 +79,6 @@
 	"format": "RGBA8888",
 	"size": {"w":606,"h":483},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:d5b24c8a55cd36d4ea39dc4d15ef5910:bb49f6b5221ef989aab820ddae456fe5:e6b98387a3ba2ba2a195aac3090be0ff$"
+	"smartupdate": "$TexturePacker:SmartUpdate:337103ce55da0c72085691fb694a4d75:c0d00ba87d6b8a8c77d2f7046ca3db4c:e6b98387a3ba2ba2a195aac3090be0ff$"
 }
 }

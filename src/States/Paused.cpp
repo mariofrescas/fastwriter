@@ -73,8 +73,8 @@ Paused::Paused(StateManager& stateManager, State* parent)
                     );
                 },
                 sf::Vector2f(mx, my),
-                sf::IntRect(303, 427, 299, 54),
-                sf::IntRect(2, 427, 299, 54)
+                sf::IntRect(259, 427, 255, 54),
+                sf::IntRect(2, 427, 255, 54)
             },
             GraphicMenu::MenuOptionData
             {

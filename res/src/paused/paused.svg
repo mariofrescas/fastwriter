@@ -82,7 +82,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.5"
-     inkscape:cx="435.4964"
+     inkscape:cx="347.40708"
      inkscape:cy="169.09633"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -101,7 +101,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -139,7 +139,7 @@
          id="tspan4052"
          x="510.98633"
          y="853.08673"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:80px;font-family:saxMono;-inkscape-font-specification:saxMono">Resumen</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:80px;font-family:saxMono;-inkscape-font-specification:saxMono">Resume</tspan></text>
     <rect
        y="1020.3621"
        x="1026.5115"
@@ -218,7 +218,7 @@
            id="tspan34981"
            x="39.450188"
            y="853.08673"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:80px;font-family:saxMono;-inkscape-font-specification:saxMono">Resumen</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:80px;font-family:saxMono;-inkscape-font-specification:saxMono">Resume</tspan></text>
       <text
          inkscape:export-ydpi="90"
          inkscape:export-xdpi="90"
@@ -281,7 +281,7 @@
          y="853.08673"
          x="817.87067"
          id="tspan35105"
-         sodipodi:role="line">Resumen</tspan></text>
+         sodipodi:role="line">Resume</tspan></text>
     <text
        transform="scale(0.99999771,1.0000023)"
        sodipodi:linespacing="125%"
