@@ -48,6 +48,7 @@ public:
 
 private:
     sf::Sprite        background; ///< Sprite de fondo
+    sf::Sprite        container;  ///< Contenedor del mensaje
     sf::Sprite        wellcome;   ///< Sprite de mensaje de bienvenida
     sf::RenderTexture snapShot;   ///< Captura de la escena
 };

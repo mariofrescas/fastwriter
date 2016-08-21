@@ -10,12 +10,21 @@
 	"pivot": {"x":0.5,"y":0.5}
 },
 {
-	"filename": "wellcome.png",
-	"frame": {"x":36,"y":2,"w":1502,"h":332},
+	"filename": "container.png",
+	"frame": {"x":36,"y":2,"w":976,"h":360},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":1502,"h":332},
-	"sourceSize": {"w":1502,"h":332},
+	"spriteSourceSize": {"x":0,"y":0,"w":976,"h":360},
+	"sourceSize": {"w":976,"h":360},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "wellcome.png",
+	"frame": {"x":2,"y":364,"w":1338,"h":114},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1338,"h":114},
+	"sourceSize": {"w":1338,"h":114},
 	"pivot": {"x":0.5,"y":0.5}
 }],
 "meta": {
@@ -23,8 +32,8 @@
 	"version": "1.0",
 	"image": "wellcome.png",
 	"format": "RGBA8888",
-	"size": {"w":1540,"h":336},
+	"size": {"w":1342,"h":480},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:1deb71357fe1420b8ff2b32148b43f78:f63e0c450d9e3d288327a6678f680590:1d19d7d9b14e287049264d73f35dd4e0$"
+	"smartupdate": "$TexturePacker:SmartUpdate:699b0247cc41847cf150673d251c5f9b:f7a42478ecf919a50296cebc773a88d7:1d19d7d9b14e287049264d73f35dd4e0$"
 }
 }

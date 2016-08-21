@@ -44,9 +44,17 @@ Wellcome::Wellcome(StateManager& stateManager)
         windowSize.y / background.getLocalBounds().width
     );
 
+    container.setTexture(resMngr.getTexture(Textures::ID::Wellcome));
+    container.setTextureRect(sf::IntRect(36 + 68, 2, 860, 360));
+    container.setPosition(0, (windowSize.y / 2) - (container.getTextureRect().height / 2));
+    container.setScale
+    (   windowSize.x / container.getLocalBounds().width,
+        1
+    );
+
     wellcome.setTexture(resMngr.getTexture(Textures::ID::Wellcome));
-    wellcome.setTextureRect(sf::IntRect(36 + 68, 2, 1366, 332));
-    wellcome.setPosition(0, (windowSize.y / 2) - (wellcome.getTextureRect().height / 2));
+    wellcome.setTextureRect(sf::IntRect(2, 364, 1338, 114));
+    wellcome.setPosition(0, (windowSize.y / 2) - (wellcome.getTextureRect().height / 2) + 40);
 
     if (!snapShot.create(windowSize.x, windowSize.y))
     {
@@ -80,6 +88,7 @@ void Wellcome::draw()
     sf::RenderWindow& window = getStateManager().getSharedContext().window;
 
     window.draw(background);
+    window.draw(container);
     window.draw(wellcome);
 }
 
@@ -87,6 +96,7 @@ const sf::Texture* Wellcome::getSnapShotTexture()
 {
     snapShot.clear();
     snapShot.draw(background);
+    snapShot.draw(container);
     snapShot.draw(wellcome);
     snapShot.display();
 
