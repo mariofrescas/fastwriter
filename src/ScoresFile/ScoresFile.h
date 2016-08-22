@@ -26,6 +26,8 @@
 #ifndef SCORESFILE_H
 #define SCORESFILE_H
 
+#include <array>
+#include <string>
 #include <memory>
 
 ////////////////////////////////////////////////////////////

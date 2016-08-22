@@ -28,6 +28,8 @@
 
 #include "State.h"
 
+#include <array>
+#include <string>
 #include "GraphicMenu.h"
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Graphics/Sprite.hpp>

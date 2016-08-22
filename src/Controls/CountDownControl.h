@@ -26,6 +26,7 @@
 #ifndef COUNTDOWNCONTROL_H
 #define COUNTDOWNCONTROL_H
 
+#include <array>
 #include <memory>
 #include "TextureNumber.h"
 #include <SFML/System/Time.hpp>

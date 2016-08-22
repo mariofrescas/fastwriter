@@ -26,6 +26,7 @@
 #ifndef TIMECONTROL_H
 #define TIMECONTROL_H
 
+#include <array>
 #include <memory>
 #include "TextureNumber.h"
 #include <SFML/System/Time.hpp>

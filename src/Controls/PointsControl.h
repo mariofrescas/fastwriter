@@ -26,6 +26,7 @@
 #ifndef POINTSCONTROL_H
 #define POINTSCONTROL_H
 
+#include <array>
 #include <memory>
 #include "TextureNumber.h"
 

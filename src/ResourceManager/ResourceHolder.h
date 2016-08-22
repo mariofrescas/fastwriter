@@ -27,6 +27,7 @@
 #define RESOURCEHOLDER_H
 
 #include <map>
+#include <string>
 #include <memory>
 
 ////////////////////////////////////////////////////////////

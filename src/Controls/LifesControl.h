@@ -26,6 +26,7 @@
 #ifndef LIFESCONTROL_H
 #define LIFESCONTROL_H
 
+#include <array>
 #include <memory>
 #include "TextureNumber.h"
 

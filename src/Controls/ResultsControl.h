@@ -27,6 +27,7 @@
 #define RESULTSCONTROL_H
 
 #include <array>
+#include <string>
 #include "GameConfManager.h"
 #include <SFML/System/Time.hpp>
 

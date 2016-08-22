@@ -26,6 +26,8 @@
 #ifndef SCORESCONTROL_H
 #define SCORESCONTROL_H
 
+#include <array>
+#include <string>
 #include <memory>
 #include <SFML/Graphics/Text.hpp>
 

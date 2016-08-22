@@ -28,6 +28,7 @@
 
 #include <list>
 #include <memory>
+#include <functional>
 #include <SFML/Graphics/Sprite.hpp>
 
 ////////////////////////////////////////////////////////////
